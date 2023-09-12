@@ -1,0 +1,33 @@
+---
+import Heading from "../system/Heading.astro";
+import Text from "../system/Text.astro";
+import config from "../../../config";
+import CampusCard from "./campusCard.astro";
+
+const campus = config.campus;
+---
+
+
+<div class='bg-white p-14 max-md:p-5 flex flex-col gap-8'>
+  <div class="flex gap-4 flex-col items-center">
+    <Text type={'subtitle'} style={{ opacity: 0.8, color: '#121212' }}>TWO Environments, One Vision</Text>
+    <div class="flex flex-row gap-4 items-center justify-start">
+      <Heading first="Insight" second="Unison"  />
+    </div>
+  </div>
+  <div class="flex flex-col gap-5">
+    {
+    campus.map((item,index) => {
+      return <CampusCard
+                image={item.images[0]}
+                name={item.title}
+                desc={item.description}
+                ctaText={item.ctaText}
+                class={index === 1 ? 'items-end' : ""}
+                >
+        </CampusCard>
+    })
+    }
+
+  </div>
+  </div>

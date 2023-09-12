@@ -1,0 +1,66 @@
+---
+import Constrain from "../system/Constrain.astro";
+import Heading from "../system/Heading.astro";
+import Text from "../system/Text.astro";
+import ConnectItem from "./ConnectItem.astro";
+
+type ContactDetails = {
+  label: string;
+  value: string;
+  type: 'contact' | 'mail' | 'address',
+}
+interface Campus {
+  details: {
+    [key: string]: ContactDetails | undefined; // Add index signature
+    phoneNo?: ContactDetails,
+    workingHours?: ContactDetails,
+    address?: ContactDetails,
+  }
+  mapEmbedLink: string;
+}
+
+const { 
+    details,
+    mapEmbedLink = "s"
+  } = Astro.props as Campus
+---
+
+<div class="p-xl max-md:px-6">
+        <Heading first="Connect with" second={"Insight"} subtitle="Experiencing the Full Spectrum of Learning">
+        </Heading>
+        <div class='flex justify-between gap-8 mt-10 text-black mb-24 items-center max-md:flex-col max-md:px-0 max-md:mt-6 max-md:mb-8'>
+        <div class='h-full w-full'>
+            <div class="flex flex-col">
+                {
+                    Object.keys(details).map((key,index) => {
+                        return <ConnectItem
+                                    label={
+                                        details[key]?.label
+                                    }
+                                    title={
+                                        details[key]?.value
+                                    }
+                                    type={
+                                        details[key]?.type
+                                    }
+                                    style={{
+                                        borderBottomWidth: index === Object.keys(details).length - 1 ? '0px' : 'initial',
+                                        }}
+                                />
+                    })
+                }
+
+        </div>
+        <div class='h-[352px] max-md:w-full bg-red rounded-lg overflow-hidden'>
+            <iframe
+            width="100%"
+            height="100%"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src={mapEmbedLink}
+            ></iframe>
+        </div>
+        </div>
+</div>

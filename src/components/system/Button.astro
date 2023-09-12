@@ -1,0 +1,85 @@
+---
+import FilledArrowCircle from '../icons/FilledArrowCircle.astro'
+const { title, secondary, icon, class: className ,type="primary" } = Astro.props;
+const buttonType = type
+const Icon = icon ? icon : FilledArrowCircle;
+const buttonClassName = {
+    'primary': 'border-white/30 bg-primary primary border-[3px]',
+    'secondary': 'border-white bg-white secondary border-[3px]',
+    'default': 'default'
+}
+
+
+---
+
+<div class=`font-display ${className}` >
+  <button 
+    class:list={[
+      "flex flex-row items-center py-2 px-5 rounded-full  button overflow-hidden relative",
+      buttonClassName[buttonType]
+    ]} 
+    style={{
+      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+      // background: primary ? "linear-gradient(263.64deg, var(--primary) 6.11%, #028339 95.99%)" : 'white'
+    }}>
+    <span class:list={[true ? "text-white" : "text-green-400", "font-semibold", "text-lg max-md:text-base"]}>
+      <slot/>
+    </span>
+    <div class="w-5 h-5 ml-2 icon">
+      <slot name="icon">
+        <Icon color={true ? "white" : "#3C674F"} />
+      </slot>
+    </div>
+  </button>
+</div>
+
+<style>
+  .button:before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255,255,255, 0) 30%,
+        rgba(255,255,255, .8),
+        rgba(255,255,255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+    animation: none; /* Animation */
+  }
+
+  .button {
+    transition: all 0.3s ease-in-out;
+    /* transform: scale(1); */
+  }
+
+  .button:hover::before{
+    animation: shine 1.5s ease-out infinite;
+  }
+
+  .button.secondary:hover::before,button.default:hover::before {
+    animation: none;
+  }
+
+  .button .icon {
+    transition: all 0.3s ease-in-out;
+  }
+  .button:hover .icon {
+    transform: translateX(4px);
+  }
+  
+
+  .button:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6)
+  }
+
+  @keyframes shine {
+    0% {left: -100px}
+    60% {left: 100%}
+    100% {left: 100%}
+  }
+</style>

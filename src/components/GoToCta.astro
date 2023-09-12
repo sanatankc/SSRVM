@@ -1,0 +1,55 @@
+---
+import campusImage from '../images/campus/gas/1.jpeg';
+import FilledArrowCircle from './icons/FilledArrowCircle.astro';
+import Text from './system/Text.astro';
+---
+<div
+  class="p-xl flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
+        max-md:p-m  max-sm:items-start
+  "
+  style=`
+    background: linear-gradient(
+      to left,
+      rgba(27, 34, 38, 0.8),
+      rgba(27, 34, 38, 0.8)
+    ), url(${campusImage});
+  `
+>
+  <div class="flex flex-col gap-10 items-start justify-start shrink-0 relative">
+    <div
+      class="flex flex-col gap-[30px]"
+    >
+  
+      <div class="flex gap-8 flex-col">
+
+        <p
+          class='uppercase  text-white font-display font-bold text-4xl max-sm:text-[28px] max-s:text-2xl'
+        >
+          WE SAVED YOUR PART<br /> 
+          IN OUR <span class='text-yellow'>legacy</span>
+  
+          </span> 
+      
+        </p>
+        <p      
+          class='font-display uppercase text-gray-800 text-4xl font-bold max-sm:text-[28px] flex gap-3 items-center max-s:text-2xl'>
+            READY TO JOIN?
+            <span class="max-s:flex hidden">
+                <FilledArrowCircle 
+                    svgClass={"w-[50px] h-[50px]"} 
+                    color={"#F5CC4F"} 
+                  />
+            </span>
+          
+      </p> 
+      </div>
+     
+    </div>
+  </div>
+  <div class="text-yellow max-s:hidden">
+    <FilledArrowCircle 
+        svgClass={"w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px]"} 
+        color={"#F5CC4F"} 
+      />
+  </div>
+</div>

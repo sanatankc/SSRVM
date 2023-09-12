@@ -1,0 +1,38 @@
+---
+import config from '../../../config';
+import clubsThumb from '../../images/clubsThumb.png'
+import coscholasticsThumb from '../../images/coscholasticsThumb.png'
+import FilledArrowCircle from '../icons/FilledArrowCircle.astro';
+import Button from '../system/Button.astro';
+import Constrain from '../system/Constrain.astro';
+import Heading from '../system/Heading.astro';
+import Image from '../system/Image.astro';
+import Text from '../system/Text.astro';
+
+---
+<div class="bg-white py-14 max-md:py-8 text-center flex flex-col items-center gap-20 max-md:gap-3">
+  <div class="flex gap-4 flex-col">
+    <Text type={'subtitle'} style={{ opacity: 0.8, color: '#121212' }}>EMBRACING QUALITY & INCLUSION</Text>
+    <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative">
+      <Heading first="Why" second="Insight?" />
+    </div>
+  </div>
+  <Constrain>
+    <div class="flex gap-20 justify-between item-center p-xl">
+      <Constrain width="778px" class="flex flex-col gap-l">
+        <p class='p-neutral-dark-grey text-[22px] text-left max-md:text-base'>
+            {config.school.discription}
+        </p>  
+        <Button type="primary" className="justify-start">
+          Read more about us
+        </Button>
+      </Constrain>
+        <Image
+          className="h-[133px] w-full max-w-md object-cover rounded-full max-sm:hidden"
+          src={clubsThumb}
+        />
+    </div>
+  </Constrain>
+ 
+  
+</div>

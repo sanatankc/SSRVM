@@ -1,0 +1,29 @@
+---
+import Button from "../system/Button.astro";
+import Text from "../system/Text.astro";
+const { image, class: className, name, desc, link,ctaText} = Astro.props
+---
+
+<div data-link={link} class:list={['p-14 max-md:w-full h-[504px] cursor-pointer max-md:h-[400px]  max-md:mb-8 flex flex-col  max-md:p-m bg-cover bg-center overflow-hidden justify-center' ,  className ]}
+  style={{
+    backgroundImage: `url(${image})`
+  }}
+>
+  <div class="flex flex-col gap-r border-solid border-t-[8px] p-9 border-yellow w-fit bg-white">
+      <Text type="h3" class="text-neutral-dark-grey font-display font-bold text-[32px]">{name}</Text>
+      <Text type="p" class="text-neutral-dark-grey max-w-[34ch]">{desc}</Text>
+      <div class="py-l">
+        <Button >
+          {ctaText}
+        </Button>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-link]').forEach(el => {
+    el.addEventListener('click', () => {
+      window.open(el.dataset.link, "_self"); 
+    })
+  })
+</script>

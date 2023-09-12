@@ -1,0 +1,79 @@
+---
+import Text from "./system/Text.astro";
+
+
+---
+<Text type="h1" class="font-roundo font-bold uppercase mt-[auto] ">
+    Experience <br> A <span class="text-yellow">
+         Legacy
+    </span>
+    <br>
+    <div class="flex gap-3">
+    of  
+    <div class={`text-yellow relative overflow-hidden text-container`}>
+        <div class="text">
+            excellence
+        </div>
+        <div class="text">
+            innovation
+        </div>
+        <div class="text">
+            achievements
+        </div>
+    </div>
+    </div>
+
+    
+</Text>
+
+<style>
+    .text-container{
+        height: 42px;
+        width: 400px;
+
+    }
+    .text{
+        position: absolute;
+        inset: 0;
+        transform: translateY(42px);
+        transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+    
+</style>
+<script>
+let texts = Array.from(document.querySelectorAll<HTMLElement>('.text'));
+let counter = 0;
+let interval: string | number | NodeJS.Timer | undefined;
+
+const textArray = [
+        "excellence",
+        "innovation",
+        "achievements",
+    ]
+function moveTextOneByOne(){
+    texts.forEach((text, index) => {
+        if(index === counter){
+            text.style.opacity = '1';
+            text.style.transform = 'translateY(0)';
+
+        }else{
+            text.style.opacity = '0'
+            text.style.transform = 'translateY(-42px)';
+
+        }
+    })
+    counter = (counter + 1) % texts.length;
+}
+const init = () => {
+    counter = 0
+    clearInterval(interval);
+    interval = setInterval(() => moveTextOneByOne(), 3000);
+    texts = Array.from(document.querySelectorAll<HTMLElement>('.text'));
+    moveTextOneByOne();
+}
+init()
+
+document.addEventListener('astro:beforeload', () => init());
+
+
+  </script>

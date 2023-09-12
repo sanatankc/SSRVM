@@ -1,0 +1,10 @@
+---
+const { class: className,width='1440px' } = Astro.props
+
+---
+  <div class={className} style={{
+    maxWidth: width,
+    width: '100%',
+  }}>
+    <slot />
+  </div>
