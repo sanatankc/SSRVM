@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Text from '../components/system/Text.astro';
+import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
+import TopNavigationBar from '../components/TopNavigationBar.astro';
+import AdmissionMarquee from '../components/campus/admissionMarquee.astro';
+
+import '../global.css'
+import GalleryMarquee from '../components/campus/galleryMarquee.astro';
+import Footer from '../components/landingPage/Footer.astro';
+
+import preeti from '../images/aboutUs/preeti.jpeg'
+import sowmia from '../images/aboutUs/sowmia.png'
+import vittal from '../images/aboutUs/vittal.jpeg'
+import rachna from '../images/aboutUs/Rachna.jpeg'
+import missionCardBG from '../images/aboutUs/missionCardBG.png'
+import cupIcon from '../images/aboutUs/CupIcon.svg'
+
+import mission1 from '../images/aboutUs/mission1.png'
+import mission2 from '../images/aboutUs/mission2.png'
+import mission3 from '../images/aboutUs/mission3.png'
+import mission4 from '../images/aboutUs/mission4.png'
+import mission5 from '../images/aboutUs/mission5.png'
+import mission6 from '../images/aboutUs/mission6.png'
+import fireSquareIcon from '../images/aboutUs/icons/Fire Square.svg'
+import globeIcon from '../images/aboutUs/icons/Global.svg'
+import LinkSquareIcon from '../images/aboutUs/icons/Link Square.svg'
+import graphUpIcon from '../images/aboutUs/icons/Graph Up.svg'
+import sledgeHammerIcon from '../images/aboutUs/icons/Sledgehammer.svg'
+import linkedinIcon from '../icons/linkedin.svg'
+import Constrain from '../components/system/Constrain.astro';
+import GoToCta from '../components/GoToCta.astro';
+import Hero from './Hero.astro';
+import PreviewImage from "../images/campus/gas/1.jpeg";
+import Image from '../components/system/Image.astro';
+import Rank1 from "../images/award.svg"
+import Heading from '../components/system/Heading.astro';
+import LeaderShipCTA from "../components/LeaderShipCTA.astro"
+import CommunityImage from "../images/campus/knk/slides/1.jpeg" 
+import SlideShow from '../components/SlideShow.astro';
+import Testimonial from '../components/landingPage/Testimonial.astro';
+
+
+const founderDesk = [
+  { name: 'Vittal Bhandary', title: 'CEO', linkedin: "https://www.linkedin.com/in/vittal-bhandary-51902519/", image: vittal, message: "Glentree Academy envisions a transformative approach to education, addressing the shortcomings of traditional learning. As a child, I found little joy in the stress of memorisation, yet I thrived in the immersive world of sports. Inspired by my own experiences and Preeti's vision of a happy learning environment, Glentree aims to create a place where children can freely explore their talents and passions without the burden of grades." },
+  { name: 'Preeti Bhandary', title: 'DIRECTOR', linkedin: 'https://www.linkedin.com/in/preeti-bhandary-0164231a', image: preeti, message: "Research shows that involved parents contribute to happier, healthier, and more successful children. However, in today's fast-paced world, lack of quality parenting time leads to increased pressure on children. We often neglect the present moment, consumed by daily crises. Engaging children in multiple activities is no substitute for parental presence, despite common misconceptions." },
+  { name: 'Sowmia Raguraman', title: 'MENTOR PRINCIPAL', linkedin: 'https://www.linkedin.com/in/sowmia-raguraman-9b51b364', image: sowmia, message: "As an educator, my goal is to nurture a growth mindset in children, teaching them to embrace failures as opportunities for progress. I strive to help them measure their advancement effectively, academically and personally. By encouraging a positive attitude towards change and letting go of past negative experiences, we can develop their mature thinking from an early age. This mindset enables them to persevere through setbacks, accept constructive criticism, refine their skills, and view mistakes as stepping stones to success." },
+  { name: 'Rachana Heda', title: 'COO', linkedin: 'https://www.linkedin.com/in/rachana-heda-b218881a6', image: rachna, message: "As the proud leader of this educational institution, I am thrilled to share our commitment to learning for life. Our vision is to cultivate lifelong learners who are curious, creative, and compassionate individuals. Through innovative teaching methods, personalized guidance, and a diverse range of opportunities, we strive to equip our students with the skills, knowledge, and values needed to thrive in an ever-changing world. Together with our dedicated educators, supportive parents, and enthusiastic students, we embark on a journey of academic excellence, character development, and holistic growth. Join us as we shape the leaders and innovators of tomorrow." },
+]
+
+const missions = [
+  { image: mission1, title: ['Empowering', 'Personal Growth'], icon: cupIcon, description: "Nurturing and empowering individuals to unleash their full potential in a supportive learning environment." },
+  { image: mission2, title: ['Education with a', 'Global Perspective'], icon: globeIcon, description: "Broadening horizons and cultivating future leaders through innovative teaching and learning approaches." },
+  { image: mission3, title: ['Igniting', 'Lifelong Learning'], icon: fireSquareIcon, description: "Sparking a passion for continuous exploration and discovery, making learning an engaging and enduring journey." },
+  { image: mission4, title: ['Building', 'Resilient Individuals'], icon: sledgeHammerIcon, description: "Equipping students with essential values, life skills, and character development for personal and professional success." },
+  { image: mission5, title: ['Strong Parents-School', 'Parternships'], icon: LinkSquareIcon, description: "Establishing collaborative communities that foster effective communication and engagement for optimal student development." },
+  { image: mission6, title: ['Innovation & Improvement', 'in Education'], icon: graphUpIcon, description: "Embracing change, innovation, and research to create a dynamic and progressive educational environment." },
+]
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="flex flex-col">
+    <TopNavigationBar />
+    <!-- section -->
+    
+    <div class="flex flex-col relative">
+      <div class="max-h-[400px] flex">
+      <div
+        class="absolute inset-0 bg-black-100 w-full h-full z-[9] hidden  max-sm:flex"
+        style={{
+          backgroundImage: `linear-gradient(0deg, #1b2226 -36.91%, #052b4cb0 69.9%, #1370a77a 131.56%), url(${PreviewImage})`
+        }}
+      ></div>
+
+          <Hero
+              config={
+                  {
+                      previewImage: PreviewImage,
+                  }
+              }
+              showCta={false}
+          >
+              <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">About Us</Text>
+              <Text type="p" slot="ctaButton" class="max-w-[37ch]">{"Managed by Insight Educational Trust, Insight Academy was founded in 2007 to deliver quality education to all. Management consists of trust members guiding strategic decisions, and a governing council overseeing daily operations. "}</Text>
+              <Image slot="previewImage" src={PreviewImage} className="w-[50%] h-full object-cover object-center z-[90] absolute right-0 max-sm:hidden" /> 
+             
+          </Hero>
+      </div>
+      <!-- linear-gradient(270deg,_#0C4974_4.9%,_#142634_65.98%) -->
+
+      <div
+        slot="footer"
+        class=" w-full p-r flex flex-wrap items-center justify-center z-10  max-sm:bg-none bg-[linear-gradient(270deg,_#0C4974_4.9%,_#142634_65.98%)]">
+        <Constrain class="flex justify-between items-center" width="1000px">
+          <div class="flex gap-[4px] flex-col w-fit items-center" >
+            <img class="w-[100px]" src={Rank1} alt="Rank 1" />
+          </div>
+          <div class="flex gap-[4px] flex-col w-fit p-r items-center">
+            <p class="text-[18px] text-yellow font-display font-semibold text-center max-sm:text-[14px]">
+                EDUCATION <br />
+                TODAY
+            </p>
+            <p class="text-[18px] text-white max-sm:text-[14px]">
+              Rank 1, 2019
+            </p>
+          </div>
+          <div class="flex gap-[4px] flex-col w-fit p-r items-center">
+            <p class="text-[18px] text-yellow font-display font-semibold text-center max-sm:text-[14px]">
+                INDIA SCHOOL <br />
+                MERIT AWARDS 
+            </p>
+            <p class="text-[18px] text-white max-sm:text-[14px]">
+              Rank 1, 2020
+            </p>
+          </div>
+        </Constrain>
+      </div>
+  </div>
+  <div class="flex p-xl flex-col gap-l justify-center z-10 max-sm:p-r">
+      <Constrain>
+     <div class="flex items-center flex-col gap-l">
+        <Heading
+          first="Our"
+          second="Objectives"
+          subtitle="MISSION & VISION"
+        ></Heading>
+        <p class="text-2xl text-neutral-dark-grey max-w-[70ch] text-center">
+          Insight Academy aims to direct the development of education to realize the immense nation building aptitudes and attitudes by utilizing the potential of aptly trained teachers. We believe education is not just a classroom affair, but it spreads over in myriad directions to provide learning in a child-friendly environment with no stress on confined syllabi or the examination.
+        </p>
+      </div>
+  
+    </Constrain>
+  </div>
+    <SlideShow />
+  <!-- section -->
+  <!-- section -->
+    <div class="flex p-xl flex-col gap-l justify-center items-center  max-sm:p-r">
+      <div class="w-full">
+        <LeaderShipCTA />
+      </div>
+    </div>
+  <!-- section -->
+  <div class="flex p-xl flex-col gap-l justify-center items-center max-sm:p-r max-sm:gap-r">
+    <div class="max-w-[1440px] bg-primary rounded-[27px] overflow-clip">
+
+      <div class="flex w-full community-section">
+        <div class="overflow-hidden">
+          <img 
+            src={CommunityImage}
+            alt="Image of community"
+            class="basis-[25%] object-cover h-full" 
+  
+        />
+        </div>
+        
+        <div class="flex  gap-[28px] flex-col w-full py-xl px-r basis-[70%] rounded-tr-[27px] card max-sm:gap-r">
+          <Text type="h2" class="text-yellow font-bold max-sm:text-lg">
+            Work with us
+          </Text>
+          <Text type="h1" class="text-white font-bold leading-[60px] max-md:leading-[40px]">
+              Join the <br />
+              Insight community
+          </Text>
+          <Text type='p' class="text-white">
+            To view open career positions, <a href="" class="underline">click here</a>
+          </Text>
+        </div>
+        <!-- <div class="flex basis-[3%] flex-col relative">
+          <div class="basis-[30%] relative left-[20px] top-[-20px] ">
+            <div class="dotted bg-primary rounded-[17px] w-[90%] h-[100%] relative  inverted text-yellow p-r">
+              <svg  fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-full h-full">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+              
+            </div>
+          </div> -->
+<!--       
+          <div class="bg-primary basis-[70%]  flex overflow-hidden rounded-tr-[27px] mt-auto">
+            
+          </div> -->
+          <!-- <div class="radius"></div> -->
+        </div>
+        <!-- <div class="absolute w-[100px] h-[100px] bg-primary z-10 right-0 border-[5px] border-[#fff]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="128" height="127" viewBox="0 0 128 127" fill="none">
+            <rect x="0.62207" y="0.146484" width="126.832" height="126.832" rx="17" fill="#006BB3"/>
+            <path d="M37.1755 84.138C35.6134 85.7001 35.6134 88.2327 37.1755 89.7948C38.7376 91.3569 41.2702 91.3569 42.8323 89.7948L37.1755 84.138ZM98.7122 32.2578C98.7122 30.0487 96.9213 28.2578 94.7122 28.2578L58.7122 28.2579C56.5031 28.2579 54.7122 30.0488 54.7122 32.2579C54.7122 34.467 56.5031 36.2579 58.7122 36.2579L90.7122 36.2578L90.7123 68.2578C90.7123 70.467 92.5032 72.2578 94.7123 72.2578C96.9215 72.2578 98.7123 70.4669 98.7123 68.2578L98.7122 32.2578ZM42.8323 89.7948L97.5407 35.0862L91.8838 29.4294L37.1755 84.138L42.8323 89.7948Z" fill="#F5CC4F"/>
+            </svg>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <Testimonial />
+  <Footer /> 
+
+
+  </div>
+
+</Layout>
+
+<style>
+  .card{
+    position: relative;
+  }
+  .card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #006BB3;
+    left: -100px;
+    height: 100%;
+    width: 200px;
+    clip-path: polygon(50% 0%, 0% 100%, 53% 100%);
+  }
+  .dotted{
+    z-index: 99;
+  }
+  .radius{
+    position: relative;
+    z-index: 22;
+    position: absolute;
+    
+    background-color: #fff;
+    /* top: -50px; */
+    top: 3px;
+    height: 100px;
+    width: 100%;
+    
+    border-bottom-left-radius: 25px;
+  }
+  /* .radius::before{
+    content: "";
+    position: absolute;
+    
+    background-color: #fff;
+    bottom: -50px;
+  height: 50px;
+  
+  width: 25px;
+  border-top-left-radius: 25px;
+  box-shadow: 0 -25px 0 0 #F66969;
+  } */
+  .community-section{
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    grid-column: 1fr;
+
+  }
+ 
+  .mission-card {
+    transition: 0.3s all ease-in-out;
+    background-image: linear-gradient(45deg, rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), url()
+  }
+  .mission-card:hover {
+    background-image: linear-gradient(45deg, rgba(10, 94, 47, 0.8), rgba(10, 94, 47, 0.8), )
+  }
+</style>

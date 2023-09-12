@@ -1,0 +1,167 @@
+---
+import YogaDay from "../images/campus/events/YogaaDay.png" 
+import RedDay from "../images/campus/events/RedDay.png" 
+import DoctorDay from "../images/campus/events/doctorDay.png" 
+import CarouselCard from "../components/carousel/CarouselCard.astro";
+import Star from "../components/icons/Star.astro";
+import Heading from "../components/system/Heading.astro";
+import arrow from "../icons/arrow.svg?raw"
+import fb from "../icons/facebook.svg?raw"
+
+
+interface Item {
+  title: string;
+  img: string;
+}
+const config: Item[] = [
+  { title: "Celebrating Yoga Day ‘23", img: YogaDay},
+  { title: "Happy Red Day!", img: RedDay},
+  { title: "Doctor’s Day 2023", img: DoctorDay}
+]
+const {title,showSocial=true} = Astro.props
+const heading = title || "Feature Updates"
+---
+
+<div
+    class="py-xl flex flex-col max-md:py-l"
+    style="
+    background: linear-gradient(
+    249.28deg,
+    rgba(255, 245, 212, 1) 0%,
+    rgba(246, 255, 237, 1) 0%,
+    rgba(233, 245, 255, 1) 100%
+    );
+    "
+>
+    <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-sm:px-3 ">
+        <Heading first={heading.split(' ')[0]} second={heading.split(' ')[1]} />
+        {showSocial && 
+          <a  href="https://www.facebook.com/InsightAcademy.KanakapuraRoad"
+              target="_blank"
+          >
+            <div
+              class="flex flex-row gap-[13px] items-center justify-center relative font-sans font-bold text-[22px] max-md:text-base max-sm:gap-1">
+              <div
+                class="text-center"
+                style="
+                color: #216283;
+                "
+              >
+              Follow @InsightAcademy for daily updates!
+            </div>
+              <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
+                <Fragment set:html={fb} />
+              </div>
+            </div>
+        </a>
+      }
+        
+    </div>
+    <div class="w-full relative">
+     
+      <div id="scroll-container" class="overflow-x-auto no-scrollbar" style={{
+              overflowX: 'scroll',
+              overflowY: 'hidden',
+        }}>
+        <div class="p-l pl-xl pb-0 pr-4 flex gap-20 max-md:px-l max-md:gap-4">
+          {
+            config.map((item, index) => (
+              <CarouselCard
+                title={item.title}
+                img={item.img} 
+                index={index}
+                />
+            ))
+          }
+          <div class="p-2"></div>
+        </div>
+      </div>
+      <div class="w-fit h-fit top-0 left-0 z-50 flex flex-row items-center  justify-between pointer-events-none gap-l mx-auto mt-l">
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="prev-button">
+          <div class="w-full h-full -scale-100 bg-neutral-dark-grey text-white flex items-center justify-center rounded-full">
+            <Fragment set:html={arrow} />
+          </div>
+        </div>
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="next-button">
+          <div class="w-full h-full scale-100 bg-neutral-dark-grey flex text-white items-center justify-center rounded-full">
+            <Fragment set:html={arrow}  />
+          </div>
+          </div>
+      </div>
+    </div>
+    
+</div>
+
+<script>
+  let prevButton = document.querySelector('#prev-button')
+  let nextButton = document.querySelector('#next-button')
+  
+  let scrollContainer = document.querySelector('#scroll-container')
+
+  const checkOverflow = () => {
+    const prevButton = document.querySelector('#prev-button')
+    const nextButton = document.querySelector('#next-button')
+  
+    const scrollContainer = document.querySelector('#scroll-container')
+    if(scrollContainer?.scrollWidth){
+      if (scrollContainer?.scrollWidth > scrollContainer?.clientWidth) {
+        prevButton?.classList.remove('hidden')
+        nextButton?.classList.remove('hidden')
+      } else {
+        prevButton?.classList.add('hidden')
+        nextButton?.classList.add('hidden')
+      }
+    }
+
+  }
+  window.addEventListener('resize', checkOverflow);
+  checkOverflow();
+
+  if (prevButton && nextButton && scrollContainer) {
+    const scroll = (scrollOffset: number) => {
+      scrollContainer.scrollBy({
+        top: 0,
+        left: scrollOffset,
+        behavior: 'smooth'
+      })
+    }
+  
+    const scrollOffset = document.querySelector('.scroll-card')?.offsetWidth
+  
+    prevButton.addEventListener('click', () => {
+      scroll(scrollOffset * -1)
+    })
+  
+    nextButton.addEventListener('click', () => {
+      scroll(scrollOffset)
+    })
+  }
+  document.addEventListener('astro:beforeload',() => {
+    prevButton = document.querySelector('#prev-button')
+    nextButton = document.querySelector('#next-button')
+    scrollContainer = document.querySelector('#scroll-container')
+    if (prevButton && nextButton && scrollContainer) {
+      const scroll = (scrollOffset: number) => {
+        scrollContainer.scrollBy({
+          top: 0,
+          left: scrollOffset,
+          behavior: 'smooth'
+        })
+      }
+    
+      const scrollOffset = document.querySelector('.scroll-card')?.offsetWidth
+    
+      prevButton.addEventListener('click', () => {
+        scroll(scrollOffset * -1)
+      })
+    
+      nextButton.addEventListener('click', () => {
+        scroll(scrollOffset)
+      })
+    }
+    checkOverflow();
+   
+
+  })
+
+</script>

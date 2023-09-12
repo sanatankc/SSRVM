@@ -1,0 +1,55 @@
+---
+import config from '../../../config';
+import Heading from '../system/Heading.astro';
+import Text from '../system/Text.astro';
+import YoutubeEmbed from '../YoutubeEmbed.astro'
+import TestimonicalCard from './TestimonicalCard.astro';
+const testimonials = config.testimonials;
+const title = testimonials.title;
+const data = testimonials.data
+const subtitle = testimonials.subtitle;
+---
+
+<div class='bg-shades-blue-dark p-xl flex flex-col max-md:px-4 max-md:p-10 '>
+  <div class="flex gap-4 flex-col items-center">
+    <Text type={'subtitle'} class='text-yellow'>{subtitle}</Text>
+    <div class="flex flex-row gap-4 items-center justify-start">
+      <Heading 
+        class='text-white'
+      >
+      <Text type={'h2'} class='text-white font-display font-bold'>{title}</Text>
+      </Heading>
+    </div>
+  </div>
+  <div class="relative flex flex-col items-center max-md:items-start">
+    
+    { 
+        <TestimonicalCard 
+            quote={data[0].quote}
+            author={data[0]?.author}
+            image={data[0].image}
+            ctaText={data[0].ctaText}
+            ctaLink={data[0].ctaLink}
+            className="bg-transparent text-white width-full"
+        />
+      
+    }
+    <div class="flex flex-row gap-10 max-sm:flex-col max-sm:gap-0">
+      {data.slice(1).map(item => {
+        return (
+          <TestimonicalCard 
+              quote={item.quote}
+              author={item?.author}
+              image={item.image}
+              ctaText={item.ctaText}
+              ctaLink={item.ctaLink}
+              className="bg-transparent text-white rounded-bl-[50px]"
+          />
+        )
+      })}
+    </div>
+   
+    <YoutubeEmbed embedId={'d-A17Q46EvI'} videoId='0' />
+  </div>
+  </div>
+

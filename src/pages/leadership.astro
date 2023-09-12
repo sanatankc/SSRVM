@@ -1,0 +1,92 @@
+---
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "./Hero.astro";
+import LeaderShipImage from ".././images/campus/gas/1.jpeg"
+import Text from "../components/system/Text.astro";
+import Button from "../components/system/Button.astro";
+import Image from "../components/system/Image.astro";
+import config from "./../../config"
+import Footer from "../components/landingPage/Footer.astro";
+
+const leaderShip = config?.leadership;
+const leaderShipData = leaderShip?.data;
+---
+
+<Layout title="welcome">
+    <div class="flex flex-col">
+        <TopNavigationBar />
+        <div class="flex flex-col">
+
+            <div class="h-[400px] flex">
+                <Hero
+                    config={
+                        {
+                            title: "Our Leadership",
+                            previewImage: LeaderShipImage,
+                        }
+                    }
+                    showCta={false}
+                >
+                    <Text type="h2" slot="title" class="font-displat font-bold  text-yellow z-10">{"Our Leadership"}</Text>
+                    <Text type="p" slot="ctaButton" class="max-w-[37ch]">{"Managed by Insight Educational Trust, Insight Academy was founded in 2007 to deliver quality education to all. Management consists of trust members guiding strategic decisions, and a governing council overseeing daily operations. "}</Text>
+                    <div
+                        slot="previewImage"
+                        class=`w-[50%] h-full object-cover object-center  absolute right-0 preview-image
+                               max-sm:inset-0 max-sm:w-full
+                                `
+                       
+                        /> 
+                        
+
+                    </div>
+                    <!-- <Image 
+                        slot="previewImage"
+                        src={LeaderShipImage} 
+                        className="w-[50%] h-full object-cover object-center  absolute right-0 max-sm:inset-0 max-sm:w-full" />  -->
+
+                </Hero>
+            
+            </div>
+               
+            </div>
+            {Object.keys(leaderShipData).map(item => {
+            
+                    return <div class="p-xl flex flex-col gap-l items-center max-sm:p-r">
+                                 <Text type="h2" class="text-center text-3xl font-bold">Trustee Members</Text>
+                                 <div class="flex flex-wrap items-center justify-center">
+                                        {
+                                            leaderShipData[item].map((item,index) => {
+                                                return  <div class="flex flex-col max-w-[300px] h-[600px]">
+                                                            <Image src={item.image} className={`w-full min-h-[400px] object-cover ${index === 0 && "border-yellow border-b-[5px]"}`} />
+                                                            <div class={"flex flex-col gap-[14px] border-[1px] border-gray-900 p-r flex-1 pb-[100px]"}
+                                                                style={`background: ${index === 0 ?  'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%)' : "#fff"}`}
+                                                            >
+                                                                <Text type="h4" class="font-bold">{item.name}</Text>
+                                                                <Text type="subtitle" class="text-black-100 text-[18px]" style={{
+                                                                    textAlign: "left"
+                                                                }}>{item.role}</Text>
+                                                            </div>
+                                                        </div>
+                                            })
+                                        }
+                                </div>
+                            </div>
+                })
+            }
+        </div>
+        <Footer />
+    </div>
+    <style>
+        .preview-image{
+            background-image:linear-gradient(185deg, #0c497478 4.9%, #142634d4 65.98%),url("src/images/campus/gas/1.jpeg")
+
+        }
+        @media not all and (max-width: 640px){
+            .preview-image{
+                background-image:url("src/images/campus/gas/1.jpeg")
+            }
+        }
+    </style>
+</Layout>
+

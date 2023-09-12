@@ -1,0 +1,49 @@
+---
+import Text from "./system/Text.astro";
+
+
+---
+<h1 class="font-display font-bold uppercase mt-[auto] text-[62px] leading-[62px]
+            max-md:text-[42px] max-md:leading-[42px]
+            max-sm:text-[32px] max-sm:leading-[32px]
+                
+            "
+             
+             >
+    Experience <br> A <span class="text-yellow">
+         Legacy
+    </span>
+    <br>
+    <div class="flex gap-3">
+    of  
+    <div class={`text-yellow relative overflow-hidden text-container h-[62px] w-[600px] max-sm:h-[33px]`}>
+        <div class="text translate-y-[62px]">
+            excellence
+        </div>
+        <div class="text translate-y-[62px]">
+            innovation
+        </div>
+        <div class="text translate-y-[62px]">
+            achievements
+        </div>
+    </div>
+    </div>
+
+    
+</h1>
+
+<style>
+      .text{
+        position: absolute;
+        inset: 0;
+        transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+    
+</style>
+<script>
+
+
+document.addEventListener('astro:beforeload', () => init());
+
+
+  </script>
