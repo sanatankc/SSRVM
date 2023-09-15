@@ -1,35 +1,45 @@
 ---
 import config from '../../../config';
-import clubsThumb from '../../images/clubsThumb.png'
+import whyChooseEdify from '../../images/whyChooseEdify.png'
 import coscholasticsThumb from '../../images/coscholasticsThumb.png'
 import FilledArrowCircle from '../icons/FilledArrowCircle.astro';
 import Button from '../system/Button.astro';
 import Constrain from '../system/Constrain.astro';
 import Heading from '../system/Heading.astro';
-import Image from '../system/Image.astro';
+import { Image } from 'astro:assets';
 import Text from '../system/Text.astro';
+import Section from '../system/Section.astro';
+
 
 ---
-<div class="bg-white py-14 max-md:py-8 text-center flex flex-col items-center gap-xl max-md:gap-3">
-    <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative">
-      <Heading first="Why" second="Insight?" subtitle="EMBRACING QUALITY & INCLUSION" />
+<Section class="flex flex-row gap-[72px]">
+  <div>
+    <Text type="h2">Why choose <span class="!text-black">Edify?</span></Text>
+    <div class="p-2"></div>
+    <Text type="lg">Our Philosophy: Empowering Through <span class="text-primary">Inquiry</span></Text>
+    <div class="p-3"></div>
+    <Text type="base">
+      We foster a learning environment where curiosity and exploration are celebrated. Developed and refined by MDN Edify Education, this approach aims to nurture forward-thinking individuals who can make a positive difference in society. Drawing inspiration from diverse international educators and learning methods, our curriculum emphasizes well-rounded student development.
+    </Text>
+    <div class="p-3"></div>
+    <div class="flex flex-row gap-6 items-center">
+      <Button type="primary" className="justify-start">
+        Read more about us
+      </Button>
+
+      <a href="#">
+        <Text type="base" class='font-bold'>
+          Watch Principal note Video
+        </Text>
+      </a>
     </div>
-  <Constrain>
-    <div class="flex gap-20 justify-between item-center px-xl">
-      <Constrain width="778px" class="flex flex-col gap-l">
-        <p class='p-neutral-dark-grey text-[22px] text-left max-md:text-base'>
-            {config.school.discription}
-        </p>  
-        <Button type="primary" className="justify-start">
-          Read more about us
-        </Button>
-      </Constrain>
-        <Image
-          className="h-[133px] w-full max-w-md object-cover rounded-full max-sm:hidden"
-          src={clubsThumb}
-        />
-    </div>
-  </Constrain>
- 
+  </div>
   
-</div>
+  <div class="flex-shrink-0">
+    <Image
+      class="w-[451px] h-[569px]"
+      src={whyChooseEdify}
+      alt="Why choose Edify??"
+    />
+  </div> 
+</Section>

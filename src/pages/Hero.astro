@@ -21,8 +21,6 @@ const subHeading = config?.subHeading
 const topHeading = config?.topHeading
 const description = config?.description
 
-console.log('hello..')
-console.log(slideImages)
 ---
 <div 
   class=`font-roundo w-full h-full bg-cover bg-top relative bg-black flex flex-col ${className}`
@@ -65,7 +63,6 @@ console.log(slideImages)
     }
   
     <div class="flex p-xl  items-center text-white justify-between w-full max-sm:p-l">
-      <!-- content -- first section -->
       <div class={`flex gap-l flex-col relative z-10 max-sm:mt-auto`}>
         <div class="flex gap-r flex-col">
           <slot name="topHeading font-display">

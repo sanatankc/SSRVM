@@ -1,5 +1,6 @@
 ---
 import FilledArrowCircle from '../icons/FilledArrowCircle.astro'
+import Text from './Text.astro'
 const { title, secondary, icon, class: className ,type="primary" } = Astro.props;
 const buttonType = type
 const Icon = icon ? icon : FilledArrowCircle;
@@ -11,19 +12,25 @@ const buttonClassName = {
 }
 ---
 
-<div class=`font-display ${className} flex-shrink-0` >
+<div class=`${className} flex-shrink-0 font-sans` >
   <button 
     class:list={[
-      "flex flex-row items-center py-2 px-5 rounded-full  button overflow-hidden relative",
+      "flex flex-row items-center py-3 px-6 rounded-full  button overflow-hidden relative",
       buttonClassName[buttonType]
     ]} 
     style={{
-      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+      // boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
       // background: primary ? "linear-gradient(263.64deg, var(--primary) 6.11%, #028339 95.99%)" : 'white'
     }}>
-    <span class:list={[true ? "text-white" : "text-green-400", "font-semibold", "text-lg max-md:text-base"]}>
-      <slot/>
-    </span>
+      <Text 
+        type="base"
+        class={`
+          ${!secondary ? "!text-white" : "!text-green-400"}
+          font-bold tracking-[-0.72px]
+        `}
+      >
+        <slot/>
+      </Text>
     <div class="w-5 h-5 ml-2 icon">
       <slot name="icon">
         <Icon />

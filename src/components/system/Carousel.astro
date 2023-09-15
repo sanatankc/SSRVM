@@ -1,12 +1,12 @@
 ---
 import arrow from "../../icons/arrow.svg?raw"
 
-const { class: className, id, stackOnMobile } = Astro.props
+const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro.props
 ---
 
 <div>
   <div class:list={[
-    "flex overflow-auto cursor-grab drag-scroll",
+    "flex overflow-auto cursor-grab drag-scroll no-scrollbar",
     className,
     stackOnMobile && 'max-md:flex-col'
   ]}
@@ -17,7 +17,8 @@ const { class: className, id, stackOnMobile } = Astro.props
   <div 
     class:list={[
       "w-fit h-fit top-0 left-0 z-50 flex flex-row items-center  justify-between pointer-events-none gap-l mx-auto",
-      stackOnMobile && 'max-md:hidden'
+      stackOnMobile && 'max-md:hidden',
+      arrowsContainerClass
     ]}
   >
     <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-prev-button data-target={id}>

@@ -1,6 +1,6 @@
 ---
-import logo from '../../images/logo.svg'
-
+import logo from '../../images/logo.png'
+import { Image } from 'astro:assets';
 import facebook from '../../icons/socials/Facebook.svg'
 import instagram from '../../icons/socials/Instagram.svg'
 import linkedin from '../../icons/socials/LinkedIn.svg'
@@ -23,100 +23,71 @@ import Constrain from '../system/Constrain.astro'
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: 'cover'
 }}>
-  <div class='w-full px-16 max-md:px-6 flex justify-center'>
+  <div class='w-full px-16 max-md:px-6'>
     <Constrain class="flex flex-row max-md:flex-col justify-between">
       <div>
-        <img src={logo} alt="Glentree's Logo" class="w-32 h-auto self-start">
-        <!-- <div class='flex flex-row mt-6'>
+        <Image src={logo} alt="Glentree's Logo" class=" w-40 h-auto self-start" />
+        <div class='flex flex-row mt-6'>
           <a target="_blank" href="https://www.facebook.com/glentreeacademy" class='mr-5'>
             <div class='h-[19px]'>
-              <img src={facebook} alt="Facebook Icon" class="w-full h-full">
+              <img src={facebook.src} alt="Facebook Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://twitter.com/GlentreeAcademy" class='mr-5'>
             <div class='h-[19px]'>
-              <img src={twitter} alt="Twitter Icon" class="w-full h-full">
+              <img src={twitter.src} alt="Twitter Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://www.instagram.com/glentreeacademyofficial/" class='mr-5'>
             <div class='h-[19px]'>
-              <img src={instagram} alt="Instagram Icon" class="w-full h-full">
+              <img src={instagram.src} alt="Instagram Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://www.linkedin.com/company/glentreeacademy/" class='mr-5'>
             <div class='h-[19px]'>
-              <img src={linkedin} alt="Linkedin Icon" class="w-full h-full">
+              <img src={linkedin.src} alt="Linkedin Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://www.youtube.com/channel/UCaO_30stUpRzaz5FH1uHWJg" class='mr-5'>
             <div class='h-[19px]'>
-              <img src={youtube} alt="Youtube Icon" class="w-full h-full">
+              <img src={youtube.src} alt="Youtube Icon" class="w-full h-full">
             </div>
           </a>
   
   
-        </div> -->
+        </div>
       </div>
   
       <div class='flex flex-row max-md:flex-col'>
-        <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
-          <Text type={'base'} class='text-yellow mb-7 max-md:mb-3 font-semibold'>Kanakapura Road</Text>
-  
-          <div class='flex flex-row items-center mb-3'>
-            <div class='w-5 flex-shrink-0'>
-              <img src={emailIcon} alt="Email Icon" class="w-full h-full">
-            </div>
-            <a target='_blank' href="mailto:info@insightacademy.in" class="hover:underline">
-              <Text type={'regular'} class='ml-2'>info@insightacademy.in</Text>
-            </a>
-          </div>
-  
-          <div class='flex flex-row items-center mb-3'>
-            <div class='w-5'>
-              <img src={phoneIcon} alt="Phone Icon" class="w-full h-full">
-            </div>
-            <a target='_blank' href='tel:+917899738130' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 7899738130</Text></a>
-  
-          </div>
-  
-          <div class='flex flex-row items-start mb-3 '>
-            <div class='w-[2.25rem]'>
-              <img src={locationIcon} alt="Location Icon" class="w-full h-full">
-            </div>
-            <a target='_blank' href="https://goo.gl/maps/1RTX2F4ZwJipSuEy9">
-              <Text type={'regular'} class='ml-2'>#20, Vasanthpura Road, off Kanakapura Road,Bangalore - 560 062</Text>
-            </a>
-          </div>
-        </div>
         <div class='ml-16 max-md:ml-0 max-w-[325px]'>
-          <Text type={'base'} class='text-yellow mb-7 max-md:mb-3 font-semibold'>Marathahalli</Text>
+          <Text type={'base'} class='text-primary mb-7 max-md:mb-3'>Contact us</Text>
   
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
-              <img src={emailIcon} alt="Email Icon" class="w-full h-full">
+              <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href="mailto:info@insightacademy.in" class="hover:underline w-[90%]">
-              <Text type={'regular'} class='ml-2'>info@insightacademy.in</Text>
+            <a target='_blank' href="mailto:admission.gas@gltreeacademy.com" class="hover:underline w-[90%]">
+              <Text type={'regular'} class='ml-2'>admission.gas@glentreeacademy.com</Text>
             </a>
           </div>
   
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
-              <img src={phoneIcon} alt="Phone Icon" class="w-full h-full">
+              <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
             <a target='_blank' href='tel:+919632104368' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9632104368</Text></a>
           </div>
   
           <div class='flex flex-row items-start mb-3 '>
             <div class='w-[2.25rem] mr-1'>
-              <img src={locationIcon} alt="Location Icon" class="w-full h-full">
+              <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
             </div>
             <a target='_blank' href="https://goo.gl/maps/2WjJv85fKSJg6yfm6">
-              <Text type={'regular'} class='ml-2'>Opp. Prestige Tech Park, Behind Croma, Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore - 560 103</Text>
+              <Text type={'regular'} class='ml-2'>No.36/5,Halanayakanahalli,Varthur Hobli Bengaluru East Taluk,Bengaluru, Karnataka 560035</Text>
             </a>
           </div>
         </div>
@@ -133,17 +104,18 @@ import Constrain from '../system/Constrain.astro'
         Copyright © 2023 &nbsp;
       </Text>
       <Text type={'regular'}>
-        {' • '} 
+        {' • '} Mandatory CBSE Public Disclosure: 
         <a 
-          href="/insight-kanakapura" 
+          href="/mandatory-public-disclosure-whitefield" 
           class="underline"
-        >Kanakapura</a>
+        >Whitefield</a>
         <span>{' | '}</span>
         <a 
-          href="/insight-marathahalli"
+          href="/mandatory-public-disclosure-sarjapur"
           class="underline"
-        >Marathahalli</a>
+        >Sarjapur</a>
       </Text>
+
     </Constrain>
   </div>
 </div>

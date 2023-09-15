@@ -10,7 +10,7 @@ import Campus from '../components/landingPage/campus.astro';
 
 import Testimonial from '../components/landingPage/Testimonial.astro';
 import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
-import Hero from './Hero.astro';
+import Hero from './LandingPageHero.astro';
 
 import '../global.css'
 
@@ -18,9 +18,11 @@ import '@fontsource/nunito-sans';
 import GlentreeFamily from '../components/landingPage/GlentreeFamily.astro';
 import Footer from '../components/landingPage/Footer.astro';
 import Text from '../components/system/Text.astro';
+import Section from '../components/system/Section.astro';
 import YoutubeEmbed from '../components/YoutubeEmbed.astro';
 import Showcase from './Showcase.astro';
 import GoToCta from '../components/GoToCta.astro';
+import Academics from '../components/landingPage/Academics.astro';
 import campus1 from "../images/campus/gas/gallery/1.jpeg"
 import campus2 from "../images/campus/gas/gallery/2.jpeg"
 import campus3 from "../images/campus/gas/gallery/3.jpeg"
@@ -42,9 +44,7 @@ const toppers = campusConfig?.toppers
     <div class='flex flex-col'>
       <TopNavigationBar />
       <div 
-        class="h-[calc(100dvh-100px)] flex py-[40px] px-[24px]
-              max-sm:px-r max-sm:py-[20px]
-        "
+        class="h-[calc(100dvh-100px)] flex"
         style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
         >
           <Hero
@@ -52,16 +52,16 @@ const toppers = campusConfig?.toppers
             showSlide={true}
             slideImages={
               [
-              {slide: slide5, position: 'center 64%', type: 'image'},
-              {slide: slide1, position: 'center', type: 'image'},
-              {slide: slide2, position: 'right 90%', type: 'image'},
-              {slide: slide3, position: 'center ', type: 'image'},
-              {slide: slide4, position: 'center', type: 'image'},
+              {slide: slide5.src, position: 'center 64%', type: 'image'},
+              {slide: slide1.src, position: 'center', type: 'image'},
+              {slide: slide2.src, position: 'right 90%', type: 'image'},
+              {slide: slide3.src, position: 'center ', type: 'image'},
+              {slide: slide4.src, position: 'center', type: 'image'},
               
             ]
             }
             contentDirection="items-end"
-            className="rounded-[20px] overflow-hidden font-roundo"
+            className="overflow-hidden font-roundo"
 
             >
             <HeroTitle slot='title' />
@@ -77,15 +77,19 @@ const toppers = campusConfig?.toppers
         </svg>
         
       </div> -->
-      <Campus />
-      <Testimonial />
-      
-      <div id="achievements" class="px-xl pb-xl pt-xl  flex flex-col justify-center gap-l  scroll-m-14 max-sm:p-m">
-        <div class="px-0 flex flex-col gap-r max-sm:gap-r max-sm:px-3">
-          <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
-          </Heading>
-          <Text type="p" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
+      <Academics />
+      <Section class="text-center">
+          <Text type="subtitle">
+            INSPIRING FEATS
+          </Text>
+          <p class="p-2"></p>
+          <Text type="h2">
+            Celebrating <span>Achievements</span>
+          </Text>
+          <p class="p-3"></p>
+          <Text type="base" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
         </div>
+        <p class="p-3"></p>
         <div class="flex items-center justify-center">
           <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
             {toppers?.map((item,index) => {
@@ -93,10 +97,12 @@ const toppers = campusConfig?.toppers
                       topper={item}
                     />
             })}
+          </div>
         </div>
-        </div>
-          
-      </div>
+      </Section>
+      <Campus />
+      <Testimonial />
+      
       <GoToCta />
     <Footer />
 

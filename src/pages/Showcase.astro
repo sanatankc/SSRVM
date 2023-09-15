@@ -2,27 +2,45 @@
 import YogaDay from "../images/campus/events/YogaaDay.png" 
 import RedDay from "../images/campus/events/RedDay.png" 
 import DoctorDay from "../images/campus/events/doctorDay.png" 
-import CarouselCard from "../components/carousel/CarouselCard.astro";
 import Star from "../components/icons/Star.astro";
 import Heading from "../components/system/Heading.astro";
 import arrow from "../icons/arrow.svg?raw"
 import fb from "../icons/facebook.svg?raw"
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import CarouselCard from "../components/system/CarouselCard.astro";
+import Carousel from "../components/system/Carousel.astro";
+import carouselTemp from "../images/carouselTemp.png"
+import { Image } from 'astro:assets';
 
 
-interface Item {
-  title: string;
-  img: string;
-}
-const config: Item[] = [
-  { title: "Celebrating Yoga Day ‘23", img: YogaDay},
-  { title: "Happy Red Day!", img: RedDay},
-  { title: "Doctor’s Day 2023", img: DoctorDay}
+
+const config = [
+  carouselTemp,
+  carouselTemp,
+  carouselTemp,
+  carouselTemp,
+  carouselTemp,
 ]
 const {title,showSocial=true} = Astro.props
-const heading = title || "Feature Updates"
+const heading = title || "Featured Updates"
 ---
+<Section class="bg-[#1F1F1F] text-white py-9">
+  <div class="w-full flex flex-row justify-between items-center">
+    <Text type="h2">Featured <span>Updates</span></Text>
+    <Text type="lg">Follow <a href="#" class="text-primary">@EdifyEcity</a> for more updates!</Text>
+  </div>
+  <p class="p-4"></p>
+  <Carousel class="gap-6" id="featured-updates" arrowsContainerClass="mt-4">
+    {config.map(image => (
+      <CarouselCard>
+        <Image src={carouselTemp} alt="Carousel Temp Image" class="w-[503px] h-[521px]" />
+      </CarouselCard>
+    ))}
+  </Carousel>
+</Section>
 
-<div
+<!-- <div
     class="py-xl flex flex-col max-md:py-l"
     style="
     background: linear-gradient(
@@ -34,7 +52,7 @@ const heading = title || "Feature Updates"
     "
 >
     <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-sm:px-3 ">
-        <Heading first={heading.split(' ')[0]} second={heading.split(' ')[1]} />
+      <Text type="h2" class="[&>span]:text-primary">Featured <span>Updates</span></Text>
         {showSocial && 
           <a  href="https://www.facebook.com/InsightAcademy.KanakapuraRoad"
               target="_blank"
@@ -88,7 +106,7 @@ const heading = title || "Feature Updates"
           </div>
           </div>
       </div>
-    </div>
+    </div> -->
     
 </div>
 

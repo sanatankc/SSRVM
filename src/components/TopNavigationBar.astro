@@ -1,6 +1,6 @@
 ---
 import Button from './system/Button.astro'
-import logo from '../images/logo.svg'
+import logo from '../images/logo.png'
 import config from '../../config'; 
 import ExternalIcon from './icons/ExternalIcon.astro';
 
@@ -19,68 +19,29 @@ const menu: Array<Menu> = [
   },
   {
     title: 'About Us',
-    link: '/about-us',
-  },
-  {
-    title: 'Kanakapura Campus',
     submenu: [
-     {
-        title: 'Overview',
-        link: '/insight-kanakapura'
+      { 
+        title: 'About School #1',
+        link: '/about-us'
       },
       {
-        title: 'Principal’s Note',
-        link: '/insight-kanakapura#principl-note'
-      },
-      {
-        title: 'Academics',
-        link: '/insight-kanakapura#academics'
-      },
-      {
-        title: 'Featured Activities',
-        link: '/insight-kanakapura#facilities'
-      },
-      {
-        title: 'Our Achievements',
-        link: '/insight-kanakapura#achievements'
-      },
-      {
-        title: 'Contact Us',
-        link: '/insight-kanakapura#contact-us'
-      },
-      
+        title: 'About School #2',
+        link: '/about-us'
+      }
     ]
   },
   {
-    title: 'Marthahalli Campus',
-    submenu: [
-    {
-        title: 'Overview',
-        link: '/insight-marathahalli'
-      },
-      {
-        title: 'Principal’s Note',
-        link: '/insight-marathahalli#principl-note'
-      },
-      {
-        title: 'Academics',
-        link: '/insight-marathahalli#academics'
-      },
-      {
-        title: 'Facilities',
-        link: '/insight-marathahalli#facilities'
-      },
-      {
-        title: 'Our Achievements',
-        link: '/insight-marathahalli#achievements'
-      },
-      {
-        title: 'Contact Us',
-        link: '/insight-marathahalli#contact-us'
-      },
-      
-    ]
-  }
+    title: 'Academics',
+    link: '/academics',
+  },
+  {
+    title: 'Campus',
+    link: '/campus',
+  },
+  {
+    title: 'Admissions',
+    link: '/admissions',
+  },
 ]
 
 
@@ -104,27 +65,27 @@ const ctaButtons: Array<{
     className: "apply-now-button",
     type: 'primary',
   },
-  {
-    title: 'Login',
-    link: config.ctaLink,
-    type: 'default',
-    menu: true,
+  // {
+  //   title: 'Login',
+  //   link: config.ctaLink,
+  //   type: 'default',
+  //   menu: true,
 
-    icon: ExternalIcon,
-  }
+  //   icon: ExternalIcon,
+  // }
 ]
 ---
-<header transition:persist  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[100px]">
+<header transition:persist  class="font-sans w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[100px]">
   <a href="/" class='relative z-10 daisy daisy-fixed daisy-1'>
-    <img src={logo} alt="Insight's Logo" width="180px" >
+    <img src={logo.src} alt="Insight's Logo" width="180px" >
   </a>
-  <div class='flex flex-row items-center max-md:hidden'>
+  <div class='flex flex-row items-center max-md:hidden gap-12'>
     {menu.map((item, i) => {
       if (item.submenu && item.submenu.length > 0) {
         return (
           <div class={`relative menu-parent cursor-pointer daisy daisy-2 daisy-fixed`}>
-            <div class:list={['flex flex-row items-center mr-8 max-md:mr-0', i >= menu.length - 1 && 'mr-0 max-md:mr-0']}>
-              <span class="text-white font-bold hover:underline font-display">{item.title}</span>
+            <div class:list={['flex flex-row items-center max-md:mr-0']}>
+              <span class="text-white font-bold hover:underline text-[21px]">{item.title}</span>
               <div class='w-6 h-6 ml-1'>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" fill="white"/>
@@ -138,7 +99,7 @@ const ctaButtons: Array<{
               <div class='py-[14px] px-3' style={{
                 borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
               }}>
-                <a href={subitem.link} class="text-white font-bold hover:underline font-display">{subitem.title}</a>
+                <a href={subitem.link} class="text-white font-bold hover:underline text-[21px]">{subitem.title}</a>
               </div>
             ))}
             </div>
@@ -146,7 +107,7 @@ const ctaButtons: Array<{
         )
       } else if (item.link) {
         return (
-          <a href={item?.link} class="text-white hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-display font-bold">{item.title}</a>
+          <a href={item?.link} class="text-white hover:underline daisy daisy-fixed daisy-2 text-[21px] font-bold">{item.title}</a>
         )
       }
     })}

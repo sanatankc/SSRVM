@@ -1,0 +1,43 @@
+---
+import Section from "../system/Section.astro";
+import Text from "../system/Text.astro";
+import Button from "../system/Button.astro";
+import { Image } from 'astro:assets';
+import academics1 from '../../images/academics1.png'
+import academics2 from '../../images/academics2.png'
+
+---
+
+<Section>
+  <div class="w-full text-center">
+    <Text type="h2">Our Academics</Text>
+    <div class="p-2" />
+    <Text type="lg" class="font-bold">Nurturing Inquisitive Minds at <span class="text-primary">Edify</span></Text>
+  </div>
+  <div class="p-[30px]" />
+  <div class="flex flex-row gap-12">
+    <Image src={academics1} alt="" class="flex-1 height:100%" />
+    <div class="flex-1">
+      <Text type="lg" class="font-bold leading-[140%]">Curriculum Fueled by Inquiry, <br /><span class="text-primary">Enriched by Exploration</span></Text>
+      <div class="p-3" />
+      <Text type="base">
+        From our Early Years Program (ESP) for young learners, through the Primary School Program (PSP) building strong foundations, to the Middle School Program (MSP) fostering growth, and finally, the Secondary School Program (SSP) preparing students for higher education. Each program is thoughtfully crafted to meet specific age-related needs and educational goals.
+      </Text>
+      <div class="p-3" />
+      <Button>Explore Academic Offerings</Button>
+    </div>
+  </div>
+  <div class="p-[30px]" />
+  <div class="flex flex-row gap-20">
+    <div class="flex-1">
+      <Text type="lg" class="font-bold leading-[140%]">Discover our <span class="text-primary">Unique Program Offerings</span><br/> to students</Text>
+      <div class="p-3" />
+      <Text type="base">
+        From our Sports Education Program to the vibrant Arts curriculum and comprehensive Life Skills training, we nurture well-rounded development outside the classroom. Our workshops further enrich the holistic learning experience, ensuring our students thrive academically and personally. 
+      </Text>
+      <div class="p-3" />
+      <Button>Explore Student Programs</Button>
+    </div>
+    <Image src={academics1} alt="" class="flex-1 height:100%" />
+  </div>
+</Section>

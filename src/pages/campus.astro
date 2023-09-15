@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import TopNavigationBar from '../components/TopNavigationBar.astro';
+
+import Updates from '../components/landingPage/Updates/index.astro'
+import LFL from '../components/landingPage/LFL.astro'
+import WhyGlentree from '../components/landingPage/whyGlentree.astro';
+import Campus from '../components/landingPage/campus.astro';
+
+import Testimonial from '../components/landingPage/Testimonial.astro';
+import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
+import Hero from './LandingPageHero.astro';
+
+import '../global.css'
+
+// import '@fontsource/nunito-sans';
+import GlentreeFamily from '../components/landingPage/GlentreeFamily.astro';
+import Footer from '../components/landingPage/Footer.astro';
+import Text from '../components/system/Text.astro';
+import Section from '../components/system/Section.astro';
+import YoutubeEmbed from '../components/YoutubeEmbed.astro';
+import Showcase from './Showcase.astro';
+import GoToCta from '../components/GoToCta.astro';
+import Academics from '../components/landingPage/Academics.astro';
+import campus1 from "../images/campus/gas/gallery/1.jpeg"
+import campus2 from "../images/campus/gas/gallery/2.jpeg"
+import campus3 from "../images/campus/gas/gallery/3.jpeg"
+import HeroTitle from '../components/HeroTitle.astro';
+import config from "../../config"
+import TopperCard from '../components/TopperCard.astro';
+import Heading from '../components/system/Heading.astro';
+const campusConfig = config.campus.find(c => c.internalName === "kanakapura")
+import slide1 from "../images/slides/1.jpeg"
+import slide2 from "../images/slides/2.jpeg"
+import slide3 from "../images/slides/3.jpeg"
+import slide4 from "../images/slides/4.jpeg"
+import slide5 from "../images/slides/5.jpeg"
+
+const toppers = campusConfig?.toppers
+---
+
+<Layout title="Welcome to Astro.">
+  <div class='flex flex-col'>
+    <TopNavigationBar />
+  </div>
+  
+  <div class='w-full h-[284px]'>
+
+  </div>
+  
+    
+  <Section class="text-center">
+    <Text type="subtitle">
+      INSPIRING FEATS
+    </Text>
+    <p class="p-2"></p>
+    <Text type="h2">
+      Celebrating <span>Achievements</span>
+    </Text>
+    <p class="p-3"></p>
+    <Text type="base" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
+    <p class="p-3"></p>
+    <div class="flex items-center justify-center">
+      <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
+        {toppers?.map((item,index) => {
+          return <TopperCard 
+                  topper={item}
+                />
+        })}
+      </div>
+    </div>
+  </Section>
+
+  <GoToCta />
+  <Footer />
+</Layout>
+
+<style>
+  .float{
+    position:fixed;
+    /* background-color:#25d366; */
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index:100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+.my-float{
+	margin-top:16px;
+}
+</style>

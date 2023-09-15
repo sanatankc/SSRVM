@@ -16,7 +16,7 @@ background: linear-gradient(
   to left,
   rgba(27, 34, 38, 0.8),
   rgba(27, 34, 38, 0.8)
-), url(${campusImage});
+), url(${campusImage.src});
 background-size: cover;
 background-repeat: no-repeat;
 `
@@ -31,18 +31,15 @@ background-repeat: no-repeat;
   
       <div class="flex gap-8 flex-col">
 
-        <p
-          class='uppercase  text-white font-display font-bold text-4xl max-sm:text-[28px] max-s:text-2xl'
-        >
-          WE SAVED YOUR PART<br /> 
-          IN OUR <span class='text-yellow'>legacy</span>
-  
-          </span> 
-      
-        </p>
+        <Text type='h2' class="text-white">
+          Ready for Growth<br />
+          and <span>Exploration?</span>
+        </Text>
+        <Text type='lg' class='text-white font-normal'>
+          Check our application process and get started!
+        </Text>
         <p      
           class='font-display uppercase text-gray-800 text-4xl font-bold max-sm:text-[28px] flex gap-3 items-center max-s:text-2xl'>
-            READY TO JOIN?
             <span class="max-s:flex hidden">
                 <FilledArrowCircle 
                     svgClass={"w-[50px] h-[50px]"} 
@@ -58,7 +55,7 @@ background-repeat: no-repeat;
   <div class="text-yellow max-s:hidden button">
     <FilledArrowCircle 
         svgClass={"w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px]"} 
-        color={"#F5CC4F"} 
+        color={"#FF6F24"} 
       />
   </div>
 </div>

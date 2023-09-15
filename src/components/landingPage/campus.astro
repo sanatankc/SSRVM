@@ -3,10 +3,61 @@ import Heading from "../system/Heading.astro";
 import Text from "../system/Text.astro";
 import config from "../../../config";
 import CampusCard from "./campusCard.astro";
+import campusBG from '../../images/campusBG.jpeg'
+import campusPreview1 from '../../images/campusPreview1.png'
+import campusPreview2 from '../../images/campusPreview2.png'
+import campusPreview3 from '../../images/campusPreview3.png'
+import campusPreview4 from '../../images/campusPreview4.png'
+import Button from "../system/Button.astro";
+import { Image } from "astro:assets"
 
 const campus = config.campus;
 ---
 
+<div class="w-full h-[868px] relative overflow-hidden">
+  <Image src={campusBG} alt="campusBG" class="w-full h-full absolute top-0 left-0" />
+  <div class="w-full h-full bg-dark-gray/70 absolute" />
+  <div class="absolute  w-full h-full top-0 left-0">
+    <div class="w-[207px] h-[138px] -top-[2%] -left-[2%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview4} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[212px] h-[190px] top-[25%] left-[5%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview2} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[338px] h-[226px] bottom-[2%] -left-[4%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview1} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[180px] h-[120px] bottom-[22%] left-[30%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview1} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[247px] h-[187px] bottom-[7%] left-[50%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview1} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[247px] h-[187px] -bottom-[7%] right-[0.5%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview3} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[228px] h-[152px] -top-[5%] -right-[6%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview2} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[228px] h-[152px] top-[15%] right-[20%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview2} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-[184px] h-[123px] top-[40%] right-[1.5%] absolute z-10 hover:z-30" data-campus-image>
+      <Image src={campusPreview2} alt="campusPreview1" class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <div class="w-full h-full bg-black/50 absolute pointer-events-none z-20 top-0 left-0" />
+  <div class="w-full h-full relative z-30 flex flex-col items-center pointer-events-none">
+    <div class="w-[1px] h-[280px] bg-white" />
+    <div class="p-3" />
+    <Text type="base" class="text-center tracking-[4.8px] uppercase text-white pointer-events-auto">Discover the EKAM Experience</Text>
+    <div class="p-2" />
+    <Text type="h2" class="text-center text-white pointer-events-auto">Our Campus & Facilities</Text>
+    <div class="p-2" />
+    <Button class="pointer-events-auto">Explore Campus</Button>
+  </div>
+</div>
+<!-- 
 
 <div class='bg-white p-14 max-md:p-5 flex flex-col gap-8'>
     <div class="flex flex-row gap-4 items-center justify-center">
@@ -29,4 +80,4 @@ const campus = config.campus;
     }
 
   </div>
-  </div>
+  </div> -->

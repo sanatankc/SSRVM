@@ -9,20 +9,20 @@ const { topper = {} } = Astro.props;
   <div
     class="absolute inset-0 -z-[1] saturate-0 topper-img"
     style={{
-      "--topper-img": `url(${topper.image})`,
+      "--topper-img": `url(${topper.image.src})`,
     }}
   >
   </div>
   <div class="flex flex-col items-center gap-[7px] mb-10">
-    <Text type="p" class="text-yellow font-display font-bold">
+    <Text type="xs" class="text-primary font-bold">
       {topper.ranks}
     </Text>
     <Text
       type="h4"
-      class="text-center text-white font-display font-bold"
+      class="text-center text-white font-sans font-bold"
       set:html={topper.name}
     />
-    <Text type="h4" class="text-yellow font-display font-bold">97.8%</Text>
+    <Text type="h4" class="text-primary font-sans font-bold">97.8%</Text>
   </div>
   <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%]">
     <svg
@@ -110,7 +110,7 @@ const { topper = {} } = Astro.props;
     transition: transform 0.4s ease;
   }
   .topper-card:hover {
-    border-bottom: 7px solid var(--primary-yellow, #f5cc4f);
+    border-bottom: 7px solid var(--primary-primary, #f5cc4f);
   }
   @media not all and (min-width: 640px){
     .topper-card:hover .leaf {

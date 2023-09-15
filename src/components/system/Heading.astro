@@ -14,7 +14,7 @@ const {first, second, className, subtitle,subtitleClass} = Astro.props;
                     </span>
                     <slot name="title">
                         <h2 class="text-neutral-dark-grey text-5xl font-bold text-center max-md:text-4xl max-md:text-[36px] max-sm:text-3xl ">
-                            {first}
+                            {first}&nbsp;
                             <span class="font-4 text-primary">{second}</span>
                         </h2>
                     </slot>
@@ -28,7 +28,7 @@ const {first, second, className, subtitle,subtitleClass} = Astro.props;
                                 </span>
                                 <slot>
                                     <h2 class="text-neutral-dark-grey text-5xl font-bold max-md:text-4xl max-md:text-[36px] max-sm:text-3xl text-center max-sm:gap-1">
-                                        {first}
+                                        {first}&nbsp;
                                         <span class="font-4 text-primary">{second}</span>
                                     </h2>
                                 </slot>

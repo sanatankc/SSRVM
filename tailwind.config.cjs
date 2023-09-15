@@ -19,8 +19,9 @@ module.exports = {
 				},
 				'shades-blue-dark': "#052B4C",
 				'neutral-dark-grey': "#1B2226",
+				"dark-gray": "#1B2226",
 				primary: {
-					DEFAULT: '#006BB3'
+					DEFAULT: '#FF6F24'
 				},
 				secondary: {
 					DEFAULT: '#FF9D51'
@@ -80,9 +81,12 @@ module.exports = {
 
 		},
 		fontFamily: {
-			'display': ['"roundo"', 'sans-serif'],
-			'sans': ['"Nunito Sans"', 'sans-serif'],
+			'display': ['"DM Serif Display"', 'sans-serif'],
+			'sans': ['"DM Sans"', 'sans-serif'],
 		}
 	},
+	// safelist: [
+	// 	"[&>span]:text-primary"
+	// ],
 	plugins: [],
 }
