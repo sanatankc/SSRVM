@@ -6,7 +6,6 @@ import TopNavigationBar from '../components/TopNavigationBar.astro';
 import Updates from '../components/landingPage/Updates/index.astro'
 import LFL from '../components/landingPage/LFL.astro'
 import WhyGlentree from '../components/landingPage/whyGlentree.astro';
-import Campus from '../components/landingPage/campus.astro';
 
 import Testimonial from '../components/landingPage/Testimonial.astro';
 import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
@@ -36,6 +35,8 @@ import slide2 from "../images/slides/2.jpeg"
 import slide3 from "../images/slides/3.jpeg"
 import slide4 from "../images/slides/4.jpeg"
 import slide5 from "../images/slides/5.jpeg"
+import DeckCard from '../components/DeckCard.astro';
+import Connect from '../components/campus/Connect.astro';
 
 const toppers = campusConfig?.toppers
 ---
@@ -43,35 +44,140 @@ const toppers = campusConfig?.toppers
 <Layout title="Welcome to Astro.">
   <div class='flex flex-col'>
     <TopNavigationBar />
-  </div>
-  
-  <div class='w-full h-[284px]'>
+    <div 
+      class="h-[calc(100dvh-100px)] flex"
+      style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
+    >
+      <Hero
+        config={{title:'Welcome to Insight Academy',bgImage: campus1}}
+        showSlide={true}
+        slideImages={
+          [
+          {slide: slide5.src, position: 'center 64%', type: 'image'},
+          {slide: slide1.src, position: 'center', type: 'image'},
+          {slide: slide2.src, position: 'right 90%', type: 'image'},
+          {slide: slide3.src, position: 'center ', type: 'image'},
+          {slide: slide4.src, position: 'center', type: 'image'},
+          
+        ]
+        }
+        contentDirection="items-end"
+        className="overflow-hidden font-roundo"
 
+      >
+        <div slot="title">
+          <Text type="h2">Discover our Campus</Text>
+          <div class="p-1"></div>
+          <Text type="base" class='text-white'>Entrance shots school Buildings Playgrounds pictures go in this slideshow</Text>
+        </div>
+      </Hero>
+    </div>
   </div>
   
     
-  <Section class="text-center">
-    <Text type="subtitle">
+  <Section class="items-start text-left">
+    <!-- <Text type="subtitle" class='!text-left'>
       INSPIRING FEATS
     </Text>
-    <p class="p-2"></p>
+    <p class="p-2"></p> -->
     <Text type="h2">
-      Celebrating <span>Achievements</span>
+      Our Facilities
     </Text>
-    <p class="p-3"></p>
-    <Text type="base" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
-    <p class="p-3"></p>
-    <div class="flex items-center justify-center">
-      <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
-        {toppers?.map((item,index) => {
-          return <TopperCard 
-                  topper={item}
-                />
-        })}
+    <Text type="lg">
+      Our Philosophy: Empowering Through <span class='text-primary'>Inquiry</span>
+    </Text>
+
+    <div class="mt-[60px] w-full flex flex-col items-center px-[44px] gap-20">
+      <div class="flex flex-row w-full gap-24 justify-between">
+        <DeckCard 
+          class="relative left-2"
+          images={[
+            {src: slide1.src, alt: 'campus1'},
+            {src: slide2.src, alt: 'campus2'},
+            // {src: slide3, alt: 'campus3'},
+          ]}
+        />
+        <div>
+          <Text type="h3">
+            <span class='text-primary italic'>Science </span> Labs
+          </Text>
+          <Text type="base" class="w-[90%]">
+            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+          </Text>
+          <div class="p-3" />
+          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+            View Labs
+          </Text>
+        </div>
+      </div>
+      <div class="flex flex-row w-full gap-24 justify-between">
+        <div>
+          <Text type="h3">
+            <span class='text-primary italic'>Science </span> Labs
+          </Text>
+          <Text type="base" class="w-[90%]">
+            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+          </Text>
+          <div class="p-3" />
+          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+            View Labs
+          </Text>
+        </div>
+        <DeckCard 
+          class="relative"
+          images={[
+            {src: slide1.src, alt: 'campus1'},
+            {src: slide2.src, alt: 'campus2'},
+            // {src: slide3, alt: 'campus3'},
+          ]}
+        />
+      </div>
+      <div class="flex flex-row w-full gap-24 justify-between">
+        <DeckCard 
+          class="relative left-2"
+          images={[
+            {src: slide1.src, alt: 'campus1'},
+            {src: slide2.src, alt: 'campus2'},
+            // {src: slide3, alt: 'campus3'},
+          ]}
+        />
+        <div>
+          <Text type="h3">
+            <span class='text-primary italic'>Science </span> Labs
+          </Text>
+          <Text type="base" class="w-[90%]">
+            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+          </Text>
+          <div class="p-3" />
+          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+            View Labs
+          </Text>
+        </div>
       </div>
     </div>
   </Section>
 
+  <div id="contact-us" style="scroll-margin: 60px;">
+    <Connect details={{
+      phoneNo: {
+        label: 'Call us On',
+        value: '+91 80 26667333, +91 80 26667444',
+        type: 'contact'
+      },
+      workingHours: {
+        label: 'Mail us at',
+        value: 'info@insightacademy.in',
+        type: 'mail'
+      },
+      address: {
+        label: 'We are here',
+        value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
+        type: 'address'
+      }
+    }}
+    mapEmbedLink='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin' 
+    />
+  </div>
   <GoToCta />
   <Footer />
 </Layout>

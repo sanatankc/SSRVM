@@ -64,11 +64,13 @@ const description = config?.description
     }}></div>
     <div class="flex p-xl items-center text-white z-20 justify-between w-full max-sm:p-l">
       <div class={`flex flex-col relative z-20 max-sm:mt-auto`}>
-        <Text type="h1">Fostering Curious <span class="italic text-primary">Minds</span></Text>
-        <div class="p-1"></div>
-        <Text type="lg">Empowering Minds with Inquiry and Exploration</Text>
-        <Button class="mt-4">Apply Now</Button>
-        <div class="p-10"></div>
+        <slot name="title">
+          <Text type="h1">Fostering Curious <span class="italic text-primary">Minds</span></Text>
+          <div class="p-1"></div>
+          <Text type="lg">Empowering Minds with Inquiry and Exploration</Text>
+          <Button class="mt-4">Apply Now</Button>
+          <div class="p-10"></div>
+        </slot>
       </div>
     </div>
     </div>

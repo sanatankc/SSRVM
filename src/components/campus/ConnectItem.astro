@@ -15,10 +15,10 @@ const {title,label,type, class,style}  = Astro.props
         borderBottom: '2px dotted #BCBCBC;',
         ...style
     }}>
-    <div class="flex gap-r font-display">
+    <div class="flex gap-r font-sans items-center">
         <ConnectIcons type={type} />
-        <Text type={'h4'} class="font-bold text-[#052B4C]">{label}</Text>
+        <Text type={'base'} class="font-bold text-[#052B4C]">{label}</Text>
     </div>
-        <Text type={'xs'} class='mt-2 text-[#282828] font-semibold max-sm:ml-12'>{title}</Text>
+        <Text type={'regular'} class='mt-2 text-[#282828] font-semibold max-sm:ml-12'>{title}</Text>
     </div>
     </div>
