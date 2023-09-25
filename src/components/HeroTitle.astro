@@ -1,44 +1,40 @@
 ---
 import Text from "./system/Text.astro";
+import Button from "./system/Button.astro";
 
 
 ---
-<h1 class="font-display mt-[auto] text-[62px] leading-[62px]
-            max-md:text-[42px] max-md:leading-[42px]
-            max-sm:text-[32px] max-sm:leading-[32px]
-                
-            "
-            data-sal="slide-up"
-            data-sal-delay="200"
-            data-sal-easing="easeInOutCirc"
-            data-sal-duration="800"
-            >
-             Fostering Curious <span class="text-primary italic">Minds</span>
-             
-    <!-- <br>
-    <div class="flex gap-3">
-    of  
-    <div class={`text-yellow relative overflow-hidden text-container h-[62px] w-[600px] max-sm:h-[33px]`}>
-        <div class="text translate-y-[62px]">
-            excellence
-        </div>
-        <div class="text translate-y-[62px]">
-            innovation
-        </div>
-        <div class="text translate-y-[62px]">
-            achievements
-        </div>
+<Text type="h1" class="text-white flex flex-row">
+  Fostering Curious
+  <div class="pl-3" />
+  <div class="flex gap-3">
+    <div class={`text-primary relative overflow-hidden text-container h-[62px] w-[600px] max-sm:h-[33px]`}>
+      <div class="text translate-y-[62px] duration-700 ease-in-out">
+          Minds
+      </div>
+      <div class="text -translate-y-[42px] opacity-0 duration-700 ease-in-out">
+          Minds 1
+      </div>
+      <div class="text -translate-y-[42px] opacity-0 duration-700 ease-in-out">
+          Minds 2
+      </div>
     </div>
-    </div> -->
+  </div>
+</Text>
+<div class="pt-3" />
+<Text type="base">
+  We take immense pride in celebrating academic triumphs that reflect the students’ dedication.
+</Text>
 
-    
-</h1>
+<div class="pt-5" />
+
+<Button>Apply Now</Button>
 
 <style>
       .text{
         position: absolute;
         inset: 0;
-        transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        /* transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s; */
     }
     
 </style>

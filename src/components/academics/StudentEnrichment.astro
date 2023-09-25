@@ -15,10 +15,11 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
 ---
 <div class="w-full px-20 pt-[67px] pb-[95px] rounded-t-[120px] bg-[#1E1E1E] text-white">
   <Text type="h3">Student-Enrichment <span class="text-primary">Programs</span></Text>
+  <div class="pt-[18px]" />
   <Text type="base" class="text-white">Discover our unique program offerings to students</Text>
-  <div class="pt-[68px]" />
+  <div class="pt-[36px]" />
   <div class="flex flex-row w-full justify-between items-center">
-    <div class="w-[53px] h-[53px] bg-white rounded-[50%]">
+    <div class="w-[53px] h-[53px] bg-white rounded-[50%] cursor-pointer" data-slide-prev>
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 54 54" fill="none">
         <g filter="url(#filter0_b_668_1006)">
           <circle cx="26.8" cy="26.8" r="26.8" transform="matrix(-1 0 0 1 53.6016 0.200012)" fill="white" fill-opacity="0.9"/>
@@ -37,20 +38,20 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
     </div>
 
 
-    <div data-slide-page="0">
-      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40 active">Sports</Text>
+    <div class="tab-nav-btn active" data-slide-page="0">
+      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40 active">Sports</Text>
     </div>
-    <div data-slide-page="1">
-      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">ARTS</Text>
+    <div class="tab-nav-btn" data-slide-page="1">
+      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40">ARTS</Text>
     </div>
-    <div data-slide-page="2">
-      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">LIFE SKILLS</Text>
+    <div class="tab-nav-btn" data-slide-page="2">
+      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40">LIFE SKILLS</Text>
     </div>
-    <div data-slide-page="3">
-      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">PDW</Text>
+    <div class="tab-nav-btn" data-slide-page="3">
+      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40">PDW</Text>
     </div>
 
-    <div class="w-[53px] h-[53px] bg-white rounded-[50%] -scale-x-100">
+    <div class="w-[53px] h-[53px] bg-white rounded-[50%] -scale-x-100 cursor-pointer" data-slide-next>
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 54 54" fill="none">
         <g filter="url(#filter0_b_668_1006)">
           <circle cx="26.8" cy="26.8" r="26.8" transform="matrix(-1 0 0 1 53.6016 0.200012)" fill="white" fill-opacity="0.9"/>
@@ -79,6 +80,7 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
       <StudentEnrichmentSlide />
       <StudentEnrichmentSlide />
       <StudentEnrichmentSlide />
+      <StudentEnrichmentSlide />
     </div>
   </div>
 
@@ -91,8 +93,8 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
   width: 100%;
 }
 
-.tab-nav-btn.active {
-  font-size: 31px;
+.tab-nav-btn.active > div {
+  font-size: 24px;
   color: #FF6F24;
   border-bottom: 5px solid #F4B33E;
 }
@@ -111,15 +113,36 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
     effect: 'coverflow',
   });
 
-  document.querySelectorAll('[data-slide-page]').forEach((el) => {
+  const slides = document.querySelectorAll('[data-slide-page]')
+  slides.forEach((el) => {
     el.addEventListener('click', (e) => {
-      const page = e.target.dataset.slidePage;
-      swiper.slideTo(page);
-      document.querySelectorAll('.tab-nav-btn').forEach((el) => {
-        el.classList.remove('active');
-      });
-      e.target.classList.add('active');
+      const page = el.dataset.slidePage;
+      setActiveTab(page)
     });
+  });
+
+  const setActiveTab = (page) => {
+    console.log('requesting for page...', page)
+    slides.forEach((el) => {
+      el.classList.remove('active');
+    });
+    document.querySelector(`[data-slide-page="${page}"]`).classList.add('active');
+    swiper.slideTo(page);
+  }
+
+  document.querySelector('[data-slide-prev]').addEventListener('click', (e) => {
+    // get active slide
+    const { activeIndex } = swiper
+
+    const prevSlideIndex = activeIndex === 0 ? swiper.slides.length - 1 : activeIndex - 1
+    setActiveTab(prevSlideIndex)
+  });
+
+  document.querySelector('[data-slide-next]').addEventListener('click', (e) => {
+    const { activeIndex } = swiper
+
+    const nextSlideIndex = activeIndex === swiper.slides.length - 1 ? 0 : activeIndex + 1
+    setActiveTab(nextSlideIndex)
   });
 
 </script>

@@ -1,8 +1,8 @@
 ---
 import FilledArrowCircle from '../icons/FilledArrowCircle.astro'
 import Text from './Text.astro'
-const { title, secondary, icon, class: className ,type="primary" } = Astro.props;
-const buttonType = type
+const { title, secondary, icon, class: className ,buttonType="primary", type="button" } = Astro.props;
+
 const Icon = icon ? icon : FilledArrowCircle;
 const buttonClassName = {
     'primary': 'border-white/30 bg-primary primary border-[3px] text-white',
@@ -14,6 +14,7 @@ const buttonClassName = {
 
 <div class=`${className} flex-shrink-0 font-sans` >
   <button 
+    type={type}
     class:list={[
       "flex flex-row items-center py-3 px-6 rounded-full  button overflow-hidden relative",
       buttonClassName[buttonType]
