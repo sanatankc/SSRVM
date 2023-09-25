@@ -19,7 +19,7 @@ const menu: Array<Menu> = [
   },
   {
     title: 'About Us',
-    link: 'about-us',
+    link: '/about-us',
     // submenu: [
     //   { 
     //     title: 'About School #1',
@@ -47,10 +47,11 @@ const menu: Array<Menu> = [
 
 
 
+
 // get route from path
 const {campusName} = Astro.params
 const campusConfig = config.campus.find(c => c.internalName === campusName)
-const admissionLink = campusConfig?.admissionLink
+const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionLink
 const ctaButtons: Array<{
   title: string
   link: string | undefined,
@@ -75,40 +76,71 @@ const ctaButtons: Array<{
   //   icon: ExternalIcon,
   // }
 ]
+
+const activePath = Astro.url.pathname
 ---
-<header transition:persist  class="font-sans w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[100px]">
+<header transition:persist  
+  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[100px]"
+>
   <a href="/" class='relative z-10 daisy daisy-fixed daisy-1'>
     <img src={logo.src} alt="Insight's Logo" width="180px" >
   </a>
-  <div class='flex flex-row items-center max-md:hidden gap-12'>
+  <div class='flex flex-row items-center max-md:hidden text-lg' >
     {menu.map((item, i) => {
       if (item.submenu && item.submenu.length > 0) {
         return (
           <div class={`relative menu-parent cursor-pointer daisy daisy-2 daisy-fixed`}>
-            <div class:list={['flex flex-row items-center max-md:mr-0']}>
-              <span class="text-white font-bold hover:underline text-[21px]">{item.title}</span>
+            <div class:list={['flex flex-row items-center mr-8 max-md:mr-0', i >= menu.length - 1 && 'mr-0 max-md:mr-0']}>
+              {item.link ? (
+                <a
+                  href={item.link}
+                  class:list={[
+                    "text-white font-semibold hover:underline font-sans text-primary",
+                    item.link === activePath && '!text-primary'
+                  ]}
+                >{item.title}</a> 
+              ) : (
+                <span class="text-white font-semibold hover:underline font-sans">{item.title}</span> 
+              )}
               <div class='w-6 h-6 ml-1'>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" fill="white"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" 
+                    
+                    class={item.link === activePath ? 'fill-primary' : 'fill-white'}
+                  />
                 </svg>					
               </div>
             </div>
-            <div class='absolute w-[250px] bg-[#121212] top-[40px] menu' style={{
+            <div class='absolute w-[250px] pt-[10px] menu' style={{
                 boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.5)',
             }}>
-            {item.submenu.map((subitem, j) => (
-              <div class='py-[14px] px-3' style={{
-                borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
-              }}>
-                <a href={subitem.link} class="text-white font-bold hover:underline text-[21px]">{subitem.title}</a>
+            <div class="w-full h-full bg-[#121212]">
+              {item.submenu.map((subitem, j) => (
+                <div class='py-[14px] px-3' style={{
+                  borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
+                }}>
+                  <a
+                    href={subitem.link}
+                    class:list={[
+                      "text-white font-semibold hover:underline font-sans",
+                      // item.link === activePath && 'text-primary'
+                    ]}
+                  >{subitem.title}</a>
+                </div>
+              ))}
               </div>
-            ))}
             </div>
           </div>
         )
       } else if (item.link) {
         return (
-          <a href={item?.link} class="text-white hover:underline daisy daisy-fixed daisy-2 text-[21px] font-bold">{item.title}</a>
+          <a
+            href={item?.link}
+            class:list={[
+              "text-white hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-sans font-semibold",
+              item.link === activePath && '!text-primary'
+            ]}
+          >{item.title}</a>
         )
       }
     })}
@@ -118,7 +150,7 @@ const ctaButtons: Array<{
       ctaButtons.map(item => {
         return (
             <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'} ${item?.className}`}>
-              <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
+              <Button class="font-sans" type={item.type} icon={item?.icon}>{item.title}</Button>
             </a>
         )
       })
@@ -345,23 +377,33 @@ const ctaButtons: Array<{
   import config from '../../config'; 
   const menuParent = document.querySelectorAll('.menu-parent') as NodeListOf<HTMLDivElement>
   const menuCheckBox = document.querySelector('.menu-checkbox') as HTMLInputElement
+  const menuChild = document.querySelectorAll('.menu') as NodeListOf<HTMLDivElement>
   menuParent.forEach((el) => {
     let removeTimeout: any = null
     const menu = el.querySelector('.menu') as HTMLDivElement
     el.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
-      menu.classList.add('visible')
+      menuChild.forEach((elC) => {
+        if (elC !== menu) {
+          console.log('elC...', elC)
+          console.log('el...', el)
+          elC.classList.remove('visible')
+        }
+      })
+      setTimeout(() => {
+        menu.classList.add('visible')
+      }, 0)
     })
     el.addEventListener('mouseout', () => {
       removeTimeout = setTimeout(() => {
         menu.classList.remove('visible')
-      }, 400)
+      }, 50)
     })
     menu.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
     })
     menu.addEventListener('mouseout', () => {
-      menu.classList.remove('visible')
+      // menu.classList.remove('visible')
     })
   })
 
@@ -386,20 +428,25 @@ const ctaButtons: Array<{
       }
     })
   })
-  document.addEventListener('astro:beforeload', () => {
-    const path = window.location.pathname
-    const campuseName = path.split('-')[1]
-    const campusConfig = config.campus.find(c => c.internalName === campuseName)
-    const admissionLink = campusConfig?.admissionLink
-    const button = document.querySelector('.apply-now-button') as HTMLDivElement
-    if(admissionLink){
-      button.setAttribute('href', admissionLink)
-    }
+  // document.addEventListener('astro:beforeload', () => {
+  //   console.log('helllo... 11')
+  //   const path = window.location.pathname
+  //   const campuseName = path.split('-')[1]
+  //   const campusConfig = config.campus.find(c => c.internalName === campuseName)
+  //   let admissionLink = campusConfig?.admissionLink
+  //   console.log('admissionLink...')
+  //   if (!admissionLink) {
+  //     admissionLink = config.campus[0].admissionLink
+  //   }
+  //   const button = document.querySelector('.apply-now-button') as HTMLDivElement
+  //   if(admissionLink){
+  //     button.setAttribute('href', admissionLink)
+  //   }
 
 
-    mobileMenu.classList.remove('visible')
-    menuCheckBox.checked = false
-  })
+  //   mobileMenu.classList.remove('visible')
+  //   menuCheckBox.checked = false
+  // })
  
   
 </script>

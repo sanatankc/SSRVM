@@ -1,25 +1,17 @@
 ---
 import Button from "../components/system/Button.astro"
 import Text from "../components/system/Text.astro"
-import Image from "../components/system/Image.astro"
 
 const {
   config, 
   showSlide, 
   slideImages,
-  showCta = true,
   className,
   style,
   contentDirection="item-center",
-  bgImageBgColor="linear-gradient(103deg, rgba(0, 13, 24, 0.7) 0%, rgba(0, 13, 24, 0) 100%)"
   } = Astro.props
 
 const bgImage = showSlide ? slideImages : config.bgImage
-const previewImage = config?.previewImage
-const title = config?.title
-const subHeading = config?.subHeading
-const topHeading = config?.topHeading
-const description = config?.description
 
 // const slideImages = []
 ---
@@ -62,7 +54,7 @@ const description = config?.description
     <div class="absolute w-full h-full z-10 top-0 left-0" style={{
       background: 'linear-gradient(21deg, #0A0A0A 8.85%, rgba(0, 0, 0, 0.00) 86.3%)'
     }}></div>
-    <div class="flex p-xl items-center text-white z-20 justify-between w-full max-sm:p-l">
+    <div class="flex p-xl items-center text-white z-20 justify-between w-full max-sm:p-4">
       <div class={`flex flex-col relative z-20 max-sm:mt-auto`}>
         <slot name="title">
           <Text type="h1">Fostering Curious <span class="italic text-primary">Minds</span></Text>

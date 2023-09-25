@@ -2,35 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 
 import TopNavigationBar from '../components/TopNavigationBar.astro';
-
-import Updates from '../components/landingPage/Updates/index.astro'
-import LFL from '../components/landingPage/LFL.astro'
-import WhyGlentree from '../components/landingPage/whyGlentree.astro';
+import WhyEkam from '../components/landingPage/whyEkam.astro';
 import Campus from '../components/landingPage/campus.astro';
-
 import Testimonial from '../components/landingPage/Testimonial.astro';
-import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
 import Hero from './LandingPageHero.astro';
-
-import '../global.css'
-
-import '@fontsource/nunito-sans';
-import GlentreeFamily from '../components/landingPage/GlentreeFamily.astro';
 import Footer from '../components/landingPage/Footer.astro';
-import Text from '../components/system/Text.astro';
-import Section from '../components/system/Section.astro';
-import YoutubeEmbed from '../components/YoutubeEmbed.astro';
 import Showcase from './Showcase.astro';
 import GoToCta from '../components/GoToCta.astro';
 import Academics from '../components/landingPage/Academics.astro';
-import campus1 from "../images/campus/gas/gallery/1.jpeg"
-import campus2 from "../images/campus/gas/gallery/2.jpeg"
-import campus3 from "../images/campus/gas/gallery/3.jpeg"
+
+import Text from '../components/system/Text.astro';
+import Section from '../components/system/Section.astro';
+
+import '../global.css'
+
 import HeroTitle from '../components/HeroTitle.astro';
 import config from "../../config"
 import TopperCard from '../components/TopperCard.astro';
-import Heading from '../components/system/Heading.astro';
 const campusConfig = config.campus.find(c => c.internalName === "kanakapura")
+
+
 import slide1 from "../images/slides/1.jpeg"
 import slide2 from "../images/slides/2.jpeg"
 import slide3 from "../images/slides/3.jpeg"
@@ -48,7 +39,6 @@ const toppers = campusConfig?.toppers
         style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
         >
           <Hero
-            config={{title:'Welcome to Insight Academy',bgImage: campus1}}
             showSlide={true}
             slideImages={
               [
@@ -70,7 +60,7 @@ const toppers = campusConfig?.toppers
       </div>
     </div>
       <Showcase showSocial={false} />
-      <WhyGlentree />
+      <WhyEkam />
       <!-- <div class="w-full h-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="3" viewBox="0 0 3000 3" fill="none" class="astro-J7PV25F6">
           <line x1="0" y1="0" x2="100%" y2="1.98047" stroke="#BCBCBC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 7" class="astro-J7PV25F6"></line>

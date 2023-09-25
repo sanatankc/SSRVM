@@ -6,21 +6,25 @@ const {
   image,
   title,
   bodyContent,
+  border,
   bulletPoints,
   layout="left"
 } = Astro.props;
 ---
 
-<div class="w-full max-w-[1173px] bg-white  rounded-2xl rounded-tr-[160px] flex flex-row">
+<div class:list={[
+  "w-full max-w-[1173px] bg-white  rounded-2xl rounded-tr-[160px] flex flex-row max-md:flex-col",
+  border === true ? 'border-secondary border-[4px]' : '',
+]}>
   {layout === "left" ? (
     <>
-      <CardLeft image={image} layout={layout} alt={title.join(' ')} />
-      <CardRight layout={layout} title={title} bodyContent={bodyContent} bulletPoints={bulletPoints} />
+      <CardLeft image={image} layout={layout} alt={title.join(' ')} border={border} />
+      <CardRight layout={layout} title={title} bodyContent={bodyContent} bulletPoints={bulletPoints} border={border} />
     </>
   ): (
     <>
-      <CardRight layout={layout} title={title} bodyContent={bodyContent} bulletPoints={bulletPoints} />
-      <CardLeft layout={layout} image={image} layout={layout} alt={title.join(' ')} />
+      <CardRight layout={layout} title={title} bodyContent={bodyContent} bulletPoints={bulletPoints} border={border} />
+      <CardLeft layout={layout} image={image} layout={layout} alt={title.join(' ')} border={border} />
     </>
   )}
 </div>

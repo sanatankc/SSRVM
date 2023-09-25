@@ -3,6 +3,7 @@ export interface Props {
 	title: string;
 }
 import "../global.css"
+import './node_modules/sal.js/dist/sal.css';
 const { title } = Astro.props;
 ---
 
@@ -58,21 +59,24 @@ const { title } = Astro.props;
 </style>
 
 <script>
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			const isIntersecting = (
-				entry.isIntersecting
-			) || entry.target.classList.contains('daisy-fixed')
-			if (isIntersecting) {
-				entry.target.classList.add('daisy-show')
-			}
-		})
-	}, {
-		root: document.querySelector("#scroll-area")
-	})
+  import sal from 'sal.js'
 
-	const hiddenElements = document.querySelectorAll('.daisy')
-	hiddenElements.forEach(element => {
-		observer.observe(element)
-	})
+  sal();
+	// const observer = new IntersectionObserver((entries) => {
+	// 	entries.forEach(entry => {
+	// 		const isIntersecting = (
+	// 			entry.isIntersecting
+	// 		) || entry.target.classList.contains('daisy-fixed')
+	// 		if (isIntersecting) {
+	// 			entry.target.classList.add('daisy-show')
+	// 		}
+	// 	})
+	// }, {
+	// 	root: document.querySelector("#scroll-area")
+	// })
+
+	// const hiddenElements = document.querySelectorAll('.daisy')
+	// hiddenElements.forEach(element => {
+	// 	observer.observe(element)
+	// })
 </script>

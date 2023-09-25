@@ -12,8 +12,8 @@ import Section from '../system/Section.astro';
 
 
 ---
-<Section class="flex flex-row gap-[72px]">
-  <div>
+<Section class="flex flex-row gap-[72px] max-md:flex-col">
+  <div class="max-md:order-2">
     <Text type="h2">Why choose <span class="!text-black">Edify?</span></Text>
     <div class="p-2"></div>
     <Text type="lg">Our Philosophy: Empowering Through <span class="text-primary">Inquiry</span></Text>
@@ -37,7 +37,7 @@ import Section from '../system/Section.astro';
   
   <div class="flex-shrink-0">
     <Image
-      class="w-[451px] h-[569px]"
+      class="w-[324px] h-[409]"
       src={whyChooseEdify}
       alt="Why choose Edify??"
     />

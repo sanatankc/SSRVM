@@ -24,7 +24,7 @@ module.exports = {
 					DEFAULT: '#FF6F24'
 				},
 				secondary: {
-					DEFAULT: '#FF9D51'
+					DEFAULT: '#FFC784'
 				},
 				green: {
 					300: '#F5CC4F',

@@ -11,6 +11,7 @@ import phoneIcon from '../../icons/Phone.svg'
 import locationIcon from '../../icons/Location.svg'
 import Text from '../system/Text.astro'
 import Constrain from '../system/Constrain.astro'
+import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
 
 ---
 <div
@@ -99,23 +100,29 @@ import Constrain from '../system/Constrain.astro'
   <div class='w-full h-[1px] bg-gray-500/40 mt-12 max-md:mt-5 max-md:w-[85%]'></div>
 
   <div class='py-6 font-normal px-16 w-full  max-md:px-6 text-center'>
-    <Constrain class="flex flex-row max-md:flex-col">
-      <Text type={'regular'}>
-        Copyright © 2023 &nbsp;
-      </Text>
-      <Text type={'regular'}>
-        {' • '} Mandatory CBSE Public Disclosure: 
-        <a 
-          href="/mandatory-public-disclosure-whitefield" 
-          class="underline"
-        >Whitefield</a>
-        <span>{' | '}</span>
-        <a 
-          href="/mandatory-public-disclosure-sarjapur"
-          class="underline"
-        >Sarjapur</a>
-      </Text>
-
+    <Constrain class="flex flex-row max-md:flex-col items-center justify-between">
+      <div class="flex flex-row items-center">
+        <Text type={'regular'}>
+          Copyright © 2023 &nbsp;
+        </Text>
+        <Text type={'regular'}>
+          {' • '} Mandatory CBSE Public Disclosure: 
+          <a 
+            href="/mandatory-public-disclosure-whitefield" 
+            class="underline"
+          >Whitefield</a>
+          <span>{' | '}</span>
+          <a 
+            href="/mandatory-public-disclosure-sarjapur"
+            class="underline"
+          >Sarjapur</a>
+        </Text>
+      </div>
+      <div>
+        <a href="https://thedotstudio.in/" target="_blank">
+          <Image src={theDotStudioLogo} class="w-[250px]" alt={"The Dot Studio Logo"} />
+        </a>
+      </div>
     </Constrain>
   </div>
 </div>

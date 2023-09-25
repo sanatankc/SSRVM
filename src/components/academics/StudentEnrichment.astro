@@ -1,0 +1,218 @@
+---
+import Text from "../system/Text.astro";
+
+
+// import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import slide1 from "../../images/slides/1.jpeg"
+import { Image } from "astro:assets";
+import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
+
+---
+<div class="w-full px-20 pt-[67px] pb-[95px] rounded-t-[120px] bg-[#1E1E1E] text-white">
+  <Text type="h3">Student-Enrichment <span class="text-primary">Programs</span></Text>
+  <Text type="base" class="text-white">Discover our unique program offerings to students</Text>
+  <div class="pt-[68px]" />
+  <div class="flex flex-row w-full justify-between items-center">
+    <div class="w-[53px] h-[53px] bg-white rounded-[50%]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 54 54" fill="none">
+        <g filter="url(#filter0_b_668_1006)">
+          <circle cx="26.8" cy="26.8" r="26.8" transform="matrix(-1 0 0 1 53.6016 0.200012)" fill="white" fill-opacity="0.9"/>
+          <circle cx="26.8" cy="26.8" r="26.4" transform="matrix(-1 0 0 1 53.6016 0.200012)" stroke="white" stroke-width="0.8"/>
+        </g>
+        <path d="M14.4023 27.8001L34.2023 39.2316L34.2023 16.3686L14.4023 27.8001Z" fill="#FF6F24"/>
+        <defs>
+          <filter id="filter0_b_668_1006" x="-5.6" y="-5.39999" width="64.8016" height="64.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="2.8"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_668_1006"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_668_1006" result="shape"/>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+
+
+    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40 active">Sports</Text>
+    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">ARTS</Text>
+    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">LIFE SKILLS</Text>
+    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">PDW</Text>
+
+    <div class="w-[53px] h-[53px] bg-white rounded-[50%] -scale-x-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 54 54" fill="none">
+        <g filter="url(#filter0_b_668_1006)">
+          <circle cx="26.8" cy="26.8" r="26.8" transform="matrix(-1 0 0 1 53.6016 0.200012)" fill="white" fill-opacity="0.9"/>
+          <circle cx="26.8" cy="26.8" r="26.4" transform="matrix(-1 0 0 1 53.6016 0.200012)" stroke="white" stroke-width="0.8"/>
+        </g>
+        <path d="M14.4023 27.8001L34.2023 39.2316L34.2023 16.3686L14.4023 27.8001Z" fill="#FF6F24"/>
+        <defs>
+          <filter id="filter0_b_668_1006" x="-5.6" y="-5.39999" width="64.8016" height="64.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="2.8"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_668_1006"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_668_1006" result="shape"/>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <div class="pb-[50px]" />
+
+
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <!-- <div class="w-full h-[350px] bg-white"></div>
+      <div class="w-full h-[350px] bg-white"></div>
+      <div class="w-full h-[350px] bg-white"></div> -->
+      <StudentEnrichmentSlide />
+      <StudentEnrichmentSlide />
+      <StudentEnrichmentSlide />
+      <!-- <div class="swiper-slide bg-white rounded-[35px] px-[16px] py-[24px] text-black">
+        <div class="h-[380px] w-full">
+          <Image src={slide1} alt="" class="w-full h-full rounded-[35px] object-cover" />
+        </div>
+        <div class="pt-[16px]" />
+        <div class="px-[16px]">
+          <div class="flex flex-row justify-between items-center">
+            <Text type="h3"><span class="text-primary italic">Sports</span> Education</Text>
+            <Text type="lg" class="font-[400]">Fitness First!</Text>
+          </div>
+  
+          <div class="pt-6" />
+          
+  
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            At Edify School, we believe that sports are an integral part of the educational process and have integrated sports firmly as a part of our curriculum. Our <span>Sports Education Program (SEP)</span> emphasizes on the development of knowledge, attitudes and skills related to a range of physical and health related activities.
+            <br />
+            <br />
+            The school has an excellent outlook on sports with its national and international size courts and sports infrastructure as well as expert professional coaches to support a variety of sport activities like <span>swimming, basketball, football, volleyball, chess, handball, netball, karate, cricket, skating, lawn tennis, table tennis, badminton.</span>
+          </Text> 
+
+          <div class="pt-8" />
+
+
+          <div class="w-full flex flex-row justify-between">
+            <div 
+              class="
+              bg-white border rounded-md p-2
+              group-hover:border-secondary transition-transform
+                w-[357px] h-[333px]
+              "
+              style={{
+                boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+              }}
+            >
+              <img
+                src={slide1.src}
+                alt=""
+                class="w-full h-full rounded-md object-cover"
+              />
+            </div>
+
+            <div 
+              class="
+              bg-white border rounded-md p-2
+              group-hover:border-secondary transition-transform
+                w-[357px] h-[333px]
+              "
+              style={{
+                boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+              }}
+            >
+              <img
+                src={slide1.src}
+                alt=""
+                class="w-full h-full rounded-md object-cover"
+              />
+            </div>
+
+            <div 
+              class="
+              bg-white border rounded-md p-2
+              group-hover:border-secondary transition-transform
+                w-[357px] h-[333px]
+              "
+              style={{
+                boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+              }}
+            >
+              <img
+                src={slide1.src}
+                alt=""
+                class="w-full h-full rounded-md object-cover"
+              />
+            </div>
+            
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="swiper-slide bg-slate-500">Slide 2</div> -->
+      <!-- <div class="swiper-slide bg-red-300">Slide 3</div> -->
+
+      </div>
+    <!-- If we need pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- If we need navigation buttons -->
+    <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+  </div>
+
+
+</div>
+
+
+<style>
+.swiper {
+  width: 100%;
+}
+
+.tab-nav-btn.active {
+  font-size: 31px;
+  color: #FF6F24;
+  border-bottom: 5px solid #F4B33E;
+}
+</style>
+
+
+<script>
+  import Swiper from 'swiper';
+  // import { Navigation, Pagination } from 'swiper/modules';
+
+
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    effect: 'coverflow',
+    // modules: [Navigation, Pagination],
+
+    // If we need pagination
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
+
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+
+    // And if we need scrollbar
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
+  });
+
+</script>

@@ -22,13 +22,13 @@ const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro
     ]}
   >
     <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-prev-button data-target={id}>
-      <div class="w-full h-full -scale-100 bg-neutral-dark-grey text-white flex items-center justify-center rounded-full">
-        <Fragment set:html={arrow} />
+      <div class="w-full h-full -scale-100 bg-white text-white flex items-center justify-center rounded-full">
+        <div class="relative left-[1px]" set:html={arrow} />
       </div>
     </div>
     <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-next-button data-target={id}>
-      <div class="w-full h-full scale-100 bg-neutral-dark-grey flex text-white items-center justify-center rounded-full">
-        <Fragment set:html={arrow}  />
+      <div class="w-full h-full scale-100 bg-white flex text-white items-center justify-center rounded-full">
+        <div class="relative left-[1px]" set:html={arrow}  />
       </div>
       </div>
   </div>
