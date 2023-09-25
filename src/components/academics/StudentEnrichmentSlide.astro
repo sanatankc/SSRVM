@@ -1,50 +1,52 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 import Text from "../system/Text.astro";
-import slide1 from "../../images/slides/1.jpeg"
+import slide1 from "../../images/slides/01.webp";
 
-const {
-  slide,
-  title,
-  subtitle,
-  description,
-  showcase
-} = Astro.props
+const { slide, title, subtitle, description, showcase } = Astro.props;
 ---
 
-<div class="swiper-slide bg-white rounded-[35px] px-[16px] py-[24px] text-black">
+<div
+  class="swiper-slide bg-white rounded-[35px] px-[16px] py-[24px] text-black"
+>
   <div class="h-[380px] w-full">
-    <Image src={slide1} alt="" class="w-full h-full rounded-[35px] object-cover" />
+    <Image
+      src={slide1}
+      alt=""
+      class="w-full h-full rounded-[35px] object-cover"
+    />
   </div>
-  <div class="pt-[16px]" />
+  <div class="pt-[16px]"></div>
   <div class="px-[16px]">
     <div class="flex flex-row justify-between items-center">
-      <Text type="h3"><span class="text-primary italic">Sports</span> Education</Text>
+      <Text type="h3">
+        <span class="text-primary italic">Sports</span> Education
+      </Text>
       <Text type="lg" class="font-[400]">Fitness First!</Text>
     </div>
 
-    <div class="pt-6" />
-    
+    <div class="pt-6"></div>
 
     <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-      At Edify School, we believe that sports are an integral part of the educational process and have integrated sports firmly as a part of our curriculum. Our <span>Sports Education Program (SEP)</span> emphasizes on the development of knowledge, attitudes and skills related to a range of physical and health related activities.
+      At Edify School, we believe that sports are an integral part of the
+      educational process and have integrated sports firmly as a part of our
+      curriculum. Our <span>Sports Education Program (SEP)</span> emphasizes on
+      the development of knowledge, attitudes and skills related to a range of
+      physical and health related activities.
       <br />
       <!-- <br />
       The school has an excellent outlook on sports with its national and international size courts and sports infrastructure as well as expert professional coaches to support a variety of sport activities like <span>swimming, basketball, football, volleyball, chess, handball, netball, karate, cricket, skating, lawn tennis, table tennis, badminton.</span> -->
-    </Text> 
+    </Text>
 
-    <div class="pt-8" />
-
+    <div class="pt-8"></div>
 
     <div class="w-full flex flex-row justify-between">
-      <div 
-        class="
-        bg-white border rounded-md p-2
+      <div
+        class="bg-white border rounded-md p-2
         group-hover:border-secondary transition-transform
-          w-[357px] h-[333px]
-        "
+          w-[357px] h-[333px]"
         style={{
-          boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+          boxShadow: "0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)",
         }}
       >
         <img
@@ -54,14 +56,12 @@ const {
         />
       </div>
 
-      <div 
-        class="
-        bg-white border rounded-md p-2
+      <div
+        class="bg-white border rounded-md p-2
         group-hover:border-secondary transition-transform
-          w-[357px] h-[333px]
-        "
+          w-[357px] h-[333px]"
         style={{
-          boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+          boxShadow: "0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)",
         }}
       >
         <img
@@ -71,14 +71,12 @@ const {
         />
       </div>
 
-      <div 
-        class="
-        bg-white border rounded-md p-2
+      <div
+        class="bg-white border rounded-md p-2
         group-hover:border-secondary transition-transform
-          w-[357px] h-[333px]
-        "
+          w-[357px] h-[333px]"
         style={{
-          boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
+          boxShadow: "0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)",
         }}
       >
         <img
@@ -87,7 +85,6 @@ const {
           class="w-full h-full rounded-md object-cover"
         />
       </div>
-      
     </div>
   </div>
 </div>

@@ -1,45 +1,48 @@
 ---
-import config from '../../../config';
-import whyChooseEdify from '../../images/whyChooseEdify.png'
-import coscholasticsThumb from '../../images/coscholasticsThumb.png'
-import FilledArrowCircle from '../icons/FilledArrowCircle.astro';
-import Button from '../system/Button.astro';
-import Constrain from '../system/Constrain.astro';
-import Heading from '../system/Heading.astro';
-import { Image } from 'astro:assets';
-import Text from '../system/Text.astro';
-import Section from '../system/Section.astro';
-
-
+import config from "../../../config";
+import whyChooseEdify from "../../images/whyChooseEdify.png";
+import coscholasticsThumb from "../../images/coscholasticsThumb.png";
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
+import Button from "../system/Button.astro";
+import Constrain from "../system/Constrain.astro";
+import Heading from "../system/Heading.astro";
+import { Image } from "astro:assets";
+import Text from "../system/Text.astro";
+import Section from "../system/Section.astro";
 ---
+
 <Section class="flex flex-row gap-[72px] max-md:flex-col">
   <div class="max-md:order-2">
-    <Text type="h2">Why choose <span class="!text-black">Edify?</span></Text>
+    <Text type="h2">
+      Why choose <span class="!text-black">EKAM Edify?</span>
+    </Text>
     <div class="p-2"></div>
-    <Text type="lg">Our Philosophy: Empowering Through <span class="text-primary">Inquiry</span></Text>
+    <Text type="lg">
+      Our Philosophy: <span class="text-primary">Inquiry Based Learning</span>
+    </Text>
     <div class="p-3"></div>
     <Text type="base">
-      We foster a learning environment where curiosity and exploration are celebrated. Developed and refined by MDN Edify Education, this approach aims to nurture forward-thinking individuals who can make a positive difference in society. Drawing inspiration from diverse international educators and learning methods, our curriculum emphasizes well-rounded student development.
+      We have built a dynamic learning space that thrives on curiosity and
+      adventure! Guided by <br />
+      <span class="text-primary">MDN Edify Education</span>
+       , our approach cultivates imaginative thinkers poised to make a positive
+      impact on the world. We are inspired by global educators and diverse
+      methods, ensuring your child's education is as thrilling as it is
+      enriching!
     </Text>
     <div class="p-3"></div>
     <div class="flex flex-row gap-6 items-center">
       <Button type="primary" className="justify-start">
         Read more about us
       </Button>
-
-      <!-- <a href="#">
-        <Text type="base" class='font-bold'>
-          Watch Principal note Video
-        </Text>
-      </a> -->
     </div>
   </div>
-  
+
   <div class="flex-shrink-0">
     <Image
       class="w-[324px] h-[409]"
       src={whyChooseEdify}
       alt="Why choose Edify??"
     />
-  </div> 
+  </div>
 </Section>

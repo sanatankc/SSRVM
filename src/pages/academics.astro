@@ -1,69 +1,75 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import TopNavigationBar from '../components/TopNavigationBar.astro';
+import TopNavigationBar from "../components/TopNavigationBar.astro";
 
+import titleBG from "../images/titleBG.png";
+import "../global.css";
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import GoToCta from "../components/GoToCta.astro";
 
-import titleBG from '../images/titleBG.png'
-import '../global.css'
-import Footer from '../components/landingPage/Footer.astro';
-import Text from '../components/system/Text.astro';
-import Section from '../components/system/Section.astro';
-import GoToCta from '../components/GoToCta.astro';
+import StudentEnrichment from "../components/academics/StudentEnrichment.astro";
 
+import academic1 from "../images/academic/1.png";
+import academic2 from "../images/academic/2.png";
+import config from "../../config";
+import TopperCard from "../components/TopperCard.astro";
+import Card from "../components/academics/Card.astro";
 
-import StudentEnrichment from '../components/academics/StudentEnrichment.astro';
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
 
-import academic1 from '../images/academic/1.png'
-import academic2 from '../images/academic/2.png'
-import config from "../../config"
-import TopperCard from '../components/TopperCard.astro';
-import Card from '../components/academics/Card.astro';
-
-const campusConfig = config.campus.find(c => c.internalName === "kanakapura")
-
-const toppers = campusConfig?.toppers
+const toppers = campusConfig?.toppers;
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class='flex flex-col'>
+  <div class="flex flex-col">
     <TopNavigationBar />
   </div>
-  
-  <div class='w-full h-[284px] flex flex-col items-center justify-center' style={{
-    backgroundImage: `url(${titleBG.src})`,
-    backgroundSize: 'cover',
-  }}>
-    <Text type="h2">Our Academic <span>Programs</span></Text>
+
+  <div
+    class="w-full h-[284px] flex flex-col items-center justify-center"
+    style={{
+      backgroundImage: `url(${titleBG.src})`,
+      backgroundSize: "cover",
+    }}
+  >
+    <Text type="h2">
+      Our Academic <span>Programs</span>
+    </Text>
     <div class="p-1"></div>
     <Text type="lg">Curriculum Fueled by Inquiry, Enriched by Exploration</Text>
   </div>
 
-  <div class="w-full bg-[#FFE3C1] border" style={{
-    borderColor: 'rgba(255, 111, 36, 0.48)'
-  }}>
+  <div
+    class="w-full bg-[#FFE3C1] border"
+    style={{
+      borderColor: "rgba(255, 111, 36, 0.48)",
+    }}
+  >
     <Section class="flex flex-col items-center">
       <Card
         image={academic1}
-        title={['Elementary', '(IK1-IK3)']}
+        title={["Elementary", "(IK1-IK3)"]}
         layout="left"
         bodyContent="This will be a small writeup on the academics offered. This has to be a 4-5 line paragraph covering all the aspects of the academics offered in the school for this grade."
         bulletPoints={[
-          'Academic Highlight - I',
-          'Academic Highlight - II',
-          'Academic Highlight - III',
+          "Academic Highlight - I",
+          "Academic Highlight - II",
+          "Academic Highlight - III",
         ]}
       />
-      <div class="p-[60px]" />
+      <div class="p-[60px]"></div>
       <Card
         image={academic2}
-        title={['Elementary', '(IK1-IK3)']}
+        title={["Elementary", "(IK1-IK3)"]}
         layout="right"
         bodyContent="This will be a small writeup on the academics offered. This has to be a 4-5 line paragraph covering all the aspects of the academics offered in the school for this grade."
         bulletPoints={[
-          'Academic Highlight - I',
-          'Academic Highlight - II',
-          'Academic Highlight - III',
+          "Academic Highlight - I",
+          "Academic Highlight - II",
+          "Academic Highlight - III",
         ]}
       />
     </Section>
@@ -72,52 +78,57 @@ const toppers = campusConfig?.toppers
     <Section class="flex flex-col items-center">
       <Card
         image={academic1}
-        title={['Elementary', '(IK1-IK3)']}
+        title={["Elementary", "(IK1-IK3)"]}
         layout="left"
         border
         bodyContent="This will be a small writeup on the academics offered. This has to be a 4-5 line paragraph covering all the aspects of the academics offered in the school for this grade."
         bulletPoints={[
-          'Academic Highlight - I',
-          'Academic Highlight - II',
-          'Academic Highlight - III',
+          "Academic Highlight - I",
+          "Academic Highlight - II",
+          "Academic Highlight - III",
         ]}
       />
-      <div class="p-[60px]" />
+      <div class="p-[60px]"></div>
       <Card
         image={academic2}
-        title={['Elementary', '(IK1-IK3)']}
+        title={["Elementary", "(IK1-IK3)"]}
         layout="right"
         border
         bodyContent="This will be a small writeup on the academics offered. This has to be a 4-5 line paragraph covering all the aspects of the academics offered in the school for this grade."
         bulletPoints={[
-          'Academic Highlight - I',
-          'Academic Highlight - II',
-          'Academic Highlight - III',
+          "Academic Highlight - I",
+          "Academic Highlight - II",
+          "Academic Highlight - III",
         ]}
       />
     </Section>
   </div>
 
-  <StudentEnrichment />
-    
+  <div id="studentenrichment">
+    <StudentEnrichment />
+  </div>
+
   <Section class="text-center">
-    <Text type="subtitle">
-      INSPIRING FEATS
-    </Text>
+    <Text type="subtitle">INSPIRING FEATS</Text>
     <p class="p-2"></p>
     <Text type="h2">
       Celebrating <span>Achievements</span>
     </Text>
     <p class="p-3"></p>
-    <Text type="base" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
+    <Text type="base" class="text-center">
+      We take immense pride in celebrating academic triumphs that reflect the
+      students’ dedication.
+    </Text>
     <p class="p-3"></p>
     <div class="flex items-center justify-center">
-      <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
-        {toppers?.map((item,index) => {
-          return <TopperCard 
-                  topper={item}
-                />
-        })}
+      <div
+        class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto"
+      >
+        {
+          toppers?.map((item, index) => {
+            return <TopperCard topper={item} />;
+          })
+        }
       </div>
     </div>
   </Section>
@@ -127,27 +138,26 @@ const toppers = campusConfig?.toppers
 </Layout>
 
 <style>
-  .float{
-    position:fixed;
+  .float {
+    position: fixed;
     /* background-color:#25d366; */
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:30px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
     /* box-shadow: 2px 2px 3px #999; */
-    z-index:100;
+    z-index: 100;
   }
 
   .float > div {
     opacity: 0;
-    transition: 0.6s all ease-in-out
+    transition: 0.6s all ease-in-out;
   }
   .float a:hover ~ div {
     opacity: 1;
   }
 
-.my-float{
-	margin-top:16px;
-}
-
+  .my-float {
+    margin-top: 16px;
+  }
 </style>

@@ -1,112 +1,115 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import TopNavigationBar from '../components/TopNavigationBar.astro';
+import TopNavigationBar from "../components/TopNavigationBar.astro";
 
-import Updates from '../components/landingPage/Updates/index.astro'
-import LFL from '../components/landingPage/LFL.astro'
-import WhyGlentree from '../components/landingPage/whyEkam.astro';
+import Updates from "../components/landingPage/Updates/index.astro";
+import LFL from "../components/landingPage/LFL.astro";
+import WhyGlentree from "../components/landingPage/whyEkam.astro";
 
-import Testimonial from '../components/landingPage/Testimonial.astro';
-import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
-import Hero from './LandingPageHero.astro';
+import Testimonial from "../components/landingPage/Testimonial.astro";
+import BigAdmissionCTA from "../components/BigAdmissionCTA.astro";
+import Hero from "./LandingPageHero.astro";
 
-import '../global.css'
+import "../global.css";
 
 // import '@fontsource/nunito-sans';
-import GlentreeFamily from '../components/landingPage/GlentreeFamily.astro';
-import Footer from '../components/landingPage/Footer.astro';
-import Text from '../components/system/Text.astro';
-import Section from '../components/system/Section.astro';
-import YoutubeEmbed from '../components/YoutubeEmbed.astro';
-import Showcase from './Showcase.astro';
-import GoToCta from '../components/GoToCta.astro';
-import Academics from '../components/landingPage/Academics.astro';
-import campus1 from "../images/campus/gas/gallery/1.jpeg"
-import campus2 from "../images/campus/gas/gallery/2.jpeg"
-import campus3 from "../images/campus/gas/gallery/3.jpeg"
-import HeroTitle from '../components/HeroTitle.astro';
-import config from "../../config"
-import TopperCard from '../components/TopperCard.astro';
-import Heading from '../components/system/Heading.astro';
-const campusConfig = config.campus.find(c => c.internalName === "kanakapura")
-import slide1 from "../images/slides/1.jpeg"
-import slide2 from "../images/slides/2.jpeg"
-import slide3 from "../images/slides/3.jpeg"
-import slide4 from "../images/slides/4.jpeg"
-import slide5 from "../images/slides/5.jpeg"
-import transportBus from "../images/transportBus.png"
-import DeckCard from '../components/DeckCard.astro';
-import Connect from '../components/campus/Connect.astro';
+import GlentreeFamily from "../components/landingPage/GlentreeFamily.astro";
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import YoutubeEmbed from "../components/YoutubeEmbed.astro";
+import Showcase from "./Showcase.astro";
+import GoToCta from "../components/GoToCta.astro";
+import Academics from "../components/landingPage/Academics.astro";
+import campus1 from "../images/campus/gas/gallery/1.jpeg";
+import campus2 from "../images/campus/gas/gallery/2.jpeg";
+import campus3 from "../images/campus/gas/gallery/3.jpeg";
+import HeroTitle from "../components/HeroTitle.astro";
+import config from "../../config";
+import TopperCard from "../components/TopperCard.astro";
+import Heading from "../components/system/Heading.astro";
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
+import slide1 from "../images/slides/01.webp";
+import slide2 from "../images/slides/02.webp";
+import slide3 from "../images/slides/03.webp";
+import slide4 from "../images/slides/04.webp";
+import slide5 from "../images/slides/05.webp";
+import transportBus from "../images/transportBus.png";
+import DeckCard from "../components/DeckCard.astro";
+import Connect from "../components/campus/Connect.astro";
 
-const toppers = campusConfig?.toppers
+const toppers = campusConfig?.toppers;
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class='flex flex-col'>
+  <div class="flex flex-col">
     <TopNavigationBar />
-    <div 
+    <div
       class="h-[calc(100dvh-100px)] flex"
-      style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
+      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
       <Hero
-        config={{title:'Welcome to Insight Academy',bgImage: campus1}}
+        config={{ title: "Welcome to Insight Academy", bgImage: campus1 }}
         showSlide={true}
-        slideImages={
-          [
-          {slide: slide5.src, position: 'center 64%', type: 'image'},
-          {slide: slide1.src, position: 'center', type: 'image'},
-          {slide: slide2.src, position: 'right 90%', type: 'image'},
-          {slide: slide3.src, position: 'center ', type: 'image'},
-          {slide: slide4.src, position: 'center', type: 'image'},
-          
-        ]
-        }
+        slideImages={[
+          { slide: slide5.src, position: "center 64%", type: "image" },
+          { slide: slide1.src, position: "center", type: "image" },
+          { slide: slide2.src, position: "right 90%", type: "image" },
+          { slide: slide3.src, position: "center ", type: "image" },
+          { slide: slide4.src, position: "center", type: "image" },
+        ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
-
       >
         <div slot="title">
           <Text type="h2">Discover our Campus</Text>
           <div class="p-1"></div>
-          <Text type="base" class='text-white'>Entrance shots school Buildings Playgrounds pictures go in this slideshow</Text>
+          <Text type="base" class="text-white">
+            Entrance shots school Buildings Playgrounds pictures go in this
+            slideshow
+          </Text>
         </div>
       </Hero>
     </div>
   </div>
-  
-    
+
   <Section class="items-start text-left">
     <!-- <Text type="subtitle" class='!text-left'>
       INSPIRING FEATS
     </Text>
     <p class="p-2"></p> -->
-    <Text type="h2">
-      Our Facilities
-    </Text>
+    <Text type="h2">Our Facilities</Text>
     <Text type="lg">
-      Our Philosophy: Empowering Through <span class='text-primary'>Inquiry</span>
+      Our Philosophy: Empowering Through <span class="text-primary"
+        >Inquiry</span
+      >
     </Text>
 
     <div class="mt-[60px] w-full flex flex-col items-center px-[44px] gap-20">
       <div class="flex flex-row w-full gap-24 justify-between">
-        <DeckCard 
+        <DeckCard
           class="relative left-2"
           images={[
-            {src: slide1.src, alt: 'campus1'},
-            {src: slide2.src, alt: 'campus2'},
+            { src: slide1.src, alt: "campus1" },
+            { src: slide2.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
         />
         <div>
           <Text type="h3">
-            <span class='text-primary italic'>Science </span> Labs
+            <span class="text-primary italic">Science</span> Labs
           </Text>
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+            Edify offers well-equipped labs following all relevant safety
+            standards, in the fields of Physics, Chemistry, Biology, and
+            Computer Science.
           </Text>
-          <div class="p-3" />
-          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold"
+          >
             View Labs
           </Text>
         </div>
@@ -114,43 +117,53 @@ const toppers = campusConfig?.toppers
       <div class="flex flex-row w-full gap-24 justify-between">
         <div>
           <Text type="h3">
-            <span class='text-primary italic'>Science </span> Labs
+            <span class="text-primary italic">Science</span> Labs
           </Text>
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+            Edify offers well-equipped labs following all relevant safety
+            standards, in the fields of Physics, Chemistry, Biology, and
+            Computer Science.
           </Text>
-          <div class="p-3" />
-          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold"
+          >
             View Labs
           </Text>
         </div>
-        <DeckCard 
+        <DeckCard
           class="relative"
           images={[
-            {src: slide1.src, alt: 'campus1'},
-            {src: slide2.src, alt: 'campus2'},
+            { src: slide1.src, alt: "campus1" },
+            { src: slide2.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
         />
       </div>
       <div class="flex flex-row w-full gap-24 justify-between">
-        <DeckCard 
+        <DeckCard
           class="relative left-2"
           images={[
-            {src: slide1.src, alt: 'campus1'},
-            {src: slide2.src, alt: 'campus2'},
+            { src: slide1.src, alt: "campus1" },
+            { src: slide2.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
         />
         <div>
           <Text type="h3">
-            <span class='text-primary italic'>Science </span> Labs
+            <span class="text-primary italic">Science</span> Labs
           </Text>
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+            Edify offers well-equipped labs following all relevant safety
+            standards, in the fields of Physics, Chemistry, Biology, and
+            Computer Science.
           </Text>
-          <div class="p-3" />
-          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold"
+          >
             View Labs
           </Text>
         </div>
@@ -158,103 +171,121 @@ const toppers = campusConfig?.toppers
     </div>
   </Section>
 
-  <div class="w-full rounded-t-[120px] bg-black-100 pt-[98px] px-[66px] h-[620px] text-white" style={{
-    background: `linear-gradient(88deg, rgba(0, 0, 0, 0.87) 24.8%, rgba(0, 0, 0, 0.00) 70%), url(${transportBus.src}), lightgray 50% / cover no-repeat`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
-  }}>
+  <div
+    class="w-full rounded-t-[120px] bg-black-100 pt-[98px] px-[66px] h-[620px] text-white"
+    style={{
+      background: `linear-gradient(88deg, rgba(0, 0, 0, 0.87) 24.8%, rgba(0, 0, 0, 0.00) 70%), url(${transportBus.src}), lightgray 50% / cover no-repeat`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    }}
+  >
     <Text type="h2">Transport <span>Vehicles</span></Text>
-    <div class="p-3" />
+    <div class="p-3"></div>
     <Text type="base" class="w-[50%]">
       The speed limits of the buses are fixed for the purpose of safety.
     </Text>
-    <div class="p-3" />
+    <div class="p-3"></div>
 
     <div class="flex flex-row items-center">
       <div class="w-[14px] h-[17px]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 14 17"
+          fill="none"
+        >
+          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+          ></path>
         </svg>
       </div>
       <div class="px-2"></div>
-      <Text type="base">
-        1:25 Student-to-Teacher ratio
-      </Text>
+      <Text type="base">1:25 Student-to-Teacher ratio</Text>
     </div>
-    <div class="p-2" />
+    <div class="p-2"></div>
     <div class="flex flex-row items-center">
       <div class="w-[14px] h-[17px]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 14 17"
+          fill="none"
+        >
+          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+          ></path>
         </svg>
       </div>
       <div class="px-2"></div>
-      <Text type="base">
-        1:25 Student-to-Teacher ratio
-      </Text>
+      <Text type="base">1:25 Student-to-Teacher ratio</Text>
     </div>
-    <div class="p-2" />
+    <div class="p-2"></div>
     <div class="flex flex-row items-center">
       <div class="w-[14px] h-[17px]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 14 17"
+          fill="none"
+        >
+          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+          ></path>
         </svg>
       </div>
       <div class="px-2"></div>
-      <Text type="base">
-        1:25 Student-to-Teacher ratio
-      </Text>
+      <Text type="base">1:25 Student-to-Teacher ratio</Text>
     </div>
-
   </div>
   <GoToCta />
 
-
   <div id="contact-us" style="scroll-margin: 60px;">
-    <Connect details={{
-      phoneNo: {
-        label: 'Call us On',
-        value: '+91 80 26667333, +91 80 26667444',
-        type: 'contact'
-      },
-      workingHours: {
-        label: 'Mail us at',
-        value: 'info@insightacademy.in',
-        type: 'mail'
-      },
-      address: {
-        label: 'We are here',
-        value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
-        type: 'address'
-      }
-    }}
-    mapEmbedLink='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin' 
+    <Connect
+      details={{
+        phoneNo: {
+          label: "Call us On",
+          value: "+91 80 26667333, +91 80 26667444",
+          type: "contact",
+        },
+        workingHours: {
+          label: "Mail us at",
+          value: "info@insightacademy.in",
+          type: "mail",
+        },
+        address: {
+          label: "We are here",
+          value:
+            "#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062",
+          type: "address",
+        },
+      }}
+      mapEmbedLink="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin"
     />
   </div>
   <Footer />
 </Layout>
 
 <style>
-  .float{
-    position:fixed;
+  .float {
+    position: fixed;
     /* background-color:#25d366; */
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:30px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
     /* box-shadow: 2px 2px 3px #999; */
-    z-index:100;
+    z-index: 100;
   }
 
   .float > div {
     opacity: 0;
-    transition: 0.6s all ease-in-out
+    transition: 0.6s all ease-in-out;
   }
   .float a:hover ~ div {
     opacity: 1;
   }
 
-.my-float{
-	margin-top:16px;
-}
+  .my-float {
+    margin-top: 16px;
+  }
 </style>

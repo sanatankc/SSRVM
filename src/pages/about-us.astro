@@ -1,225 +1,278 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import TopNavigationBar from '../components/TopNavigationBar.astro';
+import TopNavigationBar from "../components/TopNavigationBar.astro";
 
-import Hero from './LandingPageHero.astro';
+import Hero from "./LandingPageHero.astro";
 
-import '../global.css'
+import "../global.css";
 
-import Footer from '../components/landingPage/Footer.astro';
-import Text from '../components/system/Text.astro';
-import Section from '../components/system/Section.astro';
-import GoToCta from '../components/GoToCta.astro';
-import campus1 from "../images/campus/gas/gallery/1.jpeg"
-import config from "../../config"
-const campusConfig = config.campus.find(c => c.internalName === "kanakapura")
-import slide1 from "../images/slides/1.jpeg"
-import slide2 from "../images/slides/2.jpeg"
-import slide3 from "../images/slides/3.jpeg"
-import slide4 from "../images/slides/4.jpeg"
-import slide5 from "../images/slides/5.jpeg"
-import DeckCard from '../components/DeckCard.astro';
-import Connect from '../components/campus/Connect.astro';
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+import Section from "../components/system/Section.astro";
+import GoToCta from "../components/GoToCta.astro";
+import campus1 from "../images/campus/gas/gallery/1.jpeg";
+import config from "../../config";
+const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
+import slide1 from "../images/slides/01.webp";
+import slide2 from "../images/slides/02.webp";
+import slide3 from "../images/slides/03.webp";
+import slide4 from "../images/slides/04.webp";
+import slide5 from "../images/slides/05.webp";
+import DeckCard from "../components/DeckCard.astro";
+import Connect from "../components/campus/Connect.astro";
 
-import blobBig from '../fillers/blobBig.png'
-import { Image } from 'astro:assets';
+import blobBig from "../fillers/blobBig.png";
+import { Image } from "astro:assets";
 
-
-const toppers = campusConfig?.toppers
+const toppers = campusConfig?.toppers;
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class='flex flex-col'>
+  <div class="flex flex-col">
     <TopNavigationBar />
-    <div 
+    <div
       class="h-[calc(100dvh-100px)] flex"
-      style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
+      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
       <Hero
-        config={{title:'Welcome to Insight Academy',bgImage: campus1}}
+        config={{ title: "Welcome to Insight Academy", bgImage: campus1 }}
         showSlide={true}
-        slideImages={
-          [
-          {slide: slide5.src, position: 'center 64%', type: 'image'},
-          {slide: slide1.src, position: 'center', type: 'image'},
-          {slide: slide2.src, position: 'right 90%', type: 'image'},
-          {slide: slide3.src, position: 'center ', type: 'image'},
-          {slide: slide4.src, position: 'center', type: 'image'},
-          
-        ]
-        }
+        slideImages={[
+          { slide: slide5.src, position: "center 64%", type: "image" },
+          { slide: slide1.src, position: "center", type: "image" },
+          { slide: slide2.src, position: "right 90%", type: "image" },
+          { slide: slide3.src, position: "center ", type: "image" },
+          { slide: slide4.src, position: "center", type: "image" },
+        ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
-
       >
         <div slot="title">
           <Text type="h2">
             The Edify <span class="text-primary italic">Way</span>
           </Text>
           <div class="p-1"></div>
-          <Text type="base" class='text-white w-[70%] max-md:w-full'>
-            Edify School, Electronic City has its philosophy rooted in the all-round development of the child. Education is envisaged to be holistic and integrated; one that will equip students with the confidence and skills to explore and interpret the world.
+          <Text type="base" class="text-white w-[70%] max-md:w-full">
+            Edify School, Electronic City has its philosophy rooted in the
+            all-round development of the child. Education is envisaged to be
+            holistic and integrated; one that will equip students with the
+            confidence and skills to explore and interpret the world.
           </Text>
         </div>
       </Hero>
     </div>
   </div>
-  
-    
+
   <Section class="flex flex-col w-full items-center text-left">
     <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
-    <div class="pt-8" />
+    <div class="pt-8"></div>
     <Text type="lg">
-      Our Philosophy: Empowering Through <span class='text-primary'>Inquiry</span>
+      Our Philosophy: Empowering Through <span class="text-primary"
+        >Inquiry</span
+      >
     </Text>
-    <div class="pt-4" />
-    <Text type="h2">
-      Inquiry-based Learning
-    </Text>
-    <div class="pt-8" />
+    <div class="pt-4"></div>
+    <Text type="h2">Inquiry-based Learning</Text>
+    <div class="pt-8"></div>
     <Text type="base" class="w-[51%] text-center [&>span]:text-primary">
-      Inquiry is the driving factor and leading pedagogical approach that makes Edify classrooms so <span>distinctive and unique.</span>
+      Inquiry is the driving factor and leading pedagogical approach that makes
+      Edify classrooms so <span>distinctive and unique.</span>
     </Text>
 
-    <div class="pt-16" />
+    <div class="pt-16"></div>
 
     <div class="w-full flex flex-col gap-3 text-white">
       <div class="flex flex-row gap-3 h-[350px]">
         <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
-          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+          <div
+            class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end"
+          >
             <Text type="h2" class="text-[#FFE3C1]">Why?</Text>
-            <div class="p-2" />
-            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+            <div class="p-2"></div>
+            <Text type="base" class="text-white">
+              Our Inquiry based learning education model revolves around
+              ‘Inquiry based learning’ through the ‘ Inquiry based learning
+              approach’ which develops ‘Character, Competence and Content’ in a
+              child.
+            </Text>
           </div>
         </div>
         <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
-          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+          <div
+            class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end"
+          >
             <Text type="h2" class="text-[#FFE3C1]">What?</Text>
-            <div class="p-2" />
-            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+            <div class="p-2"></div>
+            <Text type="base" class="text-white">
+              Our Inquiry based learning education model revolves around
+              ‘Inquiry based learning’ through the ‘ Inquiry based learning
+              approach’ which develops ‘Character, Competence and Content’ in a
+              child.
+            </Text>
           </div>
         </div>
       </div>
       <div class="flex flex-row gap-3 h-[350px]">
         <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
-          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+          <div
+            class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end"
+          >
             <Text type="h2" class="text-[#FFE3C1]">Themes?</Text>
-            <div class="p-2" />
-            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+            <div class="p-2"></div>
+            <Text type="base" class="text-white">
+              Our Inquiry based learning education model revolves around
+              ‘Inquiry based learning’ through the ‘ Inquiry based learning
+              approach’ which develops ‘Character, Competence and Content’ in a
+              child.
+            </Text>
           </div>
         </div>
       </div>
       <div class="flex flex-row gap-3 h-[350px]">
         <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
-          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+          <div
+            class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end"
+          >
             <Text type="h2" class="text-[#FFE3C1]">Profiles</Text>
-            <div class="p-2" />
-            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+            <div class="p-2"></div>
+            <Text type="base" class="text-white">
+              Our Inquiry based learning education model revolves around
+              ‘Inquiry based learning’ through the ‘ Inquiry based learning
+              approach’ which develops ‘Character, Competence and Content’ in a
+              child.
+            </Text>
           </div>
         </div>
         <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
-          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+          <div
+            class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end"
+          >
             <Text type="h2" class="text-[#FFE3C1]">Assesment</Text>
-            <div class="p-2" />
-            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+            <div class="p-2"></div>
+            <Text type="base" class="text-white">
+              Our Inquiry based learning education model revolves around
+              ‘Inquiry based learning’ through the ‘ Inquiry based learning
+              approach’ which develops ‘Character, Competence and Content’ in a
+              child.
+            </Text>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </Section>
 
   <Section class="flex flex-col w-full items-center text-left">
     <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
-    <div class="pt-8" />
-    <Text type="h2">
-      Our Management
-    </Text>
-    <div class="pt-8" />
+    <div class="pt-8"></div>
+    <Text type="h2">Our Management</Text>
+    <div class="pt-8"></div>
     <Text type="base" class="w-[51%] text-center [&>span]:text-primary">
-      Inquiry is the driving factor and leading pedagogical approach that makes Edify classrooms so <span>distinctive and unique.</span>
+      Inquiry is the driving factor and leading pedagogical approach that makes
+      Edify classrooms so <span>distinctive and unique.</span>
     </Text>
 
-    <div class="pt-16" />
-
-    
+    <div class="pt-16"></div>
   </Section>
-  
+
   <Section class="items-start text-left">
     <!-- <Text type="subtitle" class='!text-left'>
       INSPIRING FEATS
     </Text>
     <p class="p-2"></p> -->
-    <Text type="h2">
-      Our Facilities
-    </Text>
+    <Text type="h2">Our Facilities</Text>
     <Text type="lg">
-      Our Philosophy: Empowering Through <span class='text-primary'>Inquiry</span>
+      Our Philosophy: Empowering Through <span class="text-primary"
+        >Inquiry</span
+      >
     </Text>
 
-    <div class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-0 gap-20 max-md:gap-14">
-      <div class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between">
-        <DeckCard 
+    <div
+      class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-0 gap-20 max-md:gap-14"
+    >
+      <div
+        class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between"
+      >
+        <DeckCard
           class="relative left-2 max-md:left-0"
           images={[
-            {src: slide1.src, alt: 'campus1'},
-            {src: slide2.src, alt: 'campus2'},
+            { src: slide1.src, alt: "campus1" },
+            { src: slide2.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
         />
         <div>
           <Text type="h3">
-            <span class='text-primary italic'>Science </span> Labs
+            <span class="text-primary italic">Science</span> Labs
           </Text>
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+            Edify offers well-equipped labs following all relevant safety
+            standards, in the fields of Physics, Chemistry, Biology, and
+            Computer Science.
           </Text>
-          <div class="p-3 max-md:p-2" />
-          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+          <div class="p-3 max-md:p-2"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold"
+          >
             View Labs
           </Text>
         </div>
       </div>
-      <div class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between">
+      <div
+        class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between"
+      >
         <div class="max-md:order-2">
           <Text type="h3">
-            <span class='text-primary italic'>Science </span> Labs
+            <span class="text-primary italic">Science</span> Labs
           </Text>
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+            Edify offers well-equipped labs following all relevant safety
+            standards, in the fields of Physics, Chemistry, Biology, and
+            Computer Science.
           </Text>
-          <div class="p-3 max-md:p-2" />
-          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+          <div class="p-3 max-md:p-2"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold"
+          >
             View Labs
           </Text>
         </div>
-        <DeckCard 
+        <DeckCard
           class="relative"
           images={[
-            {src: slide1.src, alt: 'campus1'},
-            {src: slide2.src, alt: 'campus2'},
+            { src: slide1.src, alt: "campus1" },
+            { src: slide2.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
         />
       </div>
-      <div class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between">
-        <DeckCard 
+      <div
+        class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between"
+      >
+        <DeckCard
           class="relative left-2 max-md:left-0"
           images={[
-            {src: slide1.src, alt: 'campus1'},
-            {src: slide2.src, alt: 'campus2'},
+            { src: slide1.src, alt: "campus1" },
+            { src: slide2.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
         />
         <div>
           <Text type="h3">
-            <span class='text-primary italic'>Science </span> Labs
+            <span class="text-primary italic">Science</span> Labs
           </Text>
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety standards, in the fields of Physics, Chemistry, Biology, and Computer Science.
+            Edify offers well-equipped labs following all relevant safety
+            standards, in the fields of Physics, Chemistry, Biology, and
+            Computer Science.
           </Text>
-          <div class="p-3 max-md:p-2" />
-          <Text type="sm" class="uppercase text-primary underline tracking-widest font-semibold">
+          <div class="p-3 max-md:p-2"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold"
+          >
             View Labs
           </Text>
         </div>
@@ -228,24 +281,26 @@ const toppers = campusConfig?.toppers
   </Section>
 
   <div id="contact-us" style="scroll-margin: 60px;">
-    <Connect details={{
-      phoneNo: {
-        label: 'Call us On',
-        value: '+91 80 26667333, +91 80 26667444',
-        type: 'contact'
-      },
-      workingHours: {
-        label: 'Mail us at',
-        value: 'info@insightacademy.in',
-        type: 'mail'
-      },
-      address: {
-        label: 'We are here',
-        value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
-        type: 'address'
-      }
-    }}
-    mapEmbedLink='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin' 
+    <Connect
+      details={{
+        phoneNo: {
+          label: "Call us On",
+          value: "+91 80 26667333, +91 80 26667444",
+          type: "contact",
+        },
+        workingHours: {
+          label: "Mail us at",
+          value: "info@insightacademy.in",
+          type: "mail",
+        },
+        address: {
+          label: "We are here",
+          value:
+            "#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062",
+          type: "address",
+        },
+      }}
+      mapEmbedLink="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin"
     />
   </div>
   <GoToCta />
@@ -253,26 +308,26 @@ const toppers = campusConfig?.toppers
 </Layout>
 
 <style>
-  .float{
-    position:fixed;
+  .float {
+    position: fixed;
     /* background-color:#25d366; */
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:30px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
     /* box-shadow: 2px 2px 3px #999; */
-    z-index:100;
+    z-index: 100;
   }
 
   .float > div {
     opacity: 0;
-    transition: 0.6s all ease-in-out
+    transition: 0.6s all ease-in-out;
   }
   .float a:hover ~ div {
     opacity: 1;
   }
 
-.my-float{
-	margin-top:16px;
-}
+  .my-float {
+    margin-top: 16px;
+  }
 </style>
