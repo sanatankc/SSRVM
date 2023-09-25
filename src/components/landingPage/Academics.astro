@@ -3,13 +3,16 @@ import Section from "../system/Section.astro";
 import Text from "../system/Text.astro";
 import Button from "../system/Button.astro";
 import { Image } from "astro:assets";
-import academics1 from "../../images/academics1.png";
-import academics2 from "../../images/academics2.png";
+import academics1 from "../../image/homepage/1.jpeg";
+import academics2 from "../../image/homepage/2.jpeg";
+import Sal from "../system/Sal.astro";
 ---
 
 <Section>
   <div class="w-full text-center">
-    <Text type="h2">Our Academics</Text>
+    <Sal preset="slide-up" d="300" t="400">
+      <Text type="h2">Our Academics</Text>
+    </Sal>
     <div class="p-2"></div>
     <Text type="lg" class="font-bold">
       Nurturing Inquisitive Minds at <span class="text-primary">Edify</span>
@@ -18,7 +21,7 @@ import academics2 from "../../images/academics2.png";
   <div class="p-[30px]"></div>
   <div class="flex flex-row max-md:flex-col gap-12">
     <Image
-      src={academics1}
+      src={academics2}
       alt=""
       class="flex-1 h-[350px] object-cover object-center"
     />
