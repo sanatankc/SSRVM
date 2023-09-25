@@ -7,13 +7,13 @@ const { topper = {} } = Astro.props;
   class="max-w-[287px] h-[525px] w-full flex flex-col justify-end topper-card relative overflow-hidden  flex-shrink-0 max-sm:h-[425px]"
 >
   <div
-    class="absolute inset-0 -z-[1] saturate-0 topper-img"
+    class="absolute inset-0 saturate-0 topper-img bg-white"
     style={{
       "--topper-img": `url(${topper.image.src})`,
     }}
   >
   </div>
-  <div class="flex flex-col items-center gap-[7px] mb-10">
+  <div class="flex flex-col items-center gap-[7px] mb-10 relative z-10">
     <Text type="xs" class="text-primary font-bold">
       {topper.ranks}
     </Text>
@@ -24,7 +24,7 @@ const { topper = {} } = Astro.props;
     />
     <Text type="h4" class="text-primary font-sans font-bold">97.8%</Text>
   </div>
-  <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%]">
+  <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%] z-10">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="158"
@@ -51,7 +51,7 @@ const { topper = {} } = Astro.props;
       </defs>
     </svg>
   </div>
-  <div class="absolute right-[51%] top-[20%] leaf leaf-left max-sm:top-[-4%]">
+  <div class="absolute right-[51%] top-[20%] leaf leaf-left max-sm:top-[-4%] z-10">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="158"

@@ -28,6 +28,8 @@ import slide3 from "../images/slides/3.jpeg"
 import slide4 from "../images/slides/4.jpeg"
 import slide5 from "../images/slides/5.jpeg"
 
+import achievementsBG from "../image/textures/achievementsBG.png"
+
 const toppers = campusConfig?.toppers
 ---
 
@@ -68,7 +70,10 @@ const toppers = campusConfig?.toppers
         
       </div> -->
       <Academics />
-      <Section class="text-center">
+      <Section class="text-center" style={{
+        background: `url("${achievementsBG.src}")`,
+        backgroundSize: 'cover',
+      }}>
           <Text type="subtitle">
             INSPIRING FEATS
           </Text>
@@ -81,7 +86,7 @@ const toppers = campusConfig?.toppers
         </div>
         <p class="p-3"></p>
         <div class="flex items-center justify-center">
-          <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
+          <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto ">
             {toppers?.map((item,index) => {
               return <TopperCard 
                       topper={item}

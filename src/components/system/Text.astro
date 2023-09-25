@@ -13,7 +13,7 @@ const { type = 'base', class: className, style = {}, ...props } = Astro.props
 {type === 'h1' && (
   <h1
     class:list={[
-      "font-display text-[62px] tracking-tight max-md:text-[2rem] [&>span]:text-primary [&>span]:italic leading-[120%]", 
+      "font-display text-[62px] max-md:text-[2rem] [&>span]:text-primary [&>span]:italic leading-[120%]", 
       className
     ]}
     style={style}
@@ -25,7 +25,7 @@ const { type = 'base', class: className, style = {}, ...props } = Astro.props
 {type === 'h2' && (
   <h2
     class:list={[
-      "font-display text-5xl tracking-tight max-md:text-[2rem] [&>span]:text-primary [&>span]:italic leading-[120%]", 
+      "font-display text-5xl max-md:text-[2rem] [&>span]:text-primary [&>span]:italic leading-[120%]", 
       className
     ]}
     style={style}

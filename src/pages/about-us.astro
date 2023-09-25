@@ -22,6 +22,10 @@ import slide5 from "../images/slides/5.jpeg"
 import DeckCard from '../components/DeckCard.astro';
 import Connect from '../components/campus/Connect.astro';
 
+import blobBig from '../fillers/blobBig.png'
+import { Image } from 'astro:assets';
+
+
 const toppers = campusConfig?.toppers
 ---
 
@@ -63,6 +67,84 @@ const toppers = campusConfig?.toppers
   </div>
   
     
+  <Section class="flex flex-col w-full items-center text-left">
+    <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
+    <div class="pt-8" />
+    <Text type="lg">
+      Our Philosophy: Empowering Through <span class='text-primary'>Inquiry</span>
+    </Text>
+    <div class="pt-4" />
+    <Text type="h2">
+      Inquiry-based Learning
+    </Text>
+    <div class="pt-8" />
+    <Text type="base" class="w-[51%] text-center [&>span]:text-primary">
+      Inquiry is the driving factor and leading pedagogical approach that makes Edify classrooms so <span>distinctive and unique.</span>
+    </Text>
+
+    <div class="pt-16" />
+
+    <div class="w-full flex flex-col gap-3 text-white">
+      <div class="flex flex-row gap-3 h-[350px]">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
+          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+            <Text type="h2" class="text-[#FFE3C1]">Why?</Text>
+            <div class="p-2" />
+            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+          </div>
+        </div>
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
+          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+            <Text type="h2" class="text-[#FFE3C1]">What?</Text>
+            <div class="p-2" />
+            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row gap-3 h-[350px]">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
+          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+            <Text type="h2" class="text-[#FFE3C1]">Themes?</Text>
+            <div class="p-2" />
+            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row gap-3 h-[350px]">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
+          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+            <Text type="h2" class="text-[#FFE3C1]">Profiles</Text>
+            <div class="p-2" />
+            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+          </div>
+        </div>
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px]">
+          <div class="w-full h-full bg-[#333] rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end">
+            <Text type="h2" class="text-[#FFE3C1]">Assesment</Text>
+            <div class="p-2" />
+            <Text type="base" class="text-white">Our Inquiry based learning education model revolves around ‘Inquiry based learning’ through the ‘ Inquiry based learning approach’ which develops ‘Character, Competence and Content’ in a child.</Text>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </Section>
+
+  <Section class="flex flex-col w-full items-center text-left">
+    <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
+    <div class="pt-8" />
+    <Text type="h2">
+      Our Management
+    </Text>
+    <div class="pt-8" />
+    <Text type="base" class="w-[51%] text-center [&>span]:text-primary">
+      Inquiry is the driving factor and leading pedagogical approach that makes Edify classrooms so <span>distinctive and unique.</span>
+    </Text>
+
+    <div class="pt-16" />
+
+    
+  </Section>
+  
   <Section class="items-start text-left">
     <!-- <Text type="subtitle" class='!text-left'>
       INSPIRING FEATS

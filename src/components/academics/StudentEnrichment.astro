@@ -37,10 +37,18 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
     </div>
 
 
-    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40 active">Sports</Text>
-    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">ARTS</Text>
-    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">LIFE SKILLS</Text>
-    <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">PDW</Text>
+    <div data-slide-page="0">
+      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40 active">Sports</Text>
+    </div>
+    <div data-slide-page="1">
+      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">ARTS</Text>
+    </div>
+    <div data-slide-page="2">
+      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">LIFE SKILLS</Text>
+    </div>
+    <div data-slide-page="3">
+      <Text type="subtitle" class="uppercase !text-[28px] cursor-pointer tab-nav-btn text-white/40">PDW</Text>
+    </div>
 
     <div class="w-[53px] h-[53px] bg-white rounded-[50%] -scale-x-100">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 54 54" fill="none">
@@ -68,105 +76,10 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
   <div class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-      <!-- Slides -->
-      <!-- <div class="w-full h-[350px] bg-white"></div>
-      <div class="w-full h-[350px] bg-white"></div>
-      <div class="w-full h-[350px] bg-white"></div> -->
       <StudentEnrichmentSlide />
       <StudentEnrichmentSlide />
       <StudentEnrichmentSlide />
-      <!-- <div class="swiper-slide bg-white rounded-[35px] px-[16px] py-[24px] text-black">
-        <div class="h-[380px] w-full">
-          <Image src={slide1} alt="" class="w-full h-full rounded-[35px] object-cover" />
-        </div>
-        <div class="pt-[16px]" />
-        <div class="px-[16px]">
-          <div class="flex flex-row justify-between items-center">
-            <Text type="h3"><span class="text-primary italic">Sports</span> Education</Text>
-            <Text type="lg" class="font-[400]">Fitness First!</Text>
-          </div>
-  
-          <div class="pt-6" />
-          
-  
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            At Edify School, we believe that sports are an integral part of the educational process and have integrated sports firmly as a part of our curriculum. Our <span>Sports Education Program (SEP)</span> emphasizes on the development of knowledge, attitudes and skills related to a range of physical and health related activities.
-            <br />
-            <br />
-            The school has an excellent outlook on sports with its national and international size courts and sports infrastructure as well as expert professional coaches to support a variety of sport activities like <span>swimming, basketball, football, volleyball, chess, handball, netball, karate, cricket, skating, lawn tennis, table tennis, badminton.</span>
-          </Text> 
-
-          <div class="pt-8" />
-
-
-          <div class="w-full flex flex-row justify-between">
-            <div 
-              class="
-              bg-white border rounded-md p-2
-              group-hover:border-secondary transition-transform
-                w-[357px] h-[333px]
-              "
-              style={{
-                boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
-              }}
-            >
-              <img
-                src={slide1.src}
-                alt=""
-                class="w-full h-full rounded-md object-cover"
-              />
-            </div>
-
-            <div 
-              class="
-              bg-white border rounded-md p-2
-              group-hover:border-secondary transition-transform
-                w-[357px] h-[333px]
-              "
-              style={{
-                boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
-              }}
-            >
-              <img
-                src={slide1.src}
-                alt=""
-                class="w-full h-full rounded-md object-cover"
-              />
-            </div>
-
-            <div 
-              class="
-              bg-white border rounded-md p-2
-              group-hover:border-secondary transition-transform
-                w-[357px] h-[333px]
-              "
-              style={{
-                boxShadow: '0px 0px 18.19317px 0px rgba(0, 0, 0, 0.30)'
-              }}
-            >
-              <img
-                src={slide1.src}
-                alt=""
-                class="w-full h-full rounded-md object-cover"
-              />
-            </div>
-            
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="swiper-slide bg-slate-500">Slide 2</div> -->
-      <!-- <div class="swiper-slide bg-red-300">Slide 3</div> -->
-
-      </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <!-- <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> -->
-
-    <!-- If we need scrollbar -->
-    <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
   </div>
 
 
@@ -196,23 +109,17 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
     direction: 'horizontal',
     loop: true,
     effect: 'coverflow',
-    // modules: [Navigation, Pagination],
+  });
 
-    // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
-
-    // Navigation arrows
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
-
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
+  document.querySelectorAll('[data-slide-page]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const page = e.target.dataset.slidePage;
+      swiper.slideTo(page);
+      document.querySelectorAll('.tab-nav-btn').forEach((el) => {
+        el.classList.remove('active');
+      });
+      e.target.classList.add('active');
+    });
   });
 
 </script>
