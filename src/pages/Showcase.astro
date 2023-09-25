@@ -17,7 +17,9 @@ const { title, showSocial = true } = Astro.props;
 const heading = title || "Featured Updates";
 ---
 
-<Section class="bg-[#1F1F1F] text-white py-9">
+<Section class="text-black py-9" style={{
+  background: 'linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)'
+}}>
   <div class="w-full flex flex-row justify-between items-center">
     <Text type="h2">Featured <span>Updates</span></Text>
     <Text type="lg">

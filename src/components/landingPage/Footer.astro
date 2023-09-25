@@ -65,6 +65,7 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
   
       <div class='flex flex-row max-md:flex-col'>
         <div class='ml-16 max-md:ml-0 max-w-[325px]'>
+          <div class="p-0 pt-4" />
           <Text type={'base'} class='text-primary mb-7 max-md:mb-3'>Contact us</Text>
   
           <div class='flex flex-row items-center mb-3'>
@@ -101,12 +102,13 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
 
   <div class='py-6 font-normal px-16 w-full  max-md:px-6 text-center'>
     <Constrain class="flex flex-row max-md:flex-col items-center justify-between">
-      <div class="flex flex-row items-center">
+      <div class="flex flex-row items-center max-md:flex-col">
         <Text type={'regular'}>
           Copyright © 2023 &nbsp;
         </Text>
         <Text type={'regular'}>
-          {' • '} Mandatory CBSE Public Disclosure: 
+          <span class="max-md:hidden">{' • '}</span> Mandatory CBSE Public Disclosure: 
+          <br class="hidden max-md:block" />
           <a 
             href="/mandatory-public-disclosure-whitefield" 
             class="underline"
@@ -118,9 +120,10 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
           >Sarjapur</a>
         </Text>
       </div>
+      <div class="max-md:pt-3 pt-0"></div>
       <div>
         <a href="https://thedotstudio.in/" target="_blank">
-          <Image src={theDotStudioLogo} class="w-[250px]" alt={"The Dot Studio Logo"} />
+          <Image src={theDotStudioLogo} class="w-[250px] max-md:w-[200px]" alt={"The Dot Studio Logo"} />
         </a>
       </div>
     </Constrain>
