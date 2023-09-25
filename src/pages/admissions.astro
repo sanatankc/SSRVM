@@ -38,7 +38,7 @@ import PhoneWhite from '../icons/PhoneWhite.svg'
 
 const faqs = [
   {
-    question: 'How do I apply for admission to Glentree Academy?',
+    question: 'Payment Terms & Conditions',
     answer: ''
   },
   {
@@ -226,37 +226,99 @@ const faqs = [
       </div>
     </Section>
 
+    <Section>
+      <div class="px-[60px] py-[46px] rounded-md border gap-8 border-primary border-dashed flex flex-row justify-between" style={{
+        background: 'rgba(255, 232, 204, 0.32)'
+      }}>
+        <div>
+          <Text type="h3">Age <span>Criteria</span></Text>
+          <div class="pt-6" />
+          <Text type="base" class="font-regular">To join Edify School Bengaluru, children should meet the specified age requirement by June 1st of the admission year. In some cases, the School Admission Committee may consider exceptions to this age limit based on the child's past academic performance and how they do in our tests, as long as they have completed their studies in a recognised school.</Text>
+        </div>
+        <div class="flex flex-row gap-[20px]">
+          <div class="w-full">
+            <Text type="base" class="bg-[#FFE3C1] py-[7px] text-primary font-bold text-center">Grade</Text>
+            <div class="w-full py-[30px] px-[60px] flex flex-col gap-[13px] bg-white text-primary text-center [&>*]:min-w-max">
+              <Text type="base">KG1</Text>
+              <Text type="base">KG2</Text>
+              <Text type="base">KG3</Text>
+              <Text type="base">1</Text>
+              <Text type="base">2</Text>
+              <Text type="base">3</Text>
+              <Text type="base">4</Text>
+              <Text type="base">5</Text>
+              <!-- <Text type="base">6</Text>
+              <Text type="base">7</Text> -->
+            </div>
+          </div>
+          <div class="w-full">
+            <Text type="base" class="bg-[#FFE3C1] py-[7px] text-black font-bold text-center">Age</Text>
+            <div class="w-full py-[30px] px-[48px] flex flex-col gap-[13px] bg-white text-black text-center [&>*]:min-w-max">
+              <Text type="base">2 Years 6 Months</Text>
+              <Text type="base">3 Years 6 Months</Text>
+              <Text type="base">4 Years 6 Months</Text>
+              <Text type="base">5 Years 6 Months</Text>
+              <Text type="base">6 Years 6 Months</Text>
+              <Text type="base">7 Years 6 Months</Text>
+              <Text type="base">8 Years 6 Months</Text>
+              <Text type="base">9 Years 6 Months</Text>
+              <!-- <Text type="base">6</Text>
+              <Text type="base">7</Text> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+
     <div class="w-full items-center flex flex-col bg-white">
       <div class="p-4" />
-      <Text type={'subtitle'} class='text-black/60'>THINGS TO NOTE</Text>
-      <Text type={'h2'} class='mt-2 text-black'>FAQs</Text>
+      <Text type={'subtitle'} class='text-black'>Key Information to note:</Text>
+      <!-- <Text type={'h2'} class='mt-2 text-black'>FAQs</Text> -->
       <div class="p-4" />
       <div class="flex flex-col items-center gap-5 ">
-        {faqs.map(({ question, answer }) => (
-          <Collapsible title={question} titleClass='font-sans font-bold text-xl max-md:text-lg' class='mb-5' collapseGroup='collapsible' plusButtonClass="w-[35px] h-[35px] ml-1">
-            <ul class="list-disc marker:text-2xl relative left-5 w-[95%]">
-              <li>
-                <Text type={'regular'}>Students using the school bus must be at the bus stop at least 5 minutes before the scheduled arrival time.</Text>
-              </li>
-              <li>
-                <Text type={'regular'}>The bus will stop only at the designated pick-up point.</Text>
-              </li>
-              <li>
-                <Text type={'regular'}>Students must use their assigned bus and bus stop, and any changes require prior written permission from the school authorities.</Text>
-              </li>
-              <li>
-                <Text type={'regular'}>Pre-Primary and Primary children will only be released to their parent/guardian. If the parent/guardian is not present at the pick-up point, the child will be returned to the school, and parents must collect them directly from the school.</Text>
-              </li>
-              <li>
-                <Text type={'regular'}>Fees paid are non-refundable.</Text>
-              </li>
-            </ul>
-    
-            <div>
-    
-            </div>
-          </Collapsible>
-        ))}
+        <Collapsible title={'Payment Terms & Conditions'} titleClass='font-sans font-bold text-xl max-md:text-lg' class='mb-5' collapseGroup='collapsible' plusButtonClass="w-[35px] h-[35px] ml-1">
+          <ol class="list-decimal relative left-[30px] marker:font-bold marker:text-lg w-[90%]">
+            <li>
+              <Text type="base">All payments are to be made in Indian Rupees only.</Text>
+            </li>
+            <li>
+              <Text type="base">Upon admission, the first installment of tuition fees, admission fee, registration fee, and security deposit must be paid.</Text>
+            </li>
+            <li>
+              <Text type="base">The second installment of tuition fees should be paid on or before 10th November of the academic year.</Text>
+            </li>
+            <li>
+              <Text type="base">Annual charges will be collected at the beginning of the session.</Text>
+            </li>
+            <li>
+              <Text type="base">Payment can be made in cash, Demand Draft, or local cheque, favoring 'EDIFY SCHOOL,' payable at Bengaluru.</Text>
+            </li>
+            <li>
+              <Text type="base">Fees once paid will not be refunded or adjusted under any circumstances.</Text>
+            </li>
+            <li>
+              <Text type="base">In the event of a student's withdrawal from the school in the middle of the term, the fee for the entire term must be paid.</Text>
+            </li>
+            <li>
+              <Text type="base">Additional items such as uniforms, shoes, books, stationery, dining, and transportation will incur extra charges.</Text>
+            </li>
+            <li>
+              <Text type="base">Transportation charges will be based on kilometers for 12 months, including GPS charges.</Text>
+            </li>
+            <li>
+              <Text type="base">The security deposit is refundable and will be returned when the child leaves the school.</Text>
+            </li>
+            <li>
+              <Text type="base">Annual charges cover Taekwando, HOG Dramatic classes, Aniguru Animation, School Cinema value education, Mindedutainment, Edusports, Edurite, field visits, picnics, Olympiads, Interschool competition entry charges, medical fee, journal, magazines, newsletter, examination fee, maintenance fee, PTA, sports fee, activity fee, assignments, and worksheets, etc.</Text>
+            </li>
+          </ol>
+        </Collapsible>
+        <Collapsible title={'Refundable Cash Deposit'} titleClass='font-sans font-bold text-xl max-md:text-lg' class='mb-5' collapseGroup='collapsible' plusButtonClass="w-[35px] h-[35px] ml-1">
+          <Text type="base">
+            The refundable cash deposit is against damage to, or loss of library books, laboratory equipment, computer facilities and other equipment or assets of the school. It will be refunded without any interest, after adjustment of dues, if any, on completion of the child's studies at Edify School.
+          </Text>
+        </Collapsible>
       </div>
       <div class="p-3" />
     </div>
