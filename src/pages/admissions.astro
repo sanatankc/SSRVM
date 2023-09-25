@@ -4,14 +4,8 @@ import Layout from '../layouts/Layout.astro';
 // import Hero from '../components/Hero.astro';
 import TopNavigationBar from '../components/TopNavigationBar.astro';
 
-import Updates from '../components/landingPage/Updates/index.astro'
-import LFL from '../components/landingPage/LFL.astro'
-// import WhyGlentree from '../components/register/whyGlentree.astro';
-// import Campus from '../components/register/campus.astro';
 import Collapsible from '../components/admissions/Collapsible.astro';
 
-import Testimonial from '../components/landingPage/Testimonial.astro';
-import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
 // import Scholarship from '../components/register/scholarship.astro';
 import RegisterForm from '../components/admissions/admissionForm.astro'
 import '../global.css'
@@ -22,13 +16,12 @@ import Footer from '../components/landingPage/Footer.astro';
 import Text from '../components/system/Text.astro';
 
 import { Image } from 'astro:assets';
-import AdmissionMarquee from '../components/campus/admissionMarquee.astro'
 
 import PrePrimaryBG from '../images/curriculum/prePrimary.png';
 import PrimaryBG from '../images/curriculum/primary.png';
 import MiddleAndHighBG from '../images/curriculum/middle&High.png';
 
-import DownArrow from '../icons/DownArrow.svg'
+import Section from '../components/system/Section.astro';
 import Slide from '../components/system/Slide.astro';
 
 import slide1 from "../image/register/slides/1.png";
@@ -42,77 +35,6 @@ import slide3MB from "../image/register/slides/mb/3.jpg";
 import PhoneWhite from '../icons/PhoneWhite.svg'
 
 
-const academics = [
-  {
-    title: 'Pre-Primary',
-    grade: 'NUR - UKG',
-    points: [
-      [
-        'Montessori and Waldorf methodologies',
-        'Activity based learning',
-        'Language, Numeracy, and Theme',
-      ],
-      [
-        'Value Education',
-        'Reading Program',
-        'Montessori Lab'
-      ]
-    ],
-    image: PrePrimaryBG,
-    background: '#0E6526',
-    backgroundContent: '#0A5E2F',
-    opacity: 1,
-
-    link: 'https://glentreeacademy.com/curriculum/pre-primary'
-  },
-  {
-    title: 'Primary',
-    image: PrimaryBG,
-    link: 'https://glentreeacademy.com/curriculum/primary',
-    background: '#C07C47',
-    grade: 'Grade I-IV',
-    points: [                
-      [
-        "Exploring Through Discovery",
-        "Multi-sensory Activities",
-        "Experiential Learning",
-        "Inter Disciplinary Approach",
-        "Language Arts (English, Hindi, Kannada",
-        "Math, Science and ICT"
-      ],  
-      [
-        "STEM Lab",
-        "R.E.A.D Program",
-        "“Connecting the Dots” Program",
-        "Regular Assessments",
-        "Bi-annual Exams"
-      ],
-    ] 
-  },
-  {
-    title: 'Middle & High School',
-    image: MiddleAndHighBG,
-    link: 'https://glentreeacademy.com/curriculum/middle-and-high',
-    background: '#6F322E',
-    grade: 'Grade V-X',
-    points: [
-      [               
-        "Creative thinking & Research",
-        "Community Learning",
-        "Language Arts (English, Hindi, Kannada)",
-        "Math, Science and ICT",
-      ],
-      [
-        "Social Studies",
-        "STEM Lab",
-        "“Connecting the Dots” Program",
-        "Regular Assessments",
-        "Bi-annual Exams",
-      ]
-    ]
-
-  },
-]
 
 const faqs = [
   {
@@ -154,12 +76,6 @@ const faqs = [
       <div class='flex flex-col max-md:h-auto min-h-screen relative'>
         <TopNavigationBar hideMenu applyNowButtonId="register-page-apply-now" />
 
-        <!-- <div class="bg-yellow p-2 text-center text-black flex flex-row max-md:flex-col justify-center items-center group">
-          <Text type='regular' class="font-bold uppercase tracking-widest">Limited-period offer</Text>
-          <div class="px-2" />
-          <Text type='base' class="font-bold">Rs. 10,000 off on Admission Fees</Text>
-        </div> -->
-
         <div class="w-full flex-1 h-full relative p-12 py-2 flex flex-row max-md:flex-col justify-between items-center max-md:p-8 max-md:px-4">
           <div class="w-full h-full absolute top-0 left-0 max-md:hidden">
             <Slide
@@ -200,7 +116,7 @@ const faqs = [
 
           <div class="h-full flex flex-row items-end relative z-20 self-end max-md:self-start">
             <div class="flex flex-col items-start max-md:items-center mb-10 max-md:mb-2">
-              <Text type="h1" class='text-white text-center'>Join our <span>Family</span></Text>
+              <Text type="h1" class='text-white text-center'>Join our <span class="!not-italic">Family</span></Text>
               <div class="pt-2" />
               <Text type='lg' class="text-white">Admissions open for the academic year 2023-24</Text>
               <div class="pt-[36px] max-md:pt-[24px]" id="register-form-container-mobile" />
@@ -222,69 +138,14 @@ const faqs = [
 
 
 
-   
-      
-
-    <div class='w-full p-14 pb-3 text-black bg-white flex flex-col items-center max-md:p-6'>
-      <Text type={'subtitle'} class='text-black/80'>ENRICHING CURRICULUM</Text>
-      <Text type={'h2'} class='mt-2'>Academic{' '}<span class='text-accent2'>Landscape</span></Text>
-      <div class='w-full flex-col flex items-center rounded-2xl max-md:rounded-2xl overflow-hidden mt-8 max-w-[1196px]'>
-        {academics.map((academic) => (
-          <div class='flex flex-row w-full mb-[2px] max-md:flex-col max-md:rounded-xl overflow-hidden max-md:mb-4'>
-            <div
-              class='w-full flex-1 max-w-[350px] max-md:max-w-[1000px] min-h-[200px] mr-[1px] flex flex-col text-white items-center justify-center relative bg-cover no-repeat'
-              style={{
-                backgroundImage: `url(${academic.image.src})`
-            }}>
-              <div class='w-full h-full mix-blend-multiply absolute z-0' style={{
-                background: academic.background,
-                opacity: academic.opacity ? academic.opacity : 1
-              }}>
-              </div>
-              <div class='relative z-10 text-center'>
-
-                <Text type={'h4'}>{academic.title}</Text>
-                <Text type={'h4'}>{academic.grade}</Text>
-              </div>
-            </div>
-            <div
-              style={{
-                background: academic.backgroundContent ? academic.backgroundContent : academic.background,
-                opacity: academic.opacity ? academic.opacity : 1
-              }}
-              class='w-full flex-1 max-w-[845px] max-md:max-w-[1000px] min-h-[200px] mr-[1px] flex flex-row max-md:flex-col max-md:items-start max-md:p-8 max-md:pt-4 items-center justify-center p-12 py-4'>
-              <Text type={'regular'} class='mt-3 font-[500] flex-1'>
-                <ul class="list-disc text-white">
-                  {academic.points[0].map((point) => (
-                    <li>{point}</li>
-                  ))}
-                </ul>
-              </Text>
-              <Text type={'regular'} class='mt-3 font-[500] flex-1 max-md:mt-0'>
-                <ul class="list-disc text-white">
-                  {academic.points[1].map((point) => (
-                    <li>{point}</li>
-                  ))}
-                </ul>
-              </Text>
-            </div>
-          </div>
-        ))}
+    
+    <Section class="w-full flex flex-col items-center">
+      <Text type="h2">Admission <span class="not-italic">Process</span></Text>
+      <div class="flex flex-row">
+        <Text type='subtitle'>STEP</Text>
+        <Text type='lg'>01</Text>
       </div>
-    </div>
-
-    <!-- <LFL /> -->
-
-
-    <!-- <Campus /> -->
-
-      
-
-
-
-    <!-- <Scholarship /> -->
-    <!-- <Testimonial /> -->
-
+    </Section>
 
     <div class="w-full items-center flex flex-col bg-white">
       <div class="p-4" />
@@ -321,20 +182,12 @@ const faqs = [
       <div class="p-3" />
     </div>
 
-
-    
-
-    <!-- <BigAdmissionCTA /> -->
-
-    <!-- <GlentreeFamily /> -->
     <Footer />
     </div>
 
     <a href="tel:7676310000">
       <div class="fixed w-full h-14 bg-green-600 bottom-0 left-0 z-10 hidden max-md:flex items-center justify-center gap-4">
-        <div 
-          class="w-4 h-4"
-        >
+        <div class="w-4 h-4">
           <Image src={PhoneWhite} alt="Phone" class="w-full h-full object-cover" />
         </div>
         <Text type="sm">+91 76763 10000</Text>

@@ -24,8 +24,9 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-accent2 text-black rounded-xl items-center w-full max-w-[534px] relative z-20" id="register-form-container-desktop">
-  <Text type="h3" class='text-[32px] text-center'>Register Now for <span class="text-green-600">AY 2024-25</span></Text>
+<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-primary text-black rounded-xl items-center w-full max-w-[534px] relative z-20" id="register-form-container-desktop">
+  <Text type="h3" class='text-[28px] font-bold text-center font-sans [&>span]:not-italic'>Register Now for <span class="text-green-600">AY 2024-25</span></Text>
+  <div class="p-1" />
   <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm">Fill the form below and we’ll get in touch shortly!</Text>
   <form class="flex-col flex gap-[23px] mt-8 max-md:mt-6"  method="POST">
     
@@ -120,7 +121,7 @@ if (Astro.request.method === "POST") {
     />
 
     <div class="flex flex-row">
-      <input type="checkbox" class="accent-accent2 cursor-pointer" name="whatsappConsent" id="whatsappConsent" />
+      <input type="checkbox" class="accent-primary cursor-pointer" name="whatsappConsent" id="whatsappConsent" />
       <div class="px-1" />
       <Text type="xs" class="text-sm cursor-pointer">
         <label for="whatsappConsent" class="cursor-pointer flex flex-row items-center">
