@@ -10,6 +10,7 @@ import TestimonicalCard from './TestimonicalCard.astro';
 
 import testimonial1 from '../../images/testimonial1.png'
 import testimonial2 from '../../images/testimonial2.png'
+import Scribble from '../Scribble.astro';
 
 const testimonials = config.testimonials;
 const title = testimonials.title;
@@ -18,7 +19,7 @@ const subtitle = testimonials.subtitle;
 ---
 
 <Section class="flex flex-col items-center">
-  <Text type={'h2'}>Parents Trust Us</Text>
+  <Text type={'h2'}>Parents <span class="scribble">Trust Us <Scribble class="-left-1 bottom-3" /> </span></Text>
   <div class="p-2" />
   <Text type={'base'} class='font-bold'>Shaping a Brighter Future for Your Child</Text>
 

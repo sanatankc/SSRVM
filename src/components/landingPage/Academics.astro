@@ -6,16 +6,20 @@ import { Image } from "astro:assets";
 import academics1 from "../../image/homepage/1.jpeg";
 import academics2 from "../../image/homepage/2.jpeg";
 import Sal from "../system/Sal.astro";
+import Scribble from "../Scribble.astro";
 ---
 
 <Section>
   <div class="w-full text-center">
     <Sal preset="slide-up" d="300" t="400">
-      <Text type="h2">Our Academics</Text>
+      <Text type="h2">Our <span class="relative">
+        Academics
+        <Scribble class="left-2" />
+      </span></Text>
     </Sal>
     <div class="p-2"></div>
     <Text type="lg" class="font-bold">
-      Nurturing Inquisitive Minds at <span class="text-primary">Edify</span>
+      Nurturing Inquisitive Minds at <span class="text-black">Edify </span>
     </Text>
   </div>
   <div class="p-[30px] max-md:p-[10px]"></div>

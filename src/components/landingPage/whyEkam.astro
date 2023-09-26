@@ -5,22 +5,27 @@ import { Image } from "astro:assets";
 import Text from "../system/Text.astro";
 import Sal from "../system/Sal.astro";
 import Section from "../system/Section.astro";
+import Scribble from "../Scribble.astro";
 ---
 
 <Section class="flex flex-row gap-[72px] max-md:gap-[30px] max-md:flex-col max-md:items-center">
   <div class="max-md:order-2">
     <Sal preset="slide-up" d="100" t="400">
       <Text type="h2">
-        Why choose <span class="!text-black">EKAM Edify?</span>
+        Why choose 
+        <span class="relative">
+          EKAM Edify?
+          <Scribble />
+        </span>
       </Text>
     </Sal>
     <div class="p-2"></div>
     <Sal preset="slide-up" d="200" t="400">
       <Text type="lg">
-        Our Philosophy: <span class="text-primary">Inquiry Based Learning</span>
+        Our Philosophy: <span class="text-black">Inquiry Based Learning</span>
       </Text>
     </Sal>
-    <div class="p-3"></div>
+    <div class="p-3 max-md:p-2"></div>
     <Sal preset="slide-up" d="300" t="400">
       <Text type="base">
         We have built a dynamic learning space that thrives on curiosity and
