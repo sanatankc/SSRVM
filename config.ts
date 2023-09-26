@@ -173,7 +173,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
-      admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
+      admissionLink: "/admissions",
       images: [
         {type: 'image', uri: campusbg1.src, position: 'center 10%'},
         {type: 'image', uri: campusbg2.src, position: 'center'},
@@ -328,7 +328,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
-      admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
+      admissionLink: "/admissions",
       images: [
         {uri: marthcampusbg1.src, type: 'image', position: 'center'},
         {uri: marthcampusbg2.src, type: 'image', position: 'center'},
