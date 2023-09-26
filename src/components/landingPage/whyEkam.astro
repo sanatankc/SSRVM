@@ -7,7 +7,7 @@ import Sal from "../system/Sal.astro";
 import Section from "../system/Section.astro";
 ---
 
-<Section class="flex flex-row gap-[72px] max-md:flex-col">
+<Section class="flex flex-row gap-[72px] max-md:gap-[30px] max-md:flex-col max-md:items-center">
   <div class="max-md:order-2">
     <Sal preset="slide-up" d="100" t="400">
       <Text type="h2">
@@ -43,7 +43,7 @@ import Section from "../system/Section.astro";
   </div>
   <Sal preset="fade" d="400" t="400" class="flex-shrink-0">
     <Image
-      class="w-[324px] h-[409]"
+      class="w-[324px] max-md:w-[210px]"
       src={whyChooseEdify}
       alt="Why choose Edify??"
     />

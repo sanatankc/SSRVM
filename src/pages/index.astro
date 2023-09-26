@@ -35,7 +35,7 @@ import achievementsBG from "../image/textures/achievementsBG.png";
 const toppers = campusConfig?.toppers;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
@@ -45,14 +45,14 @@ const toppers = campusConfig?.toppers;
       <Hero
         showSlide={true}
         slideImages={[
-          { slide: slide5.src, position: "center", type: "image" },
+          { slide: slide7.src, position: "center", type: "image" },
           { slide: slide1.src, position: "center", type: "image" },
+          { slide: slide5.src, position: "center", type: "image" },
           { slide: slide2.src, position: "center", type: "image" },
           { slide: slide3.src, position: "center ", type: "image" },
           { slide: slide4.src, position: "center", type: "image" },
           { slide: slide6.src, position: "center", type: "image" },
-          { slide: slide7.src, position: "center", type: "image" },
-          { slide: slide8.src, position: "center", type: "image" },
+          { slide: slide8.src, position: "bottom", type: "image" },
         ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"

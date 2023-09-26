@@ -1,45 +1,62 @@
 ---
+import { Image } from "astro:assets";
 import Text from "../components/system/Text.astro";
+import Sal from "../components/system/Sal.astro";
 import Section from "../components/system/Section.astro";
 import CarouselCard from "../components/system/CarouselCard.astro";
 import Carousel from "../components/system/Carousel.astro";
 import carouselTemp from "../images/carouselTemp.png";
-import { Image } from "astro:assets";
+import yogaDay from "../image/updates/yoga.jpeg";
+import scribble1 from '../fillers/scribble1.svg'
 
 const config = [
-  carouselTemp,
-  carouselTemp,
-  carouselTemp,
-  carouselTemp,
-  carouselTemp,
+  {img: yogaDay, title: "Celebration of Yoga Day"},
+  {img: yogaDay, title: "Celebration of Yoga Day"},
+  {img: yogaDay, title: "Celebration of Yoga Day"},
+  {img: yogaDay, title: "Celebration of Yoga Day"},
+  {img: yogaDay, title: "Celebration of Yoga Day"},
 ];
 const { title, showSocial = true } = Astro.props;
 const heading = title || "Featured Updates";
 ---
 
-<Section class="text-black py-9" style={{
+<Section class="text-black py-9 pr-0" style={{
   background: 'linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)'
 }}>
-  <div class="w-full flex flex-row justify-between items-center">
-    <Text type="h2">Featured <span>Updates</span></Text>
-    <Text type="lg">
-      Follow <a href="#" class="text-primary">@EdifyEcity</a> for more updates!
-    </Text>
+  <div class="w-full flex flex-row max-md:flex-col max-md:items-start justify-between items-center pr-9">
+    <Sal preset="slide-up">
+      <Text type="h2">Featured <span>Updates</span></Text>
+    </Sal>
+    <Sal preset="slide-up" d={300}>
+      <Text type="lg">
+        Follow <a href="#" class="text-primary">@EdifyEcity</a> for more updates!
+      </Text>
+    </Sal>
   </div>
   <p class="p-4"></p>
-  <Carousel class="gap-6" id="featured-updates" arrowsContainerClass="mt-4">
-    {
-      config.map((image) => (
-        <CarouselCard>
-          <Image
-            src={carouselTemp}
-            alt="Carousel Temp Image"
-            class="w-[500px] h-[350px]"
-          />
-        </CarouselCard>
-      ))
-    }
-  </Carousel>
+  <Sal preset="fade">
+    <Carousel class="gap-6 pt-4 pl-4" id="featured-updates" arrowsContainerClass="mt-4">
+      {
+        config.map((image, index) => (
+          <CarouselCard>
+            <div class="relative">
+              <Image
+                src={image.img}
+                alt="Carousel Temp Image"
+                class="w-[500px] h-[350px] max-md:w-[250px] max-md:h-[280px] object-cover object-center rounded-lg"
+              />
+              {index % 2 === 0 && <Image src={scribble1} alt="scribble" class="absolute -top-[15px] -left-[10px]" />}
+              {index % 2 === 1 && <Image src={scribble1} alt="scribble" class="absolute -bottom-[15px] -right-[15px]" />}
+            </div>
+            <Text type="lg" class="text-[#1B2226]/70 mt-[18px]">
+              {image.title}
+            </Text>
+          </CarouselCard>
+        ))
+      }
+      <div class="p-2" />
+    </Carousel>
+  </Sal>
 </Section>
 
 <!-- <div

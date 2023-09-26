@@ -15,17 +15,35 @@ import campus1 from "../images/campus/gas/gallery/1.jpeg";
 import config from "../../config";
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
 import slide1 from "../images/slides/01.webp";
-import slide2 from "../images/slides/02.webp";
 import slide3 from "../images/slides/03.webp";
 import slide4 from "../images/slides/04.webp";
 import slide5 from "../images/slides/05.webp";
 import DeckCard from "../components/DeckCard.astro";
 import Connect from "../components/campus/Connect.astro";
 
+import whyChooseEdify from "../images/whyChooseEdify.png";
+
 import blobBig from "../fillers/blobBig.png";
+import blobBigDark from "../fillers/blobBigDark.png";
 import { Image } from "astro:assets";
+import Carousel from "../components/system/Carousel.astro";
+import CarouselCard from "../components/system/CarouselCard.astro";
 
 const toppers = campusConfig?.toppers;
+
+
+const teams = [
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+]
 ---
 
 <Layout title="Welcome to Astro.">
@@ -41,7 +59,7 @@ const toppers = campusConfig?.toppers;
         slideImages={[
           { slide: slide5.src, position: "center 64%", type: "image" },
           { slide: slide1.src, position: "center", type: "image" },
-          { slide: slide2.src, position: "right 90%", type: "image" },
+          // { slide: slide2.src, position: "right 90%", type: "image" },
           { slide: slide3.src, position: "center ", type: "image" },
           { slide: slide4.src, position: "center", type: "image" },
         ]}
@@ -67,20 +85,20 @@ const toppers = campusConfig?.toppers;
   <Section class="flex flex-col w-full items-center text-left">
     <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
     <div class="pt-8"></div>
-    <Text type="lg">
+    <Text type="lg" class="text-center">
       Our Philosophy: Empowering Through <span class="text-primary"
         >Inquiry</span
       >
     </Text>
-    <div class="pt-4"></div>
+    <div class="pt-4 max-md:pt-2"></div>
     <Text type="h2">Inquiry-based Learning</Text>
-    <div class="pt-8"></div>
-    <Text type="base" class="w-[51%] text-center [&>span]:text-primary">
+    <div class="pt-8 max-md:pt-2"></div>
+    <Text type="base" class="w-[51%] max-md:w-full text-center [&>span]:text-primary">
       Inquiry is the driving factor and leading pedagogical approach that makes
       Edify classrooms so <span>distinctive and unique.</span>
     </Text>
 
-    <div class="pt-16"></div>
+    <div class="pt-16 max-md:pt-6"></div>
 
     <div class="w-full flex flex-col gap-3 text-white">
       <div class="flex flex-row gap-3 h-[350px] max-md:h-auto max-md:flex-col">
@@ -162,7 +180,58 @@ const toppers = campusConfig?.toppers;
     </div>
   </Section>
 
-  <Section class="flex flex-col w-full items-center text-left">
+  <Section class="flex flex-col w-full items-center text-left bg-[#1E1E1E] px-[56px] py-[32px] text-white">
+    <div class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center">
+      <div class="max-md:flex block flex-col items-center">
+        <Text type="h2">Our Vision</Text>
+        <div class="pt-4 max-md:pt-2" />
+        <Text type="lg" class="[&>span]:text-primary text-[28px]">Global citizenship through <span>progressive education.</span></Text>
+        <div class="pt-6 max-md:pt-2" />
+        <Text type="base" class="max-w-[900px]">
+          Edify offers facilities and capable faculty for a variety of activities that students can take part in, such as Literature, Performing Arts, Visual Arts,
+        </Text>
+        <div class="pt-12 max-md:pt-6" />
+        <Image src={blobBigDark} class="w-[268px] max-md:w-[50%]" alt="Decorative Element" />
+      </div>
+      <Image
+        class="w-[324px] max-md:w-[60%] flex-shrink-0"
+        src={whyChooseEdify}
+        alt="Why choose Edify??"
+      />
+    </div>
+    <div class="pt-[54px] max-md:pt-[20px]" />
+    <div class="w-full flex flex-col items-center text-left max-md:text-center">
+      <Text type="h2">Our Mission</Text>
+      <div class="pt-4 max-md:pt-2" />
+      <Text type="lg" class="[&>span]:text-primary text-[28px]">To create an environment <span>conducive to success.</span></Text>
+      <div class="pt-9 max-md:pt-3" />
+      <div class="w-full flex flex-row justify-between max-md:flex-col max-md:gap-4">
+        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
+          <div class="bg-red-200 rounded-md h-[271px]"></div>
+          <div class="pt-6" />
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            <span>This is mission #1</span> that will be 2 lines long I think that will be the sentence
+          </Text>
+        </div>
+        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
+          <div class="bg-red-200 rounded-md h-[271px]"></div>
+          <div class="pt-6" />
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            <span>This is mission #1</span> that will be 2 lines long I think that will be the sentence
+          </Text>
+        </div>
+        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
+          <div class="bg-red-200 rounded-md h-[271px]"></div>
+          <div class="pt-6" />
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            <span>This is mission #1</span> that will be 2 lines long I think that will be the sentence
+          </Text>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="flex flex-col w-full items-center text-left px-0">
     <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
     <div class="pt-8"></div>
     <Text type="h2">Our Management</Text>
@@ -173,112 +242,65 @@ const toppers = campusConfig?.toppers;
     </Text>
 
     <div class="pt-16 max-md:pt-0"></div>
-  </Section>
+    <div class="w-full flex flex-row gap-[73px] max-md:flex-col max-md:pr-[0px] pr-[90px]">
+      <div class="w-[388px] max-md:w-[300px] max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"></div>
+      <div>
+      <div>
+        <div class="pt-1" />
+        <Text type="h2">Principal Speak</Text>
+        <div class="pt-2" />
+        <Text type="lg" class="text-primary">Dr. Manmita Das Raina</Text>
+        <div class="pt-8" />
+        
 
-  <Section class="items-start text-left">
-    <!-- <Text type="subtitle" class='!text-left'>
-      INSPIRING FEATS
-    </Text>
-    <p class="p-2"></p> -->
-    <Text type="h2">Our Facilities</Text>
-    <Text type="lg">
-      Our Philosophy: Empowering Through <span class="text-primary"
-        >Inquiry</span
-      >
-    </Text>
+        <Text type="base">
+          We are passionate about creating a learning institution that is dynamic and constantly seeking excellence to meet the needs of present as well as the future. Schooling in Edify is a journey of personal transformation and appreciating the day to day initiatives pertaining to school programme. At Edify We uncover the hidden potential, unrelenting efforts goes on mentoring and metamorphosing the uncut diamonds into finer Edify gems.
+        </Text>
+      </div>
+      </div>
+    </div>
+    <div class="pt-[118px]" />
+    <div class="w-full flex gap-[73px] max-md:flex-col pl-[90px] max-md:pl-[0px] flex-row-reverse">
+      <div class="w-[388px] max-md:w-full h-[451px] flex-shrink-0 bg-red-100 rounded-tl-[150px] rounded-bl-[16px]"></div>
+      <div>
+      <div>
+        <div class="pt-1" />
+        <Text type="h2">Principal Speak</Text>
+        <div class="pt-2" />
+        <Text type="lg" class="text-primary">Mr. Ashok KM Gowda
+        </Text>
+        <div class="pt-8" />
 
-    <div
-      class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-0 gap-20 max-md:gap-14"
-    >
-      <div
-        class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between"
-      >
-        <DeckCard
-          class="relative left-2 max-md:left-0"
-          images={[
-            { src: slide1.src, alt: "campus1" },
-            { src: slide2.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
-          ]}
-        />
-        <div>
-          <Text type="h3">
-            <span class="text-primary italic">Science</span> Labs
-          </Text>
-          <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety
-            standards, in the fields of Physics, Chemistry, Biology, and
-            Computer Science.
-          </Text>
-          <div class="p-3 max-md:p-2"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold"
-          >
-            View Labs
-          </Text>
-        </div>
+        <Text type="base">
+          We are passionate about creating a learning institution that is dynamic and constantly seeking excellence to meet the needs of present as well as the future. Schooling in Edify is a journey of personal transformation and appreciating the day to day initiatives pertaining to school programme. At Edify We uncover the hidden potential, unrelenting efforts goes on mentoring and metamorphosing the uncut diamonds into finer Edify gems.
+        </Text>
       </div>
-      <div
-        class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between"
-      >
-        <div class="max-md:order-2">
-          <Text type="h3">
-            <span class="text-primary italic">Science</span> Labs
-          </Text>
-          <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety
-            standards, in the fields of Physics, Chemistry, Biology, and
-            Computer Science.
-          </Text>
-          <div class="p-3 max-md:p-2"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold"
-          >
-            View Labs
-          </Text>
-        </div>
-        <DeckCard
-          class="relative"
-          images={[
-            { src: slide1.src, alt: "campus1" },
-            { src: slide2.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
-          ]}
-        />
-      </div>
-      <div
-        class="flex flex-row max-md:flex-col w-full gap-24 max-md:gap-8 justify-between"
-      >
-        <DeckCard
-          class="relative left-2 max-md:left-0"
-          images={[
-            { src: slide1.src, alt: "campus1" },
-            { src: slide2.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
-          ]}
-        />
-        <div>
-          <Text type="h3">
-            <span class="text-primary italic">Science</span> Labs
-          </Text>
-          <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety
-            standards, in the fields of Physics, Chemistry, Biology, and
-            Computer Science.
-          </Text>
-          <div class="p-3 max-md:p-2"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold"
-          >
-            View Labs
-          </Text>
-        </div>
       </div>
     </div>
   </Section>
+
+  <Section>
+    <Text type="h2" class="text-center">Advisory Board</Text>
+    <div class="pt-[38px]" />
+    <div class="overflow-hidden rounded-lg">
+      <Carousel arrowsContainerClass="mt-4" class="gap-1 overflow-scroll" id="advisory-team-carousel">
+        {teams.map(team => (
+          <CarouselCard>
+            <div class="w-[287px] h-[525px] bg-black/30 text-center relative text-white">
+              <div class="absolute w-full h-full pb-[34px] flex flex-col justify-end" style={{
+                background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.7%, #000 100%)',
+              }}>
+                <Text type="lg">Ajit Mantagani</Text>
+                <div class="pt-2" />
+                <Text type="sm" class="text-primary">CEO at nsl textiles and apparel</Text>
+              </div>
+            </div>
+          </CarouselCard>
+        ))}
+      </Carousel>
+    </div>
+  </Section>
+
 
   <div id="contact-us" style="scroll-margin: 60px;">
     <Connect
