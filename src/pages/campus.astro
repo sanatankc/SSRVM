@@ -40,6 +40,7 @@ import transportBus from "../images/transportBus.png";
 import DeckCard from "../components/DeckCard.astro";
 import Connect from "../components/campus/Connect.astro";
 import blobSmall from "../fillers/blobSmall.png";
+import campusBG from "../image/campusBG.jpeg"
 
 import { Image } from "astro:assets";
 import Gallery from "../components/Gallery.astro";
@@ -51,18 +52,14 @@ const toppers = campusConfig?.toppers;
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-      class="h-[calc(100dvh-80px)] flex"
+      class="h-[70svh] flex"
       style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
       <Hero
         config={{ title: "Welcome to Insight Academy", bgImage: campus1 }}
         showSlide={true}
         slideImages={[
-          { slide: slide5.src, position: "center 64%", type: "image" },
-          { slide: slide1.src, position: "center", type: "image" },
-          // { slide: slide2.src, position: "right 90%", type: "image" },
-          { slide: slide3.src, position: "center ", type: "image" },
-          { slide: slide4.src, position: "center", type: "image" },
+          { slide: campusBG.src, position: "center 64%", type: "image" },
         ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
