@@ -31,6 +31,8 @@ import CarouselCard from "../components/system/CarouselCard.astro";
 import what from '../image/academics/what.png'
 import why from '../image/academics/why.png'
 import theme from '../image/academics/theme.png'
+import assesment from '../image/academics/assesment.png'
+import facilities from '../image/academics/facilities.png'
 
 const toppers = campusConfig?.toppers;
 
@@ -53,7 +55,7 @@ const teams = [
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-      class="h-[calc(100dvh-100px)] flex"
+      class="h-[calc(100dvh-80px)] flex"
       style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
       <Hero
@@ -71,19 +73,67 @@ const teams = [
       >
         <div slot="title">
           <Text type="h2">
-            The Edify <span class="text-primary italic">Way</span>
+            Welcome to <span class="text-primary italic">Ekam Edify</span>
           </Text>
           <div class="p-1"></div>
           <Text type="base" class="text-white w-[70%] max-md:w-full">
-            Edify School, Electronic City has its philosophy rooted in the
-            all-round development of the child. Education is envisaged to be
-            holistic and integrated; one that will equip students with the
-            confidence and skills to explore and interpret the world.
+            EKAM Edify is built on a collaboration between K M Trust and MDN Edify Education, situated in Suryanagar near Electronic City, Bangalore. 
           </Text>
         </div>
       </Hero>
     </div>
   </div>
+
+  <Section class="flex flex-col w-full items-center text-left bg-[#1E1E1E] px-[56px] py-[32px] text-white">
+    <div class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center">
+      <div class="max-md:flex block flex-col items-center">
+        <Text type="h2">Our <span>Vision</span></Text>
+        <div class="pt-4 max-md:pt-2" />
+        <Text type="lg" class="[&>span]:text-primary text-[28px]">Discovering the world, <span>one question at a time.</span></Text>
+        <div class="pt-6 max-md:pt-2" />
+        <Text type="base" class="max-w-[900px]">
+          At Edify School, a strong belief in innovative pedagogy fuels our passion to cultivate habits of the mind in our students. As a highly collaborative learning community, we are driven by the power of inquiry, curiosity and progressive learning. We are defined by our commitment to developing a global outlook in our students, and encouraging them to be confident, internationally-minded thinkers who are at home anywhere in the world.
+        </Text>
+        <div class="pt-12 max-md:pt-6" />
+        <Image src={blobBigDark} class="w-[268px] max-md:w-[50%]" alt="Decorative Element" />
+      </div>
+      <Image
+        class="w-[324px] max-md:w-[60%] flex-shrink-0"
+        src={whyChooseEdify}
+        alt="Why choose Edify??"
+      />
+    </div>
+    <div class="pt-[54px] max-md:pt-[20px]" />
+    <div class="w-full flex flex-col items-center text-left max-md:text-center">
+      <Text type="h2">Our <span>Mission</span></Text>
+      <div class="pt-4 max-md:pt-2" />
+      <Text type="lg" class="[&>span]:text-primary text-[28px]">To create an environment <span>conducive to success.</span></Text>
+      <div class="pt-9 max-md:pt-3" />
+      <div class="w-full flex flex-row justify-between max-md:flex-col max-md:gap-4">
+        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
+          <div class="bg-red-200 rounded-md h-[271px]"></div>
+          <div class="pt-6" />
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            Cultivating dynamic leaders, nurturing individual talents for a promising future.
+          </Text>
+        </div>
+        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
+          <div class="bg-red-200 rounded-md h-[271px]"></div>
+          <div class="pt-6" />
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            Fostering independence and resourcefulness for confident, successful individuals
+          </Text>
+        </div>
+        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
+          <div class="bg-red-200 rounded-md h-[271px]"></div>
+          <div class="pt-6" />
+          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
+            Developing active global citizens with high self-esteem, enriching the nation and world.
+          </Text>
+        </div>
+      </div>
+    </div>
+  </Section>
 
   <Section class="flex flex-col w-full items-center text-left">
     <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
@@ -104,172 +154,144 @@ const teams = [
     <div class="pt-16 max-md:pt-6"></div>
 
     <div class="w-full flex flex-col gap-3 text-white">
-      <div class="flex flex-row gap-3 h-[350px] max-md:h-auto max-md:flex-col">
+      <div class="flex flex-row gap-3 h-[515px] max-md:h-auto max-md:flex-col">
         <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
           <div class="w-full h-full absolute top-0 left-0 p-[7px]">
             <div 
               class="w-full h-full"
               style={{
-                background: `linear-gradient(25deg, #000 14.62%, rgba(0, 0, 0, 0.00) 71.68%), url(${why.src})`,
+                background: `url(${why.src})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'top',
               }}
             />
           </div>
           <div
-            class="max-md:min-h-[310px] w-full h-full rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
+            class="max-md:min-h-[310px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
           >
-            <Text type="h2" class="text-[#FFE3C1]">Why?</Text>
-            <div class="p-1"></div>
-            <Text type="base" class="text-white">
-              Our Inquiry based learning education model revolves around
-              ‘Inquiry based learning’ through the ‘ Inquiry based learning
-              approach’ which develops ‘Character, Competence and Content’ in a
-              child.
-            </Text>
+            <div class="px-[37px] py-6" style={{
+              background: 'linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)',
+              backdropFilter: 'blur(5px)',
+            }}>
+              <Text type="h2" class="text-[#FFE3C1]">Why?</Text>
+                <div class="p-1"></div>
+                <Text type="base" class="text-white">
+                  At EKAM Edify, we ignite curiosity by delving into 'Why' questions, resulting in a deeper grasp of concepts, whether inside or outside the classroom.
+                </Text>
+            </div>  
           </div>
         </div>
-        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
-          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
-            <div 
-              class="w-full h-full"
-              style={{
-                background: `linear-gradient(25deg, #000 14.62%, rgba(0, 0, 0, 0.00) 71.68%), url(${what.src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
-          </div>
-          <div
-            class="max-md:min-h-[310px] w-full h-full rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
-          >
-            <Text type="h2" class="text-[#FFE3C1]">What?</Text>
-            <div class="p-1"></div>
-            <Text type="base" class="text-white">
-              Inquiry based learning is a unique and progressive concept that seeks to create a social place of learning and knowledge. Where “Why” is encouraged and “What” is nurtured.
-            </Text>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row gap-3 h-[350px] max-md:h-auto">
-        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
-          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
-            <div 
-              class="w-full h-full"
-              style={{
-                background: `linear-gradient(359deg, #000 6.36%, rgba(0, 0, 0, 0.00) 87.24%), url(${theme.src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
-          </div>
-          <div
-            class="max-md:min-h-[310px] w-full h-full rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
-          >
-            <Text type="h2" class="text-[#FFE3C1]">Themes?</Text>
-            <div class="p-1"></div>
-            <Text type="base" class="text-white">
-              Our Inquiry based learning education model revolves around
-              ‘Inquiry based learning’ through the ‘ Inquiry based learning
-              approach’ which develops ‘Character, Competence and Content’ in a
-              child.
-            </Text>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-row max-md:flex-col gap-3 h-[350px] max-md:h-auto">
-        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
-          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
-            <div 
-              class="w-full h-full"
-              style={{
-                background: `linear-gradient(25deg, #000 14.62%, rgba(0, 0, 0, 0.00) 71.68%), url(${what.src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
-          </div>
-          <div
-            class="max-md:min-h-[310px] w-full h-full rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
-          >
-            <Text type="h2" class="text-[#FFE3C1]">Profiles</Text>
-            <div class="p-1"></div>
-            <Text type="base" class="text-white">
-              Character, Competence, Content
-            </Text>
-          </div>
-        </div>
-        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
-          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
-            <div 
-              class="w-full h-full"
-              style={{
-                background: `linear-gradient(25deg, #000 14.62%, rgba(0, 0, 0, 0.00) 71.68%), url(${what.src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
-          </div>
-          <div
-            class="max-md:min-h-[310px] w-full h-full rounded-[7px] px-[37px] pb-[34px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
-          >
-            <Text type="h2" class="text-[#FFE3C1]">Assesment</Text>
-            <div class="p-1"></div>
-            <Text type="base" class="text-white">
-              Dynamic Presentation on Inquiry based learning.
-            </Text>
-          </div>
-        </div>
-      </div>
-    </div>
-  </Section>
 
-  <Section class="flex flex-col w-full items-center text-left bg-[#1E1E1E] px-[56px] py-[32px] text-white">
-    <div class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center">
-      <div class="max-md:flex block flex-col items-center">
-        <Text type="h2">Our Vision</Text>
-        <div class="pt-4 max-md:pt-2" />
-        <Text type="lg" class="[&>span]:text-primary text-[28px]">Global citizenship through <span>progressive education.</span></Text>
-        <div class="pt-6 max-md:pt-2" />
-        <Text type="base" class="max-w-[900px]">
-          Edify offers facilities and capable faculty for a variety of activities that students can take part in, such as Literature, Performing Arts, Visual Arts,
-        </Text>
-        <div class="pt-12 max-md:pt-6" />
-        <Image src={blobBigDark} class="w-[268px] max-md:w-[50%]" alt="Decorative Element" />
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div 
+              class="w-full h-full"
+              style={{
+                background: `url(${what.src})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+              }}
+            />
+          </div>
+          <div
+            class="max-md:min-h-[310px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
+          >
+            <div class="px-[37px] py-6" style={{
+              background: 'linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)',
+              backdropFilter: 'blur(5px)',
+            }}>
+              <Text type="h2" class="text-[#FFE3C1]">What?</Text>
+                <div class="p-1"></div>
+                <Text type="base" class="text-white">
+                  Engaging in inquiry-based learning means exploring 'What' questions, resulting in a more profound understanding through thoughtful exploration.
+                </Text>
+            </div>  
+          </div>
+        </div>
+
       </div>
-      <Image
-        class="w-[324px] max-md:w-[60%] flex-shrink-0"
-        src={whyChooseEdify}
-        alt="Why choose Edify??"
-      />
-    </div>
-    <div class="pt-[54px] max-md:pt-[20px]" />
-    <div class="w-full flex flex-col items-center text-left max-md:text-center">
-      <Text type="h2">Our Mission</Text>
-      <div class="pt-4 max-md:pt-2" />
-      <Text type="lg" class="[&>span]:text-primary text-[28px]">To create an environment <span>conducive to success.</span></Text>
-      <div class="pt-9 max-md:pt-3" />
-      <div class="w-full flex flex-row justify-between max-md:flex-col max-md:gap-4">
-        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
-          <div class="bg-red-200 rounded-md h-[271px]"></div>
-          <div class="pt-6" />
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            <span>This is mission #1</span> that will be 2 lines long I think that will be the sentence
-          </Text>
+      <div class="flex flex-row gap-3 h-[515px] max-md:h-auto">
+
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div 
+              class="w-full h-full"
+              style={{
+                background: `url(${theme.src})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+              }}
+            />
+          </div>
+          <div
+            class="max-md:min-h-[310px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
+          >
+            <div class="px-[37px] py-6" style={{
+              background: 'linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)',
+              backdropFilter: 'blur(5px)',
+            }}>
+              <Text type="h2" class="text-[#FFE3C1]">Themes</Text>
+                <div class="p-1"></div>
+                <Text type="base" class="text-white">
+                  We incorporate six Trans-disciplinary Themes: Who We Are, Where We Are in Place & Time, How We Express Ourselves, How the World Works, How We Organise Ourselves & Sharing the Planet. These themes promote engaging, memorable learning experiences rooted in everyday life.
+                </Text>
+            </div>  
+          </div>
         </div>
-        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
-          <div class="bg-red-200 rounded-md h-[271px]"></div>
-          <div class="pt-6" />
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            <span>This is mission #1</span> that will be 2 lines long I think that will be the sentence
-          </Text>
+
+      </div>
+      <div class="flex flex-row max-md:flex-col gap-3 h-[515px] max-md:h-auto">
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div 
+              class="w-full h-full"
+              style={{
+                background: `url(${facilities.src})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+              }}
+            />
+          </div>
+          <div
+            class="max-md:min-h-[310px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
+          >
+            <div class="px-[37px] py-6" style={{
+              background: 'linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)',
+              backdropFilter: 'blur(5px)',
+            }}>
+              <Text type="h2" class="text-[#FFE3C1]">Profiles (3C)</Text>
+                <div class="p-1"></div>
+                <Text type="base" class="text-white">
+                  We believe in - instilling Character through values and attitudes; Competence in essential skills and knowledge for success; Content that is relevant and meaningful for today’s day and age.
+                </Text>
+            </div>  
+          </div>
         </div>
-        <div class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full">
-          <div class="bg-red-200 rounded-md h-[271px]"></div>
-          <div class="pt-6" />
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            <span>This is mission #1</span> that will be 2 lines long I think that will be the sentence
-          </Text>
+        <div class="h-full flex-1 bg-[#FFE3C1] rounded-[7px] p-[7px] relative">
+          <div class="w-full h-full absolute top-0 left-0 p-[7px]">
+            <div 
+              class="w-full h-full"
+              style={{
+                background: `url(${assesment.src})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+              }}
+            />
+          </div>
+          <div
+            class="max-md:min-h-[310px] w-full h-full rounded-[7px] flex flex-col justify-end max-md:px-[25px] max-md:pt-8 z-[1] relative"
+          >
+            <div class="px-[37px] py-6" style={{
+              background: 'linear-gradient(180deg, rgba(26, 24, 23, 0.80) 0%, rgba(45, 15, 0, 0.80) 100%)',
+              backdropFilter: 'blur(5px)',
+            }}>
+              <Text type="h2" class="text-[#FFE3C1]">Assessment</Text>
+                <div class="p-1"></div>
+                <Text type="base" class="text-white">
+                  Assessment helps analyse learning, plan for the future, and track progress, ensuring effective teaching and student growth.
+                </Text>
+            </div>  
+          </div>
         </div>
       </div>
     </div>

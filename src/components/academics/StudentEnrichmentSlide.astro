@@ -9,10 +9,11 @@ const { slide, title, subtitle, description, showcase } = Astro.props;
 ---
 
 <div
-  class="swiper-slide rounded-[35px] max-md:px-[0px] px-[16px] py-[24px] text-black"
+  class="swiper-slide rounded-[35px] max-md:px-[0px] px-[16px] py-[0px] text-black"
 >
   <div class="flex flex-row max-md:flex-col gap-14  items-center">
     <DeckCard
+      containerClass="w-[380px] h-[350px]"
       class="relative left-2 max-md:-left-2"
       images={[
         { src: slide1.src, alt: "campus1" },
@@ -25,36 +26,27 @@ const { slide, title, subtitle, description, showcase } = Astro.props;
 
     <div class="px-[16px] text-white">
       <div class="flex flex-row justify-between items-center">
-        <Text type="h3">
-          <span class="text-primary italic">Sports</span> Education
+        <Text type="h3" class="[&_span]:text-primary [&_span]:italic">
+          <slot name="title" />
         </Text>
       </div>
   
       <div class="pt-6"></div>
   
       <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-        At Edify School, we believe that sports are an integral part of the
-        educational process and have integrated sports firmly as a part of our
-        curriculum. Our <span>Sports Education Program (SEP)</span> emphasizes on
-        the development of knowledge, attitudes and skills related to a range of
-        physical and health related activities.
+        <slot name="body" />
         <br />
         <!-- <br />
         The school has an excellent outlook on sports with its national and international size courts and sports infrastructure as well as expert professional coaches to support a variety of sport activities like <span>swimming, basketball, football, volleyball, chess, handball, netball, karate, cricket, skating, lawn tennis, table tennis, badminton.</span> -->
       </Text>
 
-      <p class="pt-6"></p>
+      <p class="pt-3"></p>
       <Text
-        type="sm"
+        type="regular"
         class="uppercase text-primary underline tracking-widest font-semibold"
       >
-        View Labs
+        <slot name="cta" />
       </Text>
-    </div>
-
-
-    <div>
-
     </div>
   </div>
 </div>

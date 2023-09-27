@@ -21,9 +21,6 @@ import wbr from '../../image/pedagogy/wbr.png'
     <div class="max-md:order-2">
       <Sal preset="slide-up" d="100" t="400">
         <Text type="h2">
-          
-          
-          
           Aspiring <span class="relative"> for Excellence</span>
         </Text>
       </Sal>
@@ -62,18 +59,39 @@ import wbr from '../../image/pedagogy/wbr.png'
         alt="Why choose Edify??"
       />
     </Sal>
-    <div class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -left-[50px] top-[280px] -z-[1]">
+    <div class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -left-[50px] top-[280px] -z-[1] opacity-60">
       <img src={gridBG.src} class="w-full h-full" />
     </div>
   </div>
 
-  <div class="flex flex-row justify-around">
-      <Image src={threeC} class="w-[71px] object-contain max-md:w-[200px]" alt="3C logo" />
-      <Image src={eca} class="w-[116px] object-contain max-md:w-[200px]" alt="3C logo" />
-      <Image src={british} class="w-[118px] object-contain max-md:w-[200px]" alt="3C logo" />
-      <Image src={gps} class="w-[63px] object-contain max-md:w-[200px]" alt="3C logo" />
-      <Image src={trinity} class="w-[63px] object-contain max-md:w-[200px]" alt="3C logo" />
-      <Image src={wbr} class="w-[63px] object-contain max-md:w-[200px]" alt="3C logo" />
+  <div class="pt-6" />
+    <Sal class="flex bg-white flex-row flex-wrap justify-around items-center border py-[21px] border-[#1c1c1c]/40 rounded-lg max-md:px-8">
+      <div class="flex flex-col items-center h-[120px] max-md:h-auto justify-around">
+        <Image src={threeC} class="w-[71px] max-md:w-[70px] object-contain" alt="3C logo" />
+        <Text type="subtitle" class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center">3C <br />Curriculum</Text>
+      </div>
+      <div class="flex flex-col items-center h-[120px] max-md:h-auto justify-around">
+        <Image src={eca} class="w-[116px] object-contain max-md:w-[116px]" alt="3C logo" />
+        <Text type="subtitle" class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center">Early CHILDHOOD <br /> ASSOCIATION</Text>
+      </div>
+      <div class="flex flex-col items-center h-[120px] max-md:h-auto justify-around">
+        <Image src={british} class="w-[118px] object-contain max-md:w-[118px]" alt="3C logo" />
+        <Text type="subtitle" class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center">British Council <br /> Library</Text>
+      </div>
+      <div class="flex flex-col items-center h-[120px] max-md:h-auto justify-around">
+        <Image src={gps} class="w-[63px] object-contain max-md:w-[63px] invert" alt="3C logo" />
+        <Text type="subtitle" class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center">Great Place <br /> To Study</Text>
 
-  </div>
+      </div>
+      <div class="flex flex-col items-center h-[120px] max-md:h-auto justify-around">
+        <Image src={trinity} class="w-[94px] object-contain max-md:w-[94px]" alt="3C logo" />
+        <Text type="subtitle" class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center">Trinity College <br /> London</Text>
+
+      </div>
+      <div class="flex flex-col items-center h-[120px] max-md:h-auto justify-around">
+        <Image src={wbr} class="w-[111px] object-contain max-md:w-[111px]" alt="3C logo" />
+        <Text type="subtitle" class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center">World Book <br /> of Records</Text>
+      </div>
+      
+  </Sal>
 </Section>

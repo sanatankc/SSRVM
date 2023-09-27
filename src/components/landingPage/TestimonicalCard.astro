@@ -32,7 +32,9 @@ const {image,quote,author,ctaText,ctaLink,imageFade=false,className} = Astro.pro
         >
             {quote}
         </Text>
-        <Text type="sm" class="tracking-[1.8px] text-primary uppercase font-bold">- Harssha (grade 10)</Text>
+        <Text type="sm" class="tracking-[1.8px] text-primary uppercase font-bold">
+          {author}
+        </Text>
      {ctaText &&
       <div data-video-open="0">
         <Button class='mt-4'>

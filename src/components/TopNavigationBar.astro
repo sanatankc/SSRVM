@@ -20,20 +20,14 @@ const menu: Array<Menu> = [
   {
     title: "About Us",
     link: "/about-us",
-    // submenu: [
-    //   {
-    //     title: 'About School #1',
-    //     link: '/about-us'
-    //   },
-    //   {
-    //     title: 'About School #2',
-    //     link: '/about-us'
-    //   }
-    // ]
   },
   {
     title: "Academics",
     link: "/academics",
+    submenu: [
+      { title: 'Curriculum', link: '/academics' },
+      { title: 'Clubs', link: '/clubs' }
+    ]
   },
   {
     title: "Campus",
