@@ -106,8 +106,12 @@ const toppers = campusConfig?.toppers;
           >
         </Text>
       </div>
-      <div class="w-[130px] max-md:w-[60px]">
-        <Image class="w-full h-full" src={blobSmall} alt="blob" />
+      <div class="w-[130px] max-md:w-[60px] flex-shrink-0">
+        <Image
+          class="w-full h-full object-contain"
+          src={blobSmall}
+          alt="blob"
+        />
       </div>
     </div>
 
