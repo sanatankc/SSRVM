@@ -98,7 +98,7 @@ const activePath = Astro.url.pathname;
                     href={item.link}
                     class:list={[
                       "text-white font-semibold hover:underline font-sans text-primary",
-                      item.link === activePath && "!text-primary",
+                      (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) && "!text-primary",
                     ]}
                   >
                     {item.title}
@@ -119,7 +119,7 @@ const activePath = Astro.url.pathname;
                       clip-rule="evenodd"
                       d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z"
                       class={
-                        item.link === activePath ? "fill-primary" : "fill-white"
+                        (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) ? "fill-primary" : "fill-white"
                       }
                     />
                   </svg>
@@ -146,7 +146,7 @@ const activePath = Astro.url.pathname;
                         href={subitem.link}
                         class:list={[
                           "text-white font-semibold hover:underline font-sans",
-                          // item.link === activePath && 'text-primary'
+                          // subitem.link === activePath && '!text-primary'
                         ]}
                       >
                         {subitem.title}
