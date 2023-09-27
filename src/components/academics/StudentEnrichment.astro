@@ -7,14 +7,30 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import slide1 from "../../images/slides/01.webp";
+import slide1 from "../../image/academics/skating.jpg";
+import slide2 from "../../image/academics/throwball.jpg";
+import slide3 from "../../image/academics/crick.jpeg";
+import slide4 from "../../image/academics/basketball.jpg";
+import slide5 from "../../image/academics/footy.jpeg";
+
+import slide6 from "../../image/academics/dance.jpeg";
+import slide7 from "../../image/academics/music2.jpeg";
+import slide8 from "../../image/academics/artgallery.jpeg";
+
+// import slide3 from "../../images/slides/01.webp";
+
 import { Image } from "astro:assets";
 import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
 import blobSmallDark from "../../fillers/blobSmallDark.png";
 import bulletPoint from "../../fillers/bulletPoint.png";
 import DeckCard from "../DeckCard.astro";
 import Gallery from "../Gallery.astro";
-import kid from "../../image/academics/kid.png";
+
+import wellness from "../../image/academics/wellness.png";
+import spoken from "../../image/academics/spoken.png";
+import spoken from "../../image/academics/spoken.png";
+import spoken from "../../image/academics/spoken.png";
+import spoken from "../../image/academics/spoken.png";
 ---
 
 <div
@@ -290,8 +306,8 @@ import kid from "../../image/academics/kid.png";
             containerClass="w-[380px] h-[350px] max-md:w-[280px] max-md:h-[260px]"
             class="relative left-2 max-md:-left-2"
             images={[
-              { src: slide1.src, alt: "campus1" },
-              { src: slide1.src, alt: "campus1" },
+              { src: slide1.src, alt: "sports1" },
+              { src: slide2.src, alt: "sports2" },
               // { src: slide2.src, alt: "campus2" },
               // {src: slide3, alt: 'campus3'},
             ]}
@@ -360,8 +376,8 @@ import kid from "../../image/academics/kid.png";
             containerClass="w-[380px] h-[350px] max-md:w-[280px] max-md:h-[260px]"
             class="relative left-2 max-md:-left-2"
             images={[
-              { src: slide1.src, alt: "campus1" },
-              { src: slide1.src, alt: "campus1" },
+              { src: slide5.src, alt: "campus1" },
+              { src: slide6.src, alt: "campus1" },
               // { src: slide2.src, alt: "campus2" },
               // {src: slide3, alt: 'campus3'},
             ]}
@@ -385,8 +401,8 @@ import kid from "../../image/academics/kid.png";
           Student <span>Wellness</span>
         </div>
         <Image
-          src={kid}
-          alt="kid"
+          src={wellness}
+          alt="wellness"
           class="w-[320px] h-[400px] max-md:w-[260px] max-md:h-[280px] object-contain"
           slot="thumb"
         />
@@ -434,8 +450,8 @@ import kid from "../../image/academics/kid.png";
 
       <StudentEnrichmentSlide>
         <Image
-          src={kid}
-          alt="kid"
+          src={spoken}
+          alt="spoken"
           class="w-[320px] h-[400px] max-md:w-[260px] max-md:h-[280px] object-contain"
           slot="thumb"
         />
@@ -485,8 +501,8 @@ import kid from "../../image/academics/kid.png";
 
       <StudentEnrichmentSlide>
         <Image
-          src={kid}
-          alt="kid"
+          src={wellness}
+          alt="wellness"
           class="w-[320px] h-[400px] max-md:w-[260px] max-md:h-[280px] object-contain"
           slot="thumb"
         />
@@ -506,8 +522,8 @@ import kid from "../../image/academics/kid.png";
 
       <StudentEnrichmentSlide>
         <Image
-          src={kid}
-          alt="kid"
+          src={wellness}
+          alt="wellness"
           class="w-[320px] h-[400px] max-md:w-[260px] max-md:h-[280px] object-contain"
           slot="thumb"
         />
@@ -559,11 +575,21 @@ import kid from "../../image/academics/kid.png";
 
   <Gallery
     id="sports-education"
-    gallery={[{ src: slide1.src, caption: "sports sports" }]}
+    gallery={[
+      { src: slide2.src, caption: "Volleyball" },
+      { src: slide1.src, caption: "Skating" },
+      { src: slide3.src, caption: "Cricket" },
+      { src: slide4.src, caption: "Basketball" },
+      { src: slide5.src, caption: "Football" },
+    ]}
   />
   <Gallery
     id="visual-arts"
-    gallery={[{ src: slide1.src, caption: "visual-arts" }]}
+    gallery={[
+      { src: slide6.src, caption: "Dance" },
+      { src: slide7.src, caption: "Music" },
+      { src: slide8.src, caption: "Art Gallery" },
+    ]}
   />
 </div>
 

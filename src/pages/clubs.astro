@@ -28,89 +28,139 @@ import { Image } from "astro:assets";
 import Carousel from "../components/system/Carousel.astro";
 import CarouselCard from "../components/system/CarouselCard.astro";
 
-import what from '../image/academics/what.png'
-import why from '../image/academics/why.png'
-import theme from '../image/academics/theme.png'
+import what from "../image/academics/what.png";
+import why from "../image/academics/why.png";
+import theme from "../image/academics/theme.png";
 
 const toppers = campusConfig?.toppers;
 
-
 const teams = [
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-]
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+  {
+    image: "",
+    name: "Ajit Mantagani",
+    role: "CEO at nsl textiles and apparel",
+  },
+];
 
-import art from '../images/clubs/art.png'
-import debate from '../images/clubs/debate.png'
-import eco from '../images/clubs/eco.png'
-import firstFoot from '../images/clubs/firstFoot.png'
-import heritage from '../images/clubs/heritage.png'
-import math from '../images/clubs/math.png'
-import scouts from '../images/clubs/scouts.png'
-import science from '../images/clubs/science.png'
-import literary from '../images/clubs/literary.png'
+import debate from "../image/clubs/debate.png";
+import mun from "../image/clubs/mun.jpeg";
+import design from "../image/clubs/cs-1.jpeg";
+import eco from "../image/clubs/art.jpeg";
+import humane from "../image/clubs/humane.jpeg";
+import music from "../image/clubs/music2.jpeg";
+import literary from "../image/clubs/literary.jpeg";
+import visarts from "../image/clubs/art.jpeg";
+import cuisine from "../image/clubs/art.jpeg";
+import perfarts from "../image/clubs/dance.jpeg";
 
-import clubsBG from '../image/clubs/bg.jpeg'
+import clubsBG from "../image/clubs/bg.jpeg";
 
 const clubs = [
-  { 
+  {
     title: ["MUN", "Club"],
-    description: "The Model United Nations Club offers students a practical understanding of <span>global diplomacy</span>. Immersed in discussions and procedural rules, they thrive in an atmosphere where mock MUNs prepare them for school-level conferences.",
-    thumbnail: debate,
+    description:
+      "The Model United Nations Club offers students a practical understanding of <span>global diplomacy</span>. Immersed in discussions and procedural rules, they thrive in an atmosphere where mock MUNs prepare them for school-level conferences.",
+    thumbnail: mun,
   },
-  { 
+  {
     title: ["Design & Technology", "Club"],
-    description: "Students learn to use modern tools like <span>Photoshop and Animation</span> to learn about design concepts. They learn how to innovate and create prototypes, applying basic design principles through collaborative experiments.",
-    thumbnail: debate,
+    description:
+      "Students learn to use modern tools like <span>Photoshop and Animation</span> to learn about design concepts. They learn how to innovate and create prototypes, applying basic design principles through collaborative experiments.",
+    thumbnail: design,
   },
-  { 
+  {
     title: ["ECO Sustainability", "Club"],
-    description: "Students learn about <span>eco-friendly practices</span> and methods to make a positive impact on the environment. Through campaigns, students raise community awareness about the importance of going green.",
-    thumbnail: debate,
+    description:
+      "Students learn about <span>eco-friendly practices</span> and methods to make a positive impact on the environment. Through campaigns, students raise community awareness about the importance of going green.",
+    thumbnail: eco,
   },
-    { 
+  {
     title: ["Community & Humane", "Society"],
-    description: "Students learn to care for their community through drives and <span>outreach programs</span>. They also actively support and empower the less privileged while honing valuable life skills in the process.",
-    thumbnail: debate,
+    description:
+      "Students learn to care for their community through drives and <span>outreach programs</span>. They also actively support and empower the less privileged while honing valuable life skills in the process.",
+    thumbnail: humane,
   },
-  { 
+  {
     title: ["Music", "Club"],
-    description: "At Ekam, musical talents are celebrated with enthusiasm and passion. It caters to diverse musical tastes, offering voice coaching, <span>musical notation sessions, instrument lessons</span>, and opportunities for composing original scores.",
-    thumbnail: debate,
+    description:
+      "At Ekam, musical talents are celebrated with enthusiasm and passion. It caters to diverse musical tastes, offering voice coaching, <span>musical notation sessions, instrument lessons</span>, and opportunities for composing original scores.",
+    thumbnail: music,
   },
-  { 
+  {
     title: ["Literary", "Club"],
-    description: "Students participate in <span>creative writing, book reviews, poetry readings, and storytelling sessions</span> to foster language skills and create a vibrant space for literary exploration.",
-    thumbnail: debate,
+    description:
+      "Students participate in <span>creative writing, book reviews, poetry readings, and storytelling sessions</span> to foster language skills and create a vibrant space for literary exploration.",
+    thumbnail: literary,
   },
-  { 
+  {
     title: ["Visual Arts", "Club"],
-    description: "Encouraging students to bring imagination to life, we use various materials and processes including <span>paint, paper, sculpture, and pottery</span>. The club invites students to perceive colors, shapes, textures, and designs differently.",
-    thumbnail: debate,
+    description:
+      "Encouraging students to bring imagination to life, we use various materials and processes including <span>paint, paper, sculpture, and pottery</span>. The club invites students to perceive colors, shapes, textures, and designs differently.",
+    thumbnail: visarts,
   },
-  { 
+  {
     title: ["Performing Arts", "Club"],
-    description: "This club supports active expression in <span>contemporary, classical, and western dance, drama, and theatre</span>. Students explore diverse styles, from narrative dances to plays, fostering excellence in their chosen form.",
-    thumbnail: debate,
+    description:
+      "This club supports active expression in <span>contemporary, classical, and western dance, drama, and theatre</span>. Students explore diverse styles, from narrative dances to plays, fostering excellence in their chosen form.",
+    thumbnail: perfarts,
   },
-  { 
+  {
     title: ["Cuisine", "Club"],
-    description: "The Cuisine club encourages a passion for culinary arts and cooking. Students explore <span>flameless cooking, preparing dishes from global cuisines</span> and develop their understanding of flavor, texture, & cooking techniques.",
-    thumbnail: debate,
+    description:
+      "The Cuisine club encourages a passion for culinary arts and cooking. Students explore <span>flameless cooking, preparing dishes from global cuisines</span> and develop their understanding of flavor, texture, & cooking techniques.",
+    thumbnail: cuisine,
   },
-]
-
+];
 ---
 
-<Layout title="Clubs | Best International K12 Primary Schools South bengalore Electronic City">
+<Layout
+  title="Clubs | Best International K12 Primary Schools South bengalore Electronic City"
+>
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
@@ -132,7 +182,8 @@ const clubs = [
           </Text>
           <div class="p-1"></div>
           <Text type="base" class="text-white max-md:w-full">
-            Engage in Personalised Learning and Enrichment through Our Dynamic Clubs
+            Engage in Personalised Learning and Enrichment through Our Dynamic
+            Clubs
           </Text>
           <br />
         </div>
@@ -141,30 +192,35 @@ const clubs = [
   </div>
 
   <Section class="flex flex-row flex-wrap gap-5 justify-center items-center">
-      {clubs.map(club => (
-        <div 
+    {
+      clubs.map((club) => (
+        <div
           style={{
-            background: 'linear-gradient(0deg, #FFF7F2 -2.33%, #FFF 29.76%)',
-            backdropFilter: 'blur(16px)',
-            borderRadius: '24px'
-          }} 
-          class='p-4 w-[400px] min-h-[530px] border-[#B8B8B8]/60 border'
+            background: "linear-gradient(0deg, #FFF7F2 -2.33%, #FFF 29.76%)",
+            backdropFilter: "blur(16px)",
+            borderRadius: "24px",
+          }}
+          class="p-4 w-[400px] min-h-[530px] border-[#B8B8B8]/60 border"
         >
           <div
-            class='w-full h-[320px] bg-cover bg-center rounded-2xl' 
+            class="w-full h-[320px] bg-cover bg-center rounded-2xl"
             style={{
-              backgroundImage: `url(${club.thumbnail.src})`
+              backgroundImage: `url(${club.thumbnail.src})`,
             }}
-          ></div>
-          <Text type='h4' class='mt-4'>
-            <span class="italic text-primary">{club.title[0]}</span>{' '}<span>{club.title[1]}</span>
+          />
+          <Text type="h4" class="mt-4">
+            <span class="italic text-primary">{club.title[0]}</span>{" "}
+            <span>{club.title[1]}</span>
           </Text>
-          <Text type='sm' class='mt-2 [&>span]:text-primary [&>span]:font-bold' set:html={club.description}></Text>
+          <Text
+            type="sm"
+            class="mt-2 [&>span]:text-primary [&>span]:font-bold"
+            set:html={club.description}
+          />
         </div>
-      ))}
+      ))
+    }
   </Section>
-  
-  
 
   <GoToCta />
   <Footer />
