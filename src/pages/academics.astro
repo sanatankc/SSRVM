@@ -13,10 +13,10 @@ import Pedagogy from "../components/academics/pedagogy.astro";
 
 import StudentEnrichment from "../components/academics/StudentEnrichment.astro";
 
-import academic1 from "../images/academic/1.png";
-import academic2 from "../images/academic/2.png";
-import academic3 from "../images/academic/3.png";
-import academic4 from "../images/academic/4.png";
+import academic1 from "../image/academics/elementary.jpeg";
+import academic2 from "../image/academics/primary.jpeg";
+import academic3 from "../image/academics/middle.png";
+import academic4 from "../image/academics/senior.png";
 
 import circleScribble from "../fillers/circleScribble.png";
 
@@ -24,7 +24,7 @@ import config from "../../config";
 import TopperCard from "../components/TopperCard.astro";
 import Card from "../components/academics/Card.astro";
 
-import gridBG from "../fillers/gridBG.svg"
+import gridBG from "../fillers/gridBG.svg";
 import { Image } from "astro:assets";
 
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
@@ -40,108 +40,196 @@ const toppers = campusConfig?.toppers;
   <div
     class="w-full h-[284px] max-md:h-[190px] flex flex-col items-center justify-center"
     style={{
-      background: `url(${titleBG.src})`
+      background: `url(${titleBG.src})`,
     }}
   >
     <Text type="h2">
       <span class="relative !text-black !not-italic">
         Our
         <div class="w-[100px] absolute -top-4 -left-10 -z-[1]">
-          <Image src={circleScribble} alt="circle scribble" class="w-full h-full" />
+          <Image
+            src={circleScribble}
+            alt="circle scribble"
+            class="w-full h-full"
+          />
         </div>
       </span> Academic <span>Programs</span>
     </Text>
     <div class="p-2"></div>
-    <Text type="lg" class="text-center">Curriculum Fueled by Inquiry,<br class="max-md:block hidden" /> Enriched by Exploration</Text>
+    <Text type="lg" class="text-center">
+      Curriculum Fueled by Inquiry,<br class="max-md:block hidden" /> Enriched
+      by Exploration
+    </Text>
   </div>
 
-
   <Pedagogy />
-  
 
   <Section class="pt-0 relative overflow-hidden max-md:!px-0">
-    <div class='relative z-10 flex flex-col items-center'>
+    <div class="relative z-10 flex flex-col items-center">
       <div class="max-md:px-[20px] w-full flex flex-col items-center">
-        <Text type='h2' class='mt-3'>Academic{' '}<span class='text-accent2'>Overview</span></Text>
-        <div class="pt-8" />
-        <Text type='base' class="w-full max-w-[900px] text-center">Embracing the NEP 2020 framework, our school offers a comprehensive academic journey spanning Early Years to Secondary, with specialized training for competitive exams.</Text>
-        <div class="pt-4" />
+        <Text type="h2" class="mt-3">
+          Academic{" "}<span class="text-accent2">Overview</span>
+        </Text>
+        <div class="pt-8"></div>
+        <Text type="base" class="w-full max-w-[900px] text-center">
+          Embracing the NEP 2020 framework, our school offers a comprehensive
+          academic journey spanning Early Years to Secondary, with specialized
+          training for competitive exams.
+        </Text>
+        <div class="pt-4"></div>
       </div>
-      <div class="w-[1100px] max-md:w-full max-md:h-[450px] h-[537px] flex flex-col mt-8">
+      <div
+        class="w-[1100px] max-md:w-full max-md:h-[450px] h-[537px] flex flex-col mt-8"
+      >
         <div class="flex flex-row flex-1 border-b border-black/20">
-          <div class="flex-1 flex px-1 flex-col items-center justify-center border-r border-black/20">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-black">Early Years</Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
-              Play Group -<br class='max-md:block hidden' /> Grade II
+          <div
+            class="flex-1 flex px-1 flex-col items-center justify-center border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Early Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
+              Play Group -<br class="max-md:block hidden" /> Grade II
             </Text>
           </div>
-          <div class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-black flex items-start">
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black flex items-start"
+            >
               CBSE
             </Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               K.G - Grade XII
             </Text>
           </div>
           <div class="flex-1 flex px-1 items-center justify-center flex-col">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-black">Primary Years</Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Primary Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               Grade III - V
             </Text>
           </div>
         </div>
         <div class="flex flex-row flex-1 border-b border-black/20">
-          <div class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-[#6F322E]">IIT-JEE Training</Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-[#6F322E]"
+            >
+              IIT-JEE Training
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               Grade VI - XII
             </Text>
           </div>
-          <div class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-primary">NEP Policy <br class="hidden max-md:block"   /> 2020</Text>
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-primary"
+            >
+              NEP Policy <br class="hidden max-md:block" /> 2020
+            </Text>
             <!-- <Text type='base' class='mt-1 font-semibold text-center'>
             </Text> -->
-            
           </div>
 
           <div class="flex-1 flex px-1 items-center justify-center flex-col">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-[#6F322E]">NEET Training</Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-[#6F322E]"
+            >
+              NEET Training
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               Grade VI - XII
             </Text>
           </div>
-
         </div>
-        
-        <div class="flex flex-row flex-1">
 
-          <div class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-black">Middle Years</Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+        <div class="flex flex-row flex-1">
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Middle Years
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               Grade VI - VIII
             </Text>
           </div>
-          <div class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-black">Cambridge (CIE)</Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+          <div
+            class="flex-1 flex px-1 items-center justify-center flex-col border-r border-black/20"
+          >
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black"
+            >
+              Cambridge (CIE)
+            </Text>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               UKG - IGCSE
             </Text>
           </div>
 
           <div class="flex-1 flex px-1 items-center justify-center flex-col">
-            <Text type="h2" class="max-md:!text-[17px] max-md:text-center text-[32px] text-black flex flex-row items-start">
+            <Text
+              type="h2"
+              class="max-md:!text-[17px] max-md:text-center text-[32px] text-black flex flex-row items-start"
+            >
               Secondary Years
             </Text>
-            <Text type='sm' class='max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]'>
+            <Text
+              type="sm"
+              class="max-md:mt-1 mt-3 max-md:!text-[13px] font-semibold text-center text-[19px]"
+            >
               Grade IX - XII
             </Text>
           </div>
-          
         </div>
       </div>
     </div>
 
-    <div class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -right-[400px] top-[440px] -z-[1] opacity-60">
+    <div
+      class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -right-[400px] top-[440px] -z-[1] opacity-60"
+    >
       <img src={gridBG.src} class="w-full h-full" />
     </div>
   </Section>
@@ -198,11 +286,11 @@ const toppers = campusConfig?.toppers;
         title={["Senior Program", "(Grades 9-12)"]}
         layout="right"
         border
-        bodyContent="This will be a small writeup on the academics offered. This has to be a 4-5 line paragraph covering all the aspects of the academics offered in the school for this grade."
+        bodyContent="Building on the foundations laid in Middle School, our Senior Program cultivates critical thinking and goal-setting. Students engage with diverse subjects, gaining a holistic perspective and preparing them for real-world challenges with reflective thinking and language mastery."
         bulletPoints={[
-          "Academic Highlight - I",
-          "Academic Highlight - II",
-          "Academic Highlight - III",
+          // "Academic Highlight - I",
+          // "Academic Highlight - II",
+          // "Academic Highlight - III",
         ]}
       />
     </Section>

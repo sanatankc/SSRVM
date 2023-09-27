@@ -30,41 +30,41 @@ import slide6 from "../image/slides/6.jpeg";
 import slide7 from "../image/slides/7.jpg";
 import slide8 from "../image/slides/8.jpeg";
 
-import topper1 from "../image/homepage/topper1.png"
-import topper2 from "../image/homepage/topper2.png"
+import topper1 from "../image/homepage/topper1.png";
+import topper2 from "../image/homepage/topper2.png";
 
 import achievementsBG from "../image/textures/achievementsBG.png";
 
 const toppers = [
-      {
-        name: 'Gaurav Vishant Naik',
-        ranks: 'Rank 1',
-        marks: '98%',
-        image: topper1,
-        year: '2022-23 batch',
-      },
-      {
-        name: 'Laksh S. ',
-        ranks: 'Rank 2',
-        marks: '96%',
-        image: topper2,
-        year: '2021-22 batch',
-      },
-      {
-        name: 'Harsh Shalgar',
-        ranks: 'Rank 3',
-        marks: '98.8%',
-        image: topper1,
-        year: '2021-22 batch',
-      },
-      {
-        name: 'Hasini Gupta PS',
-        ranks: 'Rank 4',
-        marks: '89%',
-        image: topper2,
-        year: '2022-23 batch',
-      },
-    ]
+  {
+    name: "Gaurav Vishant Naik",
+    ranks: "Rank 1",
+    marks: "98%",
+    image: topper1,
+    year: "2022-23 batch",
+  },
+  {
+    name: "Laksh S. ",
+    ranks: "Rank 2",
+    marks: "96%",
+    image: topper2,
+    year: "2021-22 batch",
+  },
+  {
+    name: "Harsh Shalgar",
+    ranks: "Rank 3",
+    marks: "98.8%",
+    image: topper1,
+    year: "2021-22 batch",
+  },
+  {
+    name: "Hasini Gupta PS",
+    ranks: "Rank 4",
+    marks: "89%",
+    image: topper2,
+    year: "2022-23 batch",
+  },
+];
 ---
 
 <Layout title="">
@@ -77,42 +77,103 @@ const toppers = [
       <Hero
         showSlide={true}
         slideImages={[
-          {slide: [
-            { src: slide8.src, media: "(min-width: 768px)", position: 'top', },
-            { src: slide8.src, media: "(max-width: 768px)", position: 'top', },                
-          ], picture: true, type: 'image', position: 'bottom'},
-          {slide: [
-            { src: slide7.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide7.src, media: "(max-width: 768px)" },
-          ], type: 'image', picture: true},
-          {slide: [
-            { src: slide1.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide1.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
-          {slide: [
-            { src: slide5.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide5.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
-          {slide: [
-            { src: slide2.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide2.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
-          {slide: [
-            { src: slide3.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide3.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
-          {slide: [
-            { src: slide4.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide4.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
-          {slide: [
-            { src: slide6.src, media: "(min-width: 768px)", position: 'center 64%', },
-            { src: slide6.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
-          {slide: [
-            { src: slide8.src, media: "(min-width: 768px)", position: 'bottom', },
-            { src: slide8.src, media: "(max-width: 768px)" },                
-          ], picture: true, type: 'image'},
+          {
+            slide: [
+              {
+                src: slide7.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide7.src, media: "(max-width: 768px)" },
+            ],
+            type: "image",
+            picture: true,
+          },
+          {
+            slide: [
+              {
+                src: slide1.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide1.src, media: "(max-width: 768px)" },
+            ],
+            picture: true,
+            type: "image",
+          },
+          {
+            slide: [
+              {
+                src: slide5.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide5.src, media: "(max-width: 768px)" },
+            ],
+            picture: true,
+            type: "image",
+          },
+          {
+            slide: [
+              {
+                src: slide2.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide2.src, media: "(max-width: 768px)" },
+            ],
+            picture: true,
+            type: "image",
+          },
+          {
+            slide: [
+              {
+                src: slide3.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide3.src, media: "(max-width: 768px)" },
+            ],
+            picture: true,
+            type: "image",
+          },
+          {
+            slide: [
+              {
+                src: slide4.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide4.src, media: "(max-width: 768px)" },
+            ],
+            picture: true,
+            type: "image",
+          },
+          {
+            slide: [
+              {
+                src: slide6.src,
+                media: "(min-width: 768px)",
+                position: "center 64%",
+              },
+              { src: slide6.src, media: "(max-width: 768px)" },
+            ],
+            picture: true,
+            type: "image",
+          },
+          {
+            slide: [
+              { src: slide8.src, media: "(min-width: 768px)", position: "top" },
+              { src: slide8.src, media: "(max-width: 768px)", position: "top" },
+            ],
+            picture: true,
+            type: "image",
+            position: "bottom",
+          },
+          // {slide: [
+          //   { src: slide8.src, media: "(min-width: 768px)", position: 'bottom', },
+          //   { src: slide8.src, media: "(max-width: 768px)" },
+          // ], picture: true, type: 'image'},
         ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
@@ -140,7 +201,7 @@ const toppers = [
     backgroundSize: "cover",
   }}
 >
-<div class="pt-[30px]"></div>
+  <div class="pt-[30px]"></div>
   <Text type="subtitle">INSPIRING FEATS</Text>
   <p class="p-2"></p>
   <Text type="h2">
