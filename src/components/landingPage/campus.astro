@@ -4,10 +4,11 @@ import Heading from "../system/Heading.astro";
 import Text from "../system/Text.astro";
 import config from "../../../config";
 import CampusCard from "./campusCard.astro";
-import campusBG from "../../images/campusBG.jpeg";
+// import campusBG  from "../../images/campusBG.jpeg";
+import campusBGMb from "../../image/mb-campusbg.jpg";
 // import campusPreview1 from '../../images/campusPreview1.png'
 // import campusPreview2 from '../../images/campusPreview2.png'
-// import campusPreview3 from '../../images/campusPreview3.png'
+// import campuMbsPreview3 from '../../images/campusPreview3.png'
 // import campusPreview4 from '../../images/campusPreview4.png'
 
 import campusBG from "../../image/homepage/campusfacilities/campusBG.jpeg";
@@ -29,7 +30,12 @@ const campus = config.campus;
   <Image
     src={campusBG}
     alt="campusBG"
-    class="w-full h-full absolute top-0 left-0"
+    class="w-full h-full absolute top-0 left-0 max-md:hidden block"
+  />
+  <Image
+    src={campusBGMb}
+    alt="campusBG"
+    class="w-full h-full absolute top-0 left-0 max-md:block hidden"
   />
   <div class="w-full h-full bg-[#1c1c1c]/80 absolute"></div>
   <div class="absolute w-full h-full top-0 left-0">
@@ -76,7 +82,7 @@ const campus = config.campus;
       />
     </div>
     <div
-      class="w-[247px] h-[187px] max-md:w-[150px] max-md:h-[90px] bottom-[7%] max-md:bottom-[14%] max-md:left-[30%] left-[40%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+      class="w-[247px] h-[187px] max-md:w-[110px] max-md:h-[70px] bottom-[7%] max-md:bottom-[16%] max-md:left-[36%] left-[40%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
     >
       <Image
         data-campus-image
