@@ -22,8 +22,8 @@ const { topper = {} } = Astro.props;
       class="text-center text-white font-sans font-bold"
       set:html={topper.name}
     />
-    <Text type="h4" class="text-primary font-sans font-bold">97.8%</Text>
-    <Text type="sm" class="text-white uppercase font-sans font-bold">2022-23 batch</Text>
+    <Text type="h4" class="text-primary font-sans font-bold">{topper.marks}</Text>
+    <Text type="sm" class="text-white uppercase font-sans font-bold">{topper.year}</Text>
   </div>
   <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%] z-10">
     <svg

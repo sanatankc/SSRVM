@@ -29,45 +29,13 @@ import slide5 from "../image/slides/5.jpeg";
 import slide6 from "../image/slides/6.jpeg";
 import slide7 from "../image/slides/7.jpg";
 import slide8 from "../image/slides/8.jpeg";
+import Achievements from "../components/Achievements.astro";
 
-import topper1 from "../image/homepage/topper1.png";
-import topper2 from "../image/homepage/topper2.png";
 
-import achievementsBG from "../image/textures/achievementsBG.png";
 
-const toppers = [
-  {
-    name: "Gaurav Vishant Naik",
-    ranks: "Rank 1",
-    marks: "98%",
-    image: topper1,
-    year: "2022-23 batch",
-  },
-  {
-    name: "Laksh S. ",
-    ranks: "Rank 2",
-    marks: "96%",
-    image: topper2,
-    year: "2021-22 batch",
-  },
-  {
-    name: "Harsh Shalgar",
-    ranks: "Rank 3",
-    marks: "98.8%",
-    image: topper1,
-    year: "2021-22 batch",
-  },
-  {
-    name: "Hasini Gupta PS",
-    ranks: "Rank 4",
-    marks: "89%",
-    image: topper2,
-    year: "2022-23 batch",
-  },
-];
 ---
 
-<Layout title="">
+<Layout title="Home | Best International K12 Primary Schools South bengalore Electronic City">
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
@@ -194,37 +162,8 @@ const toppers = [
 <Academics />
 <div class="pt-[60px]"></div>
 <Campus />
-<Section
-  class="text-center"
-  style={{
-    background: `url("${achievementsBG.src}")`,
-    backgroundSize: "cover",
-  }}
->
-  <div class="pt-[30px]"></div>
-  <Text type="subtitle">INSPIRING FEATS</Text>
-  <p class="p-2"></p>
-  <Text type="h2">
-    Celebrating <span>Achievements</span>
-  </Text>
-  <p class="p-3"></p>
-  <Text type="base" class="text-center">
-    We take immense pride in celebrating academic triumphs that reflect the
-    students’ dedication.
-  </Text>
-</Section>
-<p class="p-3"></p>
-<div class="flex items-center justify-center">
-  <div
-    class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto"
-  >
-    {
-      toppers?.map((item, index) => {
-        return <TopperCard topper={item} />;
-      })
-    }
-  </div>
-</div>
+
+<Achievements />
 <Testimonial />
 
 <GoToCta />

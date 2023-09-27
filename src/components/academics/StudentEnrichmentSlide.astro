@@ -12,16 +12,7 @@ const { slide, title, subtitle, description, showcase } = Astro.props;
   class="swiper-slide rounded-[35px] max-md:px-[0px] px-[16px] py-[0px] text-black"
 >
   <div class="flex flex-row max-md:flex-col gap-14  items-center">
-    <DeckCard
-      containerClass="w-[380px] h-[350px]"
-      class="relative left-2 max-md:-left-2"
-      images={[
-        { src: slide1.src, alt: "campus1" },
-        { src: slide1.src, alt: "campus1" },
-        // { src: slide2.src, alt: "campus2" },
-        // {src: slide3, alt: 'campus3'},
-      ]}
-    />
+    <slot name="thumb" />
 
 
     <div class="px-[16px] text-white">

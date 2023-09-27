@@ -26,13 +26,14 @@ import Card from "../components/academics/Card.astro";
 
 import gridBG from "../fillers/gridBG.svg";
 import { Image } from "astro:assets";
+import Achievements from "../components/Achievements.astro";
 
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
 
 const toppers = campusConfig?.toppers;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Academics | Best International K12 Primary Schools South bengalore Electronic City">
   <div class="flex flex-col">
     <TopNavigationBar />
   </div>
@@ -240,16 +241,16 @@ const toppers = campusConfig?.toppers;
       borderColor: "rgba(255, 111, 36, 0.48)",
     }}
   >
-    <Section class="flex flex-col items-center px-[30px]">
+    <Section class="flex flex-col items-center !px-[50px]">
       <Card
         image={academic1}
         title={["Elementary", "(IK1-IK3)"]}
         layout="left"
         bodyContent="Edify International Kindergarten Program encourages creativity and teamwork through innovative programs. We empower children to communicate effectively, and try new things."
         bulletPoints={[
-          "Wonder Room: A fun space for kids to engage in hands-on activities, role-playing, math challenges, and dramatic play guided by interactive learning.",
-          "Storytelling: Exciting sessions featuring picture-books, props, lively puppets, and a touch of theatrical magic to inspire creativity in kids.",
-          "Jungle Gym: A play area with slides, walkways, swings, tunnels, and climbing walls offering various levels of challenge for children of different abilities.",
+          "Wonder Room: Kids engage in hands-on activities, role-playing and math challenges guided by interactive learning.",
+          "Storytelling: Exciting sessions featuring picture-books, props and lively puppets to inspire creativity in kids.",
+          "Jungle Gym: A play area with slides, walkways, tunnels, and climbing walls offering various levels of challenge for children.",
         ]}
       />
       <div class="p-[60px] max-md:p-[10px]"></div>
@@ -257,27 +258,27 @@ const toppers = campusConfig?.toppers;
         image={academic2}
         title={["Primary School Program", "(Grades 1-5)"]}
         layout="right"
-        bodyContent="The Primary School Program aims to develop reflective thinking, preparing students to address real-world challenges through a trans-disciplinary learning approach. In this process, students master language skills to comprehend, infer, critically analyse, and use language creatively in their day-to-day interactions."
+        bodyContent="The Primary School Program fosters reflective thinking, equipping students to tackle real-world challenges. Through a trans-disciplinary approach, they master language skills for effective communication and critical analysis."
         bulletPoints={[
-          "Math Marvels: Students emerge fluent in numeration, everyday computations, spatial lingo, logic-life links, data handling, pattern spotting, and more!",
-          "Personalised Progress: Classroom activities aim for tailored growth - fine motor skills, independent decision-making, vibrant social interactions, and a rock-solid knowledge foundation!",
-          "Collaborative Learning: EVS hones skills through dynamic tools like keen observation, lively discussions, questioning, analysis, and hands-on experimentation, fostering a strong sense of teamwork and collaboration.",
+          "Math Marvels: Students emerge fluent in everyday computations, spatial lingo, data handling, pattern spotting, and more!",
+          "Personalised Progress: Activities that aim to develop motor skills, independent decision-making and vibrant social interactions!",
+          "Collaborative Learning: Students learn through keen observation, lively discussions and experimentation, fostering a sense of teamwork.",
         ]}
       />
     </Section>
   </div>
   <div class="w-full bg-white">
-    <Section class="flex flex-col items-center px-[30px]">
+    <Section class="flex flex-col items-center !px-[50px]">
       <Card
         image={academic3}
         title={["Middle School Program", "(Grades 6-8)"]}
         layout="left"
         border
-        bodyContent="The Middle School Program caters to students aged 11-17 and aims to enhance critical thinking, abstract reasoning, and ethical decision-making abilities. The program encourages goal-setting, discernment of facts, and understanding consequences, achieved through diverse subject perspectives."
+        bodyContent="The Middle School Program nurtures critical thinking and ethical decision-making. Students develop abstract reasoning and gain a well-rounded perspective through diverse subjects."
         bulletPoints={[
           "DEAR Program: Fostering a love for good books, nurturing young minds with age-appropriate, thought-provoking reading materials.",
-          "Career Counselling: Our in-house career counselors nurture students' interests and aptitudes for informed decisions on higher education and careers.",
-          "Ethical Mastery: Nurture a student's mind to think critically, cultivate sharper reasoning skills, encourage inclusive decision-making, and uphold moral values.",
+          "Career Counselling: In-house career counselors nurture students' interests and aptitudes for informed decisions on higher education and careers.",
+          "Ethical Mastery: Nurture a student's mind to think critically, cultivate reasoning skills, encourage decision-making, and uphold moral values.",
         ]}
       />
       <div class="p-[60px] max-md:p-[10px]"></div>
@@ -300,30 +301,9 @@ const toppers = campusConfig?.toppers;
     <StudentEnrichment />
   </div>
 
-  <Section class="text-center">
-    <Text type="subtitle">INSPIRING FEATS</Text>
-    <p class="p-2"></p>
-    <Text type="h2">
-      Celebrating <span>Achievements</span>
-    </Text>
-    <p class="p-3"></p>
-    <Text type="base" class="text-center">
-      We take immense pride in celebrating academic triumphs that reflect the
-      students’ dedication.
-    </Text>
-    <p class="p-3"></p>
-    <div class="flex items-center justify-center">
-      <div
-        class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto"
-      >
-        {
-          toppers?.map((item, index) => {
-            return <TopperCard topper={item} />;
-          })
-        }
-      </div>
-    </div>
-  </Section>
+  <Achievements />
+
+  <p class="pb-14" />
 
   <GoToCta />
   <Footer />
