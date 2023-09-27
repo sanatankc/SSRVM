@@ -11,12 +11,20 @@ import 'swiper/css/pagination';
 import slide1 from "../../images/slides/1.jpeg"
 import { Image } from "astro:assets";
 import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
+import blobSmallDark from '../../fillers/blobSmallDark.png'
 
 ---
-<div class="w-full px-20 pt-[67px] pb-[95px] rounded-t-[120px] bg-[#1E1E1E] text-white">
-  <Text type="h3">Student-Enrichment <span class="text-primary">Programs</span></Text>
-  <div class="pt-[18px]" />
-  <Text type="base" class="text-white">Discover our unique program offerings to students</Text>
+<div class="w-full px-20 max-md:px-8 max-md:py-[50px] pt-[67px] pb-[95px] max-md:rounded-t-[50px] rounded-t-[120px] bg-[#1E1E1E] text-white">
+  <div class="flex flex-row items-center max-md:items-start w-full justify-between">
+    <div>
+      <Text type="h3">Student-Enrichment <span class="text-primary">Programs</span></Text>
+      <div class="pt-[14px]" />
+      <Text type="base" class="text-white">Discover our unique program offerings to students</Text>
+    </div>
+    <div class="w-[130px] max-md:w-[60px]">
+      <Image class="w-full h-full" src={blobSmallDark} alt="blob" />
+    </div>
+  </div>
   <div class="pt-[36px]" />
   <div class="flex flex-row w-full justify-between items-center">
     <div class="w-[53px] h-[53px] bg-white rounded-[50%] cursor-pointer" data-slide-prev>
@@ -38,18 +46,21 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
     </div>
 
 
-    <div class="tab-nav-btn active" data-slide-page="0">
-      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40 active">Sports</Text>
+    <div class="flex flex-row flex-1 max-md:flex-[unset] max-md:w-[unset] w-full justify-around">
+      <div class="tab-nav-btn max-md:border-b-[none] max-md:[&.active>div]:!text-16px [&.active>div]:!text-[20px] max-md:[&.active>div]:!block max-md:[&>div]:!hidden active" data-slide-page="0">
+        <Text type="subtitle" class="uppercase max-md:[&.active]:text-[16px] text-[22px] cursor-pointer text-white/40 active">Sports</Text>
+      </div>
+      <div class="tab-nav-btn max-md:border-b-[none] max-md:[&.active>div]:!text-16px [&.active>div]:!text-[20px] max-md:[&.active>div]:!block max-md:[&>div]:hidden" data-slide-page="1">
+        <Text type="subtitle" class="uppercase max-md:[&.active]:text-[16px] text-[22px] cursor-pointer text-white/40">ARTS</Text>
+      </div>
+      <div class="tab-nav-btn max-md:border-b-[none] max-md:[&.active>div]:!text-16px [&.active>div]:!text-[20px] max-md:[&.active>div]:!block max-md:[&>div]:hidden" data-slide-page="2">
+        <Text type="subtitle" class="uppercase max-md:[&.active]:text-[16px] text-[22px] cursor-pointer text-white/40">LIFE SKILLS</Text>
+      </div>
+      <div class="tab-nav-btn max-md:border-b-[none] max-md:[&.active>div]:!text-16px [&.active>div]:!text-[20px] max-md:[&.active>div]:!block max-md:[&>div]:hidden" data-slide-page="3">
+        <Text type="subtitle" class="uppercase max-md:[&.active]:text-[16px] text-[22px] cursor-pointer text-white/40">PDW</Text>
+      </div>
     </div>
-    <div class="tab-nav-btn" data-slide-page="1">
-      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40">ARTS</Text>
-    </div>
-    <div class="tab-nav-btn" data-slide-page="2">
-      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40">LIFE SKILLS</Text>
-    </div>
-    <div class="tab-nav-btn" data-slide-page="3">
-      <Text type="subtitle" class="uppercase !text-[22px] cursor-pointer text-white/40">PDW</Text>
-    </div>
+
 
     <div class="w-[53px] h-[53px] bg-white rounded-[50%] -scale-x-100 cursor-pointer" data-slide-next>
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 54 54" fill="none">
@@ -94,7 +105,6 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
 }
 
 .tab-nav-btn.active > div {
-  font-size: 24px;
   color: #FF6F24;
   border-bottom: 5px solid #F4B33E;
 }
@@ -109,7 +119,7 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
   const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     effect: 'coverflow',
   });
 
@@ -143,6 +153,11 @@ import StudentEnrichmentSlide from "./StudentEnrichmentSlide.astro";
 
     const nextSlideIndex = activeIndex === swiper.slides.length - 1 ? 0 : activeIndex + 1
     setActiveTab(nextSlideIndex)
+  });
+
+
+  swiper.on('slideChange', function (e) {
+    setActiveTab(e.activeIndex)
   });
 
 </script>

@@ -3,7 +3,7 @@ export const openCollapsible = (collapsible: HTMLElement) => {
   const collapseIcon = collapsible.querySelector('.collapse-icon')
   if (!collapseIcon) return
 
-  collapsibleContent.style.maxHeight = '100vh'
+  collapsibleContent.style.maxHeight = '200vh'
   collapseIcon.innerHTML = '-'
 }
 
@@ -26,7 +26,7 @@ const toggleCollapsible = (collapsible: HTMLElement) => {
     collapsibleContent.style.maxHeight = '0px'
     collapseIcon.innerHTML = '+'
   } else {
-    collapsibleContent.style.maxHeight = '100vh'
+    collapsibleContent.style.maxHeight = '200vh'
     collapseIcon.innerHTML = '-'
   }
 }

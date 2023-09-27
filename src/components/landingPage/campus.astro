@@ -25,16 +25,16 @@ import Layout from "../../layouts/Layout.astro";
 const campus = config.campus;
 ---
 
-<div class="w-full h-[868px] relative overflow-hidden">
+<div class="w-full h-[868px] max-md:h-[650px] relative overflow-hidden">
   <Image
     src={campusBG}
     alt="campusBG"
     class="w-full h-full absolute top-0 left-0"
   />
-  <div class="w-full h-full bg-[#1c1c1c]/70 absolute"></div>
+  <div class="w-full h-full bg-[#1c1c1c]/80 absolute"></div>
   <div class="absolute w-full h-full top-0 left-0">
     <div
-      class="w-[207px] h-[138px] top-0 left-0 absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-top-left"
+      class="w-[207px] h-[138px] max-md:w-[103px] max-md:h-[69px] top-0 left-0 absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-top-left"
     >
       <Image
         data-campus-image
@@ -48,7 +48,7 @@ const campus = config.campus;
       />
     </div>
     <div
-      class="w-[212px] h-[190px] top-[25%] left-[5%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+      class="w-[212px] h-[190px] max-md:w-[125px] max-md:h-[90px] top-[25%] left-[5%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
     >
       <Image
         data-campus-image
@@ -62,7 +62,7 @@ const campus = config.campus;
       />
     </div>
     <div
-      class="w-[338px] h-[226px] bottom-[2%] -left-[4%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-bottom-left"
+      class="w-[338px] h-[226px] max-md:w-[125px] max-md:h-[90px] bottom-[2%] -left-[4%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-bottom-left"
     >
       <Image
         data-campus-image
@@ -75,22 +75,8 @@ const campus = config.campus;
         class="w-full h-full object-cover"
       />
     </div>
-    <!-- <div
-      class="w-[180px] h-[120px] bottom-[22%] left-[30%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
-    >
-      <Image
-        data-campus-image
-        data-sal="zoom-in"
-        data-sal-delay="100"
-        data-sal-easing="easeInOutCirc"
-        data-sal-duration="800"
-        src={campusBG4}
-        alt="campusPreview1"
-        class="w-full h-full object-cover"
-      />
-    </div> -->
     <div
-      class="w-[247px] h-[187px] bottom-[7%] left-[40%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+      class="w-[247px] h-[187px] max-md:w-[150px] max-md:h-[90px] bottom-[7%] max-md:bottom-[14%] max-md:left-[30%] left-[40%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
     >
       <Image
         data-campus-image
@@ -104,7 +90,7 @@ const campus = config.campus;
       />
     </div>
     <div
-      class="w-[247px] h-[187px] bottom-0 right-0 absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-bottom-right"
+      class="w-[247px] h-[187px] max-md:w-[125px] max-md:h-[90px] bottom-0 right-0 absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-bottom-right"
     >
       <Image
         data-campus-image
@@ -132,7 +118,7 @@ const campus = config.campus;
       />
     </div> -->
     <div
-      class="w-[250px] h-[180px] top-[4%] right-[0%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-top-right"
+      class="w-[250px] h-[180px] max-md:w-[125px] max-md:h-[90px] top-[4%] right-[0%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform origin-top-right"
     >
       <Image
         data-campus-image
@@ -146,7 +132,7 @@ const campus = config.campus;
       />
     </div>
     <div
-      class="w-[250px] h-[180px] top-[40%] right-[8%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
+      class="w-[250px] h-[180px] max-md:w-[125px] max-md:h-[90px] max-md:top-[30%] top-[40%] right-[8%] absolute z-10 hover:z-30 hover:scale-125 duration-500 transition-transform"
     >
       <Image
         data-campus-image
