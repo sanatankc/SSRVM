@@ -10,7 +10,7 @@ const { images = [], class: className, target, id, containerClass } = Astro.prop
     <div 
       class="
       bg-white border rounded-md w-full h-full absolute top-0 left-0 p-2
-        rotate-[-2.785deg] group-hover:rotate-[-4deg] group-hover:border-[#0A5E2F] transition-transform
+        rotate-[-2.785deg] group-hover:rotate-[-4deg] group-hover:border-primary transition-transform
         max-md:rotate-[-2.785deg]
       "
       style={{
@@ -26,7 +26,7 @@ const { images = [], class: className, target, id, containerClass } = Astro.prop
     <div 
       class="
       bg-white border rounded-md w-full h-full absolute top-0 left-0 p-2
-        rotate-[2.026deg] group-hover:rotate-[4.651deg] group-hover:border-accent2 transition-transform
+        rotate-[2.026deg] group-hover:rotate-[4.651deg] group-hover:border-primary transition-transform
         max-md:rotate-[3.026deg] origin-bottom-right
       "
       style={{
@@ -49,11 +49,11 @@ const { images = [], class: className, target, id, containerClass } = Astro.prop
   }
   .deck-card.active > div:first-child {
     transform: rotate(-4deg);
-    border-color: #0A5E2F;
+    border-color: #FF6F24;
   }
   .deck-card.active > div:last-child {
     transform: rotate(4.651deg);
-    border-color: #0A5E2F;
+    border-color: #FF6F24;
   }
 </style>
 
