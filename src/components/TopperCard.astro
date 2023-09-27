@@ -4,32 +4,30 @@ const { topper = {} } = Astro.props;
 ---
 
 <div
-  class="max-w-[287px] h-[525px] w-full flex flex-col justify-end topper-card relative overflow-hidden  flex-shrink-0 max-sm:h-[425px]"
+  class="max-w-[287px] max-md:max-w-[90%] h-[525px] w-full flex flex-col justify-end topper-card relative overflow-hidden  flex-shrink-0 max-sm:h-[425px]"
 >
   <div
-    class="absolute inset-0 saturate-0 topper-img bg-white"
+    class="absolute inset-0 saturate-0 topper-img bg-white !bg-cover",
     style={{
       "--topper-img": `url(${topper.image.src})`,
     }}
   >
   </div>
-  <div class="flex flex-col items-center gap-[7px] mb-10 relative z-10">
-    <Text type="xs" class="text-primary font-bold">
+  <div class="flex flex-col items-center gap-[7px] max-md:gap-[2px] mb-10 max-md:mb-4 relative z-10">
+    <Text type="xs" class="text-primary font-bold max-md:text-sm">
       {topper.ranks}
     </Text>
     <Text
       type="h4"
-      class="text-center text-white font-sans font-bold"
+      class="text-center text-white font-sans font-bold max-md:text-2xl"
       set:html={topper.name}
     />
     <Text type="h4" class="text-primary font-sans font-bold">{topper.marks}</Text>
-    <Text type="sm" class="text-white uppercase font-sans font-bold">{topper.year}</Text>
+    <Text type="sm" class="text-white uppercase font-sans font-bold text-white/90 max-md:text-sm">{topper.year}</Text>
   </div>
-  <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%] z-10">
+  <div class="absolute left-[48%] w-[50%] top-[27%] leaf leaf-right max-sm:top-[-15%] z-10">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="158"
-      height="467"
       viewBox="0 0 158 467"
       fill="none"
     >
@@ -52,11 +50,9 @@ const { topper = {} } = Astro.props;
       </defs>
     </svg>
   </div>
-  <div class="absolute right-[51%] top-[20%] leaf leaf-left max-sm:top-[-4%] z-10">
+  <div class="absolute right-[51%] top-[27%] w-[50%] leaf leaf-left max-sm:top-[-15%] max-md:right-[51%] z-10">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="158"
-      height="467"
       viewBox="0 0 158 467"
       fill="none"
     >
