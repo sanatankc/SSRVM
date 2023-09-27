@@ -25,65 +25,63 @@ const bgImage = showSlide ? slideImages : config.bgImage;
       ...style,
     }}
   >
-    {
-      showSlide ? (
-        slideImages.map(
+  {
+    showSlide ? slideImages.map(({slide, position, type, picture, mobileOnly, desktopOnly} : {slide: string, position: string, type: string, picture: boolean}, i : number) => (
+      type === 'image' ? (
+        picture ? (
+          <picture
+            class:list={[
+              "slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover",
+              i === 0 ? "opacity-1" : "opacity-0",
+            ]}
+            style={{
+              transition: "1s all ease-in-out",
+              backgroundPosition: position,
+            }}
+          >
+            {slide.map(({ src, position, media }) => (
+              <source srcset={src} media={media} class="w-full h-full object-cover" style={{
+                objectPosition: position
+              }} />
+            ))}
+            <img src={slide[0]} alt="slide-img" class="w-full h-full object-cover" style={{
+              objectPosition: position
+            }} />
+          </picture>
+        ) : (
           (
-            {
-              slide,
-              position,
-              type,
-            }: { slide: string; position: string; type: string },
-            i: number
-          ) =>
-            type === "image" ? (
-              <div
-                class:list={[
-                  "slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover",
-                  i === 0 ? "opacity-1" : "opacity-0",
-                  `slide-${i}`,
-                ]}
-                style={{
-                  backgroundImage: `url(${slide})`,
-                  transition: "1s all ease-in-out",
-                  backgroundPosition: position,
-                }}
-              />
-            ) : (
-              <div class="absolute top-0 left-0 w-full h-full">
-                <video
-                  class:list={[
-                    "slideshow-item absolute top-0 left-0 lazy play-on-hover w-full h-full object-cover",
-                    i === 0 ? "opacity-1" : "opacity-0",
-                    `slide-${i}`,
-                  ]}
-                  loop
-                  autoplay
-                >
-                  <source data-src={"." + slide} src={slide} type="video/mp4" />
-                </video>
-                <div
-                  class="absolute w-full h-full"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0, 1) 100%)",
-                    opacity: 0.5,
-                  }}
-                />
-              </div>
-            )
+            <div class:list={[
+              'slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', 
+              i === 0 ? 'opacity-1' : 'opacity-0',
+              `slide-${i}`
+            ]} style={{
+              backgroundImage: `url(${slide})`,
+              transition: '1s all ease-in-out',
+              backgroundPosition: position,
+            }}></div>
+          ) 
+
         )
-      ) : (
-        <div
-          class="w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover"
-          style={{
-            backgroundImage: `linear-gradient(0deg, #1B2226 0%, #052B4C 63.40%, #1370A7 100%), url(${bgImage})`,
-            transition: "1s all  ease-in-out",
-            backgroundPosition: "center",
-          }}
-        />
+      ): (
+        <div class="absolute top-0 left-0 w-full h-full">
+          <video class:list={["slideshow-item absolute top-0 left-0 lazy play-on-hover w-full h-full object-cover", i === 0 ? 'opacity-1' : 'opacity-0',`slide-${i}`]} loop autoplay>
+            <source data-src={'.' + slide} src={slide} type="video/mp4">
+          </video>
+          <div class="absolute w-full h-full" style={{
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0, 1) 100%)',
+            opacity: 0.5
+          }}>
+          </div>
+        </div>
       )
-    }
+  )) : (
+    <div class="w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover" style={{
+      backgroundImage: `linear-gradient(0deg, #1B2226 0%, #052B4C 63.40%, #1370A7 100%), url(${bgImage})`,
+      transition: '1s all  ease-in-out',
+      backgroundPosition: 'center',
+      // filter: 'invert'
+    }}></div>
+  )}
     <div
       class="absolute w-full h-full z-10 top-0 left-0"
       style={{

@@ -1,173 +1,114 @@
 ---
-import logo from "../../images/logo.png";
-import { Image } from "astro:assets";
-import facebook from "../../icons/socials/Facebook.svg";
-import instagram from "../../icons/socials/Instagram.svg";
-import linkedin from "../../icons/socials/LinkedIn.svg";
-import twitter from "../../icons/socials/Twitter.svg";
-import youtube from "../../icons/socials/YouTube.svg";
-import emailIcon from "../../icons/Email.svg";
-import phoneIcon from "../../icons/Phone.svg";
-import locationIcon from "../../icons/Location.svg";
-import Text from "../system/Text.astro";
-import Constrain from "../system/Constrain.astro";
-import theDotStudioLogo from "../../images/theDotStudioLogo.svg";
----
+import logo from '../../images/logo.png'
+import { Image } from 'astro:assets';
+import facebook from '../../icons/socials/Facebook.svg'
+import instagram from '../../icons/socials/Instagram.svg'
+import linkedin from '../../icons/socials/LinkedIn.svg'
+import twitter from '../../icons/socials/Twitter.svg'
+import youtube from '../../icons/socials/YouTube.svg'
+import emailIcon from '../../icons/Email.svg'
+import phoneIcon from '../../icons/Phone.svg'
+import locationIcon from '../../icons/Location.svg'
+import Text from '../system/Text.astro'
+import Constrain from '../system/Constrain.astro'
+import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
 
+---
 <div
-  class="w-full pt-12 flex flex-col items-center text-white"
+  class='w-full pt-12 flex flex-col items-center text-white'
   style={{
-    background: "black",
+    background: 'black'
     // background: `linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(${footerBG})`,
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center 200px',
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: 'cover'
-  }}
->
-  <div class="w-full px-16 max-md:px-6">
+}}>
+  <div class='w-full px-16 max-md:px-6'>
     <Constrain class="flex flex-row max-md:flex-col justify-between">
       <div>
-        <Image
-          src={logo}
-          alt="Glentree's Logo"
-          class="w-40 h-auto self-start"
-        />
-        <div class="flex flex-row mt-6">
-          <a
-            target="_blank"
-            href="https://www.facebook.com/Edifyschoolecity/"
-            class="mr-5"
-          >
-            <div class="h-[19px]">
-              <img
-                src={facebook.src}
-                alt="Facebook Icon"
-                class="w-full h-full"
-              />
+        <Image src={logo} alt="Glentree's Logo" class=" w-40 h-auto self-start" />
+        <div class='flex flex-row mt-6'>
+          <a target="_blank" href="https://www.facebook.com/Edifyschoolecity/" class='mr-5'>
+            <div class='h-[19px]'>
+              <img src={facebook.src} alt="Facebook Icon" class="w-full h-full">
             </div>
           </a>
-
-          <a target="_blank" href="https://twitter.com/EdifyEcity" class="mr-5">
-            <div class="h-[19px]">
-              <img src={twitter.src} alt="Twitter Icon" class="w-full h-full" />
+  
+          <a target="_blank" href="https://twitter.com/EdifyEcity" class='mr-5'>
+            <div class='h-[19px]'>
+              <img src={twitter.src} alt="Twitter Icon" class="w-full h-full">
             </div>
           </a>
-
-          <a
-            target="_blank"
-            href="https://www.instagram.com/edifyecity/"
-            class="mr-5"
-          >
-            <div class="h-[19px]">
-              <img
-                src={instagram.src}
-                alt="Instagram Icon"
-                class="w-full h-full"
-              />
+  
+          <a target="_blank" href="https://www.instagram.com/edifyecity/" class='mr-5'>
+            <div class='h-[19px]'>
+              <img src={instagram.src} alt="Instagram Icon" class="w-full h-full">
             </div>
           </a>
-
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/edify-school-electronic-city-5b373087/"
-            class="mr-5"
-          >
-            <div class="h-[19px]">
-              <img
-                src={linkedin.src}
-                alt="Linkedin Icon"
-                class="w-full h-full"
-              />
+  
+          <a target="_blank" href="https://www.linkedin.com/in/edify-school-electronic-city-5b373087/" class='mr-5'>
+            <div class='h-[19px]'>
+              <img src={linkedin.src} alt="Linkedin Icon" class="w-full h-full">
             </div>
           </a>
-
-          <a
-            target="_blank"
-            href="https://www.youtube.com/channel/UCiuf4x5YQCWMIDtRb5zpY0g"
-            class="mr-5"
-          >
-            <div class="h-[19px]">
-              <img src={youtube.src} alt="Youtube Icon" class="w-full h-full" />
+  
+          <a target="_blank" href="https://www.youtube.com/channel/UCiuf4x5YQCWMIDtRb5zpY0g" class='mr-5'>
+            <div class='h-[19px]'>
+              <img src={youtube.src} alt="Youtube Icon" class="w-full h-full">
             </div>
           </a>
+  
+  
         </div>
       </div>
-
-      <div class="flex flex-row max-md:flex-col">
-        <div class="ml-16 max-md:ml-0 max-w-[325px]">
-          <div class="p-0 pt-4"></div>
-          <Text type={"base"} class="text-primary mb-7 max-md:mb-3">
-            Contact us
-          </Text>
-
-          <div class="flex flex-row items-center mb-3">
-            <div class="w-5">
-              <Image src={emailIcon} alt="Email Icon" class="w-full h-full" />
-              <a
-                target="_blank"
-                href="mailto:admissions@edifyecity.com"
-                class="hover:underline w-[90%]"
-              >
-                <Text type={"regular"} class="ml-2">
-                  admissions@edifyecity.com
-                </Text>
-              </a>
+  
+      <div class='flex flex-row max-md:flex-col'>
+        <div class='ml-16 max-md:ml-0 max-w-[325px]'>
+          <div class="p-0 pt-4" />
+          <Text type={'base'} class='text-primary mb-7 max-md:mb-3'>Contact us</Text>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <div class='w-5'>
+              <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
             </div>
-
-            <div class="flex flex-row items-center mb-3">
-              <div class="w-5">
-                <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full" />
-                <a
-                  target="_blank"
-                  href="tel:+919900077180"
-                  class="hover:underline"
-                  ><Text type={"regular"} class="ml-2">+91 9900077180</Text></a
-                >
-                <Text type="base">,</Text>
-                <a
-                  target="_blank"
-                  href="tel:+919900077181"
-                  class="hover:underline"
-                  ><Text type={"regular"} class="ml-2">+91 9900077181</Text></a
-                >
-              </div>
-
-              <div class="flex flex-row items-start mb-3">
-                <div class="w-5 mr-1 flex-shrink-0">
-                  <Image
-                    src={locationIcon}
-                    alt="Location Icon"
-                    class="w-full h-full"
-                  />
-                  <a
-                    target="_blank"
-                    href="https://goo.gl/maps/2WjJv85fKSJg6yfm6"
-                  >
-                    <Text type={"regular"} class="ml-2">
-                      #388/0, 6th Main Cross, 14th Cross, Sector C, Surya Nagar
-                      Phase 2, Anekal Chandapura Main Road, Electronic City,
-                      Bengaluru, Karnataka 562106
-                    </Text>
-                  </a>
-                </div>
-              </div>
+            <a target='_blank' href="mailto:admissions@edifyecity.com" class="hover:underline w-[90%]">
+              <Text type={'regular'} class='ml-2'>admissions@edifyecity.com</Text>
+            </a>
+          </div>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <div class='w-5'>
+              <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
+            <a target='_blank' href='tel:+919900077180' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9900077180</Text></a>
+            <Text type="base">,</Text>
+            <a target='_blank' href='tel:+919900077181' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9900077181</Text></a>
+          </div>
+  
+          <div class='flex flex-row items-start mb-3 '>
+            <div class='w-5 mr-1 flex-shrink-0'>
+              <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href="https://goo.gl/maps/2WjJv85fKSJg6yfm6">
+              <Text type={'regular'} class='ml-2'>#388/0, 6th Main Cross, 14th Cross, Sector C, Surya Nagar Phase 2, Anekal Chandapura Main Road, Electronic City, Bengaluru, Karnataka 562106</Text>
+            </a>
           </div>
         </div>
+        
+      </div>
+    </Constrain>
+  </div>
 
-        <div
-          class="w-full h-[1px] bg-gray-500/40 mt-12 max-md:mt-5 max-md:w-[85%]"
-        >
-        </div>
+  <div class='w-full h-[1px] bg-gray-500/40 mt-12 max-md:mt-5 max-md:w-[85%]'></div>
 
-        <div class="py-6 font-normal px-16 w-full max-md:px-6 text-center">
-          <Constrain
-            class="flex flex-row max-md:flex-col items-center justify-between"
-          >
-            <div class="flex flex-row items-center max-md:flex-col">
-              <Text type={"regular"}>Copyright © 2023 &nbsp;</Text>
-              <!-- <Text type={'regular'}>
+  <div class='py-6 font-normal px-16 w-full  max-md:px-6 text-center'>
+    <Constrain class="flex flex-row max-md:flex-col items-center justify-between">
+      <div class="flex flex-row items-center max-md:flex-col">
+        <Text type={'regular'}>
+          Copyright © 2023 &nbsp;
+        </Text>
+        <!-- <Text type={'regular'}>
           <span class="max-md:hidden">{' • '}</span> Mandatory CBSE Public Disclosure: 
           <br class="hidden max-md:block" />
           <a 
@@ -180,19 +121,12 @@ import theDotStudioLogo from "../../images/theDotStudioLogo.svg";
             class="underline"
           >Sarjapur</a>
         </Text> -->
-            </div>
-            <div class="max-md:pt-3 pt-0"></div>
-            <div>
-              <a href="https://thedotstudio.in/" target="_blank">
-                <Image
-                  src={theDotStudioLogo}
-                  class="w-[250px] max-md:w-[200px]"
-                  alt={"The Dot Studio Logo"}
-                />
-              </a>
-            </div>
-          </Constrain>
-        </div>
+      </div>
+      <div class="max-md:pt-3 pt-0"></div>
+      <div>
+        <a href="https://thedotstudio.in/" target="_blank">
+          <Image src={theDotStudioLogo} class="w-[250px] max-md:w-[200px]" alt={"The Dot Studio Logo"} />
+        </a>
       </div>
     </Constrain>
   </div>

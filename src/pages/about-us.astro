@@ -34,20 +34,86 @@ import theme from '../image/academics/theme.png'
 import assesment from '../image/academics/assesment.png'
 import facilities from '../image/academics/facilities.png'
 
+import president from '../image/about-us/president.png'
+import principal from '../image/about-us/principal.png'
+
+
+import advisory1 from "../image/about-us/advisory/1.jpg"
+import advisory2 from "../image/about-us/advisory/2.jpg"
+import advisory3 from "../image/about-us/advisory/3.jpg"
+import advisory4 from "../image/about-us/advisory/4.jpg"
+import advisory5 from "../image/about-us/advisory/5.jpg"
+import advisory6 from "../image/about-us/advisory/6.jpg"
+import advisory7 from "../image/about-us/advisory/7.jpg"
+import advisory8 from "../image/about-us/advisory/8.jpg"
+import advisory9 from "../image/about-us/advisory/9.jpg"
+import advisory10 from "../image/about-us/advisory/10.jpg"
+import advisory11 from "../image/about-us/advisory/11.jpg"
+import advisory12 from "../image/about-us/advisory/12.jpg"
+
 const toppers = campusConfig?.toppers;
 
-
-const teams = [
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
-  { image: '', name: 'Ajit Mantagani', role: 'CEO at nsl textiles and apparel' },
+const advisory = [
+    {
+        "name": "Ajit Mantagani",
+        "description": "CEO at NSL Textiles and Apparel",
+        "image": advisory1
+    },
+    {
+        "name": "Anjani Kumar Agarwal",
+        "description": "Established DRS Agarwal packers and movers",
+        "image": advisory2
+    },
+    {
+        "name": "Dr. A. Jagdeesh",
+        "description": "Founder of Abaya Hospital",
+        "image": advisory3
+    },
+    {
+        "name": "Jude Felix Sebestian",
+        "description": "Arjuna Awardee, international hockey player",
+        "image": advisory4
+    },
+    {
+        "name": "Jennifer Martindale",
+        "description": "CEO at NSL Textiles and Apparel",
+        "image": advisory5
+    },
+    {
+        "name": "Mr. Kaiser Dopaishi",
+        "description": "President of South Asia IB Schools Association",
+        "image": advisory6
+    },
+    {
+        "name": "Major General B.S. Nealakantappa",
+        "description": "Chief of Army Staff",
+        "image": advisory7
+    },
+    {
+        "name": "Dr. Malathi K. Holla",
+        "description": "International Para Athlete, Padmashri, and Arjuna Awardee",
+        "image": advisory8
+    },
+    {
+        "name": "Pawan Kumar",
+        "description": "Renowned Kannada director",
+        "image": advisory9
+    },
+    {
+        "name": "Prof Rajeev Gowda",
+        "description": "IIM Bangalore Professor",
+        "image": advisory10
+    },
+    {
+        "name": "Sanjay Gubbi",
+        "description": "Forest Activist",
+        "image": advisory11
+    },
+    {
+        "name": "Saswathi Belliyappa",
+        "description": "Urban planner",
+        "image": advisory12
+    }
 ]
 ---
 
@@ -297,19 +363,40 @@ const teams = [
     </div>
   </Section>
 
-  <Section class="flex flex-col w-full items-center text-left px-0">
+  <Section class="flex flex-col w-full items-center text-left !px-0">
     <Image src={blobBig} class="w-[268px] h-[72px]" alt="Decorative Element" />
     <div class="pt-8"></div>
     <Text type="h2">Our Management</Text>
-    <div class="pt-8"></div>
-    <Text type="base" class="w-[51%] max-md:w-full text-center [&>span]:text-primary">
-      Inquiry is the driving factor and leading pedagogical approach that makes
-      Edify classrooms so <span>distinctive and unique.</span>
-    </Text>
+    <!-- <div class="pt-8"></div> -->
 
     <div class="pt-16 max-md:pt-0"></div>
+
+    <div class="w-full flex gap-[73px] max-md:flex-col pl-[90px] max-md:pl-[0px] flex-row-reverse">
+      <div class="w-[388px] overflow-hidden max-md:w-full h-[451px] flex-shrink-0 bg-red-100 rounded-tl-[150px] rounded-bl-[16px]">
+        <Image src={president} class="w-full h-full object-cover" alt="President" />
+      </div>
+      <div>
+      <div>
+        <div class="pt-1" />
+        <Text type="h2">President Speak</Text>
+        <div class="pt-2" />
+        <Text type="lg" class="text-primary">Mr. Ashok KM Gowda
+        </Text>
+        <div class="pt-8" />
+
+        <Text type="base">
+          We are passionate about creating a learning institution that is dynamic and constantly seeking excellence to meet the needs of present as well as the future. Schooling in Edify is a journey of personal transformation and appreciating the day to day initiatives pertaining to school programme. At Edify We uncover the hidden potential, unrelenting efforts goes on mentoring and metamorphosing the uncut diamonds into finer Edify gems.
+        </Text>
+      </div>
+      </div>
+    </div>
+
+    <div class="pt-[118px]" />
+
     <div class="w-full flex flex-row gap-[73px] max-md:flex-col max-md:pr-[0px] pr-[90px]">
-      <div class="w-[388px] max-md:w-[300px] max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"></div>
+      <div class="w-[388px] overflow-hidden max-md:w-[300px] max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]">
+        <Image src={principal} class="w-full h-full object-cover" alt="President" />
+      </div>
       <div>
       <div>
         <div class="pt-1" />
@@ -325,24 +412,7 @@ const teams = [
       </div>
       </div>
     </div>
-    <div class="pt-[118px]" />
-    <div class="w-full flex gap-[73px] max-md:flex-col pl-[90px] max-md:pl-[0px] flex-row-reverse">
-      <div class="w-[388px] max-md:w-full h-[451px] flex-shrink-0 bg-red-100 rounded-tl-[150px] rounded-bl-[16px]"></div>
-      <div>
-      <div>
-        <div class="pt-1" />
-        <Text type="h2">Principal Speak</Text>
-        <div class="pt-2" />
-        <Text type="lg" class="text-primary">Mr. Ashok KM Gowda
-        </Text>
-        <div class="pt-8" />
-
-        <Text type="base">
-          We are passionate about creating a learning institution that is dynamic and constantly seeking excellence to meet the needs of present as well as the future. Schooling in Edify is a journey of personal transformation and appreciating the day to day initiatives pertaining to school programme. At Edify We uncover the hidden potential, unrelenting efforts goes on mentoring and metamorphosing the uncut diamonds into finer Edify gems.
-        </Text>
-      </div>
-      </div>
-    </div>
+    
   </Section>
 
   <Section>
@@ -350,15 +420,18 @@ const teams = [
     <div class="pt-[38px]" />
     <div class="overflow-hidden rounded-lg">
       <Carousel arrowsContainerClass="mt-4" class="gap-1 overflow-scroll" id="advisory-team-carousel">
-        {teams.map(team => (
+        {advisory.map(advisor => (
           <CarouselCard>
             <div class="w-[287px] h-[525px] bg-black/30 text-center relative text-white">
+              <div class="absolute top-0 left-0 w-full h-full">
+                <Image src={advisor.image} class="w-full h-full object-cover grayscale" alt={advisor.name} />
+              </div>
               <div class="absolute w-full h-full pb-[34px] flex flex-col justify-end" style={{
                 background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.7%, #000 100%)',
               }}>
-                <Text type="lg">Ajit Mantagani</Text>
+                <Text type="lg">{advisor.name}</Text>
                 <div class="pt-2" />
-                <Text type="sm" class="text-primary">CEO at nsl textiles and apparel</Text>
+                <Text type="sm" class="text-primary">{advisor.description}</Text>
               </div>
             </div>
           </CarouselCard>
