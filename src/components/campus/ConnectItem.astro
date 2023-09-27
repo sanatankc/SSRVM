@@ -11,7 +11,7 @@ interface Props {
 }
 const {title,label,type, class,style}  = Astro.props
 ---
-<div class='p-r border flex flex-row justify-between last:bottom-0 max-sm:flex-col' style={{
+<div class='p-r max-md:px-0 border flex flex-row justify-between last:bottom-0 max-sm:flex-col' style={{
         borderBottom: '2px dotted #BCBCBC;',
         ...style
     }}>
@@ -19,6 +19,5 @@ const {title,label,type, class,style}  = Astro.props
         <ConnectIcons type={type} />
         <Text type={'base'} class="font-bold text-[#052B4C]">{label}</Text>
     </div>
-        <Text type={'regular'} class='mt-2 text-[#282828] font-semibold max-sm:ml-12'>{title}</Text>
-    </div>
-    </div>
+    <Text type={'regular'} class:list={['mt-2 text-[#282828] font-semibold max-sm:ml-12', type === 'address' && 'w-[50%] max-md:w-[90%]']}>{title}</Text>
+</div>

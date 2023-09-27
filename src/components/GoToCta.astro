@@ -8,6 +8,8 @@ import Text from "./system/Text.astro";
 <div
   class="p-xl flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
         max-md:p-m max-sm:items-start card"
+
+  onclick="window.location.href='/admissions'"
 >
   <div
     class="absolute inset-0 img"
@@ -33,9 +35,9 @@ background-repeat: no-repeat;
              and <span>Exploration?</span>
           </Text>
           <div
-            class="flex flex-col max-md:flex-row max-md:w-[calc(100vw-40px)] max-md:justify-between"
+            class="flex flex-col max-md:flex-row max-md:items-center max-md:w-[calc(100vw-40px)] max-md:justify-between"
           >
-            <Text type="lg" class="text-white font-normal w-auto flex-1">
+            <Text type="lg" class="text-white font-normal w-auto flex-1 max-md:!text-base">
               Admission open for <a
                 href="/admissions"
                 class="text-primary underline font-bold">AY 2024-25</a

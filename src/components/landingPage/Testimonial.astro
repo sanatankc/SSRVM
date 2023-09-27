@@ -106,9 +106,10 @@ const subtitle = testimonials.subtitle;
         min-w-[34vw] max-md:w-[100%]
         max-md:min-h-[136px] bg-cover bg-center
         rounded-lg
+        rounded-r-none
         '
         style={{
-          backgroundImage: `linear-gradient(90deg, rgba(255, 255, 255, 0) 80.82%, rgba(255, 255, 255, 0.9) 95.62%), url(${testimonials.data[0].image.src})`
+          backgroundImage: `url(${testimonials.data[0].image.src})`
         }}>
       </div>
       <div class='flex flex-col justify-center px-14 max-md:px-1 max-md:items-left'>

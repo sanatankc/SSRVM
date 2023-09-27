@@ -11,6 +11,7 @@ import Testimonial from "../components/landingPage/Testimonial.astro";
 import BigAdmissionCTA from "../components/BigAdmissionCTA.astro";
 import Hero from "./LandingPageHero.astro";
 
+
 import "../global.css";
 
 // import '@fontsource/nunito-sans';
@@ -38,6 +39,10 @@ import slide5 from "../images/slides/05.webp";
 import transportBus from "../images/transportBus.png";
 import DeckCard from "../components/DeckCard.astro";
 import Connect from "../components/campus/Connect.astro";
+import blobSmall from "../fillers/blobSmall.png";
+
+import { Image } from "astro:assets";
+import Gallery from "../components/Gallery.astro";
 
 const toppers = campusConfig?.toppers;
 ---
@@ -79,58 +84,71 @@ const toppers = campusConfig?.toppers;
       INSPIRING FEATS
     </Text>
     <p class="p-2"></p> -->
-    <Text type="h2">Our Facilities</Text>
-    <Text type="lg">
-      Our Philosophy: Empowering Through <span class="text-primary"
-        >Inquiry</span
-      >
-    </Text>
+    <div class="flex flex-row justify-between">
+      <div>
+        <Text type="h2">Our Facilities</Text>
+        <Text type="lg">
+          Our Philosophy: Empowering Through <span class="text-primary"
+            >Inquiry</span
+          >
+        </Text>
+      </div>
+      <div class="w-[130px] max-md:w-[60px]">
+        <Image class="w-full h-full" src={blobSmall} alt="blob" />
+      </div>
+    </div>
 
     <div class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-[0px] gap-20 max-md:gap-16">
-      <div class="flex flex-row max-md:flex-col w-full gap-8 justify-between">
+      <div class="flex flex-row max-md:flex-col w-full gap-16 justify-between">
         <DeckCard
           class="relative left-2 max-md:-left-2"
           images={[
             { src: slide1.src, alt: "campus1" },
             { src: slide1.src, alt: "campus1" },
-            // { src: slide2.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
           ]}
+          target="classroom-facilities"
         />
         <div>
           <Text type="h3">
-            <span class="text-primary italic">Science</span> Labs
+            <span class="text-primary italic">Classroom</span> Facilities
           </Text>
           <div class="p-2" />
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety
-            standards, in the fields of Physics, Chemistry, Biology, and
-            Computer Science.
+            Step into our modern, spacious classrooms equipped with the latest educational technology. We prioritise comfort and up-to-date resources to support your child’s optimal learning experience.
+            <br />
+            <br />
+            <ul class="list-inside list-disc flex flex-col gap-2">
+              <li>Digitally Enabled Classrooms</li>
+              <li>Wonder Room for Pre primary</li>
+              <li>Well-stocked libraries</li>
+              <li>Multi-purpose Amphitheatres</li>
+              <li>CC TV Monitoring for added security.</li>
+            </ul>
           </Text>
           <div class="p-3"></div>
           <Text
             type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="classroom-facilities"
           >
-            View Labs
+            View Facilities
           </Text>
         </div>
       </div>
-      <div class="flex flex-row max-md:flex-col w-full gap-8 justify-between">
+      <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
         <div class="max-md:order-2">
           <Text type="h3">
             <span class="text-primary italic">Science</span> Labs
           </Text>
           <div class="p-2" />
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety
-            standards, in the fields of Physics, Chemistry, Biology, and
-            Computer Science.
+            Explore our modern STEM labs at Ekam Edify, where curiosity meets innovation. They are meticulously designed, adhering to the highest safety standards. Here, students embark on hands-on experiments, unlocking the mysteries of science and technology in an environment that sparks intellectual curiosity and creativity.
           </Text>
           <div class="p-3"></div>
           <Text
             type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="science-labs"
           >
             View Labs
           </Text>
@@ -142,9 +160,10 @@ const toppers = campusConfig?.toppers;
             { src: slide1.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
+          target="science-labs"
         />
       </div>
-      <div class="flex flex-row max-md:flex-col w-full gap-8 justify-between">
+      <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
         <DeckCard
           class="relative left-2 max-md:-left-2"
           images={[
@@ -152,25 +171,56 @@ const toppers = campusConfig?.toppers;
             { src: slide1.src, alt: "campus2" },
             // {src: slide3, alt: 'campus3'},
           ]}
+          target="sports-facilities"
         />
         <div>
           <Text type="h3">
-            <span class="text-primary italic">Science</span> Labs
+            <span class="text-primary italic">Sports</span> Labs
           </Text>
           <div class="p-2" />
           <Text type="base" class="w-[90%]">
-            Edify offers well-equipped labs following all relevant safety
-            standards, in the fields of Physics, Chemistry, Biology, and
-            Computer Science.
+            International size courts and sports infrastructure as well as expert professional coaches support a variety of sport activities like swimming, basketball, football, volleyball, chess, handball, netball, karate, cricket, skating, lawn tennis, table tennis, and badminton.
+            <br />
+            <br />
+            The students are also exposed to opportunities to participate in varied recreational programs that include gymnastics, aerobics, yoga, athletics and exercise.
           </Text>
           <div class="p-3"></div>
           <Text
             type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="sports-facilities"
           >
-            View Labs
+            View Sport Facilities
           </Text>
         </div>
+      </div>
+      <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
+        <div class="max-md:order-2">
+          <Text type="h3">
+            <span class="text-primary italic">Extra-curricular</span> Facilities
+          </Text>
+          <div class="p-2" />
+          <Text type="base" class="w-[90%]">
+            At Ekam Edify, we’re equipped with modern facilities and a dedicated faculty to support a diverse range of student interests. From Literature, Performing Arts, Visual Arts, Music, to hands-on experiences in Design & Technology, we offer a comprehensive array of enriching activities for our students.
+          </Text>
+          <div class="p-3"></div>
+          <Text
+            type="sm"
+            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
+            data-modal-target="extra-curricular-facilities"
+          >
+            View Facilities
+          </Text>
+        </div>
+        <DeckCard
+          class="relative"
+          images={[
+            { src: slide1.src, alt: "campus1" },
+            { src: slide1.src, alt: "campus2" },
+            // {src: slide3, alt: 'campus3'},
+          ]}
+          target="extra-curricular-facilities"
+        />
       </div>
     </div>
   </Section>
@@ -179,72 +229,83 @@ const toppers = campusConfig?.toppers;
     class="
       w-full rounded-t-[120px] max-md:rounded-t-[30px] max-md:px-[30px] max-md:py-[40px]
       bg-black-100 pt-[98px] px-[66px] h-[620px] text-white
-      bg-[linear-gradient(88deg,_rgba(0,_0,_0,_0.87)_24.8%,_rgba(0,_0,_0,_0.00)_70%)]
       relative
+      overflow-hidden
     "
     style={{
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
     }}
   >
-    <div class="bg-green-300 absolute -z-[1] w-full h-full top-0 left-0"></div>
-    <Text type="h2">Transport <span>Vehicles</span></Text>
-    <div class="p-3"></div>
-    <Text type="base" class="w-[50%]">
-      The speed limits of the buses are fixed for the purpose of safety.
-    </Text>
-    <div class="p-3"></div>
+    <div class="absolute w-full h-full top-0 left-0">
+      <Image src={transportBus} alt="transportBus" class="w-full h-full object-cover" />
+      <div
+        class="
+          absolute w-full h-full top-0 left-0
+          bg-[linear-gradient(88deg,_rgba(0,_0,_0,_0.87)_24.8%,_rgba(0,_0,_0,_0.00)_70%)]
+          max-md:bg-[linear-gradient(182deg,_rgba(0,_0,_0,_0.86)_49.8%,_rgba(0,_0,_0,_0.00)_220%)]
+        "
+      ></div>
+    </div>
+    <div class="relative z-10">
+      <Text type="h2">Transport <span>Vehicles</span></Text>
+      <div class="p-3"></div>
+      <Text type="base" class="w-[50%]">
+        Efficient and Safe Transportation Services for Students
+      </Text>
+      <div class="p-3"></div>
+      <div class="flex flex-row items-center">
+        <div class="w-[14px] h-[17px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 14 17"
+            fill="none"
+          >
+            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+            ></path>
+          </svg>
+        </div>
+        <div class="px-2"></div>
+        <Text type="base">GPS Enabled Buses</Text>
+      </div>
+      <div class="p-2"></div>
+      <div class="flex flex-row items-center">
+        <div class="w-[14px] h-[17px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 14 17"
+            fill="none"
+          >
+            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+            ></path>
+          </svg>
+        </div>
+        <div class="px-2"></div>
+        <Text type="base">Equipped with CCTV</Text>
+      </div>
+      <div class="p-2"></div>
+      <div class="flex flex-row items-center">
+        <div class="w-[14px] h-[17px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 14 17"
+            fill="none"
+          >
+            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
+            ></path>
+          </svg>
+        </div>
+        <div class="px-2"></div>
+        <Text type="base">Bus attendant and teacher accompany students</Text>
+      </div>
+    </div>
 
-    <div class="flex flex-row items-center">
-      <div class="w-[14px] h-[17px]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          viewBox="0 0 14 17"
-          fill="none"
-        >
-          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
-          ></path>
-        </svg>
-      </div>
-      <div class="px-2"></div>
-      <Text type="base">1:25 Student-to-Teacher ratio</Text>
-    </div>
-    <div class="p-2"></div>
-    <div class="flex flex-row items-center">
-      <div class="w-[14px] h-[17px]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          viewBox="0 0 14 17"
-          fill="none"
-        >
-          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
-          ></path>
-        </svg>
-      </div>
-      <div class="px-2"></div>
-      <Text type="base">1:25 Student-to-Teacher ratio</Text>
-    </div>
-    <div class="p-2"></div>
-    <div class="flex flex-row items-center">
-      <div class="w-[14px] h-[17px]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          viewBox="0 0 14 17"
-          fill="none"
-        >
-          <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
-          ></path>
-        </svg>
-      </div>
-      <div class="px-2"></div>
-      <Text type="base">1:25 Student-to-Teacher ratio</Text>
-    </div>
   </div>
   <GoToCta />
 
@@ -272,6 +333,34 @@ const toppers = campusConfig?.toppers;
     />
   </div>
   <Footer />
+
+  <Gallery
+    id="classroom-facilities"
+    gallery={[
+      { src: slide1.src, caption: "Classroom Facilities" },
+    ]}
+  />
+
+  <Gallery
+    id="science-labs"
+    gallery={[
+      { src: slide1.src, caption: "Science Labs" },
+    ]}
+  />
+
+  <Gallery
+    id="sports-facilities"
+    gallery={[
+      { src: slide1.src, caption: "Sports Facilities" },
+    ]}
+  />
+
+  <Gallery
+    id="extra-curricular-facilities"
+    gallery={[
+      { src: slide1.src, caption: "Extra-curricular Facilities" },
+    ]}
+  />
 </Layout>
 
 <style>
