@@ -7,14 +7,15 @@ import ConnectItem from "./ConnectItem.astro";
 type ContactDetails = {
   label: string;
   value: string;
-  type: 'contact' | 'mail' | 'address',
+  type: 'contact' | 'mail' | 'address' | 'time',
 }
 interface Campus {
   details: {
     [key: string]: ContactDetails | undefined; // Add index signature
     phoneNo?: ContactDetails,
-    workingHours?: ContactDetails,
+    mail?: ContactDetails,
     address?: ContactDetails,
+    time?: ContactDetails,
   }
   mapEmbedLink: string;
 }
@@ -30,7 +31,7 @@ const details = {
     value: "+91 9900077180, +91 9900077181",
     type: "contact",
   },
-  workingHours: {
+  mail: {
     label: "Mail us at",
     value: "For enquiries: edifyspoc@gmail.com",
     type: "mail",
@@ -40,6 +41,12 @@ const details = {
     value:
       "#388/0, 6th Main Cross, 14th Cross, Sector C, Surya Nagar Phase 2, Anekal Chandapura Main Road, Electronic City, Bengaluru, Karnataka 562106",
     type: "address",
+  },
+  workingHours: {
+    label: "Working Hours",
+    value:
+      "Mon-Sat 8:30 AM to 4:00 PM",
+    type: "time",
   },
 }
 
