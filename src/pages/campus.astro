@@ -35,7 +35,7 @@ import slide1 from "../images/slides/01.webp";
 import slide3 from "../images/slides/03.webp";
 import slide4 from "../images/slides/04.webp";
 import slide5 from "../images/slides/05.webp";
-import transportBus from "../image/campus/Transport.png";
+import transportBus from "../image/campus/Transport.jpeg";
 import DeckCard from "../components/DeckCard.astro";
 import Connect from "../components/campus/Connect.astro";
 import blobSmall from "../fillers/blobSmall.png";
@@ -48,12 +48,16 @@ import campus4 from "../image/campus/wonderroom.jpeg";
 import campus5 from "../image/campus/science-chem.jpeg";
 import campus6 from "../image/campus/science-bio.jpeg";
 import campus7 from "../image/campus/science-phy.jpeg";
-import campus8 from "../image/campus/bbcourt.jpeg";
+import campus8 from "../image/campus/bbcourt.png";
 import campus9 from "../image/campus/football.jpeg";
 import campus10 from "../image/campus/pool.jpeg";
 import campus11 from "../image/campus/crick.jpeg";
 import campus12 from "../image/campus/skating.jpg";
 import campus13 from "../image/campus/throwball.jpg";
+import campus14 from "../image/campus/bb2.jpg";
+import campus15 from "../image/campus/football2.jpeg";
+import campus16 from "../image/campus/swim2.jpeg";
+
 
 import { Image } from "astro:assets";
 import Gallery from "../components/Gallery.astro";
@@ -213,7 +217,7 @@ const toppers = campusConfig?.toppers;
             International size courts and sports infrastructure as well as
             expert professional coaches support a variety of sport activities
             like swimming, basketball, football, volleyball, chess, handball,
-            netball, karate, cricket, skating, lawn tennis, table tennis, and
+            netball, karate, cricket, skating, lawn tennis, and
             badminton.
             <br />
             <br />
@@ -406,6 +410,9 @@ const toppers = campusConfig?.toppers;
       { src: campus11.src, caption: "Cricket Ground" },
       { src: campus12.src, caption: "Skating Ring" },
       { src: campus13.src, caption: "Throwball Court" },
+      { src: campus14.src, caption: "Basketball Court" },
+      { src: campus15.src, caption: "Football Court" },
+      { src: campus16.src, caption: "Swimming Pool" },
     ]}
   />
 
