@@ -75,10 +75,13 @@ const activePath = Astro.url.pathname;
 
 <header
   transition:persist
-  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[80px]"
+  class="font-roundo w-screen bg-white border-[#fff6ea] border-b-[2px] py-1 pl-10 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[80px]"
+  style={{
+    boxShadow: "0px 1px 7px 0px #8888881c",
+  }}
 >
   <a href="/" class="relative z-10 daisy daisy-fixed daisy-1">
-    <img src={logo.src} alt="Ekam's Logo" width="140px" />
+    <img src={logo.src} alt="Ekam's Logo" width="80px" />
   </a>
   <div class="flex flex-row items-center max-md:hidden text-lg">
     {
@@ -98,14 +101,14 @@ const activePath = Astro.url.pathname;
                   <a
                     href={item.link}
                     class:list={[
-                      "text-white font-semibold hover:underline font-sans text-primary",
+                      "text-black font-semibold hover:underline font-sans",
                       (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) && "!text-primary",
                     ]}
                   >
                     {item.title}
                   </a>
                 ) : (
-                  <span class="text-white font-semibold hover:underline font-sans">
+                  <span class="text-black font-semibold hover:underline font-sans">
                     {item.title}
                   </span>
                 )}
@@ -120,19 +123,18 @@ const activePath = Astro.url.pathname;
                       clip-rule="evenodd"
                       d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z"
                       class={
-                        (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) ? "fill-primary" : "fill-white"
+                        (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) ? "fill-primary" : "fill-black"
                       }
                     />
                   </svg>
                 </div>
               </div>
               <div
-                class="absolute w-[250px] pt-[10px] menu"
-                style={{
-                  boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.5)",
-                }}
+                class="absolute w-[250px] pt-[10px] menu bg-white"
               >
-                <div class="w-full h-full bg-[#121212]">
+                <div class="w-full h-full bg-white" style={{
+                  boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+                }}>
                   {item.submenu.map((subitem, j) => (
                     <div
                       class="py-[14px] px-3"
@@ -140,13 +142,13 @@ const activePath = Astro.url.pathname;
                         borderBottom:
                           j >= item?.submenu?.length - 1
                             ? "none"
-                            : "1px solid rgba(255, 255, 255, 0.2)",
+                            : "1px solid rgba(0, 0, 0, 0.2)",
                       }}
                     >
                       <a
                         href={subitem.link}
                         class:list={[
-                          "text-white font-semibold hover:underline font-sans",
+                          "text-black font-semibold hover:underline font-sans",
                           // subitem.link === activePath && '!text-primary'
                         ]}
                       >
@@ -163,7 +165,7 @@ const activePath = Astro.url.pathname;
             <a
               href={item?.link}
               class:list={[
-                "text-white hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-sans font-semibold",
+                "text-black hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-sans font-semibold",
                 item.link === activePath && "!text-primary",
               ]}
             >
@@ -218,7 +220,7 @@ const activePath = Astro.url.pathname;
                 }}
               >
                 <div class="flex flex-row w-full">
-                  <span class="text-white font-semibold hover:underline">
+                  <span class="text-black font-semibold hover:underline">
                     {item.title}
                   </span>
                   <div class="w-6 h-6 ml-1 -rotate-90 menu-arrow">
@@ -239,19 +241,15 @@ const activePath = Astro.url.pathname;
               </div>
               <div class="subMenu">
                 {item.submenu.map((subMenuItem) => (
-                  <div
-                    class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full"
+                  <a 
+                    href={subMenuItem.link}
+                    class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full text-black font-semibold hover:underline pl-10"
                     style={{
                       borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
                     }}
                   >
-                    <a
-                      href={subMenuItem.link}
-                      class="text-white font-semibold hover:underline pl-5"
-                    >
                       {subMenuItem.title}
-                    </a>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -267,7 +265,7 @@ const activePath = Astro.url.pathname;
               >
                 <a
                   href={item.link}
-                  class="text-white font-semibold hover:underline"
+                  class="text-black font-semibold hover:underline"
                 >
                   {item.title}
                 </a>
@@ -441,7 +439,6 @@ const activePath = Astro.url.pathname;
 </style>
 
 <script>
-  import config from "../../config";
   const menuParent = document.querySelectorAll(
     ".menu-parent"
   ) as NodeListOf<HTMLDivElement>;

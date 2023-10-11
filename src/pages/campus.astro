@@ -61,6 +61,7 @@ import campus16 from "../image/campus/swim2.jpeg";
 
 import { Image } from "astro:assets";
 import Gallery from "../components/Gallery.astro";
+import GalleryWithDescription from "../components/GalleryWithDescription.astro";
 
 const toppers = campusConfig?.toppers;
 ---
@@ -135,7 +136,7 @@ const toppers = campusConfig?.toppers;
         />
         <div>
           <Text type="h3">
-            <span class="text-primary italic">Academic</span> Facilities
+            <span class="text-primary">Academic</span> Facilities
           </Text>
           <div class="p-2"></div>
           <Text type="base" class="w-[90%]">
@@ -166,7 +167,7 @@ const toppers = campusConfig?.toppers;
       <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
         <div class="max-md:order-2">
           <Text type="h3">
-            <span class="text-primary italic">STEM</span> Labs
+            <span class="text-primary">STEM</span> Labs
           </Text>
           <div class="p-2"></div>
           <Text type="base" class="w-[90%]">
@@ -210,11 +211,16 @@ const toppers = campusConfig?.toppers;
         />
         <div>
           <Text type="h3">
-            <span class="text-primary italic">Sports</span> Facilities
+            <span class="text-primary">Sports</span> Facilities
           </Text>
           <div class="p-2"></div>
           <Text type="base" class="w-[90%]">
-            International size courts and sports infrastructure as well as
+            Sports ensure the good physical, mental and emotional health of children.
+            Ekam International has outstanding infrastructure with vibrant sports facilities. 
+            <br/><br/>
+            School has two magnificent grounds for football, kabaddi, kho kho and athletics, well structured basketball and volleyball courts, well equipped & well netted cricket arena, well fenced skating arena with smooth flooring. Indoor games like chess, carom, TT etc along with one well designed & structured swimming pool.
+
+            <!-- International size courts and sports infrastructure as well as
             expert professional coaches support a variety of sport activities
             like swimming, basketball, football, volleyball, chess, handball,
             netball, karate, cricket, skating, lawn tennis, and
@@ -223,7 +229,7 @@ const toppers = campusConfig?.toppers;
             <br />
              The students are also exposed to opportunities to participate in
             varied recreational programs that include gymnastics, aerobics,
-            yoga, athletics and exercise.
+            yoga, athletics and exercise. -->
           </Text>
           <div class="p-3"></div>
           <Text
@@ -300,7 +306,7 @@ const toppers = campusConfig?.toppers;
       <Text type="h2">Transport <span>Vehicles</span></Text>
       <div class="p-3"></div>
       <Text type="base" class="w-[50%]">
-        Efficient and Safe Transportation Services for Students
+        Ekam International has 20 buses well equipped with GPS & CCTV. Ekam school buses are spacious with a required capacity to accommodate students. Every bus has a teacher and helper to ensure proper discipline & safety of students. School bus drivers are responsible to pick & drop the children to their respective stops.
       </Text>
       <div class="p-3"></div>
       <div class="flex flex-row items-center">
@@ -391,13 +397,38 @@ const toppers = campusConfig?.toppers;
     ]}
   />
 
-  <Gallery
+  <!-- <Gallery
     id="science-labs"
     gallery={[
       { src: campus7.src, caption: "Physics Lab" },
       { src: campus6.src, caption: "Biology Lab" },
       { src: campus5.src, caption: "Chemistry Lab" },
       { src: campus2.src, caption: "Computer Science Lab" },
+    ]}
+  /> -->
+  <GalleryWithDescription
+    id="science-labs"
+    gallery={[
+      { 
+        src: campus7.src,
+        caption: "Physics Lab",
+        description: 'The school has a spacious and well maintained Physics laboratory to carry out various experiments. It is also equipped with relevant upgraded equipments to cater the needs of various curriculum across all grades.',
+      },
+      { 
+        src: campus6.src,
+        caption: "Biology Lab",
+        description: 'Explore our vast library, a treasure trove of knowledge with a diverse collection of books and journals, to fuel the academic journey.',
+      },
+      { 
+        src: campus5.src,
+        caption: "Chemistry Lab",
+        description: 'Ekam international school  has a well ventilated, spacious chemistry lab which is equipped with all modern amenities, apparatus and chemicals.',
+      },
+      { 
+        src: campus2.src,
+        caption: "Computer Science Lab",
+        description: "Ekam International's IT lab, equipped with 45 computers, fosters digital literacy. Introducing computing in our curriculum emphasizes computational skills and online safety.",
+      },
     ]}
   />
 

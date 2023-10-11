@@ -7,15 +7,16 @@ import Sal from "../system/Sal.astro";
 import Section from "../system/Section.astro";
 import Scribble from "../Scribble.astro";
 import gridBG from "../../fillers/gridBG.svg"
+import Affiliations from "../Affiliations.astro";
 ---
 
-<Section class="flex flex-row gap-[72px] max-md:gap-[30px] max-md:flex-col max-md:items-center relative">
+<Section class="flex flex-row gap-[72px] max-md:gap-[30px] max-md:flex-col items-center relative">
   <div class="max-md:order-2">
     <Sal preset="slide-up" d="100" t="400">
       <Text type="h2">
         Why choose
         <span class="relative">
-          EKAM Edify?
+          EKAM?
           <Scribble />
         </span>
       </Text>
@@ -29,13 +30,10 @@ import gridBG from "../../fillers/gridBG.svg"
     <div class="p-3 max-md:p-2"></div>
     <Sal preset="slide-up" d="300" t="400">
       <Text type="base">
-        We have built a dynamic learning space that thrives on curiosity and
-        adventure! Guided by <br />
-        <span class="text-primary dont-bold">MDN Edify Education</span>
-         , our approach cultivates imaginative thinkers poised to make a
-        positive impact on the world. We are inspired by global educators and
-        diverse methods, ensuring your child's education is as thrilling as it
-        is enriching!
+        The EKAM INTERNATIONAL School in Electronic City is deeply committed to the all-round development of every child. We focus on providing a holistic and integrated education, equipping our students to navigate and interpret the world with confidence. Located on an 8-acre expanse, the school offers state-of-the-art digital classrooms, specialized labs, and spaces for arts and sports. Our digital classroom setup harmonizes with the Inquiry-Based learning ethos of NEP 2020.
+        <br/>
+        <br/>
+        Open to students both locally from Bangalore and internationally, we offer admissions from Kindergarten to Grade 10. The school is affiliated with both the CBSE and CAIE (Cambridge) boards. The distinct EKAM teaching approach is consistently applied across all grade levels.
       </Text>
     </Sal>
     <div class="p-3"></div>
@@ -51,7 +49,7 @@ import gridBG from "../../fillers/gridBG.svg"
   </div>
   <Sal preset="fade" d="400" t="400" class="flex-shrink-0">
     <Image
-      class="w-[324px] max-md:w-[210px]"
+      class="w-[384px] max-md:w-[210px]"
       src={whyChooseEdify}
       alt="Why choose Edify??"
     />
@@ -59,4 +57,5 @@ import gridBG from "../../fillers/gridBG.svg"
   <div class="w-[1016px] h-[650px] max-[1030px]:w-full absolute -left-[50px] top-[280px] -z-[1]">
     <img src={gridBG.src} class="w-full h-full" />
   </div>
+  <div class="pt-8" />
 </Section>

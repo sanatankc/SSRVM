@@ -8,12 +8,7 @@ import Section from "../system/Section.astro";
 import Scribble from "../Scribble.astro";
 import gridBG from "../../fillers/gridBG.svg";
 
-import threeC from "../../image/pedagogy/3c.png";
-import british from "../../image/pedagogy/british.png";
-import eca from "../../image/pedagogy/eca.png";
-import gps from "../../image/pedagogy/gps.png";
-import trinity from "../../image/pedagogy/trinity.png";
-import wbr from "../../image/pedagogy/wbr.png";
+import Affiliations from "../Affiliations.astro";
 ---
 
 <Section>
@@ -74,99 +69,5 @@ import wbr from "../../image/pedagogy/wbr.png";
   </div>
 
   <div class="pt-6"></div>
-  <Sal
-    class="flex bg-white flex-row flex-wrap justify-around items-center border py-[21px] border-[#1c1c1c]/40 rounded-lg max-md:px-8"
-    d="600"
-  >
-    <div
-      class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
-    >
-      <Image
-        src={threeC}
-        class="w-[71px] max-md:w-[70px] object-contain"
-        alt="3C logo"
-      />
-      <Text
-        type="subtitle"
-        class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
-      >
-        3C <br />Curriculum
-      </Text>
-    </div>
-    <div
-      class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
-    >
-      <Image
-        src={eca}
-        class="w-[116px] object-contain max-md:w-[116px]"
-        alt="3C logo"
-      />
-      <Text
-        type="subtitle"
-        class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
-      >
-        Early CHILDHOOD <br /> ASSOCIATION
-      </Text>
-    </div>
-    <div
-      class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
-    >
-      <Image
-        src={british}
-        class="w-[118px] object-contain max-md:w-[118px]"
-        alt="3C logo"
-      />
-      <Text
-        type="subtitle"
-        class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
-      >
-        British Council <br /> Library
-      </Text>
-    </div>
-    <div
-      class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
-    >
-      <Image
-        src={gps}
-        class="w-[63px] object-contain max-md:w-[63px] invert"
-        alt="3C logo"
-      />
-      <Text
-        type="subtitle"
-        class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
-      >
-        Great Place <br /> To Study
-      </Text>
-    </div>
-    <div
-      class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
-    >
-      <Image
-        src={trinity}
-        class="w-[94px] object-contain max-md:w-[94px]"
-        alt="3C logo"
-      />
-      <Text
-        type="subtitle"
-        class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
-      >
-        Trinity College <br /> London
-      </Text>
-    </div>
-    <div
-      class="flex flex-col items-center h-[120px] max-md:h-auto justify-around"
-    >
-      <Image
-        src={wbr}
-        class="w-[111px] object-contain max-md:w-[111px]"
-        alt="3C logo"
-      />
-      <Text
-        type="subtitle"
-        class="!text-[11.5px] font-normal leading-4 max-md:leading-4 max-md:mt-3 max-md:mb-4 tracking-tightest text-center"
-      >
-        World Book <br /> of Records
-      </Text>
-    </div>
-  </Sal>
+  <Affiliations />
 </Section>

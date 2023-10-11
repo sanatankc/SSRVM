@@ -58,68 +58,44 @@ import advisorydummy from "../image/about-us/advisory/dummy.webp";
 
 const toppers = campusConfig?.toppers;
 
+
 const advisory = [
   {
-    name: "Ajit Mantagani",
-    description: "CEO at NSL Textiles and Apparel",
-    image: advisorydummy,
-  },
-  {
-    name: "Anjani Kumar Agarwal",
-    description: "Established DRS Agarwal packers and movers",
-    image: advisorydummy,
-  },
-  {
-    name: "Dr. A. Jagdeesh",
-    description: "Founder of Abaya Hospital",
-    image: advisorydummy,
-  },
-  {
-    name: "Jude Felix Sebestian",
-    description: "Arjuna Awardee, international hockey player",
-    image: advisorydummy,
-  },
-  {
-    name: "Jennifer Martindale",
-    description: "CEO at NSL Textiles and Apparel",
-    image: advisorydummy,
-  },
-  {
-    name: "Mr. Kaiser Dopaishi",
-    description: "President of South Asia IB Schools Association",
-    image: advisorydummy,
-  },
-  {
-    name: "Major General B.S. Nealakantappa",
-    description: "Chief of Army Staff",
-    image: advisorydummy,
-  },
-  {
-    name: "Dr. Malathi K. Holla",
-    description: "International Para Athlete, Padmashri, and Arjuna Awardee",
-    image: advisorydummy,
-  },
-  {
-    name: "Pawan Kumar",
-    description: "Renowned Kannada director",
-    image: advisorydummy,
-  },
-  {
-    name: "Prof Rajeev Gowda",
-    description: "IIM Bangalore Professor",
-    image: advisorydummy,
-  },
-  {
-    name: "Sanjay Gubbi",
-    description: "Forest Activist",
-    image: advisorydummy,
+    name: "Major General B.S Nealakantappa",
+    description: "Veteran of the Indo-Pak wars, served 35 years in the Indian Army; associated with Runto Projects and Lemon Cements Ltd.",
+    image: advisorydummy
   },
   {
     name: "Saswathi Belliyappa",
-    description: "Urban planner",
-    image: advisorydummy,
+    description: "Experienced urban planner and consultant with U.N Habitat and World Bank; trustee of Samvad Foundation; Ph.D. candidate.",
+    image: advisorydummy
   },
-];
+  {
+    name: "Pawan Kumar",
+    description: "Renowned Kannada film director and actor; founder of Act or Productions theater; multiple award recipient, including for the film Lucia.",
+    image: advisorydummy
+  },
+  {
+    name: "Dr. A. Jagdeesh",
+    description: "Established psychiatrist; founder of Abaya Hospital and institutes; former HOD of psychiatry at K.I.M.S; published author.",
+    image: advisorydummy
+  },
+  {
+    name: "Ajit Mantagani",
+    description: "Former CEO at several prominent companies; BE from Suratkal, IIM(A) alumnus; accredited business mentor and founder of Gameplan Consultancy.",
+    image: advisorydummy
+  },
+  {
+    name: "Prof Rajeev Gowda",
+    description: "IIM(B) professor; Indian National Congress spokesperson; RBI and GIC director; Wharton PhD; global educator and author.",
+    image: advisorydummy
+  },
+  {
+    name: "Dr. Malathi K Holla",
+    description: "International Para Athlete; Padmashri and Arjun Awardee; Syndicate Bank Chief Manager; NGO founder; motivational speaker.",
+    image: advisorydummy
+  },
+]
 ---
 
 <Layout
@@ -146,7 +122,7 @@ const advisory = [
       >
         <div slot="title">
           <Text type="h2">
-            Welcome to <span class="text-primary italic">Ekam Edify</span>
+            Welcome to <span class="text-primary">Ekam Edify</span>
           </Text>
           <div class="p-1"></div>
           <Text type="base" class="text-white w-[70%] max-md:w-full">
@@ -161,7 +137,11 @@ const advisory = [
   </div>
 
   <Section
-    class="flex flex-col w-full items-center text-left bg-[#1E1E1E] px-[56px] pt-[0] text-white"
+    class="flex flex-col w-full items-center text-left px-[56px] pt-[0] text-black"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
+    }}
   >
     <div
       class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
@@ -184,7 +164,7 @@ const advisory = [
         </Text>
         <div class="pt-12 max-md:pt-6"></div>
         <Image
-          src={blobBigDark}
+          src={blobBig}
           class="w-[268px] max-md:w-[50%]"
           alt="Decorative Element"
         />
@@ -207,7 +187,7 @@ const advisory = [
         class="w-full flex flex-row justify-between max-md:flex-col max-md:gap-4"
       >
         <div
-          class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full"
+          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
         >
           <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
             <Image src={mission1} alt="" class="object-cover w-full h-full" />
@@ -219,7 +199,7 @@ const advisory = [
           </Text>
         </div>
         <div
-          class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full"
+          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
         >
           <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
             <Image src={mission2} alt="" class="object-cover w-full h-full" />
@@ -231,7 +211,7 @@ const advisory = [
           </Text>
         </div>
         <div
-          class="p-5 rounded-md border border-white/20 w-[390px] max-md:w-full"
+          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
         >
           <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
             <Image src={mission3} alt="" class="object-cover w-full h-full" />
@@ -526,19 +506,22 @@ const advisory = [
           <div class="pt-1"></div>
           <Text type="h2">Message from our Principal</Text>
           <div class="pt-2"></div>
-          <Text type="lg" class="text-primary">Dr. Manmita Das Raina</Text>
+          <Text type="lg" class="text-primary">Dr. Manmitta Das Raina</Text>
           <div class="pt-8"></div>
 
           <Text type="base">
-            At Edify, we're dedicated to nurturing holistic development,
-            blending modern knowledge with traditional values. Our focus is on
-            creating an academically strong yet globally aware environment,
-            where each child is treasured and guided towards emotional,
-            intellectual, and spiritual growth. We emphasize a balanced
-            curriculum and a safe atmosphere to foster critical thinking and a
-            lifelong love for learning. Our ultimate goal is to equip students
-            to not only adapt to change, but to confidently face life's
-            challenges, building a strong belief system for a promising future.
+            Greetings !!<br/>
+            <br />
+
+            We are passionate about creating a dynamic learning institution that strives for excellence to meet current and future needs.
+            <br />
+            <br />
+
+            At EKAM International, we uncover the hidden potential, diligently mentoring to transform uncut diamonds into EKAM gems. EKAM is an academically focused, globally minded institution. We inspire every student to reach their full potential, blending universal and Indian values. Every child entrusted to us is treasured and nurtured.
+            <br />
+            <br />
+            We aim to create a trajectory beyond the classroom, offering students diverse opportunities through a balanced curriculum. We ensure a safe, happy and intellectually stimulating environment with an enquiry-based curriculum that empowers them to be innovative thinkers and lifelong learners. Our journey is geared towards providing an exceptional learning experience, aiming for unmatched heights.
+            
           </Text>
         </div>
       </div>
@@ -557,7 +540,7 @@ const advisory = [
         {
           advisory.map((advisor) => (
             <CarouselCard>
-              <div class="w-[287px] max-md:w-[143px] max-md:h-[262px] h-[525px] bg-black/30 text-center relative text-white">
+              <div class="w-[540px] max-md:w-[95vw] max-md:h-[320px] h-[525px] bg-black/30 text-center relative text-white">
                 <div class="absolute top-0 left-0 w-full h-full">
                   <Image
                     src={advisor.image}
@@ -566,22 +549,20 @@ const advisory = [
                   />
                 </div>
                 <div
-                  class="absolute w-full h-full pb-[34px] flex flex-col max-md:pt-0 max-md:justify-end max-md:pb-[10px] pb-unset pt-[140%] items-center"
+                  class="absolute w-full h-full pb-[34px] flex flex-col justify-end max-md:pt-0 max-md:justify-end max-md:pb-[10px] pb-unset items-start px-[35px]"
                   style={{
                     background:
                       "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.7%, #000 100%)",
                   }}
                 >
-                  <Text type="lg" class="max-md:text-sm max-md:w-[90%]">
+                  <Text type="lg" class="max-md:w-[90%] text-primary text-start">
                     {advisor.name}
                   </Text>
                   <div class="pt-2" />
-                  <Text
-                    type="sm"
-                    class="text-primary max-md:text-xs max-w-[70%]"
-                  >
+                  <Text type="base" class="max-md:w-[90%] text-start">
                     {advisor.description}
                   </Text>
+                  <div class="pt-2" />
                 </div>
               </div>
             </CarouselCard>

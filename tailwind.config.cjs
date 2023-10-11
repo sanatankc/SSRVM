@@ -81,7 +81,7 @@ module.exports = {
 
 		},
 		fontFamily: {
-			'display': ['"DM Serif Display"', 'sans-serif'],
+			'display': ['"DM Sans"', 'sans-serif'],
 			'sans': ['"DM Sans"', 'sans-serif'],
 		}
 	},

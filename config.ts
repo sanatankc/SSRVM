@@ -313,7 +313,7 @@ const data: Data = {
           image: topper3,
         },
         {
-          name: 'Hasini Gupta PS',
+          name: 'Hasini Gupta P S',
           ranks: 'Rank 4',
           marks: '98.8%',
           image: topper4,
@@ -461,7 +461,7 @@ const data: Data = {
           image: topper3,
         },
         {
-          name: 'Hasini Gupta PS',
+          name: 'Hasini Gupta P S',
           ranks: 'Rank 4',
           marks: '98.8%',
           image: topper4,
