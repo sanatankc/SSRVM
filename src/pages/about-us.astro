@@ -16,7 +16,8 @@ import config from "../../config";
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
 import slide1 from "../images/slides/01.webp";
 import slide3 from "../images/slides/03.webp";
-import slide4 from "../image/about-us/bg.jpeg";
+import aboutUsBG from "../image/about-us/bg.webp";
+import aboutUsBGMb from "../image/about-us/bgMb.webp";
 import slide5 from "../images/slides/05.webp";
 import Connect from "../components/campus/Connect.astro";
 
@@ -41,19 +42,6 @@ import mission3 from "../image/about-us/mission-3.png";
 import president from "../image/about-us/president2.jpg";
 import principal from "../image/about-us/principal.png";
 
-import advisory1 from "../image/about-us/advisory/1.jpg";
-import advisory2 from "../image/about-us/advisory/2.jpg";
-import advisory3 from "../image/about-us/advisory/3.jpg";
-import advisory4 from "../image/about-us/advisory/4.jpg";
-import advisory5 from "../image/about-us/advisory/5.jpg";
-import advisory6 from "../image/about-us/advisory/6.jpg";
-import advisory7 from "../image/about-us/advisory/7.jpg";
-import advisory8 from "../image/about-us/advisory/8.jpg";
-import advisory9 from "../image/about-us/advisory/9.jpg";
-import advisory10 from "../image/about-us/advisory/10.jpg";
-import advisory11 from "../image/about-us/advisory/11.jpg";
-import advisory12 from "../image/about-us/advisory/12.jpg";
-
 import advisorydummy from "../image/about-us/advisory/dummy.webp";
 import AdvisoryBoard from "../components/AdvisoryBoard.astro";
 
@@ -73,14 +61,17 @@ const toppers = campusConfig?.toppers;
       style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
       <Hero
-        config={{ title: "Welcome to EKAM", bgImage: campus1 }}
         showSlide={true}
         slideImages={[
-          // { slide: slide5.src, position: "center 64%", type: "image" },
-          // { slide: slide1.src, position: "center", type: "image" },
-          // { slide: slide2.src, position: "right 90%", type: "image" },
-          // { slide: slide3.src, position: "center ", type: "image" },
-          { slide: slide4.src, position: "top", type: "image" },
+          {
+            slide: [
+              { src: aboutUsBG.src, media: "(min-width: 768px)", position: "top" },
+              { src: aboutUsBGMb.src, media: "(max-width: 768px)", position: "top" },
+            ],
+            picture: true,
+            type: "image",
+            position: "top",
+          },
         ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo pb-0"
@@ -95,7 +86,6 @@ const toppers = campusConfig?.toppers;
             We're deeply committed to holistic child development. Situated on an 8-acre campus, we feature advanced digital classrooms, specialized labs, and multifaceted facilities for arts and sports.
           </Text>
           <div class="p-2"></div>
-
         </div>
       </Hero>
     </div>

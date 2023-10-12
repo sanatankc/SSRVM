@@ -15,38 +15,38 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
 
 ---
 <div
-  class='w-full pt-12 flex flex-col items-center text-black bg-[#fff6ea]'>
+  class='w-full pt-12 flex flex-col items-center text-black bg-white'>
   <div class='w-full px-16 max-md:px-6'>
     <Constrain class="flex flex-row max-md:flex-col justify-between">
       <div>
         <Image src={logo} alt="Glentree's Logo" class="w-20 h-auto self-start" />
         <div class='flex flex-row mt-6'>
           <a target="_blank" href="https://www.facebook.com/Edifyschoolecity/" class='mr-5'>
-            <div class='h-[19px]'>
+            <div class='h-[25px]'>
               <img src={facebook.src} alt="Facebook Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://twitter.com/EdifyEcity" class='mr-5'>
-            <div class='h-[19px]'>
+            <div class='h-[25px]'>
               <img src={twitter.src} alt="Twitter Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://www.instagram.com/edifyecity/" class='mr-5'>
-            <div class='h-[19px]'>
+            <div class='h-[25px]'>
               <img src={instagram.src} alt="Instagram Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://www.linkedin.com/in/edify-school-electronic-city-5b373087/" class='mr-5'>
-            <div class='h-[19px]'>
+            <div class='h-[25px]'>
               <img src={linkedin.src} alt="Linkedin Icon" class="w-full h-full">
             </div>
           </a>
   
           <a target="_blank" href="https://www.youtube.com/channel/UCiuf4x5YQCWMIDtRb5zpY0g" class='mr-5'>
-            <div class='h-[19px]'>
+            <div class='h-[25px]'>
               <img src={youtube.src} alt="Youtube Icon" class="w-full h-full">
             </div>
           </a>
@@ -55,10 +55,48 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
         </div>
       </div>
   
-      <div class='flex flex-row max-md:flex-col'>
-        <div class='ml-16 max-md:ml-0 max-w-[325px]'>
-          <div class="p-0 pt-4" />
-          <Text type={'base'} class='text-primary mb-7 max-md:mb-3 font-medium'>Contact us</Text>
+      <div class='flex flex-row gap-6 max-md:gap-0 max-md:flex-col'>
+        <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
+          <Text type={'base'} class='text-black/70 !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 font-semibold'>Explore</Text>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <a target='_blank' href="/about-us" class="hover:underline">
+              <Text type={'regular'}>Home</Text>
+            </a>
+          </div>
+          <div class='flex flex-row items-center mb-3'>
+            <a target='_blank' href="/about-us" class="hover:underline">
+              <Text type={'regular'}>About Us</Text>
+            </a>
+          </div>
+          <div class='flex flex-row items-center mb-3'>
+            <a target='_blank' href="/academics" class="hover:underline">
+              <Text type={'regular'}>Curriculum</Text>
+            </a>
+          </div>
+          <div class='flex flex-row items-center mb-3'>
+            <a target='_blank' href="/clubs" class="hover:underline">
+              <Text type={'regular'}>Clubs</Text>
+            </a>
+          </div>
+
+          <div class='flex flex-row items-center mb-3'>
+            <a target='_blank' href='/campus' class="hover:underline"><Text type={'regular'}>Campus</Text></a>
+          </div>
+
+          <div class='flex flex-row items-center mb-3'>
+            <a target='_blank' href="/admissions" class="hover:underline">
+              <Text type={'regular'}>Admissions</Text>
+            </a>
+          </div>
+  
+          
+
+        </div>
+        
+        <div class="bg-white/20 w-[5px] h-full max-md:h-[1px] max-md:w-full"></div>
+        <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
+          <Text type={'base'} class='text-black/70 !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 font-semibold'>Contact us</Text>
   
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
@@ -77,7 +115,7 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
             <Text type="base">,</Text>
             <a target='_blank' href='tel:+919900077181' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9900077181</Text></a>
           </div>
-  
+
           <div class='flex flex-row items-start mb-3 '>
             <div class='w-5 mr-1 flex-shrink-0'>
               <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
@@ -86,7 +124,65 @@ import theDotStudioLogo from '../../images/theDotStudioLogo.svg'
               <Text type={'regular'} class='ml-2'>#388/0, 6th Main Cross, 14th Cross, Sector C, Surya Nagar Phase 2, Anekal Chandapura Main Road, Electronic City, Bengaluru, Karnataka 562106</Text>
             </a>
           </div>
+
         </div>
+        <!-- <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
+          <Text type={'base'} class='text-green-300 mb-7 max-md:mb-3 font-semibold'>Whitefield</Text>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <div class='w-5 flex-shrink-0'>
+              <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href="mailto:admission.wf@glentreeacademy.coms" class="hover:underline">
+              <Text type={'regular'} class='ml-2'>admission.gaw@glentreeacademy.com</Text>
+            </a>
+          </div>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <div class='w-5'>
+              <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href='tel:+917899738130' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 7899738130</Text></a>
+  
+          </div>
+  
+          <div class='flex flex-row items-start mb-3 '>
+            <div class='w-[2.25rem]'>
+              <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href="https://goo.gl/maps/1RTX2F4ZwJipSuEy9">
+              <Text type={'regular'} class='ml-2'>Nallurhalli Rd, Palm Meadows, Nallurhalli, Whitefield, Bengaluru, Karnataka 560066</Text>
+            </a>
+          </div>
+        </div>
+        <div class='ml-16 max-md:ml-0 max-w-[325px]'>
+          <Text type={'base'} class='text-green-300 mb-7 max-md:mb-3 font-semibold'>Sarjapur</Text>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <div class='w-5'>
+              <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href="mailto:admission.gas@gltreeacademy.com" class="hover:underline w-[90%]">
+              <Text type={'regular'} class='ml-2'>admission.gas@glentreeacademy.com</Text>
+            </a>
+          </div>
+  
+          <div class='flex flex-row items-center mb-3'>
+            <div class='w-5'>
+              <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href='tel:+919632104368' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9632104368</Text></a>
+          </div>
+  
+          <div class='flex flex-row items-start mb-3 '>
+            <div class='w-[2.25rem] mr-1'>
+              <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
+            </div>
+            <a target='_blank' href="https://goo.gl/maps/2WjJv85fKSJg6yfm6">
+              <Text type={'regular'} class='ml-2'>No.36/5,Halanayakanahalli,Varthur Hobli Bengaluru East Taluk,Bengaluru, Karnataka 560035</Text>
+            </a>
+          </div>
+        </div> -->
         
       </div>
     </Constrain>

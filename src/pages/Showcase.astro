@@ -7,7 +7,7 @@ import CarouselCard from "../components/system/CarouselCard.astro";
 import Carousel from "../components/system/Carousel.astro";
 import carouselTemp from "../images/carouselTemp.png";
 import fb from "../icons/facebook.svg?raw"
-
+ 
 import yogaDay from "../image/updates/yoga.jpeg";
 import hindidivas from "../image/updates/hindi divas.jpg";
 import mother from "../image/updates/mother toddler.jpg";
@@ -38,11 +38,12 @@ const heading = title || "Featured Updates";
     <Sal preset="slide-up">
       <Text type="h2">Featured <span>Updates</span></Text>
     </Sal>
-    <Sal preset="slide-up" d={300}>
+    <Sal preset="slide-up" d={300} class="flex flex-row">
       <Text type="lg">
         Follow <a href="https://www.facebook.com/Edifyschoolecity/" target="_blank" class="text-primary">@EdifyEcity</a> for more
         updates!
       </Text>
+      <div class="px-1"></div>
       <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
         <Fragment set:html={fb} />
       </div>
@@ -104,7 +105,7 @@ const heading = title || "Featured Updates";
     <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-sm:px-3 ">
       <Text type="h2" class="[&>span]:text-primary">Featured <span>Updates</span></Text>
         {showSocial && 
-          <a  href="https://www.facebook.com/InsightAcademy.KanakapuraRoad"
+          <a  href="https://www.facebook.com/EkamAcademy.KanakapuraRoad"
               target="_blank"
           >
             <div
@@ -115,7 +116,7 @@ const heading = title || "Featured Updates";
                 color: #216283;
                 "
               >
-              Follow @InsightAcademy for daily updates!
+              Follow @EkamAcademy for daily updates!
             </div>
               <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
                 <Fragment set:html={fb} />
