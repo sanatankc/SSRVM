@@ -40,13 +40,25 @@ const heading = title || "Featured Updates";
     </Sal>
     <Sal preset="slide-up" d={300} class="flex flex-row">
       <Text type="lg">
-        Follow <a href="https://www.facebook.com/Edifyschoolecity/" target="_blank" class="text-primary">@EdifyEcity</a> for more
-        updates!
+        Follow 
       </Text>
       <div class="px-1"></div>
-      <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
-        <Fragment set:html={fb} />
-      </div>
+      <Text type="lg">
+        <a href="https://www.facebook.com/Edifyschoolecity/" target="_blank" class="flex flex-row text-primary">
+          @EdifyEcity
+          <div class="px-1"></div>
+    
+          <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
+            <Fragment set:html={fb} />
+          </div>
+        </a>
+      </Text>
+      <div class="px-1"></div>
+
+      
+      <Text type="lg">
+        for more updates!
+      </Text>
     </Sal>
   </div>
   <p class="p-4"></p>
