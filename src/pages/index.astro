@@ -40,6 +40,7 @@ import slide7Mb from "../image/slides/mb/7.png";
 import slide8Mb from "../image/slides/mb/8.png";
 import Achievements from "../components/Achievements.astro";
 import Affiliations from "../components/Affiliations.astro";
+import AdvisoryBoard from "../components/AdvisoryBoard.astro";
 
 
 
@@ -55,30 +56,39 @@ import Affiliations from "../components/Affiliations.astro";
       <Hero
         showSlide={true}
         slideImages={[
-          {
-            slide: [
-              {
-                src: slide7.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide2Mb.src, media: "(max-width: 768px)" },
-            ],
+          // {
+          //   slide: [
+          //     {
+          //       src: slide7.src,
+          //       media: "(min-width: 768px)",
+          //       position: "center 64%",
+          //     },
+          //     { src: slide2Mb.src, media: "(max-width: 768px)" },
+          //   ],
 
-            type: "image",
-            picture: true,
-          },
+          //   type: "image",
+          //   picture: true,
+          // },
+          // {
+          //   slide: [
+          //     {
+          //       src: slide1.src,
+          //       media: "(min-width: 768px)",
+          //       position: "center 64%",
+          //     },
+          //     { src: slide8Mb.src, media: "(max-width: 768px)" },
+          //   ],
+          //   picture: true,
+          //   type: "image",
+          // },
           {
             slide: [
-              {
-                src: slide1.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide8Mb.src, media: "(max-width: 768px)" },
+              { src: slide8.src, media: "(min-width: 768px)", position: "top" },
+              { src: slide1Mb.src, media: "(max-width: 768px)", position: "top" },
             ],
             picture: true,
             type: "image",
+            position: "bottom",
           },
           {
             slide: [
@@ -92,63 +102,55 @@ import Affiliations from "../components/Affiliations.astro";
             picture: true,
             type: "image",
           },
-          {
-            slide: [
-              {
-                src: slide2.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide7Mb.src, media: "(max-width: 768px)" },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide3.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide5Mb.src, media: "(max-width: 768px)" },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide4.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide6Mb.src, media: "(max-width: 768px)" },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide6.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide4Mb.src, media: "(max-width: 768px)" },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              { src: slide8.src, media: "(min-width: 768px)", position: "top" },
-              { src: slide1Mb.src, media: "(max-width: 768px)", position: "top" },
-            ],
-            picture: true,
-            type: "image",
-            position: "bottom",
-          },
+          // {
+          //   slide: [
+          //     {
+          //       src: slide2.src,
+          //       media: "(min-width: 768px)",
+          //       position: "center 64%",
+          //     },
+          //     { src: slide7Mb.src, media: "(max-width: 768px)" },
+          //   ],
+          //   picture: true,
+          //   type: "image",
+          // },
+          // {
+          //   slide: [
+          //     {
+          //       src: slide3.src,
+          //       media: "(min-width: 768px)",
+          //       position: "center 64%",
+          //     },
+          //     { src: slide5Mb.src, media: "(max-width: 768px)" },
+          //   ],
+          //   picture: true,
+          //   type: "image",
+          // },
+          // {
+          //   slide: [
+          //     {
+          //       src: slide4.src,
+          //       media: "(min-width: 768px)",
+          //       position: "center 64%",
+          //     },
+          //     { src: slide6Mb.src, media: "(max-width: 768px)" },
+          //   ],
+          //   picture: true,
+          //   type: "image",
+          // },
+          // {
+          //   slide: [
+          //     {
+          //       src: slide6.src,
+          //       media: "(min-width: 768px)",
+          //       position: "center 64%",
+          //     },
+          //     { src: slide4Mb.src, media: "(max-width: 768px)" },
+          //   ],
+          //   picture: true,
+          //   type: "image",
+          // },
+          
           // {slide: [
           //   { src: slide8.src, media: "(min-width: 768px)", position: 'bottom', },
           //   { src: slide8.src, media: "(max-width: 768px)" },
@@ -165,7 +167,7 @@ import Affiliations from "../components/Affiliations.astro";
 <Showcase showSocial={false} />
 <WhyEkam />
 
-<Section>
+<Section class="py-[10px]">
   <Affiliations />
 </Section>
 <!-- <div class="w-full h-1">
@@ -180,6 +182,7 @@ import Affiliations from "../components/Affiliations.astro";
 
 <!-- <Achievements /> -->
 <Testimonial />
+<AdvisoryBoard />
 
 <GoToCta />
 <Footer />

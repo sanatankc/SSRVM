@@ -55,47 +55,10 @@ import advisory11 from "../image/about-us/advisory/11.jpg";
 import advisory12 from "../image/about-us/advisory/12.jpg";
 
 import advisorydummy from "../image/about-us/advisory/dummy.webp";
+import AdvisoryBoard from "../components/AdvisoryBoard.astro";
 
 const toppers = campusConfig?.toppers;
 
-
-const advisory = [
-  {
-    name: "Major General B.S Nealakantappa",
-    description: "Veteran of the Indo-Pak wars, served 35 years in the Indian Army; associated with Runto Projects and Lemon Cements Ltd.",
-    image: advisorydummy
-  },
-  {
-    name: "Saswathi Belliyappa",
-    description: "Experienced urban planner and consultant with U.N Habitat and World Bank; trustee of Samvad Foundation; Ph.D. candidate.",
-    image: advisorydummy
-  },
-  {
-    name: "Pawan Kumar",
-    description: "Renowned Kannada film director and actor; founder of Act or Productions theater; multiple award recipient, including for the film Lucia.",
-    image: advisorydummy
-  },
-  {
-    name: "Dr. A. Jagdeesh",
-    description: "Established psychiatrist; founder of Abaya Hospital and institutes; former HOD of psychiatry at K.I.M.S; published author.",
-    image: advisorydummy
-  },
-  {
-    name: "Ajit Mantagani",
-    description: "Former CEO at several prominent companies; BE from Suratkal, IIM(A) alumnus; accredited business mentor and founder of Gameplan Consultancy.",
-    image: advisorydummy
-  },
-  {
-    name: "Prof Rajeev Gowda",
-    description: "IIM(B) professor; Indian National Congress spokesperson; RBI and GIC director; Wharton PhD; global educator and author.",
-    image: advisorydummy
-  },
-  {
-    name: "Dr. Malathi K Holla",
-    description: "International Para Athlete; Padmashri and Arjun Awardee; Syndicate Bank Chief Manager; NGO founder; motivational speaker.",
-    image: advisorydummy
-  },
-]
 ---
 
 <Layout
@@ -104,11 +67,11 @@ const advisory = [
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-      class="h-[70svh] flex"
+      class="h-[76svh] flex"
       style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
       <Hero
-        config={{ title: "Welcome to EKAM Edify", bgImage: campus1 }}
+        config={{ title: "Welcome to EKAM", bgImage: campus1 }}
         showSlide={true}
         slideImages={[
           // { slide: slide5.src, position: "center 64%", type: "image" },
@@ -118,19 +81,19 @@ const advisory = [
           { slide: slide4.src, position: "top", type: "image" },
         ]}
         contentDirection="items-end"
-        className="overflow-hidden font-roundo"
+        className="overflow-hidden font-roundo pb-0"
       >
-        <div slot="title">
+      <div slot="title">
+          <!-- <div class="p-20"></div> -->
           <Text type="h2">
-            Welcome to <span class="text-primary">Ekam Edify</span>
+            Welcome to <span class="text-primary">Ekam</span>
           </Text>
           <div class="p-1"></div>
-          <Text type="base" class="text-white w-[70%] max-md:w-full">
-            EKAM Edify is built on a collaboration between K M Trust and MDN
-            Edify Education, situated in Suryanagar near Electronic City,
-            Bangalore.
+          <Text type="base" class="text-white w-[80%] max-md:w-full">
+            We're deeply committed to holistic child development. Situated on an 8-acre campus, we feature advanced digital classrooms, specialized labs, and multifaceted facilities for arts and sports.
           </Text>
-          <div class="p-4"></div>
+          <div class="p-2"></div>
+
         </div>
       </Hero>
     </div>
@@ -147,10 +110,11 @@ const advisory = [
       class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
     >
       <div class="max-md:flex block flex-col items-center">
-        <Text type="h2">Our <span>Vision</span></Text>
+        <Text type="h2">Our <span>Mission</span> & <span>Vision</span></Text>
+
         <div class="pt-4 max-md:pt-2"></div>
-        <Text type="lg" class="[&>span]:text-primary text-[28px]">
-          Discovering the world, <span>one question at a time.</span>
+        <Text type="lg" class="[&>span]:text-primary text-[24px]">
+          Empower young minds for global citizenship through <span>progressive education</span>
         </Text>
         <div class="pt-6 max-md:pt-2"></div>
         <Text type="base" class="max-w-[900px]">
@@ -177,10 +141,11 @@ const advisory = [
     </div>
     <div class="pt-[54px] max-md:pt-[20px]"></div>
     <div class="w-full flex flex-col items-center text-left max-md:text-center">
-      <Text type="h2">Our <span>Mission</span></Text>
+      <Text type="h2">Our <span>Philosophy</span></Text>
       <div class="pt-4 max-md:pt-2"></div>
       <Text type="lg" class="[&>span]:text-primary text-[28px]">
-        To create an environment <span>conducive to success.</span>
+        Empathy, Excellence, Empowerment: <span>The Ekam Journey</span>
+        <!-- To create an environment <span>conducive to success.</span> -->
       </Text>
       <div class="pt-9 max-md:pt-3"></div>
       <div
@@ -193,9 +158,8 @@ const advisory = [
             <Image src={mission1} alt="" class="object-cover w-full h-full" />
           </div>
           <div class="pt-6"></div>
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            Cultivating dynamic leaders, nurturing individual talents for a
-            promising future.
+          <Text type="regular" class="[&>span]:font-bold">
+            <span>Environment for Success:</span> Ekam promotes a student-centric, empathetic atmosphere with emphasis on respect for community values and cooperation.
           </Text>
         </div>
         <div
@@ -205,9 +169,8 @@ const advisory = [
             <Image src={mission2} alt="" class="object-cover w-full h-full" />
           </div>
           <div class="pt-6"></div>
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            Fostering independence and resourcefulness for confident, successful
-            individuals
+          <Text type="regular" class="[&>span]:font-bold">
+            <span>Fostering Lifelong Learning:</span> We implement an integrated, inquiry-based curriculum, encouraging diverse intellectual, artistic, and athletic pursuits.
           </Text>
         </div>
         <div
@@ -217,9 +180,8 @@ const advisory = [
             <Image src={mission3} alt="" class="object-cover w-full h-full" />
           </div>
           <div class="pt-6"></div>
-          <Text type="base" class="[&>span]:text-primary [&>span]:font-bold">
-            Developing active global citizens with high self-esteem, enriching
-            the nation and world.
+          <Text type="regular" class="[&>span]:font-bold">
+            <span>Shaping Global Leaders:</span> Ekam is committed to nurturing resilient and adaptable students prepared for further education and social responsibility.
           </Text>
         </div>
       </div>
@@ -234,7 +196,7 @@ const advisory = [
     />
     <div class="pt-8"></div>
     <Text type="lg" class="text-center">
-      Our Philosophy: Empowering Through <span class="text-primary"
+      Empowering Through <span class="text-primary"
         >Inquiry</span
       >
     </Text>
@@ -439,6 +401,86 @@ const advisory = [
     </div>
   </Section>
 
+  <Section
+    class="flex flex-col w-full items-center text-left px-[56px] pt-[0] pb-[0] text-black"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
+    }}
+  >
+    <div
+      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] pt-[60px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
+    >
+      <div class="max-md:flex block flex-col items-center">
+        <Text type="h2">Our Quality Policy</Text>
+
+        <div class="pt-4 max-md:pt-2"></div>
+        <Text type="lg" class="[&>span]:text-primary text-[24px]">
+          <span>Commitment to Excellence:</span> Shaping Global Citizens Through Holistic Education
+        </Text>
+        <div class="pt-6 max-md:pt-2"></div>
+
+        <Text type="regular">
+          The school emphasises academic distinction while cherishing a community that values compassion and diversity. Our approach is designed to nurture well-rounded individuals who are globally aware and locally rooted.
+        </Text>
+        <div class="pt-4" />
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold">
+              <span>Inclusive Ethos:</span> Practicing tolerance, peaceful coexistence, and ethical leadership.
+            </Text>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold">
+              <span>Comprehensive Awareness:</span> Merging historic insights with contemporary global understanding.
+            </Text>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold">
+              <span>Diverse Engagement:</span> Enhancing international perspectives through exchanges and our unique school community.
+            </Text>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
+                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
+              </svg>
+            </div>
+            <div class="px-2"></div>
+            <Text type="regular" class="[&>span]:font-bold">
+              <span>Continuous Advancement:</span> Prioritising quality in teaching, resources, multilingualism, and curriculum development.
+            </Text>
+          </div>
+        </div>
+
+      </div>
+      <Image
+        class="w-[344px] object-contain max-md:w-[90%]"
+        src={vision}
+        alt="Why choose Edify??"
+      />
+    </div>
+    <!-- <div class="pt-[54px] max-md:pt-[20px]"></div> -->
+  </Section>
+
   <Section class="flex flex-col w-full items-center text-left !px-0">
     <Image
       src={blobBig}
@@ -452,7 +494,7 @@ const advisory = [
     <div class="pt-16 max-md:pt-8"></div>
 
     <div
-      class="w-full flex gap-[73px] max-md:gap-[24px]  max-md:items-center max-md:flex-col pl-[90px] max-md:px-[20px] flex-row-reverse"
+      class="w-full flex gap-[73px] max-md:gap-[24px] items-center max-md:flex-col pl-[90px] max-md:px-[20px] flex-row-reverse"
     >
       <div
         class="w-[460px] max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden h-[451px] flex-shrink-0 bg-red-100 rounded-tl-[150px] rounded-bl-[16px]"
@@ -466,22 +508,20 @@ const advisory = [
       <div class="max-md:text-center text-left">
         <div>
           <div class="pt-1"></div>
-          <Text type="h2">Message from our President</Text>
+          <Text type="h2">Message from our Director</Text>
           <div class="pt-2"></div>
           <Text type="lg" class="text-primary">Mr. Ashok KM Gowda</Text>
+          <div class="p-1" />
+          <Text type="sm" class="text-black">Chairman KMET, EKAM International School, Electronic City</Text>
           <div class="pt-8"></div>
 
-          <Text type="base">
-            At Kamala Muniyappa Education Trust, we’re driven by a deep
-            commitment to provide quality education, transcending barriers of
-            caste, religion, and gender. Starting with 67 students, Ekam Edify
-            has grown to over 650 students, drawing students from various parts
-            of the city. Our school stands as a testament, offering subsidised
-            and, in some cases, free education to hundreds of children. We are
-            immensely proud of achieving a 100% quality result in the CBSE Board
-            exams, showcasing the dedication and excellence of our institution.
-            Our strong emphasis on values, life skills, and community engagement
-            further cements our dedication to holistic education.
+          <Text type="base" class="[&>span]:text-primary">
+            At EKAM International School Ecity, every day is a chance to profoundly impact our students, guiding their self-discovery and potential realization. Our mission centers on igniting each child's inherent learning prowess. We emphasize fostering a genuine love for learning, encapsulated in our mantra: <span>teach them how to learn, not what to learn</span>.
+            <br/><br/>
+            Annually, our dedication to shaping global citizens sees our students mature into self-driven leaders who appreciate cultural diversity. EKAM's primary goal remains providing holistic education, ensuring our students become critical thinkers and globally-aware community members.
+            <br/><br/>
+
+            Our cohesive strategic efforts, combined with our dedicated staff and supportive community, consistently drive us towards excellence. We're focused on imparting essential lifelong skills and values, cultivating responsible global citizenship in our students. We're hopeful and excited about EKAM's bright future.
           </Text>
         </div>
       </div>
@@ -490,10 +530,10 @@ const advisory = [
     <div class="pt-[118px] max-md:pt-[30px]"></div>
 
     <div
-      class="w-full flex flex-row gap-[73px] max-md:gap-[24px] max-md: max-md:items-center max-md:flex-col max-md:px-[20px] pr-[90px]"
+      class="w-full flex flex-row gap-[73px] max-md:gap-[24px] items-center max-md:flex-col max-md:px-[20px] pr-[90px]"
     >
       <div
-        class="w-[460px] max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"
+        class="w-[460px]  max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"
       >
         <Image
           src={principal}
@@ -509,10 +549,8 @@ const advisory = [
           <Text type="lg" class="text-primary">Dr. Manmitta Das Raina</Text>
           <div class="pt-8"></div>
 
-          <Text type="base">
-            Greetings !!<br/>
-            <br />
-
+          <Text type="base" class="[&>span]:text-primary">
+            Greetings!<br/>
             We are passionate about creating a dynamic learning institution that strives for excellence to meet current and future needs.
             <br />
             <br />
@@ -528,49 +566,9 @@ const advisory = [
     </div>
   </Section>
 
-  <!-- <Section>
-    <Text type="h2" class="text-center">Our <span>Advisory</span> Board</Text>
-    <div class="pt-[38px]"></div>
-    <div class="overflow-hidden rounded-lg">
-      <Carousel
-        arrowsContainerClass="mt-4"
-        class="gap-1 overflow-scroll"
-        id="advisory-team-carousel"
-      >
-        {
-          advisory.map((advisor) => (
-            <CarouselCard>
-              <div class="w-[540px] max-md:w-[95vw] max-md:h-[320px] h-[525px] bg-black/30 text-center relative text-white">
-                <div class="absolute top-0 left-0 w-full h-full">
-                  <Image
-                    src={advisor.image}
-                    class="w-full h-full object-cover grayscale"
-                    alt={advisor.name}
-                  />
-                </div>
-                <div
-                  class="absolute w-full h-full pb-[34px] flex flex-col justify-end max-md:pt-0 max-md:justify-end max-md:pb-[10px] pb-unset items-start px-[35px]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.7%, #000 100%)",
-                  }}
-                >
-                  <Text type="lg" class="max-md:w-[90%] text-primary text-start">
-                    {advisor.name}
-                  </Text>
-                  <div class="pt-2" />
-                  <Text type="base" class="max-md:w-[90%] text-start">
-                    {advisor.description}
-                  </Text>
-                  <div class="pt-2" />
-                </div>
-              </div>
-            </CarouselCard>
-          ))
-        }
-      </Carousel>
-    </div>
-  </Section> -->
+  
+
+  <AdvisoryBoard />
 
   <div id="contact-us" style="scroll-margin: 60px;">
     <Connect
