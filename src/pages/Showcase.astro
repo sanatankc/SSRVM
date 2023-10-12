@@ -6,6 +6,7 @@ import Section from "../components/system/Section.astro";
 import CarouselCard from "../components/system/CarouselCard.astro";
 import Carousel from "../components/system/Carousel.astro";
 import carouselTemp from "../images/carouselTemp.png";
+import fb from "../icons/facebook.svg?raw"
 
 import yogaDay from "../image/updates/yoga.jpeg";
 import hindidivas from "../image/updates/hindi divas.jpg";
@@ -42,6 +43,9 @@ const heading = title || "Featured Updates";
         Follow <a href="https://www.facebook.com/Edifyschoolecity/" target="_blank" class="text-primary">@EdifyEcity</a> for more
         updates!
       </Text>
+      <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
+        <Fragment set:html={fb} />
+      </div>
     </Sal>
   </div>
   <p class="p-4"></p>
