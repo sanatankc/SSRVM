@@ -109,10 +109,22 @@ const activePath = Astro.url.pathname;
     style={{
       boxShadow: "0px 1px 7px 0px #8888881c",
     }}
-  >
-    <a href="/" class="relative z-10 daisy daisy-fixed daisy-1">
-      <img src={logo.src} alt="Ekam's Logo" width="80px" />
-    </a>
+    >
+    <div class="flex flex-row items-center">    
+      <div class="max-md:block hidden">
+        <form autocomplete="off">
+          <div id="menuToggle">
+            <input class="menu-checkbox" type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </form>
+      </div>
+      <a href="/" class="relative z-10 daisy daisy-fixed daisy-1 w-[80px] max-md:w-[70px] max-md:pl-4">
+        <img src={logo.src} alt="Ekam's Logo"  />
+      </a>
+    </div>
     <div class="flex flex-row items-center max-md:hidden text-lg">
       {
         menu.map((item, i) => {
@@ -212,9 +224,9 @@ const activePath = Astro.url.pathname;
           return (
             <a
               href={item.link}
-              class={`${item.menu && "max-md:hidden"} ${item?.className}`}
+              class={`${item.menu} ${item?.className}`}
             >
-              <Button class="font-sans" type={item.type} icon={item?.icon}>
+              <Button class="font-sans relative z-10" buttonClass="max-md:px-4 max-md:py-3" textClass="max-md:!text-sm" type={item.type} icon={item?.icon}>
                 {item.title}
               </Button>
             </a>
@@ -223,18 +235,9 @@ const activePath = Astro.url.pathname;
       }
     </div>
   
-    <div class="max-md:block hidden">
-      <form autocomplete="off">
-        <div id="menuToggle">
-          <input class="menu-checkbox" type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </form>
-    </div>
+    
   
-    <div class="mobileMenu absolute pt- top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
+    <div class="mobileMenu absolute top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
       {menu.map(item => {
         if (item.submenu && item.submenu.length > 0) {
           return (
