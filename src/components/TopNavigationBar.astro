@@ -84,7 +84,11 @@ const activePath = Astro.url.pathname;
         <div class='w-4'>
           <Image src={phoneIconWhite} alt="Phone Icon" class="w-full h-full">
         </div>
-        <a target='_blank' href='tel:+919900077180' class="hover:underline font-bold"><Text type={'regular'} class='ml-2 max-md:text-[15px] '>+91 9900077180</Text></a>
+        <div class="flex flex-row">
+          <a target='_blank' href='tel:+919900077180' class="hover:underline font-bold"><Text type={'regular'} class='ml-2 max-md:text-[15px]'>+91 9900077180 </Text></a>
+          /
+          <a target='_blank' href='tel:+919900077181' class="hover:underline font-bold"><Text type={'regular'} class='max-md:text-[15px]'>81</Text></a>
+        </div>
       </div>
 </div>
     <div class="flex flex-row items-center h-full gap-8 max-md:gap-3">
@@ -100,12 +104,16 @@ const activePath = Astro.url.pathname;
         <div class='w-4 max-md:w-3'>
           <Image src={phoneIconWhite} alt="Phone Icon" class="w-full h-full">
         </div>
-        <a target='_blank' href='tel:+919900077180' class="hover:underline font-bold"><Text type={'sm'} class='ml-2 max-md:text-[15px] '>+91 9900077180</Text></a>
+        <div class="flex flex-row">
+          <a target='_blank' href='tel:+919900077180' class="hover:underline font-bold"><Text type={'sm'} class='ml-2 max-md:text-[15px] '>+91 9900077180</Text></a>
+          /
+          <a target='_blank' href='tel:+919900077181' class="hover:underline font-bold"><Text type={'sm'} class='max-md:text-[15px]'>81</Text></a>
+        </div>
       </div>
     </div>
   </div>
   <header
-    class="font-roundo w-screen bg-white border-[#fff6ea] border-b-[2px] py-1 pl-10 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md h-[80px]"
+    class="font-roundo w-screen relative bg-white border-[#fff6ea] border-b-[2px] py-1 pl-10 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md h-[80px]"
     style={{
       boxShadow: "0px 1px 7px 0px #8888881c",
     }}
