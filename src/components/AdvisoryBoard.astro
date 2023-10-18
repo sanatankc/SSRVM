@@ -3,44 +3,51 @@ import Carousel from "./system/Carousel.astro";
 import CarouselCard from "./system/CarouselCard.astro";
 import Section from "./system/Section.astro";
 import Text from "./system/Text.astro";
-import advisorydummy from "../image/about-us/advisory/dummy.webp";
+import ajitMontagony from '../image/about-us/advisory/Ajit Montagony.jpeg';
+import jagdeesh from '../image/about-us/advisory/Dr Jagdeesh.jpeg'
+import neelkantappa from '../image/about-us/advisory/Major Neelkantappa.jpeg'
+import holla from '../image/about-us/advisory/Malathi Holla.jpeg'
+import pawan from '../image/about-us/advisory/Pawan Kumar.jpeg'
+import rajeev from '../image/about-us/advisory/Rajeev Gowda.jpeg'
+import saswathi from '../image/about-us/advisory/saswathi belliyappa.jpeg'
+
 import { Image } from "astro:assets";
 
 const advisory = [
   {
     name: "Major General B.S Nealakantappa",
     description: "Veteran of the Indo-Pak wars, served 35 years in the Indian Army; associated with Runto Projects and Lemon Cements Ltd.",
-    image: advisorydummy
+    image: neelkantappa
   },
   {
     name: "Saswathi Belliyappa",
     description: "Experienced urban planner and consultant with U.N Habitat and World Bank; trustee of Samvad Foundation; Ph.D. candidate.",
-    image: advisorydummy
+    image: saswathi
   },
   {
     name: "Pawan Kumar",
     description: "Renowned Kannada film director and actor; founder of Act or Productions theater; multiple award recipient, including for the film Lucia.",
-    image: advisorydummy
+    image: pawan
   },
   {
     name: "Dr. A. Jagdeesh",
     description: "Established psychiatrist; founder of Abaya Hospital and institutes; former HOD of psychiatry at K.I.M.S; published author.",
-    image: advisorydummy
+    image: jagdeesh
   },
   {
     name: "Ajit Mantagani",
     description: "Former CEO at several prominent companies; BE from Suratkal, IIM(A) alumnus; accredited business mentor and founder of Gameplan Consultancy.",
-    image: advisorydummy
+    image: ajitMontagony
   },
   {
     name: "Prof Rajeev Gowda",
     description: "IIM(B) professor; Indian National Congress spokesperson; RBI and GIC director; Wharton PhD; global educator and author.",
-    image: advisorydummy
+    image: rajeev
   },
   {
     name: "Dr. Malathi K Holla",
     description: "International Para Athlete; Padmashri and Arjun Awardee; Syndicate Bank Chief Manager; NGO founder; motivational speaker.",
-    image: advisorydummy
+    image: holla
   },
 ]
 ---
@@ -60,7 +67,7 @@ const advisory = [
               <div class="absolute top-0 left-0 w-full h-full">
                 <Image
                   src={advisor.image}
-                  class="w-full h-full object-cover grayscale"
+                  class="w-full h-full object-cover grayscale object-top"
                   alt={advisor.name}
                 />
               </div>
