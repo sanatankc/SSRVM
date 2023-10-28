@@ -30,7 +30,8 @@ const menu: Array<Menu> = [
     link: "/academics",
     submenu: [
       { title: 'Curriculum', link: '/academics' },
-      { title: 'Clubs', link: '/clubs' }
+      { title: 'Clubs', link: '/clubs' },
+      { title: 'Co-scholastics', link: '/coscholastics' }
     ]
   },
   {
@@ -79,7 +80,7 @@ const activePath = Astro.url.pathname;
 <div class="fixed z-[999]">
   <div class="py-2 w-full max-md:px-2 bg-primary px-12 text-white flex flex-row items-center justify-between max-md:flex-col max-md:gap-3">
 <div class="flex flex-row justify-center max-md:w-full gap-6">
-    <Text type="sm" class="font-bold max-md:text-[15px]">Admissions Open</Text>
+    <Text type="sm" class="font-bold max-md:text-[15px] max-md:hidden">Admissions Open</Text>
 <div class='max-md:flex hidden flex-row items-center h-full'>
         <div class='w-4'>
           <Image src={phoneIconWhite} alt="Phone Icon" class="w-full h-full">
@@ -91,7 +92,7 @@ const activePath = Astro.url.pathname;
         </div>
       </div>
 </div>
-    <div class="flex flex-row items-center h-full gap-8 max-md:gap-3">
+    <div class="flex flex-row items-center h-full gap-8 max-md:gap-3 max-md:hidden">
       <div class='flex flex-row items-center h-full'>
         <div class='w-6 max-md:w-5'>
           <Image src={emailIconWhite} alt="Email Icon" class="w-full h-full">
@@ -129,11 +130,11 @@ const activePath = Astro.url.pathname;
           </div>
         </form>
       </div>
-      <a href="/" class="relative z-10 daisy daisy-fixed daisy-1 w-[230px] max-md:w-[150px] max-md:pl-4">
+      <a href="/" class="relative z-10 daisy daisy-fixed daisy-1 w-[230px] max-md:w-[88%] max-md:pl-4">
         <img src={logo.src} alt="Ekam's Logo"  />
       </a>
     </div>
-    <div class="flex flex-row items-center max-md:hidden text-lg">
+    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0">
       {
         menu.map((item, i) => {
           if (item.submenu && item.submenu.length > 0) {
@@ -226,7 +227,7 @@ const activePath = Astro.url.pathname;
         })
       }
     </div>
-    <div class="flex gap-3">
+    <div class="flex gap-3 flex-shrink-0">
       {
         ctaButtons.map((item) => {
           return (
@@ -330,7 +331,7 @@ const activePath = Astro.url.pathname;
     </div>
   </header>
 </div>
-<div class="max-md:h-[157px] h-[120px]"></div>
+<div class="max-md:h-[120px] h-[120px]"></div>
 
 <style>
   .menu {
