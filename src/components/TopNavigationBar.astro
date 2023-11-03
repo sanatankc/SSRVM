@@ -105,7 +105,7 @@ const { hideMenu = false, applyNowButtonId = null } = Astro.props;
   {
     hideMenu ? (
       <div class="relative z-10 daisy daisy-fixed daisy-1">
-        <Image src={logo} alt="SSRVM's Logo" class="w-[300px] p-2" />
+        <Image src={logo} alt="SSRVM's Logo" class="w-[300px] max-md:w-[200px] p-2" />
       </div>
     ) : (
       <a href="/" class="relative z-10 daisy daisy-fixed daisy-1">
