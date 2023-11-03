@@ -11,6 +11,7 @@ import TestimonicalCard from './TestimonicalCard.astro';
 import testimonial1 from '../../images/testimonial/1.png'
 import testimonial2 from '../../images/testimonial/2.png'
 import testimonial3 from '../../images/testimonial/3.png'
+import testimonial4 from '../../images/testimonial/4.png'
 import Scribble from '../Scribble.astro';
 
 const testimonials = {
@@ -18,9 +19,9 @@ const testimonials = {
     subtitle: 'Stories of Transformation and Growth',
     data: [
       {
-        image: testimonial2,
-        quote: "SSRVM has created a nurturing environment that has contributed to my son's personal development. The teachers and staff are so dedicated and caring and ensure to take genuine interest in each student's progress and provide individualized attention when needed. SSRVM stands out for its inclusive atmosphere where every child feels valued.",
-        author: '- Ms Akhila Sreedharan, Parent'
+        image: testimonial1,
+        quote: "This school has demonstrated that education extends beyond the mental and physical aspects. It offers spiritual education while keeping a strong connection to our Indian culture, which significantly boosts my child's morale",
+        author: '- Ms Anjana Singh, Parent',
       },
       {
         image: testimonial3,
@@ -29,9 +30,9 @@ const testimonials = {
         author: '- MR. Rakesh Singh, PARENT'
       },
       {
-        image: testimonial1,
-        quote: "This school has demonstrated that education extends beyond the mental and physical aspects. It offers spiritual education while keeping a strong connection to our Indian culture, which significantly boosts my child's morale",
-        author: '- Ms Anjana Singh, Parent',
+        image: testimonial4,
+        quote: "SSRVM is a wonderful place to learn and grow. SSRVM has given me a holistic education that I am thankful for. SSRVM is not just a school, it is a community",
+        author: '- Samarth Jain, Student',
 
       },
     ],
@@ -100,7 +101,7 @@ const subtitle = testimonials.subtitle;
   </div> -->
 
 
-   <!-- <div class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto'>
+   <div class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto'>
       <div class='
         min-w-[34vw] max-md:w-[100%]
         max-md:min-h-[136px] bg-cover bg-center
@@ -108,7 +109,9 @@ const subtitle = testimonials.subtitle;
         rounded-r-none
         '
         style={{
-          backgroundImage: `url(${testimonials.data[0].image.src})`
+          backgroundImage: `url(${testimonials.data[0].image.src})`,
+          backgroundPosition: `center bottom 220px`
+
         }}>
       </div>
       <div class='flex flex-col justify-center px-14 max-md:px-1 max-md:items-left'>
@@ -122,13 +125,13 @@ const subtitle = testimonials.subtitle;
         <div class="pt-4 max-md:2" />
         <Text type="sm" class="tracking-[1.8px] text-primary uppercase font-bold">{testimonials.data[0].author}</Text>
       </div>
-    </div> -->
-    <TestimonicalCard 
+    </div>
+    <!-- <TestimonicalCard 
             quote={testimonials.data[0].quote}
             author={testimonials.data[0]?.author}
             image={testimonials.data[0].image}
             className="bg-transparent  rounded-bl-[50px]"
-        />
+        /> -->
 
 
   <div class="p-3" />
