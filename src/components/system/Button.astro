@@ -21,11 +21,13 @@ const buttonClassName = {
 };
 ---
 
-<div class:list={[
-  className,
-  "flex-shrink-0 font-sans",
-  "[&.loading_.icon]:!hidden [&.loading_.loading-icon]:!block"
-]}>
+<div
+  class:list={[
+    className,
+    "flex-shrink-0 font-sans",
+    "[&.loading_.icon]:!hidden [&.loading_.loading-icon]:!block",
+  ]}
+>
   <button
     type={type}
     class:list={[
@@ -35,14 +37,16 @@ const buttonClassName = {
     ]}
     style={{
       // boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-      // background: primary ? "linear-gradient(263.64deg, var(--primary) 6.11%, #028339 95.99%)" : 'white'
+      background:
+        buttonType === "primary"
+          ? "linear-gradient(264deg, #FBC807 6.11%, #C89E01 95.99%);"
+          : "white",
     }}
   >
-  
     <Text
       type="base"
       class={`
-          ${!secondary ? "!text-white" : "!text-green-400"}
+          ${!secondary ? "!text-black" : "!text-green-400"}
           font-bold tracking-[-0.72px]
           ${textClass}
         `}
@@ -56,23 +60,32 @@ const buttonClassName = {
     </div>
 
     <div class="w-8 h-8 ml-2 loading-icon hidden">
-      <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-    <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
-      <animateTransform 
-         attributeName="transform" 
-         attributeType="XML" 
-         type="rotate"
-         dur="1s" 
-         from="0 50 50"
-         to="360 50 50" 
-         repeatCount="indefinite" />
-  </path>
-</svg>
-
-
+      <svg
+        version="1.1"
+        id="L9"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 100 100"
+        enable-background="new 0 0 0 0"
+        xml:space="preserve"
+      >
+        <path
+          fill="#fff"
+          d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            dur="1s"
+            from="0 50 50"
+            to="360 50 50"
+            repeatCount="indefinite"></animateTransform>
+        </path>
+      </svg>
     </div>
-    
   </button>
 </div>
 

@@ -16,10 +16,10 @@ module.exports = {
         "neutral-dark-grey": "#1B2226",
         "dark-gray": "#1B2226",
         primary: {
-          DEFAULT: "#17436d",
+          DEFAULT: "#FBC807",
         },
         secondary: {
-          DEFAULT: "#fcb900",
+          DEFAULT: "#707861",
         },
         green: {
           300: "#F5CC4F",
@@ -93,9 +93,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ['"avenir"', "sans-serif"],
+      display: ['"Playfair Display"', "sans-serif"],
       sans: ['"avenir"', "sans-serif"],
-      header: ['"Playfair Display"', "sans-serif"],
     },
   },
   // safelist: [

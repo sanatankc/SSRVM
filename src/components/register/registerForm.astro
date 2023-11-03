@@ -13,22 +13,12 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 
 <div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-accent2 text-black rounded-xl items-center w-full max-w-[534px] relative z-20 transition-opacity duration-300" id="register-form-container-desktop">
   <div class="w-full form">
-    <Text type="h3" class='text-[32px] text-center'>Register Now for <span class="text-blue-600">AY 2024-25</span></Text>
+    <Text type="h3" class='text-[32px] text-center'>Register Now for <span class="!text-secondary">AY 2024-25</span></Text>
     <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm">Fill the form below and we’ll get in touch shortly!</Text>
     
     <form class="flex-col flex gap-[23px] mt-8 max-md:mt-6" id="register-form"  method="POST">
-      <Select
-        placeholder="Select Admission Year"
-        id="selectAdmissionYear"
-        options={[
-          "2023-24",
-          "2024-25"
-        ]}
-        name="admissionYear"
-        required
-        defaultValue="2024-25"
-      />
-      <div class="flex flex-row gap-5 max-md:flex-col"> 
+      
+      <div class="flex flex-col gap-5 max-md:flex-col"> 
         <div class="w-full" style={{
           boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.05)'
         }}>
@@ -78,18 +68,7 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
         </svg>
       </InputIcon>
       
-      <Select
-        placeholder="Choose Campus"
-        id="selectBranch"
-        title="Please select a Campus"
-        options={[
-          "Whitefield",
-          "Sarjapur Road",
-          "Bannerghatta Road",
-        ]}
-        name="campus"
-        required
-      />
+      
 
       <SelectPill
         placeholder="Select Grade"
@@ -110,6 +89,7 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
           "Grade 9",
           "Grade 10",
           "Grade 11",
+          "Grade 12"
         ]}
         name="selectDisabled"
         disabled
@@ -193,7 +173,7 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
           </label>
         </Text>
       </div>
-      <Button type='submit' class='w-full [&>button]:w-full [&>button]:justify-center max-md:mt-0 apply-now-register-button'>Apply Now</Button>
+      <Button type='submit' class='w-full [&>button]:w-full [&>button]:justify-center max-md:mt-0 apply-now-register-button'>APPLY NOW</Button>
     </form>
   </div>
   <div class="w-full success-msg flex flex-col gap-2">
