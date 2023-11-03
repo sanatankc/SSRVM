@@ -11,10 +11,10 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 
 ---
 
-<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-accent2 text-black rounded-xl items-center w-full max-w-[534px] relative z-20 transition-opacity duration-300" id="register-form-container-desktop">
+<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-blue-500 text-black rounded-xl items-center w-full max-w-[534px] relative z-20 transition-opacity duration-300" id="register-form-container-desktop">
   <div class="w-full form">
-    <Text type="h3" class='text-[32px] text-center mb-2'>Register Now </Text>
-    <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm">Fill the form below and we’ll get in touch shortly!</Text>
+    <Text type="h3" class='text-[32px] text-center'>Register Now</Text>
+    <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm mt-2">Fill the form below and we’ll get in touch shortly!</Text>
     
     <form class="flex-col flex gap-[23px] mt-8 max-md:mt-6" id="register-form"  method="POST">
       
@@ -68,19 +68,37 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
         </svg>
       </InputIcon>
       
-      <input
-        placeholder="Date of Birth"
-        type="date"
-        name="dob"
-        required
-        class="
-          w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
-          py-3 px-4 text-[14px]
-          relative
-        "
-        onclick="this.showPicker()"
-      />
-      
+      <div class="relative h-[49px]">
+        <input
+          placeholder="Date of Birth"
+          type="date"
+          name="dob"
+          data-date-placeholder="dob-register-form"
+          required
+          class="
+            w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
+            py-3 px-4 text-[14px]
+            absolute top-0 left-0
+            h-[49px]
+          "
+          onclick="this.showPicker()"
+        />
+        <input
+          placeholder="Date of Birth"
+          id="dob-register-form"
+          type="text"
+          name="dob"
+          required
+          class="
+            w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
+            py-3 px-4 text-[14px]
+            absolute top-0 left-0
+            h-[49px]
+            pointer-events-none
+          "
+        />
+        
+      </div> 
 
       <SelectPill
         placeholder="Select Grade"
@@ -108,72 +126,6 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
         required={false}
       />
 
-      <SelectPill
-        placeholder="Select Grade"
-        id="selectGrade1"
-        title="Please select a grade"
-        class="hidden"
-        options={[
-          "Nursery",
-          "LKG",
-          "UKG",
-          "Grade 1",
-          "Grade 2",
-          "Grade 3",
-          "Grade 4",
-          "Grade 5",
-          "Grade 6",
-          "Grade 7",
-          "Grade 8",
-          "Grade 9",
-          "Grade 10",
-          "Grade 11",
-        ]}
-        name="grade1"
-        required
-      />
-      <SelectPill
-        placeholder="Select Grade"
-        id="selectGrade2"
-        title="Please select a grade"
-        class="hidden"
-        options={[
-          "Nursery",
-          "LKG",
-          "UKG",
-          "Grade 1",
-          "Grade 2",
-          "Grade 3",
-          "Grade 4",
-          "Grade 5",
-          "Grade 6",
-          "Grade 7",
-          "Grade 8",
-          "Grade 9",
-          "Grade 10",
-          "Grade 11",
-        ]}
-        name="grade2"
-        required
-      />
-      <SelectPill
-        placeholder="Select Grade"
-        id="selectGrade3"
-        title="Please select a grade"
-        class="hidden"
-        options={[
-          "Nursery",
-          "LKG",
-          "UKG",
-          "Grade 1",
-          "Grade 2",
-          "Grade 3",
-          "Grade 4",
-        ]}
-        name="grade3"
-        required
-      />
-  
       <div class="flex flex-row">
         <input type="checkbox" class="accent-accent2 cursor-pointer" name="whatsappConsent" id="whatsappConsent" />
         <div class="px-1" />
@@ -227,65 +179,6 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 
 <script>
   import tippy from 'tippy.js';
-
-  console.log('hello...')
-  // by default hide grades
-  const selectGrade1Container = document.querySelector('[data-select-parent-id="selectGrade1"]');
-  const selectGrade2Container = document.querySelector('[data-select-parent-id="selectGrade2"]');
-  const selectGrade3Container = document.querySelector('[data-select-parent-id="selectGrade3"]');
-  const selectAdmissionYear = document.querySelector('[data-select-parent-id="selectAdmissionYear"]');
-  
-  const selectBranchEl = document.querySelector('[data-select-parent-id="selectBranch"] select');
-  
-  const selectBranchOptions = document.querySelectorAll('[data-select-parent-id="selectBranch"] [data-value]');
-  
-  selectGrade1Container.style.display = 'none';
-  selectGrade2Container.style.display = 'none';
-  selectGrade3Container.style.display = 'none';
-
-  const updateGradesOptions = (campusName) => {
-    document.querySelector('[data-select-parent-id="selectDisabled"]').style.display = 'none';
-    // document.getElementById('register-form-container-desktop').classList.add('form-completed')
-    if (campusName === 'Whitefield') {
-      selectAdmissionYear.querySelector('select').required = true
-      selectAdmissionYear.style.display = 'block'
-      selectGrade1Container.style.display = 'block';
-      selectGrade2Container.style.display = 'none';
-      selectGrade3Container.style.display = 'none';
-      // required for form validation
-      selectGrade2Container.querySelector('select').required = false
-      selectGrade3Container.querySelector('select').required = false
-    } else if (campusName === 'Sarjapur Road') {
-      selectAdmissionYear.querySelector('select').required = true
-      selectAdmissionYear.style.display = 'block'
-      selectGrade1Container.style.display = 'none';
-      selectGrade2Container.style.display = 'block';
-      selectGrade3Container.style.display = 'none';
-
-      selectGrade1Container.querySelector('select').required = false
-      selectGrade3Container.querySelector('select').required = false
-    } else if (campusName === 'Bannerghatta Road') {
-      selectGrade1Container.style.display = 'none';
-      selectGrade2Container.style.display = 'none';
-      selectGrade3Container.style.display = 'block';
-      selectAdmissionYear.style.display = 'none'
-
-      selectGrade1Container.querySelector('select').required = false
-      selectGrade2Container.querySelector('select').required = false
-      selectAdmissionYear.querySelector('select').required = false
-
-    }
-  }
-  // show grades when branch is selected
-  selectBranchEl.addEventListener('change', (e) => {
-    updateGradesOptions(e.target.value)
-  })
-
-  selectBranchOptions.forEach((option) => {
-    option.addEventListener('click', (e) => {
-      updateGradesOptions(option.innerText)
-    })
-  })
   
    const registerForm = document.getElementById('register-form')
    registerForm?.addEventListener('submit', async (e) => {
@@ -335,11 +228,20 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
       }
     })
 
+    const datePlaceHolderTargets = document.querySelectorAll('[data-date-placeholder]')
 
-    tippy(`[data-select-parent-id="selectDisabled"]`, {
-      content: '<span class="text-sm">Before choosing a grade, please select a campus.</span>',
-      allowHTML: true,
-      placement: 'bottom',
-      arrow: true,
-    });
+    datePlaceHolderTargets.forEach(dateTarget => {
+      const placeholderId = dateTarget.dataset.datePlaceholder
+      const placeholderEl = document.getElementById(placeholderId)
+
+      dateTarget.addEventListener('focus', (e) => {
+        console.log('date focus')
+        placeholderEl.classList.add('hidden')
+      })
+      dateTarget.addEventListener('blur', (e) => {
+        if (dateTarget.value === '') {
+          placeholderEl.classList.remove('hidden')
+        }
+      })
+    })
 </script>

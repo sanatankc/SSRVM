@@ -3,100 +3,113 @@ import PrePrimaryBG from "../images/curriculum/prePrimary.png";
 import PrimaryBG from "../images/curriculum/primary.png";
 import MiddleAndHighBG from "../images/curriculum/middle&High.png";
 import Text from "./system/Text.astro";
+import { Image } from 'astro:assets'
 
-const academics = [
+import academics1 from '../image/lead-gen/1.png'
+import academics2 from '../image/lead-gen/2.png'
+import academics3 from '../image/lead-gen/3.png'
+import academics4 from '../image/lead-gen/4.png'
+import academics5 from '../image/lead-gen/5.png'
+
+let academics = [
   {
     title: "Pre-Primary",
     grade: "NUR - UKG",
     points: [
       [
-        "Montessori Lab",
         "Multi-sensory Lab",
+        "Montessori Lab",
+      ],
+      [
         "Safe and clean playground",
         "Quality education",
-      ],
-      [],
+      ]
     ],
-    image: PrePrimaryBG,
     subtitle: "Fun, Creative, and Innovative",
-    background: "#0E6526",
-    backgroundContent: "#0A5E2F",
-    opacity: 1,
+    background: "linear-gradient(0deg, rgba(108, 158, 194, 0.3) 19.29%, rgba(108, 158, 194, 0.20) 100%)",
+    color: '#17436D',
+    image: academics1,
     link: "https://glentreeacademy.com/curriculum/pre-primary",
   },
   {
     title: "Primary",
-    image: PrimaryBG,
+    image: academics2,
     link: "https://glentreeacademy.com/curriculum/primary",
-    background: "#C07C47",
+    background: "linear-gradient(0deg, rgba(95, 172, 249, 0.3) 19.29%, rgba(95, 172, 249, 0.20) 100%)",
+    color: '#17436D',
     subtitle: "Active Learning, Values, Wellness",
     grade: "Grade I-V",
     points: [
-      [
-        "Engaging Activity-Based Learning",
-        "Yoga, Shlokas, Meditation",
-        "Comprehensive Assessment Approach",
-      ],
-      [],
-    ],
+        [
+          "Engaging Activity-Based Learning",
+          "Yoga, Shlokas, Meditation",
+        ],
+        [
+          "Comprehensive Assessment Approach",
+        ]
+      ]
   },
   {
     title: "Middle",
-    image: MiddleAndHighBG,
+    image: academics3,
     link: "https://glentreeacademy.com/curriculum/middle-and-high",
-    background: "#6F322E",
-    grade: "Grade VI-VII",
+    background: "linear-gradient(0deg, rgba(245, 224, 182, 0.3) 19.29%, rgba(162, 144, 122, 0.20) 100%)",
+    backgroundImageColor: "linear-gradient(0deg, rgba(108, 158, 194, 0.7) 19.29%, rgba(108, 158, 194, 0.80) 100%)",
+    color: '#816A4E',
+    grade: "Grade VI-VIII",
     subtitle: "Skills, Languages, and Indian Arts",
     points: [
-      [
-        "French, Sanskrit and German",
-        "Skill Training: Carpentry and Solar Training",
-        "Entrepreneurial & Leadership Skills",
-        "Yakshagana: Traditional Indian art",
-      ],
-      [],
-    ],
+        [
+          "French, Sanskrit and German",
+          "Skill Training: Carpentry and Solar Training",
+        ],
+        [
+          "Entrepreneurial & Leadership Skills",
+          "Yakshagana: Traditional Indian art",
+        ]
+      ]
   },
   {
     title: "Secondary",
-    image: MiddleAndHighBG,
+    image: academics4,
     link: "https://glentreeacademy.com/curriculum/middle-and-high",
-    background: "#6F322E",
+    background: "linear-gradient(0deg, rgba(252, 223, 167, 0.3) 19.29%, rgba(248, 181, 51, 0.20) 100%)",
+    color: '#C0840F',
     subtitle: "Stress-free, Personalised, Future Readiness",
     grade: "Grade IX-X",
     points: [
-      [
-        "Hands-on Learning & Peer Reviews",
-        "Personalised Discussions & Individual Focus",
-        "Board Exam Preparation Guidance",
-        "Sports, Yoga, Kriya & Interschool Competitions",
+        [
+          "Hands-on Learning & Peer Reviews",
+          "Personalised Discussions & Individual Focus",
+        ],
+        [
+          "Board Exam Preparation Guidance",
+          "Sports, Yoga, Kriya & Interschool Competitions",
+        ]
       ],
-      [],
-    ],
   },
   {
     title: "Senior Secondary School",
-    image: MiddleAndHighBG,
+    image: academics5,
     link: "https://glentreeacademy.com/curriculum/middle-and-high",
-    background: "#2C734B",
+    background: "linear-gradient(180deg, rgba(154, 164, 137, 0.3) 19.29%, rgba(112, 120, 97, 0.20) 100%)",
+    color: '#707861',
     grade: "Grade XI-XII",
     subtitle: "Tailored Curriculum & Guidance, Exam Focused",
-    points: [
-
-      [
-        "Counselling Sessions & Career guidance",
-        "KCET/ NEET/JEE Guidance",
-        "Experienced Faculty",
+    points:  [
+        [
+          "Counselling Sessions & Career guidance",
+          "KCET/ NEET/JEE Guidance",
+        ],
+        [
+          "Experienced Faculty",
+        ]
       ],
-
-      [],
-    ],
   },
 ];
 
 const { noHeader } = Astro.props;
 ---
-
 <div
   class:list={[
     "w-full p-14 text-black bg-white flex flex-col items-center max-md:p-6",
@@ -122,16 +135,20 @@ const { noHeader } = Astro.props;
       academics.map((academic) => (
         <div class="flex flex-row w-full mb-[2px] max-md:flex-col max-md:rounded-xl overflow-hidden max-md:mb-4">
           <div
-            class="w-full flex-1 overflow-hidden max-w-[350px] max-md:max-w-[1000px] min-h-[200px] mr-[1px] flex flex-col text-white items-center justify-center relative bg-cover no-repeat"
+            class="w-full flex-1 overflow-hidden max-w-[350px] max-md:max-w-[1000px] min-h-[160px] mr-[1px] flex flex-col text-white items-center justify-center relative bg-cover no-repeat"
             style={{
               backgroundImage: `url(${academic.image.src})`,
             }}
           >
             <div
-              class="w-full h-full mix-blend-multiply absolute z-0"
+              class="w-full h-full absolute z-0"
+            >
+              <Image src={academic.image} alt={academic.title} width={300} class="w-full h-full object-cover object-top" />
+            </div>
+            <div
+              class="w-full h-full absolute z-1 mix-blend-multiply"
               style={{
-                background: academic.background,
-                opacity: academic.opacity ? academic.opacity : 1,
+                background: 'rgba(23, 67, 109,0.7)',
               }}
             />
             {academic.new && (
@@ -152,17 +169,17 @@ const { noHeader } = Astro.props;
                 : academic.background,
               opacity: academic.opacity ? academic.opacity : 1,
             }}
-            class="w-full relative flex-1 max-w-[845px] max-md:max-w-[1000px] min-h-[200px] mr-[1px] flex flex-row max-md:flex-col max-md:items-start max-md:p-8 max-md:pt-4 items-center justify-center p-12 py-4"
+            class="w-full relative flex-1 max-w-[845px] max-md:max-w-[1000px] min-h-[160px] mr-[1px] flex flex-row max-md:flex-col max-md:items-start max-md:p-8 max-md:pt-4 items-center justify-center p-12 py-4"
           >
             <Text type={"regular"} class="mt-3 font-[500] flex-1">
-              <ul class="list-disc text-white">
+              <ul class="list-disc" style={{ color: academic.color }}>
                 {academic.points[0].map((point) => (
                   <li>{point}</li>
                 ))}
               </ul>
             </Text>
             <Text type={"regular"} class="mt-3 font-[500] flex-1 max-md:mt-0">
-              <ul class="list-disc text-white">
+              <ul class="list-disc" style={{ color: academic.color }}>
                 {academic.points[1].map((point) => (
                   <li>{point}</li>
                 ))}

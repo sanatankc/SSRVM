@@ -2,6 +2,7 @@
 import Modal from "./system/Modal.astro";
 import Text from "./system/Text.astro";
 import arrow from '../icons/arrow.svg';
+import { Image } from "astro:assets";
 
 const { id, gallery, currentLink, link, closeLink } = Astro.props
 const slideId = 'slide' + id
@@ -13,11 +14,12 @@ console.log('slideId...', slideId)
   <div class="bg-white rounded-md w-full h-full max-md:h-auto p-3 max-md:p-0">
     <div class="w-full h-full relative rounded-md">
       {gallery.map((slide: {
-      src: string,
+        src: string,
         caption: string
       }, index: Number) => (
-        <img
-          src={slide?.src}
+        <Image
+          src={slide.src}
+          height={1080}
           alt={slide.caption}
           class="w-full h-full max-md:h-auto object-cover rounded-md hidden data-[is-active=true]:block"
           data-target-slide={slideId}

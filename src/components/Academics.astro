@@ -22,8 +22,8 @@ let academics = [
     title: "Pre-Primary",
     grade: "NUR - UKG",
     points: [
-      "Montessori Lab",
       "Multi-sensory Lab",
+      "Montessori Lab",
       "Safe and clean playground",
       "Quality education",
     ],
@@ -122,7 +122,7 @@ const { noHeader } = Astro.props;
     )
   }
   <div
-    class="w-full flex-col flex items-center gap-24 overflow-hidden mt-4 max-w-[1196px]"
+    class="w-full flex-col flex items-center gap-8 overflow-hidden mt-4 max-w-[1196px]"
   >
   {academics.map((academic, i) => (
     <div class:list={["w-full flex flex-row max-md:flex-col max-md:w-[400px] p-8 gap-36 rounded-2xl max-md:rounded-2xl justify-center", i % 2  === 1 && 'flex-row-reverse']} style={{
