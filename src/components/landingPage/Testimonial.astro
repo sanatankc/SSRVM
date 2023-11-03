@@ -11,6 +11,7 @@ import TestimonicalCard from './TestimonicalCard.astro';
 import testimonial1 from '../../images/testimonial/1.png'
 import testimonial2 from '../../images/testimonial/2.png'
 import testimonial3 from '../../images/testimonial/3.png'
+import testimonial4 from '../../images/testimonial/4.png'
 import Scribble from '../Scribble.astro';
 
 const testimonials = {
@@ -18,21 +19,20 @@ const testimonials = {
     subtitle: 'Stories of Transformation and Growth',
     data: [
       {
-        image: testimonial3,
-        quote: "Ekam’s warm and supportive environment has played a vital role in shaping my child's educational journey and personal development. We’re delighted to call our child an Edifian!",
-        ctaText: 'Watch Video',
-        ctaLink: '',
-        author: '- MS. VIJAYALAKSHMI, PARENT'
-      },
-      {
-        image: testimonial2,
-        quote: "Experiencing continuous growth over the past year, I've felt supported and welcomed since day one. This school provides an excellent platform for me to build confidence.",
-        author: '- PRERnA (grade 10)',
-      },
-      {
         image: testimonial1,
-        quote: 'I cherish my school for its supportive and friendly teachers who not only enhance our skill sets but also instill invaluable moral values, creating a nurturing learning environment.',
-        author: '- VIHANA, STAGE 6, igcse',
+        quote: "This school has demonstrated that education extends beyond the mental and physical aspects. It offers spiritual education while keeping a strong connection to our Indian culture, which significantly boosts my child's morale",
+        author: '- Ms Anjana Singh, Parent',
+      },
+      {
+        image: testimonial3,
+        quote: "Over the past 2 years, I have witnessed my child's tremendous academic and personal growth. The school's commitment to a well rounded education is evident in the variety of extracurricular activities offered.",
+        ctaLink: '',
+        author: '- MR. Rakesh Singh, PARENT'
+      },
+      {
+        image: testimonial4,
+        quote: "SSRVM is a wonderful place to learn and grow. SSRVM has given me a holistic education that I am thankful for. SSRVM is not just a school, it is a community",
+        author: '- Samarth Jain, Student',
 
       },
     ],
@@ -109,7 +109,9 @@ const subtitle = testimonials.subtitle;
         rounded-r-none
         '
         style={{
-          backgroundImage: `url(${testimonials.data[0].image.src})`
+          backgroundImage: `url(${testimonials.data[0].image.src})`,
+          backgroundPosition: `center bottom 220px`
+
         }}>
       </div>
       <div class='flex flex-col justify-center px-14 max-md:px-1 max-md:items-left'>
@@ -121,17 +123,15 @@ const subtitle = testimonials.subtitle;
         </Text>
 
         <div class="pt-4 max-md:2" />
-        <Text type="sm" class="tracking-[1.8px] text-primary uppercase font-bold">{testimonials.data[0].author}</Text>
-        <!-- <div data-video-open="0" class="max-md:flex max-md:justify-center">
-          <Button class='mt-4'>
-            <span>Watch Video</span>
-            <svg slot="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM13.2313 8.72996C12.9466 8.53003 12.6242 8.32321 12.2903 8.1202C11.0034 7.33764 10.36 6.94636 9.7829 7.37957C9.2058 7.81278 9.15335 8.71968 9.04846 10.5335C9.01879 11.0464 9 11.5493 9 12.0001C9 12.4508 9.01879 12.9537 9.04846 13.4666C9.15335 15.2804 9.2058 16.1873 9.7829 16.6205C10.36 17.0537 11.0034 16.6625 12.2903 15.8799C12.6242 15.6769 12.9466 15.4701 13.2313 15.2702C13.5559 15.0423 13.909 14.7688 14.2651 14.4783C15.555 13.426 16.2 12.8999 16.2 12.0001C16.2 11.1002 15.555 10.5741 14.2651 9.52182C13.909 9.23134 13.5559 8.95785 13.2313 8.72996Z" fill="white"/>
-            </svg>
-          </Button>
-        </div> -->
+        <Text type="sm" class="tracking-[1.8px] text-yellow-500 uppercase font-bold">{testimonials.data[0].author}</Text>
       </div>
     </div>
+    <!-- <TestimonicalCard 
+            quote={testimonials.data[0].quote}
+            author={testimonials.data[0]?.author}
+            image={testimonials.data[0].image}
+            className="bg-transparent  rounded-bl-[50px]"
+        /> -->
 
 
   <div class="p-3" />

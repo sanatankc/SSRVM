@@ -6,12 +6,21 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'avenir';
+  src: url('/fonts/AvenirRegular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 
 html {
   background: #fff;
   scroll-behavior:smooth;
   /* color: white; */
-  /* font-family: roundo, sans; */
+  font-family: avenir, sans;
 }
 
 

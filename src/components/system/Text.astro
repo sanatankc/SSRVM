@@ -41,8 +41,9 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
     <h2
       class:list={[
         `font-display font-extrabold text-5xl max-md:text-[2rem] 
-         [&>span]:text-primary 
-         [&>span]:text-primary 
+         [&>span]:text-yellow-500 
+         [&>span]:italic
+         text-blue-500 
          leading-[120%]
         `,
         className,
@@ -58,7 +59,7 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
   type === "h3" && (
     <h3
       class:list={[
-        "text-[2.5rem] tracking-tight font-display font-extrabold max-md:text-2xl [&>span]:text-primary  leading-[120%]",
+        "text-[2.5rem] font-display font-extrabold max-md:text-2xl [&>span]:text-primary  leading-[120%]",
         className,
       ]}
       style={style}
