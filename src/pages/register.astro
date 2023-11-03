@@ -22,6 +22,7 @@ import YoutubeEmbed from "../components/YoutubeEmbed.astro";
 import psjaAward from "../images/psjaAward.png";
 import meritAwards from "../images/meritAwards.png";
 import VittalFounderDesk from "../components/vittalFounderDesk.astro";
+import CampusSection from "../components/register/campusSection.astro";
 import { Image } from "astro:assets";
 import AdmissionMarquee from "../components/campus/admissionMarquee.astro";
 
@@ -86,6 +87,7 @@ const faqs = [
     >
       <div class="flex flex-col max-md:h-auto min-h-[98svh] relative">
         <TopNavigationBar hideMenu applyNowButtonId="register-page-apply-now" />
+        <div class="h-[88px] w-full bg-black"></div>
 
         <!-- <div class="bg-yellow p-2 text-center text-black flex flex-row max-md:flex-col justify-center items-center group">
           <Text type='regular' class="font-bold uppercase tracking-widest">Limited-period offer</Text>
@@ -196,7 +198,7 @@ const faqs = [
         </div> -->
       </div>
 
-      <WhySsrvm/>
+      <WhySsrvm />
 
       <div class="bg-white relative p-20 pb-10 max-md:p-5 text-black">
         <div
@@ -323,6 +325,8 @@ const faqs = [
           </div>
         </Constrain>
       </div>
+
+      <CampusSection />
 
       <div
         class="w-full p-14 pb-3 text-black bg-white flex flex-col items-center max-md:p-6"
