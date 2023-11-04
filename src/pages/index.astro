@@ -52,6 +52,7 @@ import slide4MB from "../images/register/slides/mb/3.png";
 import slide5MB from "../images/register/slides/mb/3.png";
 
 import PhoneWhite from "../icons/PhoneWhite.svg";
+import PhoneGrey from "../icons/PhoneGrey.svg";
 import Faqs from "../components/faqs.astro";
 import AcademicsBox from "../components/AcademicsBox.astro";
 import Academics from "../components/Academics.astro";
@@ -165,13 +166,13 @@ import Academics from "../components/Academics.astro";
             <div
               class="flex flex-col items-start max-md:items-center mb-10 max-md:mb-2"
             >
-              <Text type="h1" class="text-white text-center">
+              <Text type="h1" class="text-white max-md:text-center">
                 Join our <span class="!not-italic text-yellow-500">SSRVM Family</span>
               </Text>
               <div class="pt-2"></div>
               <Text
                 type="lg"
-                class="text-white max-md:text-center max-md:text-[15px] max-md:w-auto px-8"
+                class="text-white text-left max-md:text-center max-md:text-[15px] max-md:w-auto max-md:px-8"
               >
                 Admissions open for  Pre-Primary to Grade XII 
               </Text>
@@ -343,10 +344,10 @@ import Academics from "../components/Academics.astro";
         class="w-full p-14 pb-1 text-black bg-white flex flex-col items-center max-md:p-6"
       >
         <Text type={"subtitle"} class="text-black/80">
-          ENRICHING CURRICULUM
+          Holisitic Education
         </Text>
         <Text type={"h2"} class="mt-2">
-          Academic{" "}<span class="text-accent2">Landscape</span>
+          Beyond the {" "}<span class="text-accent2">Books</span>
         </Text>
       </div>
       <Activities />
@@ -371,6 +372,17 @@ import Academics from "../components/Academics.astro";
       <!-- <GlentreeFamily /> -->
       <Footer />
     </div>
+
+  <a href="tel:+919901393284">
+      <div class="fixed w-full h-14 bg-yellow-600 bottom-0 left-0 z-10 hidden max-md:flex items-center justify-center gap-4 font-medium">
+        <div class="w-4 h-4">
+          <Image src={PhoneGrey} alt="Phone" class="w-full h-full object-cover" />
+        </div>
+        <Text type="sm">+91 99013 93284</Text>
+      </div>
+    </a>
+
+
   </main>
 </Layout>
 
