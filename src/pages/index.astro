@@ -490,8 +490,10 @@ import Academics from "../components/Academics.astro";
   const applyNowButtons = document.querySelectorAll(
     `[data-apply-now-button="register-page-apply-now"]`
   );
-  console.log(applyNowButtons);
-  applyNowButtons.forEach((applyNowButton) => {
+  const applyNowLinks = document.querySelectorAll(
+    `[data-form-scroll]`
+  );
+  [...applyNowButtons, ...applyNowLinks].forEach((applyNowButton) => {
     applyNowButton?.addEventListener("click", () => {
       if (window.innerWidth > 768) {
         const registerFormContainer = document.getElementById(
