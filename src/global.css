@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'avenir';
-  src: url('/fonts/AvenirRegular.ttf') format('ttf');
+  src: url('/fonts/AvenirRegular.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
