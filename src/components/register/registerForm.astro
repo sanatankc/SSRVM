@@ -215,13 +215,14 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
           ...params,
           
         }
-        fbq('track', 'CompleteRegistration', {
-          value: 0.00,
-          currency: 'INR',
-          em: formData.get('email'),
-          ph: formData.get('phone'),
-          fn: formData.get('parentName'),
-        })
+        // fbq('track', 'CompleteRegistration', {
+        //   value: 0.00,
+        //   currency: 'INR',
+        //   em: formData.get('email'),
+        //   ph: formData.get('phone'),
+        //   fn: formData.get('parentName'),
+        // })
+        window.gtag_report_conversion()
         document.getElementById('register-form-container-desktop').classList.add('form-completed')
       }
     })

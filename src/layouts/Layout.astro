@@ -35,14 +35,30 @@ const { title = 'Best CBSE School in Bangalore | Ekam School' } = Astro.props;
 		<!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
 		<!-- Google tag (gtag.js) -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEL743GRSY"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11188045824"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 
-			gtag('config', 'G-SEL743GRSY');
-		</script> -->
+			gtag('config', 'AW-11188045824');
+
+			function gtag_report_conversion(url) {
+				var callback = function () {
+					if (typeof(url) != 'undefined') {
+						window.location = url;
+					}
+				};
+				gtag('event', 'conversion', {
+						'send_to': 'AW-11188045824/gz03CPGhwPgYEICQ8NYp',
+						'event_callback': callback
+				});
+				return false;
+			}
+			window.gtag_report_conversion = gtag_report_conversion
+		</script>
+
+
 	</head>
 	<body>
 		<slot />
