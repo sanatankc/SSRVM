@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../system/Button.astro";
 import Text from "../system/Text.astro";
 
@@ -20,9 +21,12 @@ const {image,quote,author,ctaText,ctaLink,imageFade=false,className} = Astro.pro
       backgroundImage: `${imageFade ? 'linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%),' : ''} url(${image})`
     }}> -->
     <slot>
-      <img  
-        src=`${image.src}`
-        class="object-contain max-h-[200px] rounded-[22px]"
+      <Image  
+        src={image}
+        width={250}
+        height={200}
+        alt={"Testimonial Image of " + author}
+        class="h-[200px] rounded-[22px] w-[250px] object-cover"
       />
     </slot>
     <div class='flex flex-col justify-around px-14 max-md:px-0 max-md:items-center'>
