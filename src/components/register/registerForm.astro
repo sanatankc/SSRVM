@@ -182,8 +182,8 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
    let loading = false
    registerForm?.addEventListener('submit', async (e) => {
       e.preventDefault()
-      loading = true
       if (loading) return
+      loading = true
       const formData = new FormData(e.target as HTMLFormElement);
       const grade1 = formData.get('grade1')
       const grade2 = formData.get('grade2')
