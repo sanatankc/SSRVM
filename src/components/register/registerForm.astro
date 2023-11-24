@@ -179,8 +179,11 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
   import tippy from 'tippy.js';
   
    const registerForm = document.getElementById('register-form')
+   let loading = false
    registerForm?.addEventListener('submit', async (e) => {
       e.preventDefault()
+      loading = true
+      if (loading) return
       const formData = new FormData(e.target as HTMLFormElement);
       const grade1 = formData.get('grade1')
       const grade2 = formData.get('grade2')
@@ -203,8 +206,10 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
         method: "POST",
         body: formData,
       });
-      document.querySelector('.apply-now-register-button').classList.remove('loading')
+      
       const data = await response.json();
+      document.querySelector('.apply-now-register-button').classList.remove('loading')
+      loading = false
       if (data.message) {
         let params = Array.from(formData.entries()).reduce((memo, [key, value]) => ({
           ...memo,
@@ -222,7 +227,9 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
         //   ph: formData.get('phone'),
         //   fn: formData.get('parentName'),
         // })
-        window.gtag_report_conversion()
+        if(window.gtag_report_conversion) {
+          window.gtag_report_conversion()
+        }
         document.getElementById('register-form-container-desktop').classList.add('form-completed')
       }
     })
