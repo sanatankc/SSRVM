@@ -96,20 +96,20 @@ const menu: Array<Menu> = [
   },
 ];
 
-const { hideMenu = false, applyNowButtonId = null } = Astro.props;
+const { hideMenu = false, logoClick = false, applyNowButtonId = null } = Astro.props;
 ---
 
 <header
   class="w-screen bg-[#000E1C] py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[99]"
 >
   {
-    hideMenu ? (
-      <div class="relative z-10 daisy daisy-fixed daisy-1">
+    !logoClick ? (
+      <a href="https://bangaloresouth.ssrvm.org/" class="relative z-10 daisy daisy-fixed daisy-1">
         <Image src={logo} alt="SSRVM's Logo" class="w-[300px] max-md:w-[200px] p-2" />
-      </div>
+      </a>
     ) : (
       <a href="/" class="relative z-10 daisy daisy-fixed daisy-1">
-        <Image src={logo} alt="SSRVM's Logo" />
+        <Image src={logo} alt="SSRVM's Logo" class="w-[300px] max-md:w-[200px] p-2" />
       </a>
     )
   }
@@ -221,7 +221,7 @@ const { hideMenu = false, applyNowButtonId = null } = Astro.props;
         </div>
       ) : (
         <a
-          href="https://admissions.glentreeacademy.com"
+          href="/"
           target="_blank"
           class="daisy daisy-fixed daisy-3"
         >
