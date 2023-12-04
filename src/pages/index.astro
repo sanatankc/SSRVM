@@ -189,11 +189,13 @@ import Academics from "../components/Academics.astro";
           <div class="max-md:py-0"></div>
           <RegisterForm />
         </div>
-        <!-- <div class="w-[50px] h-[50px] down-arrow-button transition-all duration-500 rounded-[50%] bg-accent border-accent/60 border-[4px] absolute top-[97vh] left-[50%] z-[9999] flex items-center justify-center max-md:hidden">
+
+        <AdmissionMarquee class="max-md:!hidden" />
+        <div class="flex w-full justify-center down-arrow-button relative">
           <div class="w-[18px] h-[9px] down-arrow-icon">
             <Image src={DownArrow} alt="Down Arrow" class="w-full h-full object-cover" />
           </div>
-        </div> -->
+        </div>
       </div>
 
       <div class="bg-white relative p-20 pb-10 max-md:p-5 text-black">
@@ -445,6 +447,22 @@ import Academics from "../components/Academics.astro";
       left: 100%;
     }
   }
+
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 10px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+
+  .down-arrow-icon {
+    animation: jumpInfinite 1.5s infinite;
+  }
 </style>
 
 <script>
@@ -515,10 +533,12 @@ import Academics from "../components/Academics.astro";
   collapsible(".collapsible", null);
 
   const downArrowButton = document.querySelector(".down-arrow-button");
+  const downArrowIcon = document.querySelector(".down-arrow-icon");
   document.addEventListener("scroll", (e) => {
     // after scrolling 100px, show the button
     if (window.scrollY > window.innerHeight / 5) {
       downArrowButton?.classList.add("opacity-0");
+      downArrowIcon?.classList.remove('down-arrow-icon')
     }
   });
   const mainContainer = document.querySelector(".main-container");
