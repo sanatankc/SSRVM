@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro";
 
 export const POST: APIRoute = async ({ request }) => {
-  console.log('hello...')
   const data = await request.formData();
 
   data.append("Date_Time", new Date().toLocaleString('en-GB', { timeZone: 'IST' }));
