@@ -200,6 +200,8 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
       const grade2 = formData.get('grade2')
       const grade = grade1 || grade2
       formData.append('form-name', 'register-form');
+
+
       formData.delete("grade1")
       formData.delete("grade2")
       formData.append("grade", grade)
@@ -232,9 +234,16 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
           
         }
 
-        const email = await convertToSHA256(formData.get('email'))
-        const phone = await convertToSHA256(formData.get('phone'))
-        const parentName = await convertToSHA256(formData.get('parentName'))
+        const email = await convertToSHA256(formData.get('Email'))
+        const phone = await convertToSHA256(formData.get('Phone'))
+        const parentName = await convertToSHA256(formData.get('ParentName'))
+
+        console.log(
+          formData,
+          'email', formData.get('Email'), email, '\n',
+          'phone', formData.get('Phone'), phone, '\n',
+          'parentName', formData.get('ParentName'), parentName, '\n',
+        )
 
         fbq('track', 'CompleteRegistration', {
           value: 0.00,
