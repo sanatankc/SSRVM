@@ -236,13 +236,13 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 
         const email = await convertToSHA256(formData.get('Email'))
         const phone = await convertToSHA256(formData.get('Phone'))
-        const parentName = await convertToSHA256(formData.get('ParentName'))
+        const parentName = await convertToSHA256(formData.get('Parent Name'))
 
         console.log(
           formData,
           'email', formData.get('Email'), email, '\n',
           'phone', formData.get('Phone'), phone, '\n',
-          'parentName', formData.get('ParentName'), parentName, '\n',
+          'parentName', formData.get('Parent Name'), parentName, '\n',
         )
 
         fbq('track', 'CompleteRegistration', {
