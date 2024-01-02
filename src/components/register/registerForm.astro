@@ -231,12 +231,17 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
           ...params,
           
         }
+
+        const email = await convertToSHA256(formData.get('email'))
+        const phone = await convertToSHA256(formData.get('phone'))
+        const parentName = await convertToSHA256(formData.get('parentName'))
+
         fbq('track', 'CompleteRegistration', {
           value: 0.00,
           currency: 'INR',
-          em: convertToSHA256(formData.get('email')),
-          ph: convertToSHA256(formData.get('phone')),
-          fn: convertToSHA256(formData.get('parentName')),
+          em: email,
+          ph: phone,
+          fn: parentName,
         })
         if(window.gtag_report_conversion) {
           window.gtag_report_conversion()
