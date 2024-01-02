@@ -177,6 +177,17 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 
 <script>
   import tippy from 'tippy.js';
+
+  const convertToSHA256 = (string: string) => {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(string);
+    return crypto.subtle.digest('SHA-256', data).then((hash) => {
+      const hexString = Array.from(new Uint8Array(hash))
+        .map((b) => b.toString(16).padStart(2, '0'))
+        .join('');
+      return hexString;
+    });
+  };
   
    const registerForm = document.getElementById('register-form')
    let loading = false
@@ -223,9 +234,9 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
         fbq('track', 'CompleteRegistration', {
           value: 0.00,
           currency: 'INR',
-          em: formData.get('email'),
-          ph: formData.get('phone'),
-          fn: formData.get('parentName'),
+          em: convertToSHA256(formData.get('email')),
+          ph: convertToSHA256(formData.get('phone')),
+          fn: convertToSHA256(formData.get('parentName')),
         })
         if(window.gtag_report_conversion) {
           window.gtag_report_conversion()
