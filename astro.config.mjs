@@ -9,9 +9,9 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [tailwind()],
   output: "server",
-  // adapter: vercel(),
-  adapter: netlify({
-    edgeMiddleware: true
-  }),
+  adapter: vercel(),
+  // adapter: netlify({
+  //   edgeMiddleware: true
+  // }),
   server: (command) => ({ port: command === 'dev' ? 4231 : 4000, host: true })
 });
