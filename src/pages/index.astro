@@ -52,6 +52,7 @@ import slide4MB from "../images/register/slides/mb/3.png";
 import slide5MB from "../images/register/slides/mb/3.png";
 
 import PhoneWhite from "../icons/PhoneWhite.svg";
+import Location from "../icons/LocationWhite.svg";
 import PhoneGrey from "../icons/PhoneGrey.svg";
 import Faqs from "../components/faqs.astro";
 import AcademicsBox from "../components/AcademicsBox.astro";
@@ -164,12 +165,23 @@ import Academics from "../components/Academics.astro";
             class="h-full flex flex-row relative z-20 max-md:w-max max-md:self-center self-end"
           >
             <div
-              class="flex flex-col items-start max-md:items-center mb-10 max-md:mb-2"
+              class="flex flex-col items-start max-md:items-center mb-2 max-md:mb-2 max-md:gap-2 gap-0"
             >
               <Text type="h1" class="text-white max-md:text-center">
-                Join our <span class="!not-italic text-yellow-500">SSRVM Family</span>
+                Join <span class="!not-italic text-yellow-500">SSRVM<br class="max-md:block hidden" /> Bangalore South</span>
               </Text>
-              <div class="pt-2"></div>
+              <div class="pt-2 max-md:pt-0"></div>
+              <div class="flex flex-row gap-4 max-md:gap-2 items-center">
+                <div class="w-[20px] h-[20px]">
+                  <Image src={Location} alt="Location" class="w-full h-full object-contain" />
+                </div>
+                <Text
+                  type="lg"
+                  class="text-white text-left max-md:text-center max-md:text-[15px] max-md:w-auto max-md:px-1"
+                >
+                  Kanakapura Road
+                </Text>
+              </div>
               <Text
                 type="lg"
                 class="text-white text-left max-md:text-center max-md:text-[15px] max-md:w-auto max-md:px-8"
